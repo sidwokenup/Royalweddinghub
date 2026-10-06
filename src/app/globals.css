@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  --color-ivory: var(--ivory);
+  --color-warm-white: var(--warm-white);
+  --color-champagne: var(--champagne);
+  --color-gold: var(--gold);
+  --color-burgundy: var(--burgundy);
+  --color-rose: var(--rose);
+  --color-muted: var(--muted);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+:root {
+  /* Core Colors */
+  --background: #faf9f6; /* Ivory base */
+  --foreground: #1c1917; /* Soft black/dark brown */
+  
+  /* Brand Colors - Luxury Editorial Palette */
+  --ivory: #faf9f6;
+  --warm-white: #fffdfa;
+  --champagne: #f3e5d8;
+  --gold: #d4af37;
+  --burgundy: #671024;
+  --rose: #b36a5e;
+  --muted: #78716c; /* Stone 500 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Optional Dark Mode - For cinematic sections */
+    --background: #1c1917;
+    --foreground: #faf9f6;
+    
+    --muted: #a8a29e;
   }
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .display-text {
+  font-family: var(--font-display), serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
