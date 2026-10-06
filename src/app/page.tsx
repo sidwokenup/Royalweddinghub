@@ -3,17 +3,24 @@ import { Navbar } from "@/components/navigation/Navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-start w-full bg-[#0a0705]">
       <Navbar />
       <Hero />
       
-      {/* Placeholder section below hero */}
-      <section className="w-full py-32 px-6 flex flex-col items-center justify-center bg-background text-foreground text-center">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <span className="text-sm uppercase tracking-widest text-muted">The Experience</span>
-          <h2 className="text-4xl md:text-5xl display-text">Editorial elegance meets cultural richness</h2>
-          <p className="text-lg font-light leading-relaxed text-muted">
-            We specialize in creating bespoke, immersive wedding experiences that honor tradition while embracing contemporary luxury. Every detail is curated to reflect your unique story.
+      {/* Temporary Next Section */}
+      <section 
+        id="services" 
+        className="relative w-full py-28 sm:py-36 px-6 bg-[#0e0a08] text-[#faf9f6] flex flex-col items-center justify-center text-center border-t border-[#f3e5d8]/10"
+      >
+        <div className="max-w-2xl mx-auto space-y-4">
+          <small className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-[#d4af37] font-medium block">
+            COMING NEXT
+          </small>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl display-text font-normal text-white leading-tight">
+            Extraordinary celebrations,<br className="hidden sm:inline" /> thoughtfully planned.
+          </h2>
+          <p className="text-xs sm:text-sm md:text-base font-light text-[#faf9f6]/70 max-w-lg mx-auto leading-relaxed pt-2">
+            The complete portfolio, bespoke destination services, and curated experiences will be introduced here.
           </p>
         </div>
       </section>

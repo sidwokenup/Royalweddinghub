@@ -7,6 +7,7 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
 const inter = Inter({
@@ -23,29 +24,29 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Premium Indian Wedding Planner | Luxury Cinematic Weddings",
-  description: "Crafting royal, luxurious, and cinematic Indian weddings with an editorial touch.",
+  metadataBase: new URL("https://royalweddinghub.com"),
+  title: "The Royal Weddinghub | Luxury Wedding Planner in Lucknow",
+  description: "Plan your dream wedding with The Royal Weddinghub — luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
   openGraph: {
-    title: "Premium Indian Wedding Planner",
-    description: "Crafting royal, luxurious, and cinematic Indian weddings with an editorial touch.",
-    url: "https://example.com",
-    siteName: "Luxury Weddings",
+    title: "The Royal Weddinghub | Luxury Wedding Planner in Lucknow",
+    description: "Plan your dream wedding with The Royal Weddinghub — luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
+    url: "https://royalweddinghub.com",
+    siteName: "The Royal Weddinghub",
     images: [
       {
-        url: "https://example.com/og-image.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Luxury Indian Wedding Planner",
+        alt: "The Royal Weddinghub - Luxury Wedding Planner in Lucknow",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium Indian Wedding Planner",
-    description: "Crafting royal, luxurious, and cinematic Indian weddings with an editorial touch.",
-    images: ["https://example.com/twitter-image.jpg"],
+    title: "The Royal Weddinghub | Luxury Wedding Planner in Lucknow",
+    description: "Plan your dream wedding with The Royal Weddinghub — luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
   },
   icons: {
     icon: "/favicon.ico",

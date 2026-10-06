@@ -13,16 +13,16 @@ export function Navbar() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest text-white">
-          <Link href="/services" className="hover:opacity-70 transition-opacity">Services</Link>
+          <Link href="#services" className="hover:opacity-70 transition-opacity">Services</Link>
           <Link href="/venues" className="hover:opacity-70 transition-opacity">Venues</Link>
           <Link href="/about" className="hover:opacity-70 transition-opacity">About</Link>
           <Link href="/contact" className="hover:opacity-70 transition-opacity">Contact</Link>
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <button className="md:hidden text-white" aria-label="Open menu">
-          <Menu size={24} />
-        </button>
+        <Link href="/contact" className="md:hidden text-xs uppercase tracking-widest text-white border border-white/30 px-3 py-1.5 rounded-[2px]" aria-label="Contact Concierge">
+          Concierge
+        </Link>
       </nav>
     </header>
   );
