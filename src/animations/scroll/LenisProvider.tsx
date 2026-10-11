@@ -55,7 +55,9 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       touchMultiplier: 2,
     });
 
-    setLenisInstance(lenis);
+    requestAnimationFrame(() => {
+      setLenisInstance(lenis);
+    });
 
     function raf(time: number) {
       lenis.raf(time);

@@ -82,25 +82,6 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
         className="w-full h-full object-cover object-[center_35%] md:object-center transition-opacity duration-700"
       />
 
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              var v = document.getElementById('hero-bg-video');
-              if (v) {
-                v.muted = true;
-                v.defaultMuted = true;
-                if (!v.src) {
-                  var isMobile = window.matchMedia('(max-width: 768px)').matches;
-                  v.src = isMobile ? '/videos/Mobile.mp4' : '/videos/Desktop.mp4';
-                  v.load();
-                }
-                v.play().catch(function(){});
-              }
-            })();
-          `,
-        }}
-      />
 
       {/* Cinematic subtle overlays - strictly delicate to preserve wedding footage clarity */}
       

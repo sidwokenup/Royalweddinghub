@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Check, Phone, MessageCircle, Sparkles, User, Calendar, Users } from "lucide-react";
+import { ArrowRight, Check, Phone, MessageCircle, Sparkles, User, Calendar } from "lucide-react";
 import { saveUserPreferences, getUserPreferences } from "@/lib/storage";
 import { captureCampaignParams, CampaignParams } from "@/lib/campaign";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
-import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
+import { getTelUrl } from "@/lib/contact";
 
 const SERVICE_OPTIONS = [
   "Complete Wedding Planning",
@@ -39,18 +39,19 @@ export function QuickLeadForm() {
   const [errorMsg, setErrorMsg] = useState<string>("");
 
   useEffect(() => {
-    // Capture UTM attribution upon landing
-    const utms = captureCampaignParams();
-    setCampaign(utms);
+    // Capture UTM attribution upon landing and pre-fill stored preferences
+    const timer = setTimeout(() => {
+      const utms = captureCampaignParams();
+      setCampaign(utms);
 
-    // Pre-fill name if user previously submitted
-    const saved = getUserPreferences();
-    if (saved.name) {
-      setName(saved.name);
-    }
-    if (saved.phone) {
-      setPhone(saved.phone);
-    }
+      const saved = getUserPreferences();
+      if (saved.name) {
+        setName(saved.name);
+      }
+      if (saved.phone) {
+        setPhone(saved.phone);
+      }
+    }, 0);
 
     // Listen for custom service selection from ServicesPreview
     const handleServiceSelect = (e: Event) => {
@@ -64,6 +65,7 @@ export function QuickLeadForm() {
 
     window.addEventListener("select_wedding_service", handleServiceSelect);
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("select_wedding_service", handleServiceSelect);
     };
   }, []);

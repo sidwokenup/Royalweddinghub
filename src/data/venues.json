@@ -1,0 +1,2893 @@
+[
+  {
+    "id": "vsquare",
+    "slug": "vsquare",
+    "name": "Vsquare",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "adjacent Babasaheb Bhim Rao Ambedkar University, near Ramabai Ambedkar Raili Sthal Road, Babasaheb Bhim Rao Ambedkar University, Lucknow, Uttar Pradesh 226025, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 50,
+      "maxPax": 200,
+      "capacity": 150,
+      "rooms": 10,
+      "raw": "50 - 200 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/vsquare/thumbnail.jpg",
+      "localUrl": "/venues/vsquare/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/XTOjWOgNK07XmyQWS4gyNr6iTpG4RRF6kkA17huf.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Vsquare wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/vsquare/gallery_001.jpg",
+        "localUrl": "/venues/vsquare/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/hCE46p1VawVKRXLkNfQXt17tvYbNoyAeorLMD8G0.jpg",
+        "width": 1280,
+        "height": 721,
+        "alt": "Vsquare wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vsquare/gallery_002.jpg",
+        "localUrl": "/venues/vsquare/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Vsquare wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vsquare/gallery_003.jpg",
+        "localUrl": "/venues/vsquare/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Vsquare wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vsquare/gallery_004.jpg",
+        "localUrl": "/venues/vsquare/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Vsquare wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vsquare/gallery_005.jpg",
+        "localUrl": "/venues/vsquare/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Vsquare wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/vsquare",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/vsquare",
+      "scraped_at": "2026-10-08T05:31:15.042926+00:00"
+    }
+  },
+  {
+    "id": "veridian-inn",
+    "slug": "veridian-inn",
+    "name": "Veridian Inn",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "3/272, Viraj Khand, Gomti Nagar, Near Max Hospital Gate No-3, Lucknow, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 50,
+      "maxPax": 250,
+      "capacity": 200,
+      "rooms": 24,
+      "raw": "50 - 250 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Restaurant",
+      "DJ",
+      "Catering",
+      "Decor"
+    ],
+    "description": "A property with neat and clean rooms with basic amenities and a funky in-house restaurant.The bathrooms are modern and hygienic.",
+    "primaryImage": {
+      "url": "/venues/veridian-inn/thumbnail.jpg",
+      "localUrl": "/venues/veridian-inn/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/4uHTU4WZsFh75DJxj6wSMXCSPbqGwAaNn0mHTzch.jpg",
+      "width": 1200,
+      "height": 819,
+      "alt": "Veridian Inn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/veridian-inn/gallery_001.jpg",
+        "localUrl": "/venues/veridian-inn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Cx5Jn562CxO0hw7qOgMXmq8kndXM8P7M9H1JbHat.jpg",
+        "width": 1026,
+        "height": 744,
+        "alt": "Veridian Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/veridian-inn/gallery_002.jpg",
+        "localUrl": "/venues/veridian-inn/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Veridian Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/veridian-inn/gallery_003.jpg",
+        "localUrl": "/venues/veridian-inn/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Veridian Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/veridian-inn/gallery_004.jpg",
+        "localUrl": "/venues/veridian-inn/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Veridian Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/veridian-inn/gallery_005.jpg",
+        "localUrl": "/venues/veridian-inn/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Veridian Inn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/veridian-inn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/veridian-inn",
+      "scraped_at": "2026-10-08T05:31:23.066768+00:00"
+    }
+  },
+  {
+    "id": "magnolia-garden-marriage-lawn",
+    "slug": "magnolia-garden-marriage-lawn",
+    "name": "Magnolia Garden Marriage Lawn",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Faizabad Rd, Chinhat, Anora Kala, Lucknow, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 400,
+      "capacity": 400,
+      "rooms": 50,
+      "raw": "200 - 400 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "Magnolia Garden, nestled on the main Lucknow- Ayodhya Road (Faizabad Road) in Lucknow is the perfect blend of elegance, space, and convenience for your special day. This stunning venue which spans over 4 acres boasts of expansive, beautifully manicured lawns that provide a picturesque setting for your wedding ceremony and reception. With the capacity to host weddings of over 3000 PAX, Magnolia Garden is ideal for both intimate gatherings and grand celebrations. With a huge parking space, your guests will enjoy hassle-free parking, ensuring a smooth and enjoyable experience from the moment they arrive. The lush greenery and serene ambiance of Magnolia Garden create a romantic backdrop, making it an ideal choice for couples looking to celebrate their love in a natural and enchanting environment. Whether you're planning a small, intimate ceremony or a large, lavish event, Magnolia Garden offers the perfect setting to make your wedding day truly unforgettable.",
+    "primaryImage": {
+      "url": "/venues/magnolia-garden-marriage-lawn/thumbnail.jpg",
+      "localUrl": "/venues/magnolia-garden-marriage-lawn/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/NJAprhCUnTqC2XBKtAVznVaQ5aUWTFrk278z7i2R.jpg",
+      "width": 1360,
+      "height": 1020,
+      "alt": "Magnolia Garden Marriage Lawn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/magnolia-garden-marriage-lawn/gallery_001.jpg",
+        "localUrl": "/venues/magnolia-garden-marriage-lawn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/0zCBeiUyDm0hFyHInqauTrvy8burb8fFAYegqpHc.jpg",
+        "width": 1280,
+        "height": 853,
+        "alt": "Magnolia Garden Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/magnolia-garden-marriage-lawn/gallery_002.jpg",
+        "localUrl": "/venues/magnolia-garden-marriage-lawn/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/BQGzGNHxtOIQI5se968hgweWX7iVlWrhjPY9lDQc.jpg",
+        "width": 1280,
+        "height": 854,
+        "alt": "Magnolia Garden Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/magnolia-garden-marriage-lawn/gallery_003.jpg",
+        "localUrl": "/venues/magnolia-garden-marriage-lawn/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Magnolia Garden Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/magnolia-garden-marriage-lawn/gallery_004.jpg",
+        "localUrl": "/venues/magnolia-garden-marriage-lawn/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Magnolia Garden Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/magnolia-garden-marriage-lawn/gallery_005.jpg",
+        "localUrl": "/venues/magnolia-garden-marriage-lawn/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Magnolia Garden Marriage Lawn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/magnolia-garden-marriage-lawn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/magnolia-garden-marriage-lawn",
+      "scraped_at": "2026-10-08T05:31:40.218512+00:00"
+    }
+  },
+  {
+    "id": "hotel-kings-paradise",
+    "slug": "hotel-kings-paradise",
+    "name": "Hotel Kings Paradise",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "NEAR RAMA BAI PARK ASHIYYANA LUCKNOW, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 50,
+      "maxPax": 250,
+      "capacity": 200,
+      "rooms": 18,
+      "raw": "50 - 250 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "DJ",
+      "Catering",
+      "Decor"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/hotel-kings-paradise/thumbnail.jpg",
+      "localUrl": "/venues/hotel-kings-paradise/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/Oc1jB5yXWs0bDvQgskOTdlGIHbcJbWAhief8bMNc.jpg",
+      "width": 960,
+      "height": 1280,
+      "alt": "Hotel Kings Paradise wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/hotel-kings-paradise/gallery_001.jpg",
+        "localUrl": "/venues/hotel-kings-paradise/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/3qLDug1bvOAzefMRpeC1WrapGje2OWucD7mTbfLU.jpg",
+        "width": 960,
+        "height": 1280,
+        "alt": "Hotel Kings Paradise wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-kings-paradise/gallery_002.jpg",
+        "localUrl": "/venues/hotel-kings-paradise/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Hotel Kings Paradise wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-kings-paradise/gallery_003.jpg",
+        "localUrl": "/venues/hotel-kings-paradise/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Hotel Kings Paradise wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-kings-paradise/gallery_004.jpg",
+        "localUrl": "/venues/hotel-kings-paradise/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Hotel Kings Paradise wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-kings-paradise/gallery_005.jpg",
+        "localUrl": "/venues/hotel-kings-paradise/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Hotel Kings Paradise wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/hotel-kings-paradise",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/hotel-kings-paradise",
+      "scraped_at": "2026-10-08T05:31:50.420292+00:00"
+    }
+  },
+  {
+    "id": "amantran-resort",
+    "slug": "amantran-resort",
+    "name": "Amantran Resort",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "gomti nagar, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 300,
+      "maxPax": 1000,
+      "capacity": 1000,
+      "rooms": 8,
+      "raw": "300 - 1000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Gym"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/amantran-resort/thumbnail.jpg",
+      "localUrl": "/venues/amantran-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/4LiRqjnHPgABhulV65Hd95aiFWDb5LxLAjDMjkJx.jpg",
+      "width": 800,
+      "height": 533,
+      "alt": "Amantran Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/amantran-resort/gallery_002.jpg",
+        "localUrl": "/venues/amantran-resort/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Amantran Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amantran-resort/gallery_003.jpg",
+        "localUrl": "/venues/amantran-resort/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Amantran Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amantran-resort/gallery_004.jpg",
+        "localUrl": "/venues/amantran-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Amantran Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amantran-resort/gallery_005.jpg",
+        "localUrl": "/venues/amantran-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Amantran Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/amantran-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/amantran-resort",
+      "scraped_at": "2026-10-08T05:31:59.149524+00:00"
+    }
+  },
+  {
+    "id": "sainik-lawn",
+    "slug": "sainik-lawn",
+    "name": "Sainik Lawn",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "ashiyana near khazana market, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 500,
+      "maxPax": 2000,
+      "capacity": 1500,
+      "rooms": 4,
+      "raw": "500 - 2000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Air Conditioning"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/sainik-lawn/thumbnail.jpg",
+      "localUrl": "/venues/sainik-lawn/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/hMRSkZnwyw2zFZLN8w5FG3zsWy4SJtgfnHEIJfJF.jpg",
+      "width": 495,
+      "height": 486,
+      "alt": "Sainik Lawn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/sainik-lawn/gallery_001.jpg",
+        "localUrl": "/venues/sainik-lawn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/hP04pmoAew11rjItgkFDlYUzex5K1a8LpVmbqbSP.jpg",
+        "width": 1280,
+        "height": 716,
+        "alt": "Sainik Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/sainik-lawn/gallery_002.jpg",
+        "localUrl": "/venues/sainik-lawn/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Sainik Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/sainik-lawn/gallery_003.jpg",
+        "localUrl": "/venues/sainik-lawn/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Sainik Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/sainik-lawn/gallery_004.jpg",
+        "localUrl": "/venues/sainik-lawn/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Sainik Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/sainik-lawn/gallery_005.jpg",
+        "localUrl": "/venues/sainik-lawn/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Sainik Lawn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/sainik-lawn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/sainik-lawn",
+      "scraped_at": "2026-10-08T05:32:10.615313+00:00"
+    }
+  },
+  {
+    "id": "yash-resort",
+    "slug": "yash-resort",
+    "name": "Yash Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "sultanpur road, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 300,
+      "maxPax": 2000,
+      "capacity": 1000,
+      "rooms": 50,
+      "raw": "300 - 2000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/yash-resort/thumbnail.jpg",
+      "localUrl": "/venues/yash-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/yPnmbfsEMsCDJM9EBOkXWBlRG8XawlXduWIYaSuy.jpg",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Yash Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/yash-resort/gallery_001.jpg",
+        "localUrl": "/venues/yash-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/DTz7mXUfOzZG9koNrSDHj4J8JrGXILvRVfQooAOy.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Yash Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/yash-resort/gallery_002.jpg",
+        "localUrl": "/venues/yash-resort/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Yash Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/yash-resort/gallery_003.jpg",
+        "localUrl": "/venues/yash-resort/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Yash Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/yash-resort/gallery_004.jpg",
+        "localUrl": "/venues/yash-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Yash Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/yash-resort/gallery_005.jpg",
+        "localUrl": "/venues/yash-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Yash Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/yash-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/yash-resort",
+      "scraped_at": "2026-10-08T05:32:21.939979+00:00"
+    }
+  },
+  {
+    "id": "hotel-milenia-regency",
+    "slug": "hotel-milenia-regency",
+    "name": "Hotel Milenia Regency",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "FAIZABAD ROAD , Gomti Nagar, Lucknow, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 147,
+      "maxPax": 600,
+      "capacity": 500,
+      "rooms": 100,
+      "raw": "147 - 600 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/hotel-milenia-regency/thumbnail.jpg",
+      "localUrl": "/venues/hotel-milenia-regency/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/gjpzSEHN38bXBO2wYWgXPD5C2c1vinsnxGii4J4S.jpg",
+      "width": 1201,
+      "height": 1600,
+      "alt": "Hotel Milenia Regency wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/hotel-milenia-regency/gallery_001.jpg",
+        "localUrl": "/venues/hotel-milenia-regency/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/XDWeMGizUzpy9N9sMYSOPzW3L3XmwKnQhyKyyjag.jpg",
+        "width": 1280,
+        "height": 852,
+        "alt": "Hotel Milenia Regency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-milenia-regency/gallery_002.jpg",
+        "localUrl": "/venues/hotel-milenia-regency/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Hotel Milenia Regency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-milenia-regency/gallery_003.jpg",
+        "localUrl": "/venues/hotel-milenia-regency/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Hotel Milenia Regency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-milenia-regency/gallery_004.jpg",
+        "localUrl": "/venues/hotel-milenia-regency/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Hotel Milenia Regency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-milenia-regency/gallery_005.jpg",
+        "localUrl": "/venues/hotel-milenia-regency/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Hotel Milenia Regency wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/hotel-milenia-regency",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/hotel-milenia-regency",
+      "scraped_at": "2026-10-08T05:32:31.983269+00:00"
+    }
+  },
+  {
+    "id": "santorini-resort-lucknow",
+    "slug": "santorini-resort-lucknow",
+    "name": "Santorini Resort Lucknow",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "IIM ROAD NEAR BAKSHI KA TALAB LUCKNOW, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 1000,
+      "capacity": 250,
+      "rooms": 42,
+      "raw": "200 - 1000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": 1800,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/santorini-resort-lucknow/thumbnail.jpg",
+      "localUrl": "/venues/santorini-resort-lucknow/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H4Ta10R552XlMwirU0vTapD08z3qI7jOADAmZTQ6.jpg",
+      "width": 960,
+      "height": 1280,
+      "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/santorini-resort-lucknow/gallery_001.jpg",
+        "localUrl": "/venues/santorini-resort-lucknow/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/FttBnqlAAAINfNHxQ7rqcmDVCCa5UxWpZnFqeDjE.jpg",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/santorini-resort-lucknow/gallery_003.jpg",
+        "localUrl": "/venues/santorini-resort-lucknow/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/rDFYq4T0gYhiINiAVSzSwP7C2UaUE3UFpqH1EAef.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/santorini-resort-lucknow/gallery_004.jpg",
+        "localUrl": "/venues/santorini-resort-lucknow/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/LUYby39kuShUtiOpmNGW0tOJssm4apRPKI8gKhsZ.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/santorini-resort-lucknow/gallery_005.jpg",
+        "localUrl": "/venues/santorini-resort-lucknow/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/HbTz55WO1t6rX40trBBBqeAqTeyxXO2z5orLapwh.jpg",
+        "width": 1080,
+        "height": 1080,
+        "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/santorini-resort-lucknow/gallery_006.jpg",
+        "localUrl": "/venues/santorini-resort-lucknow/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/YsaSj3wmRnYQ062ZuwIocG4gdCDM6WZgk8Bdg2jR.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/santorini-resort-lucknow/gallery_002.jpg",
+        "localUrl": "/venues/santorini-resort-lucknow/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Santorini Resort Lucknow wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/santorini-resort-lucknow",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/santorini-resort-lucknow",
+      "scraped_at": "2026-10-08T05:32:52.407585+00:00"
+    }
+  },
+  {
+    "id": "meava",
+    "slug": "meava",
+    "name": "Meava",
+    "category": "Hotel",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "kursi road, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 500,
+      "maxPax": 1500,
+      "capacity": 1000,
+      "rooms": 34,
+      "raw": "500 - 1500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Gym",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/meava/thumbnail.jpg",
+      "localUrl": "/venues/meava/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/8D7ViNZbd0OmvxRAQzlf7Tcv8Ml2q4tQ3uM1oUS1.jpg",
+      "width": 1600,
+      "height": 1066,
+      "alt": "Meava wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/meava/gallery_001.jpg",
+        "localUrl": "/venues/meava/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/1A2EwqarER00i2nr11Z4cnVK9T6r2HfofXYMjspR.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Meava wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/meava/gallery_002.jpg",
+        "localUrl": "/venues/meava/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/zsk48mn8MmyPTRKvG1mYoXstFNiHXzCaIolQC2vE.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Meava wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/meava/gallery_003.jpg",
+        "localUrl": "/venues/meava/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/1rErQa5PZ3byhoTohFTcoQ9uB4BP0VkEUX2pHSQS.jpg",
+        "width": 1066,
+        "height": 1600,
+        "alt": "Meava wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/meava/gallery_004.jpg",
+        "localUrl": "/venues/meava/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Hp48sVEWsa9AWAAWB8qgEhBNz3vJvVCjQiw1ETEl.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Meava wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/meava/gallery_005.jpg",
+        "localUrl": "/venues/meava/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Meava wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/meava",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/meava",
+      "scraped_at": "2026-10-08T05:33:09.563955+00:00"
+    }
+  },
+  {
+    "id": "geeta-lawn",
+    "slug": "geeta-lawn",
+    "name": "Geeta Lawn",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Faizabad Road, Lucknow, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 100,
+      "maxPax": 200,
+      "capacity": 200,
+      "rooms": 20,
+      "raw": "100 - 200 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Air Conditioning",
+      "Restaurant"
+    ],
+    "description": "Heading for a business trip anytime soon? Being a corporate traveler, you must have checked into countless receptions and have been bearing the formalities, rules, and high rates of those hotels. This private and secure executive apartment offers you modish interiors and appealing decor with a personal touch. To give you a homelike experience, OYO has implemented a complete set of modern day amenities such as high-speed internet, LED/LCD TV, and fully air-conditioned living space. It features top-of-the-line interiors exclusively crafted for corporate needs. We know how much you miss homecooked food while you?re out there working your way through innumerable meetings, presentations, and power points. Don?t worry, our professional chef is waiting to impress you with some cooking skills. We, at OYO, look forward to providing you the unbeatable combination of privacy, space, and well equipped common hangout areas. 24/7 customer support is available as and when required. Hence, if you are a business traveler and looking for a home away from home, this specially designed facility is awaiting your presence. See you soon!",
+    "primaryImage": {
+      "url": "/venues/geeta-lawn/gallery_005.jpg",
+      "localUrl": "/venues/geeta-lawn/gallery_005.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+      "width": 1360,
+      "height": 1020,
+      "alt": "Geeta Lawn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/geeta-lawn/gallery_001.jpg",
+        "localUrl": "/venues/geeta-lawn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/s7eB0Mlg1uTQvfBhznAtXTp3JVHdgLMFAt2U1OG0.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Geeta Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/geeta-lawn/gallery_002.jpg",
+        "localUrl": "/venues/geeta-lawn/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/5LF7tY2RtQlh6UPRGNe74IiirmaNRbaLlYIFmeBA.jpg",
+        "width": 1354,
+        "height": 1020,
+        "alt": "Geeta Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/geeta-lawn/gallery_003.jpg",
+        "localUrl": "/venues/geeta-lawn/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Geeta Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/geeta-lawn/gallery_004.jpg",
+        "localUrl": "/venues/geeta-lawn/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Geeta Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/geeta-lawn/gallery_006.jpg",
+        "localUrl": "/venues/geeta-lawn/gallery_006.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/W4RJvylC1v81Evt4UJNWDvsCvsF3558uXBGStzEW.jpg",
+        "width": 1360,
+        "height": 906,
+        "alt": "Geeta Lawn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/geeta-lawn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/geeta-lawn",
+      "scraped_at": "2026-10-08T05:33:20.587607+00:00"
+    }
+  },
+  {
+    "id": "jj-resort",
+    "slug": "jj-resort",
+    "name": "Jj Resort",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Faizabad road,semara, chinhat,Lucknow,Uttar Pradesh,226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 100,
+      "maxPax": 300,
+      "capacity": 300,
+      "rooms": 20,
+      "raw": "100 - 300 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Air Conditioning",
+      "Restaurant"
+    ],
+    "description": "JJ Lawns and Resort in Lucknow, India, is a 3-star property offering a blend of comfort, luxury, and natural beauty, ideal for travelers and event planners. Nestled in a serene environment, the resort prioritizes guest safety with dedicated security and provides a tranquil escape from the city, located about near bbd green city Lucknow. Its lush, well-designed lawns and sophisticated resort spaces create an inviting atmosphere for relaxation and memorable experiences. JJ Lawns and Resort is particularly renowned for hosting events, especially weddings, with facilities designed for seamless coordination and exquisite settings for special occasions. Its proximity to landmarks like Indira Gandhi Pratishthan (3.1 miles), Lucknow University (8.9 miles), and Chaudhary Charan Singh International Airport (15 miles) adds convenience for guests. While it doesn’t offer parking or allow pets or parties, the resort’s focus on safety, comfort, and event excellence makes it a standout choice in Lucknow. Rates start as low as $14 per night, offering great value for a memorable stay.",
+    "primaryImage": {
+      "url": "/venues/jj-resort/gallery_004.jpg",
+      "localUrl": "/venues/jj-resort/gallery_004.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+      "width": 1080,
+      "height": 728,
+      "alt": "Jj Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/jj-resort/gallery_001.png",
+        "localUrl": "/venues/jj-resort/gallery_001.png",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/fqQbf3FF02OIT8BULleSYjTuaIT1q0GfdmiyDTON.png",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Jj Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jj-resort/gallery_002.jpg",
+        "localUrl": "/venues/jj-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/rqp52llMjRA015hTGyNJiD8dW88nzELfSoShVLFI.jpg",
+        "width": 1024,
+        "height": 682,
+        "alt": "Jj Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jj-resort/gallery_003.jpg",
+        "localUrl": "/venues/jj-resort/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Jj Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jj-resort/gallery_005.jpg",
+        "localUrl": "/venues/jj-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Jj Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jj-resort/gallery_006.jpg",
+        "localUrl": "/venues/jj-resort/gallery_006.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/W4RJvylC1v81Evt4UJNWDvsCvsF3558uXBGStzEW.jpg",
+        "width": 1360,
+        "height": 906,
+        "alt": "Jj Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/jj-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/jj-resort",
+      "scraped_at": "2026-10-08T05:33:31.583116+00:00"
+    }
+  },
+  {
+    "id": "amravati-hotel",
+    "slug": "amravati-hotel",
+    "name": "Amravati Hotel",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "V2JQ+JG2, Khand -2, Matiyari, Chinhat, Lucknow, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 100,
+      "maxPax": 200,
+      "capacity": 200,
+      "rooms": 20,
+      "raw": "100 - 200 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Air Conditioning",
+      "Restaurant"
+    ],
+    "description": "Amrawatee Banquet And Lawn is a great choice for travellers looking for a star hotel in Lucknow. This Hotel stands out as one of the highly recommended hotel in Lucknow. Hotel is rated out of 5, which is considered as very good.From all theBudget hotels in Lucknow,this property is very much popular among the tourists.A smooth check-in/check-out process, flexible policies and friendly management garner great customer satisfaction for this property. The Hotel has standard Check-In time as 02:00 PM and Check-Out time as 12:00 PM.You can find numeroushotels in Lucknowunder different categories and this property is one the best hotel under its category.",
+    "primaryImage": {
+      "url": "/venues/amravati-hotel/gallery_003.jpg",
+      "localUrl": "/venues/amravati-hotel/gallery_003.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+      "width": 1600,
+      "height": 737,
+      "alt": "Amravati Hotel wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/amravati-hotel/gallery_001.jpg",
+        "localUrl": "/venues/amravati-hotel/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Xu27qj9sYmwYDjOvFgwyKLAnyiMQmK8cTxp2scWw.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Amravati Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amravati-hotel/gallery_002.jpg",
+        "localUrl": "/venues/amravati-hotel/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Amravati Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amravati-hotel/gallery_004.jpg",
+        "localUrl": "/venues/amravati-hotel/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Amravati Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amravati-hotel/gallery_005.jpg",
+        "localUrl": "/venues/amravati-hotel/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Amravati Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/amravati-hotel/gallery_006.jpg",
+        "localUrl": "/venues/amravati-hotel/gallery_006.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/W4RJvylC1v81Evt4UJNWDvsCvsF3558uXBGStzEW.jpg",
+        "width": 1360,
+        "height": 906,
+        "alt": "Amravati Hotel wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/amravati-hotel",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/amravati-hotel",
+      "scraped_at": "2026-10-08T05:33:38.333565+00:00"
+    }
+  },
+  {
+    "id": "prayag-marriage-lawn",
+    "slug": "prayag-marriage-lawn",
+    "name": "Prayag Marriage Lawn",
+    "category": "Banquet Hall",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Ayodhya Road, opp. Golden Blossom Resort, near Goel Tower, Lucknow, Sandauli Umarpur, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 500,
+      "capacity": 100,
+      "rooms": 100,
+      "raw": "200 - 500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "Located in Lucknow, Prayag Marriage Lawn is a well designed wedding venue that serves as the epitome of splendour and regality for your family and wedding guests. Prayag Marriage Lawn is a wedding venue that is great to host multiple pre wedding and wedding celebrations. This gorgeous property sits in a great location and makes it worthwhile to choose this impressive venue. They are also widely reputed for their professional and warm service that is highly efficient. This venue is absolutely ideal for the wedding celebrations and would sure prove to be a memorable one for you and your lovely wedding guests. Their warm welcoming nature and hospitality make your wedding experience very special. The location adds another level of desirability to this venue. Prayag Marriage Lawn is located in Lucknow. Prayag Marriage Lawn has multiple venue options to host all your pre wedding festivities The outdoor lawn with a seating capacity for 700 guests and space for 1000 floating guests which is simply stunning for a sangeet or the reception under the moonlight. A massive wedding venue like this mandap is simply the best choice for a glorious medium scale wedding to a royal large scale wedding. Reach out to this wedding venue to host the wedding of the century.",
+    "primaryImage": {
+      "url": "/venues/prayag-marriage-lawn/gallery_002.jpg",
+      "localUrl": "/venues/prayag-marriage-lawn/gallery_002.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+      "width": 1200,
+      "height": 686,
+      "alt": "Prayag Marriage Lawn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/prayag-marriage-lawn/gallery_001.jpg",
+        "localUrl": "/venues/prayag-marriage-lawn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/iV4qz3oOOm27B4oDY8zE0XH2v625ZQQcEuT44ZJ2.jpg",
+        "width": 1360,
+        "height": 826,
+        "alt": "Prayag Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/prayag-marriage-lawn/gallery_004.jpg",
+        "localUrl": "/venues/prayag-marriage-lawn/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/nX3c5K7GzofprHC0ZSUwSGVdPiAjAVIE1nsnTK3j.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Prayag Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/prayag-marriage-lawn/gallery_005.jpg",
+        "localUrl": "/venues/prayag-marriage-lawn/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/QVp8ZL2Io4sWy2U5GWDu33CElSI43c9ulg94TGim.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Prayag Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/prayag-marriage-lawn/gallery_003.jpg",
+        "localUrl": "/venues/prayag-marriage-lawn/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Prayag Marriage Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/prayag-marriage-lawn/gallery_006.jpg",
+        "localUrl": "/venues/prayag-marriage-lawn/gallery_006.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/W4RJvylC1v81Evt4UJNWDvsCvsF3558uXBGStzEW.jpg",
+        "width": 1360,
+        "height": 906,
+        "alt": "Prayag Marriage Lawn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/prayag-marriage-lawn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/prayag-marriage-lawn",
+      "scraped_at": "2026-10-08T05:33:55.018704+00:00"
+    }
+  },
+  {
+    "id": "chaudhary-garden",
+    "slug": "chaudhary-garden",
+    "name": "Chaudhary Garden",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "gomti nagar extension, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 400,
+      "maxPax": 1200,
+      "capacity": 900,
+      "rooms": 8,
+      "raw": "400 - 1200 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/chaudhary-garden/thumbnail.jpg",
+      "localUrl": "/venues/chaudhary-garden/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/66ZzHhKBkK0wKsD0cg556bnO5gptGqicMEDEOYQX.jpg",
+      "width": 1280,
+      "height": 960,
+      "alt": "Chaudhary Garden wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/chaudhary-garden/gallery_001.jpg",
+        "localUrl": "/venues/chaudhary-garden/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/1Xt9zfRvVlCcYv2zggahYutdAdPm8qVz1XkidDFI.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Chaudhary Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/chaudhary-garden/gallery_002.jpg",
+        "localUrl": "/venues/chaudhary-garden/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Chaudhary Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/chaudhary-garden/gallery_003.jpg",
+        "localUrl": "/venues/chaudhary-garden/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Chaudhary Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/chaudhary-garden/gallery_004.jpg",
+        "localUrl": "/venues/chaudhary-garden/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Chaudhary Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/chaudhary-garden/gallery_005.jpg",
+        "localUrl": "/venues/chaudhary-garden/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Chaudhary Garden wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/chaudhary-garden",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/chaudhary-garden",
+      "scraped_at": "2026-10-08T05:34:06.090495+00:00"
+    }
+  },
+  {
+    "id": "the-madhuvan-lawn",
+    "slug": "the-madhuvan-lawn",
+    "name": "The Madhuvan Lawn",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "3, Chhota Bharwara, Vigyan Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 1000,
+      "capacity": 1000,
+      "rooms": 16,
+      "raw": "200 - 1000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Restaurant"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/the-madhuvan-lawn/thumbnail.jpg",
+      "localUrl": "/venues/the-madhuvan-lawn/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/fez8w53oKUAsK2IBhC96KfYNTzt1ryYg8AaIrK7z.jpg",
+      "width": 1156,
+      "height": 868,
+      "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/the-madhuvan-lawn/gallery_001.jpg",
+        "localUrl": "/venues/the-madhuvan-lawn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/6O6FAm46tpoAXUimPiPU0xT4ZkQxqdzPn9wPy3YG.jpg",
+        "width": 1600,
+        "height": 720,
+        "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-madhuvan-lawn/gallery_002.jpg",
+        "localUrl": "/venues/the-madhuvan-lawn/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/bI9fVCfMZENR521mTykS8bjrGeLBtxDqLcabpwkk.jpg",
+        "width": 868,
+        "height": 1156,
+        "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-madhuvan-lawn/gallery_003.jpg",
+        "localUrl": "/venues/the-madhuvan-lawn/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/lO6qQKbok3d40sjBiIHsKKK4wRjdJY2BqrBG2fS1.jpg",
+        "width": 1156,
+        "height": 868,
+        "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-madhuvan-lawn/gallery_005.jpg",
+        "localUrl": "/venues/the-madhuvan-lawn/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/S8y7qu4AhdfaB3GhKQtxFGuaKK1ax7LFVFXUEUt5.jpg",
+        "width": 1156,
+        "height": 868,
+        "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-madhuvan-lawn/gallery_006.jpg",
+        "localUrl": "/venues/the-madhuvan-lawn/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/cxTeiEy0pYYXMU6xIpY9lwLUhZQ4EO9Ja9m204Zk.jpg",
+        "width": 1156,
+        "height": 868,
+        "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-madhuvan-lawn/gallery_004.jpg",
+        "localUrl": "/venues/the-madhuvan-lawn/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "The Madhuvan Lawn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/the-madhuvan-lawn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/the-madhuvan-lawn",
+      "scraped_at": "2026-10-08T05:34:29.193520+00:00"
+    }
+  },
+  {
+    "id": "mayur-garden",
+    "slug": "mayur-garden",
+    "name": "Mayur Garden",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Mayur Garden, Near Comfort Inn Hotel, Amar Shaheed Path, Ahmamau-226002, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 300,
+      "maxPax": 1000,
+      "capacity": 600,
+      "rooms": 8,
+      "raw": "300 - 1000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Air Conditioning"
+    ],
+    "description": "a beautiful lawn with best decoration and food for wedding and other function making your event memorable with our services .",
+    "primaryImage": {
+      "url": "/venues/mayur-garden/thumbnail.jpg",
+      "localUrl": "/venues/mayur-garden/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/sCk4gNgbgS8qigtQi9Ni7AfXMhOOWfg3ELxCMDFr.jpg",
+      "width": 1600,
+      "height": 1067,
+      "alt": "Mayur Garden wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/mayur-garden/gallery_001.jpg",
+        "localUrl": "/venues/mayur-garden/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/qbyS1E8qA0F62c6TCPS02ATdIJow0pK0LQNVGqia.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Mayur Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/mayur-garden/gallery_002.jpg",
+        "localUrl": "/venues/mayur-garden/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/R7gZLkq3cyT9xeK1jPGRuXr6I83Jm69JEM1wSvfj.jpg",
+        "width": 1280,
+        "height": 853,
+        "alt": "Mayur Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/mayur-garden/gallery_003.jpg",
+        "localUrl": "/venues/mayur-garden/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/zrXQwJTr6yh6T1mehXYzyPXTVUrnXffktxAIo89y.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Mayur Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/mayur-garden/gallery_004.jpg",
+        "localUrl": "/venues/mayur-garden/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Fiac8arl3CfEWCC7h7tIyfVSjBE6qVhKB3ua4uNc.jpg",
+        "width": 1600,
+        "height": 1067,
+        "alt": "Mayur Garden wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/mayur-garden/gallery_005.jpg",
+        "localUrl": "/venues/mayur-garden/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/5bVmcXx1ra35GJX4g3aBZ2vR5AvcoLsPiOc9M8cT.jpg",
+        "width": 1600,
+        "height": 2400,
+        "alt": "Mayur Garden wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/mayur-garden",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/mayur-garden",
+      "scraped_at": "2026-10-08T05:34:47.634886+00:00"
+    }
+  },
+  {
+    "id": "ashiyana-residency",
+    "slug": "ashiyana-residency",
+    "name": "Ashiyana Residency",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "lda colony near khajana market ashiyana, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 150,
+      "maxPax": 600,
+      "capacity": 600,
+      "rooms": 22,
+      "raw": "150 - 600 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Air Conditioning",
+      "Restaurant"
+    ],
+    "description": "ashiyana residency is providing best class of services with 22 rooms and 2 banquet and lawn",
+    "primaryImage": {
+      "url": "/venues/ashiyana-residency/thumbnail.jpg",
+      "localUrl": "/venues/ashiyana-residency/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/HAY2Lv0fzVc1i9PgyF8O8OgoBfw21KXokQ0tRKjR.jpg",
+      "width": 1600,
+      "height": 1066,
+      "alt": "Ashiyana Residency wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/ashiyana-residency/gallery_001.jpg",
+        "localUrl": "/venues/ashiyana-residency/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/87k1mfr9MEygfIQxpvze3SY0XrnyYeiMr5uVxUIl.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Ashiyana Residency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ashiyana-residency/gallery_002.jpg",
+        "localUrl": "/venues/ashiyana-residency/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/bgGSoH9T7FzJMvR7L2WaCy66yEizAGNBr6Eg9XWu.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Ashiyana Residency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ashiyana-residency/gallery_003.jpg",
+        "localUrl": "/venues/ashiyana-residency/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/aGjUakBFmyMRSql3Qx81KQtcblqltHHofAtle5ls.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Ashiyana Residency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ashiyana-residency/gallery_004.jpg",
+        "localUrl": "/venues/ashiyana-residency/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/bXRRGHtu85dpL6SlMLzubVT2ItgWzqOPxOFD5v1y.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Ashiyana Residency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ashiyana-residency/gallery_005.jpg",
+        "localUrl": "/venues/ashiyana-residency/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/BMzakt3TzF5B1ABRp40b3bRKOSXjR0ACTAcezNvB.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Ashiyana Residency wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ashiyana-residency/gallery_006.jpg",
+        "localUrl": "/venues/ashiyana-residency/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/2sFzPQZsWNkOMeTwTy4jiFX8l8jikVS1RS5wgd7d.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Ashiyana Residency wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/ashiyana-residency",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/ashiyana-residency",
+      "scraped_at": "2026-10-08T05:35:09.634326+00:00"
+    }
+  },
+  {
+    "id": "umang-lawn",
+    "slug": "umang-lawn",
+    "name": "Umang Lawn",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "deva road, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 300,
+      "maxPax": 1500,
+      "capacity": 1500,
+      "rooms": 6,
+      "raw": "300 - 1500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": 25000,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/umang-lawn/thumbnail.jpg",
+      "localUrl": "/venues/umang-lawn/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/pQCxC7hnMF1gqGTBnljVsYZnhXoDDS3kHE3ir041.jpg",
+      "width": 1280,
+      "height": 960,
+      "alt": "Umang Lawn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/umang-lawn/gallery_001.jpg",
+        "localUrl": "/venues/umang-lawn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/1gZQYGcSYR2YbPxZWUYRXhtdZ7Kqb1SSRlU1ZhvS.jpg",
+        "width": 960,
+        "height": 1280,
+        "alt": "Umang Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/umang-lawn/gallery_002.jpg",
+        "localUrl": "/venues/umang-lawn/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Rq6f1SKlZySVMNtFHS78tICRmChy1NKZBLwY1NiC.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Umang Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/umang-lawn/gallery_003.jpg",
+        "localUrl": "/venues/umang-lawn/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/5ZYPUfM1RarAEHTZGLhOyvtumsGt7fjzM4w8epN1.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Umang Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/umang-lawn/gallery_004.jpg",
+        "localUrl": "/venues/umang-lawn/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/SOyyFBesBGCOomlMaordPXJu3lx4FGVIO8yaJxQS.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Umang Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/umang-lawn/gallery_005.jpg",
+        "localUrl": "/venues/umang-lawn/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/1i1JXLPFPyfqZ47yP2I1Ht3dbmgVeJOckbgg16FN.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Umang Lawn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/umang-lawn/gallery_006.jpg",
+        "localUrl": "/venues/umang-lawn/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/cGZV51nTFY7UCC0ZwZi4tt7TwpmAcoRuq3LMmoC2.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Umang Lawn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/umang-lawn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/umang-lawn",
+      "scraped_at": "2026-10-08T05:35:35.514883+00:00"
+    }
+  },
+  {
+    "id": "dolphin-club-and-resort",
+    "slug": "dolphin-club-and-resort",
+    "name": "Dolphin Club And Resort",
+    "category": "Lawn",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Faizabad Road, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 1500,
+      "capacity": 1500,
+      "rooms": 24,
+      "raw": "200 - 1500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": 1800,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/dolphin-club-and-resort/thumbnail.jpg",
+      "localUrl": "/venues/dolphin-club-and-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/bQZKbi8WHRaT9dnsVo6NkqS8CCMwwly5CEw2k3Wf.jpg",
+      "width": 1500,
+      "height": 1000,
+      "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/dolphin-club-and-resort/gallery_001.jpg",
+        "localUrl": "/venues/dolphin-club-and-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/81DuDDphRp1KqygH4iCpzptXTWVqok2np0Iy1zyQ.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/dolphin-club-and-resort/gallery_002.jpg",
+        "localUrl": "/venues/dolphin-club-and-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Jngt2AySThgb6KITobxj6GFV4Pj4sjgD1TJdwcNC.jpg",
+        "width": 1500,
+        "height": 1000,
+        "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/dolphin-club-and-resort/gallery_003.jpg",
+        "localUrl": "/venues/dolphin-club-and-resort/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/0Hw2LqvWrSouIv3TkGS9GhEGf3LQzxlZDR87rzyv.jpg",
+        "width": 1500,
+        "height": 1000,
+        "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/dolphin-club-and-resort/gallery_005.jpg",
+        "localUrl": "/venues/dolphin-club-and-resort/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/RQshQUDwLAEFEZjNWrZDSIkuD2fYBGrkX6bok1cC.jpg",
+        "width": 1500,
+        "height": 1000,
+        "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/dolphin-club-and-resort/gallery_006.jpg",
+        "localUrl": "/venues/dolphin-club-and-resort/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/1tIlPtb3PvtF3tSa27Z8zmREd0cm3Ynkyo2S1Ab5.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/dolphin-club-and-resort/gallery_004.jpg",
+        "localUrl": "/venues/dolphin-club-and-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Dolphin Club And Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/dolphin-club-and-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/dolphin-club-and-resort",
+      "scraped_at": "2026-10-08T05:35:53.308238+00:00"
+    }
+  },
+  {
+    "id": "wild-crest-resort-and-hotel",
+    "slug": "wild-crest-resort-and-hotel",
+    "name": "Wild Crest Resort And Hotel",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "kanpur road near toll plaza, sarai joga, lucknow uttar pradesh 209859, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 100,
+      "maxPax": 500,
+      "capacity": 250,
+      "rooms": 20,
+      "raw": "100 - 500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/wild-crest-resort-and-hotel/thumbnail.jpg",
+      "localUrl": "/venues/wild-crest-resort-and-hotel/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/sDbkVr0rihKEQuR5R77by5P1mTaHhoX4BQv6muKH.jpg",
+      "width": 1024,
+      "height": 768,
+      "alt": "Wild Crest Resort And Hotel wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/wild-crest-resort-and-hotel/gallery_001.jpg",
+        "localUrl": "/venues/wild-crest-resort-and-hotel/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/7YGakTjJ4nWE2seYdnCzRxYZSC5fio1pHHu3fJqt.jpg",
+        "width": 1200,
+        "height": 1600,
+        "alt": "Wild Crest Resort And Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/wild-crest-resort-and-hotel/gallery_002.jpg",
+        "localUrl": "/venues/wild-crest-resort-and-hotel/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/LUqo1aW9RdMN0vERiENxpDIZlcHY6rSPTP61SGL3.jpg",
+        "width": 1024,
+        "height": 768,
+        "alt": "Wild Crest Resort And Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/wild-crest-resort-and-hotel/gallery_003.jpg",
+        "localUrl": "/venues/wild-crest-resort-and-hotel/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Wild Crest Resort And Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/wild-crest-resort-and-hotel/gallery_004.jpg",
+        "localUrl": "/venues/wild-crest-resort-and-hotel/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Wild Crest Resort And Hotel wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/wild-crest-resort-and-hotel/gallery_005.jpg",
+        "localUrl": "/venues/wild-crest-resort-and-hotel/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Wild Crest Resort And Hotel wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/wild-crest-resort-and-hotel",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/wild-crest-resort-and-hotel",
+      "scraped_at": "2026-10-08T05:36:04.092182+00:00"
+    }
+  },
+  {
+    "id": "the-glory-reverside-resort",
+    "slug": "the-glory-reverside-resort",
+    "name": "The Glory Reverside Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "CHANDIKA DEVI ROAD KATWARA UP NEAR BAKSHI KA TALAB, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 150,
+      "maxPax": 1500,
+      "capacity": 1000,
+      "rooms": 20,
+      "raw": "150 - 1500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/the-glory-reverside-resort/thumbnail.jpg",
+      "localUrl": "/venues/the-glory-reverside-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/KeRm4HTFUfQnSE10GiGpBSRBaxAFQWgl6nSZ1yAL.jpg",
+      "width": 1280,
+      "height": 716,
+      "alt": "The Glory Reverside Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/the-glory-reverside-resort/gallery_001.jpg",
+        "localUrl": "/venues/the-glory-reverside-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/FMakTRz8iM4Vs2CagpkiRBRxtFXxUEnVx8C2SswI.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "The Glory Reverside Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-glory-reverside-resort/gallery_002.jpg",
+        "localUrl": "/venues/the-glory-reverside-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/8gcpwNuGWHQlzZIZBoIluNDKYq4H3F5fl39slvl6.jpg",
+        "width": 1600,
+        "height": 896,
+        "alt": "The Glory Reverside Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-glory-reverside-resort/gallery_003.jpg",
+        "localUrl": "/venues/the-glory-reverside-resort/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "The Glory Reverside Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-glory-reverside-resort/gallery_004.jpg",
+        "localUrl": "/venues/the-glory-reverside-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "The Glory Reverside Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-glory-reverside-resort/gallery_005.jpg",
+        "localUrl": "/venues/the-glory-reverside-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "The Glory Reverside Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/the-glory-reverside-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/the-glory-reverside-resort",
+      "scraped_at": "2026-10-08T05:36:16.323056+00:00"
+    }
+  },
+  {
+    "id": "gaura-resort",
+    "slug": "gaura-resort",
+    "name": "Gaura Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "RAIBARELI ROAD LUCKNOW, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 250,
+      "maxPax": 1200,
+      "capacity": 1000,
+      "rooms": 24,
+      "raw": "250 - 1200 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/gaura-resort/thumbnail.jpg",
+      "localUrl": "/venues/gaura-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/N0tcfwNTxP3npv2lgQSTcJOa5svxgckheGIehj7W.jpg",
+      "width": 720,
+      "height": 402,
+      "alt": "Gaura Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/gaura-resort/gallery_001.jpg",
+        "localUrl": "/venues/gaura-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/amrPKlxWYakw6fro4coUNM6FI5XoSniiS2TSFCVu.jpg",
+        "width": 720,
+        "height": 411,
+        "alt": "Gaura Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/gaura-resort/gallery_002.jpg",
+        "localUrl": "/venues/gaura-resort/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Gaura Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/gaura-resort/gallery_003.jpg",
+        "localUrl": "/venues/gaura-resort/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Gaura Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/gaura-resort/gallery_004.jpg",
+        "localUrl": "/venues/gaura-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Gaura Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/gaura-resort/gallery_005.jpg",
+        "localUrl": "/venues/gaura-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Gaura Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/gaura-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/gaura-resort",
+      "scraped_at": "2026-10-08T05:36:25.395815+00:00"
+    }
+  },
+  {
+    "id": "shri-ram-hotel-resort",
+    "slug": "shri-ram-hotel-resort",
+    "name": "Shri Ram Hotel Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "DEVA ROAD NEAR CHAPRA SCHOOL DEVA BARABANKI UP 225301, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 150,
+      "maxPax": 2000,
+      "capacity": 1500,
+      "rooms": 30,
+      "raw": "150 - 2000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "A BEAUTIFULL LUXURIOUS RESORT WITH SWIMMINGPOOL AND VILLA FOR BEST WEDDING EVENT",
+    "primaryImage": {
+      "url": "/venues/shri-ram-hotel-resort/thumbnail.jpg",
+      "localUrl": "/venues/shri-ram-hotel-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/wijbgQO6625HQcgMAO3sNJ8ZTaMs2Vud5GNVzyBR.jpg",
+      "width": 1080,
+      "height": 1080,
+      "alt": "Shri Ram Hotel Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/shri-ram-hotel-resort/gallery_001.jpg",
+        "localUrl": "/venues/shri-ram-hotel-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/2Jigp0DCd52dDpWIHyRjiw3lVvDy5P1XtiHiiryy.jpg",
+        "width": 1600,
+        "height": 900,
+        "alt": "Shri Ram Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shri-ram-hotel-resort/gallery_002.jpg",
+        "localUrl": "/venues/shri-ram-hotel-resort/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Shri Ram Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shri-ram-hotel-resort/gallery_003.jpg",
+        "localUrl": "/venues/shri-ram-hotel-resort/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Shri Ram Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shri-ram-hotel-resort/gallery_004.jpg",
+        "localUrl": "/venues/shri-ram-hotel-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Shri Ram Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shri-ram-hotel-resort/gallery_005.jpg",
+        "localUrl": "/venues/shri-ram-hotel-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Shri Ram Hotel Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/shri-ram-hotel-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/shri-ram-hotel-resort",
+      "scraped_at": "2026-10-08T05:36:34.555763+00:00"
+    }
+  },
+  {
+    "id": "vivanta-hotel-resort",
+    "slug": "vivanta-hotel-resort",
+    "name": "Vivanta Hotel Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "SITAPUR ROAD LUCKNOW, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 1000,
+      "capacity": 1000,
+      "rooms": 30,
+      "raw": "200 - 1000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "YOUR DREAM WEDDING COME,S TRUE,ONE DAY WEDDING OR DESTINATION WEDDING WE TRUELY ORGANISED BY US.",
+    "primaryImage": {
+      "url": "/venues/vivanta-hotel-resort/thumbnail.jpg",
+      "localUrl": "/venues/vivanta-hotel-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/brYvfVjSWc9ZLl4VR0bL8LngwP1YRCa3MjRcDcId.jpg",
+      "width": 960,
+      "height": 597,
+      "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/vivanta-hotel-resort/gallery_001.jpg",
+        "localUrl": "/venues/vivanta-hotel-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/K2PazzZvOXPPbvx4zjikTzIDGkOlmGTYrnjF3jXh.jpg",
+        "width": 1200,
+        "height": 650,
+        "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vivanta-hotel-resort/gallery_002.jpg",
+        "localUrl": "/venues/vivanta-hotel-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/eFwpRvnUscNu7jExJx55hCPAfXxQEzFAlA7SgYIe.jpg",
+        "width": 955,
+        "height": 542,
+        "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vivanta-hotel-resort/gallery_003.jpg",
+        "localUrl": "/venues/vivanta-hotel-resort/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/jaofJgweHzsqDK25XnYlcG6FuAhBnVwdzwH9hYsJ.jpg",
+        "width": 1200,
+        "height": 680,
+        "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vivanta-hotel-resort/gallery_004.jpg",
+        "localUrl": "/venues/vivanta-hotel-resort/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/l1LeU6bNVuTX37acUs2MT6xb8EdfWicGgggfcNv6.jpg",
+        "width": 1200,
+        "height": 670,
+        "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vivanta-hotel-resort/gallery_006.jpg",
+        "localUrl": "/venues/vivanta-hotel-resort/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/2o0aCKSVKgQ5YMasF4dhsw7PEmZvb1Bw5StPiYPM.jpg",
+        "width": 640,
+        "height": 826,
+        "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/vivanta-hotel-resort/gallery_005.jpg",
+        "localUrl": "/venues/vivanta-hotel-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Vivanta Hotel Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/vivanta-hotel-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/vivanta-hotel-resort",
+      "scraped_at": "2026-10-08T05:36:51.530283+00:00"
+    }
+  },
+  {
+    "id": "shakuntalam-resort",
+    "slug": "shakuntalam-resort",
+    "name": "Shakuntalam Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "near g 20 chauraha behind awadh shilp gram lucknow, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 300,
+      "maxPax": 3000,
+      "capacity": 1500,
+      "rooms": 12,
+      "raw": "300 - 3000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning"
+    ],
+    "description": "a luxurious venue with best decoration and food ,swimming pool & two big lawn with12 rooms on prime location",
+    "primaryImage": {
+      "url": "/venues/shakuntalam-resort/thumbnail.jpg",
+      "localUrl": "/venues/shakuntalam-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/LxUqX4Ou5Tr2bPQ8hNnBucQ1bPsx2uvyCyZ5beEE.jpg",
+      "width": 1600,
+      "height": 1066,
+      "alt": "Shakuntalam Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/shakuntalam-resort/gallery_001.jpg",
+        "localUrl": "/venues/shakuntalam-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/xv6r4cXWZHStW4UMFI1dNhu4VTgZINprLHA3OAhe.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Shakuntalam Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shakuntalam-resort/gallery_002.jpg",
+        "localUrl": "/venues/shakuntalam-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/sozOnl8RMzBGh2V0BmI38FS0r0bj4q45geaXglX2.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Shakuntalam Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shakuntalam-resort/gallery_003.jpg",
+        "localUrl": "/venues/shakuntalam-resort/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Rnu48VN2csNuKoY0n3zaOfirXvt33KNLA8IUVgS5.jpg",
+        "width": 1600,
+        "height": 1200,
+        "alt": "Shakuntalam Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shakuntalam-resort/gallery_004.jpg",
+        "localUrl": "/venues/shakuntalam-resort/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/w2oLroHZ4srSrSaUCL0uedMMg4bBrPRrwHcoqgmL.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Shakuntalam Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/shakuntalam-resort/gallery_005.jpg",
+        "localUrl": "/venues/shakuntalam-resort/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/mZfPygwQm1Zv6GXdFRmvcN0to9XglqsvJE20AZZs.jpg",
+        "width": 1280,
+        "height": 960,
+        "alt": "Shakuntalam Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/shakuntalam-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/shakuntalam-resort",
+      "scraped_at": "2026-10-08T05:37:11.067439+00:00"
+    }
+  },
+  {
+    "id": "anandi-water-park-resort",
+    "slug": "anandi-water-park-resort",
+    "name": "Anandi Water Park Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Faizabad Rd, beside Indra Canal, Lucknow, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 150,
+      "maxPax": 500,
+      "capacity": 500,
+      "rooms": 50,
+      "raw": "150 - 500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "Anandi Water Park started its journey on April 2002 & since then we have crossed many mile stones and achived many targets. Anandi Water Park is Northern India's biggest water park with maximum number of slider and events. We have always tried are candid efforts to give the best possible entertainment to our customers & we are overeuhelmed by the response which we get from the ........ and the ........ of all adquering cities. We have established ourselves as of the best entertainment centers of Northern India.",
+    "primaryImage": {
+      "url": "/venues/anandi-water-park-resort/thumbnail.jpg",
+      "localUrl": "/venues/anandi-water-park-resort/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/eAWDpeYNNQ7QqzUz2aC7lZBdE7ENIDAMA09wLYcS.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Anandi Water Park Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/anandi-water-park-resort/gallery_002.jpg",
+        "localUrl": "/venues/anandi-water-park-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/IfTlwdeClPZpU2Ec2vyG1XWHIzg3VgYIxqDdeCtn.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Anandi Water Park Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/anandi-water-park-resort/gallery_003.jpg",
+        "localUrl": "/venues/anandi-water-park-resort/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/venEC60qV8ejW2GdsFeiji5Lf4jCXtVBzhVfRbsO.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Anandi Water Park Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/anandi-water-park-resort/gallery_004.jpg",
+        "localUrl": "/venues/anandi-water-park-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Anandi Water Park Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/anandi-water-park-resort/gallery_005.jpg",
+        "localUrl": "/venues/anandi-water-park-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Anandi Water Park Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/anandi-water-park-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/anandi-water-park-resort",
+      "scraped_at": "2026-10-08T05:37:23.751335+00:00"
+    }
+  },
+  {
+    "id": "charans-club-and-resort",
+    "slug": "charans-club-and-resort",
+    "name": "Charans Club And Resort",
+    "category": "Resort",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "Ayodhya Marg, Matiyari, Chinhat, Lucknow, Uttar Pradesh 226028, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 100,
+      "maxPax": 300,
+      "capacity": 300,
+      "rooms": 30,
+      "raw": "100 - 300 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "The in-houserestaurantis a delectable delight with its fare of flavours and aromas.",
+    "primaryImage": {
+      "url": "/venues/charans-club-and-resort/gallery_006.jpg",
+      "localUrl": "/venues/charans-club-and-resort/gallery_006.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/W4RJvylC1v81Evt4UJNWDvsCvsF3558uXBGStzEW.jpg",
+      "width": 1360,
+      "height": 906,
+      "alt": "Charans Club And Resort wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/charans-club-and-resort/gallery_001.jpg",
+        "localUrl": "/venues/charans-club-and-resort/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/VD1PFbFyJHs8sggQhPzZBDxpUP2LrMC8spDK4HiS.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Charans Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/charans-club-and-resort/gallery_002.jpg",
+        "localUrl": "/venues/charans-club-and-resort/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/TrAEDRCzkjnKecBCjgHEqeRdUE9v1hRRD6eJLNLp.jpg",
+        "width": 1360,
+        "height": 765,
+        "alt": "Charans Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/charans-club-and-resort/gallery_003.jpg",
+        "localUrl": "/venues/charans-club-and-resort/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Lh4osg1TfVYAP3esH0J8hfEnWI4ZpvGW2IKWmR56.jpg",
+        "width": 1360,
+        "height": 586,
+        "alt": "Charans Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/charans-club-and-resort/gallery_004.jpg",
+        "localUrl": "/venues/charans-club-and-resort/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Charans Club And Resort wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/charans-club-and-resort/gallery_005.jpg",
+        "localUrl": "/venues/charans-club-and-resort/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Charans Club And Resort wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/charans-club-and-resort",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/charans-club-and-resort",
+      "scraped_at": "2026-10-08T05:37:34.185197+00:00"
+    }
+  },
+  {
+    "id": "ayansh-klyde-inn",
+    "slug": "ayansh-klyde-inn",
+    "name": "Ayansh Klyde Inn",
+    "category": "Hotel",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "TRANSPORT NAGAR LUCKNOW, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 150,
+      "maxPax": 500,
+      "capacity": 400,
+      "rooms": 30,
+      "raw": "150 - 500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/ayansh-klyde-inn/thumbnail.jpg",
+      "localUrl": "/venues/ayansh-klyde-inn/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/AHO25wwYIt83WBW4KWr5YpihcaIxBTTUVCEMtwH4.jpg",
+      "width": 1280,
+      "height": 960,
+      "alt": "Ayansh Klyde Inn wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/ayansh-klyde-inn/gallery_001.jpg",
+        "localUrl": "/venues/ayansh-klyde-inn/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/0GoNiG5zaQzjtzVddpQDZ0PeasBIqa5KSlD22iym.jpg",
+        "width": 1280,
+        "height": 1031,
+        "alt": "Ayansh Klyde Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ayansh-klyde-inn/gallery_002.jpg",
+        "localUrl": "/venues/ayansh-klyde-inn/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Ayansh Klyde Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ayansh-klyde-inn/gallery_003.jpg",
+        "localUrl": "/venues/ayansh-klyde-inn/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Ayansh Klyde Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ayansh-klyde-inn/gallery_004.jpg",
+        "localUrl": "/venues/ayansh-klyde-inn/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Ayansh Klyde Inn wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/ayansh-klyde-inn/gallery_005.jpg",
+        "localUrl": "/venues/ayansh-klyde-inn/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Ayansh Klyde Inn wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/ayansh-klyde-inn",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/ayansh-klyde-inn",
+      "scraped_at": "2026-10-08T05:37:44.929915+00:00"
+    }
+  },
+  {
+    "id": "jb-innovation",
+    "slug": "jb-innovation",
+    "name": "Jb Innovation",
+    "category": "Hotel",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "shaheed path near ambedkar university, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 200,
+      "maxPax": 1000,
+      "capacity": 500,
+      "rooms": 22,
+      "raw": "200 - 1000 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/jb-innovation/thumbnail.jpg",
+      "localUrl": "/venues/jb-innovation/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/7Rv5I7QB4K59m1vqKE7fT9UQGYdWbS7OiKyN1RvZ.jpg",
+      "width": 1600,
+      "height": 900,
+      "alt": "Jb Innovation wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/jb-innovation/gallery_001.jpg",
+        "localUrl": "/venues/jb-innovation/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/QsLZqhQLJsLdzD1E2BSIkTt0kcPttygf1Gjui86C.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "Jb Innovation wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jb-innovation/gallery_002.jpg",
+        "localUrl": "/venues/jb-innovation/gallery_002.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/H6rbvOWTE5lr9yT7bx0OCBRsAudNmSItVZKcNRL2.jpg",
+        "width": 1200,
+        "height": 686,
+        "alt": "Jb Innovation wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jb-innovation/gallery_003.jpg",
+        "localUrl": "/venues/jb-innovation/gallery_003.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/ugnfo55lVSaXQeV6RwqZoE6dIKQLEnkBJVRBHkZ7.jpg",
+        "width": 1600,
+        "height": 737,
+        "alt": "Jb Innovation wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jb-innovation/gallery_004.jpg",
+        "localUrl": "/venues/jb-innovation/gallery_004.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/49PaGFvWEmm6Tjsp08KgbwmHNTgjMrHNQeaepMBP.jpg",
+        "width": 1080,
+        "height": 728,
+        "alt": "Jb Innovation wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/jb-innovation/gallery_005.jpg",
+        "localUrl": "/venues/jb-innovation/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Jb Innovation wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/jb-innovation",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/jb-innovation",
+      "scraped_at": "2026-10-08T05:37:53.640362+00:00"
+    }
+  },
+  {
+    "id": "the-comfort-villa",
+    "slug": "the-comfort-villa",
+    "name": "The Comfort Villa",
+    "category": "Hotel",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "NEAR ASHIYANA PARAG LUCKNOW 226012, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 100,
+      "maxPax": 300,
+      "capacity": 250,
+      "rooms": 12,
+      "raw": "100 - 300 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": 1000,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": "A PERFECT VENUE FOR ENGAGEMENT, BIRTHDAY, KITTY PARTY OR WEDDING & RECEPTION",
+    "primaryImage": {
+      "url": "/venues/the-comfort-villa/thumbnail.jpg",
+      "localUrl": "/venues/the-comfort-villa/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/q0QlEnZMEPxXTyOpmZxZXkzQSCQcGDDKlvX55Y94.jpg",
+      "width": 1066,
+      "height": 1600,
+      "alt": "The Comfort Villa wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/the-comfort-villa/gallery_001.jpg",
+        "localUrl": "/venues/the-comfort-villa/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/yHVON6GNV1XvRQbU9tmE0CssrDBGfWX0LkMMxtoZ.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "The Comfort Villa wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-comfort-villa/gallery_002.jpg",
+        "localUrl": "/venues/the-comfort-villa/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/ZTji4oTrRJqQQ7Lp49GQxeRBYq8Q09uDhLaf2R8u.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "The Comfort Villa wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-comfort-villa/gallery_003.jpg",
+        "localUrl": "/venues/the-comfort-villa/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/u5WzIdc0JL2LamhrBA2hIcFswOKtOKgYuAgnUJ1T.jpg",
+        "width": 1066,
+        "height": 1600,
+        "alt": "The Comfort Villa wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-comfort-villa/gallery_004.jpg",
+        "localUrl": "/venues/the-comfort-villa/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/7PxDbVxaVUEaTRy7lnRio29nmE5FvBU56eO6X6NK.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "The Comfort Villa wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-comfort-villa/gallery_005.jpg",
+        "localUrl": "/venues/the-comfort-villa/gallery_005.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/iy6BL2mGqOFAUST74ZERSJOOTyRMF7e4Wgn6FzVp.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "The Comfort Villa wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/the-comfort-villa/gallery_006.jpg",
+        "localUrl": "/venues/the-comfort-villa/gallery_006.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/L2Hbg1DWkPtjV9SihlRBDfvQYlJFMa1idUxIK2iT.jpg",
+        "width": 1066,
+        "height": 1600,
+        "alt": "The Comfort Villa wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/the-comfort-villa",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/the-comfort-villa",
+      "scraped_at": "2026-10-08T05:38:14.139835+00:00"
+    }
+  },
+  {
+    "id": "hotel-classio-collection",
+    "slug": "hotel-classio-collection",
+    "name": "Hotel Classio Collection",
+    "category": "Hotel",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "address": "GOMTI NAGAR NEAR MAX HOSPITAL, Lucknow, Uttar Pradesh",
+    "rating": 4.9,
+    "reviewCount": 7,
+    "capacity": {
+      "minPax": 150,
+      "maxPax": 500,
+      "capacity": 300,
+      "rooms": 25,
+      "raw": "150 - 500 pax"
+    },
+    "food": {
+      "vegetarian": true,
+      "nonVegetarian": true,
+      "pricePerPlate": null,
+      "unit": "per_plate"
+    },
+    "amenities": [
+      "WiFi",
+      "Parking",
+      "Swimming Pool",
+      "Valet Parking",
+      "Dry Cleaning",
+      "Air Conditioning",
+      "Restaurant",
+      "Bar"
+    ],
+    "description": null,
+    "primaryImage": {
+      "url": "/venues/hotel-classio-collection/thumbnail.jpg",
+      "localUrl": "/venues/hotel-classio-collection/thumbnail.jpg",
+      "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/aAJopUDsBp9naaiV5cNtzwT4u6Gk55bOKlJZtsfC.jpg",
+      "width": 1200,
+      "height": 798,
+      "alt": "Hotel Classio Collection wedding venue in Lucknow"
+    },
+    "gallery": [
+      {
+        "url": "/venues/hotel-classio-collection/gallery_001.jpg",
+        "localUrl": "/venues/hotel-classio-collection/gallery_001.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/NQPA7kiAXYz4djo9iU4QzTIu9HyRsLkr35sbEVwK.jpg",
+        "width": 1600,
+        "height": 718,
+        "alt": "Hotel Classio Collection wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-classio-collection/gallery_002.jpg",
+        "localUrl": "/venues/hotel-classio-collection/gallery_002.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/0C5ErkpU54MvmsELimuMbdLt36Fh8UzhIpkd2fZL.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Hotel Classio Collection wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-classio-collection/gallery_003.jpg",
+        "localUrl": "/venues/hotel-classio-collection/gallery_003.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/b24V18VznVpi3YlJ9tucX40lbzRRKkrDLW4jBKvq.jpg",
+        "width": 1280,
+        "height": 853,
+        "alt": "Hotel Classio Collection wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-classio-collection/gallery_004.jpg",
+        "localUrl": "/venues/hotel-classio-collection/gallery_004.jpg",
+        "sourceUrl": "https://blinkwed.com/public/storage/venues/gallery/Gu1z87cMdxeFdkebuTbXAr2ZrPPJyYjE0S9ZUEtj.jpg",
+        "width": 1600,
+        "height": 1066,
+        "alt": "Hotel Classio Collection wedding venue in Lucknow"
+      },
+      {
+        "url": "/venues/hotel-classio-collection/gallery_005.jpg",
+        "localUrl": "/venues/hotel-classio-collection/gallery_005.jpg",
+        "sourceUrl": "https://www.blinkwed.com/storage/app/public/venues/main/VjqeEN7j888O7PVosMUybsnHBCZPrZCDII1e4ApG.jpg",
+        "width": 1360,
+        "height": 1020,
+        "alt": "Hotel Classio Collection wedding venue in Lucknow"
+      }
+    ],
+    "detailUrl": "https://www.blinkwed.com/venue/hotel-classio-collection",
+    "source": {
+      "website": "BlinkWed",
+      "url": "https://www.blinkwed.com/venue/hotel-classio-collection",
+      "scraped_at": "2026-10-08T05:38:29.930401+00:00"
+    }
+  }
+]

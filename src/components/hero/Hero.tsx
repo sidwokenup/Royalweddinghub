@@ -38,6 +38,7 @@ export function Hero() {
 
   return (
     <section
+      id="hero"
       ref={containerRef}
       className="relative w-full h-[100svh] min-h-[100svh] flex flex-col items-center justify-between overflow-hidden bg-[#0d0907] text-white"
       aria-label="Hero - Luxury Indian Wedding Planner"

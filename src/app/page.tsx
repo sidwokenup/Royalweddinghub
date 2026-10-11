@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Hero } from "@/components/hero/Hero";
 import { Navbar } from "@/components/navigation/Navbar";
 
@@ -22,6 +23,15 @@ export default function Home() {
           <p className="text-xs sm:text-sm md:text-base font-light text-[#faf9f6]/70 max-w-lg mx-auto leading-relaxed pt-2">
             The complete portfolio, bespoke destination services, and curated experiences will be introduced here.
           </p>
+          <div className="pt-4">
+            <Link
+              href="/venues"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#d4af37] hover:text-[#f3e5d8] transition-colors group border-b border-[#d4af37]/40 pb-1"
+            >
+              <span>Explore Curated Venues in Lucknow</span>
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
         </div>
       </section>
     </main>

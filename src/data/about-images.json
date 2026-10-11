@@ -1,0 +1,57 @@
+[
+  {
+    "key": "hero",
+    "filename": "about-editorial-hero.jpg",
+    "localPath": "/images/about/about-editorial-hero.jpg",
+    "section": "Section 1: Editorial About Hero",
+    "subject": "Ornate royal palace archway entrance with crystal chandeliers and luxury celebration seating",
+    "sourceUrl": "https://unsplash.com/photos/ornate-archway-entrance-with-chandeliers-1761472606347",
+    "license": "Unsplash License (Free commercial use, no copyright restrictions)",
+    "attribution": "Unsplash Commercial License",
+    "fileSizeKB": 288
+  },
+  {
+    "key": "story",
+    "filename": "about-story.jpg",
+    "localPath": "/images/about/about-story.jpg",
+    "section": "Section 2: Our Story (A Promise to Make It Personal)",
+    "subject": "Couple performing wedding ritual under an opulent floral canopy in a royal ballroom setting",
+    "sourceUrl": "https://unsplash.com/photos/a-couple-performing-a-wedding-ritual-under-a-floral-canopy-1587271407850",
+    "license": "Unsplash License (Free commercial use, no copyright restrictions)",
+    "attribution": "Unsplash Commercial License",
+    "fileSizeKB": 267
+  },
+  {
+    "key": "philosophy",
+    "filename": "about-philosophy.jpg",
+    "localPath": "/images/about/about-philosophy.jpg",
+    "section": "Section 3: Our Philosophy (Thoughtful in Every Detail)",
+    "subject": "Fine-art wedding tablescape with custom place settings, taper candles, and floral artistry",
+    "sourceUrl": "https://unsplash.com/photos/a-table-set-for-a-formal-dinner-1649615644622",
+    "license": "Unsplash License (Free commercial use, no copyright restrictions)",
+    "attribution": "Unsplash Commercial License",
+    "fileSizeKB": 163
+  },
+  {
+    "key": "experience",
+    "filename": "about-experience.jpg",
+    "localPath": "/images/about/about-experience.jpg",
+    "section": "Section 4: The Experience & Planning Approach",
+    "subject": "Two hands with intricate bridal henna patterns gently clasping each other in a sacred vow",
+    "sourceUrl": "https://unsplash.com/photos/two-hands-with-intricate-henna-patterns-1621801306185",
+    "license": "Unsplash License (Free commercial use, no copyright restrictions)",
+    "attribution": "Unsplash Commercial License",
+    "fileSizeKB": 103
+  },
+  {
+    "key": "cta",
+    "filename": "about-cta.jpg",
+    "localPath": "/images/about/about-cta.jpg",
+    "section": "Section 7: Closing Call to Action (Your Story Deserves a Beautiful Beginning)",
+    "subject": "Starlit reception celebration courtyard with warm fairy light canopies and candlelit tables",
+    "sourceUrl": "https://unsplash.com/photos/wedding-fairy-lights-night-reception-1519741497674",
+    "license": "Unsplash License (Free commercial use, no copyright restrictions)",
+    "attribution": "Unsplash Commercial License",
+    "fileSizeKB": 45
+  }
+]

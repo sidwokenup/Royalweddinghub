@@ -22,7 +22,7 @@ export const BUSINESS_INFO = {
   },
 } as const;
 
-export function getTelUrl(phone = BUSINESS_INFO.primaryPhone): string {
+export function getTelUrl(phone: string = BUSINESS_INFO.primaryPhone): string {
   return `tel:${phone.replace(/\s+/g, "")}`;
 }
 
