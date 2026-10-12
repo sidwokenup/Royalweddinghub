@@ -26,18 +26,20 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://royalweddinghub.com"),
   title: "The Royal Weddinghub | Luxury Wedding Planner in Lucknow",
-  description: "Plan your dream wedding with The Royal Weddinghub — luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
+  description: "Plan your dream wedding with The Royal Weddinghub - luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
   openGraph: {
     title: "The Royal Weddinghub | Luxury Wedding Planner in Lucknow",
-    description: "Plan your dream wedding with The Royal Weddinghub — luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
+    description: "Plan your dream wedding with The Royal Weddinghub - luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
     url: "https://royalweddinghub.com",
     siteName: "The Royal Weddinghub",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://royalweddinghub.com/og-image.jpg",
+        secureUrl: "https://royalweddinghub.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "The Royal Weddinghub - Luxury Wedding Planner in Lucknow",
+        alt: "Happy Indian Bride and Groom - The Royal Weddinghub Lucknow",
+        type: "image/jpeg",
       },
     ],
     locale: "en_IN",
@@ -46,7 +48,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Royal Weddinghub | Luxury Wedding Planner in Lucknow",
-    description: "Plan your dream wedding with The Royal Weddinghub — luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
+    description: "Plan your dream wedding with The Royal Weddinghub - luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
+    images: ["https://royalweddinghub.com/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
