@@ -45,14 +45,17 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
+    const isTouch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: isTouch ? 0.8 : 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
+      touchMultiplier: 1, // Native touch responsiveness without laggy multiplier
+      syncTouch: false,
     });
 
     requestAnimationFrame(() => {
@@ -66,7 +69,21 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
 
     rafId.current = requestAnimationFrame(raf);
 
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (rafId.current) {
+          cancelAnimationFrame(rafId.current);
+          rafId.current = null;
+        }
+      } else if (!rafId.current) {
+        rafId.current = requestAnimationFrame(raf);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       if (rafId.current) {
         cancelAnimationFrame(rafId.current);
       }

@@ -22,26 +22,28 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
     const mql = window.matchMedia("(max-width: 768px)");
     const targetFile = mql.matches ? "/videos/Mobile.mp4" : "/videos/Desktop.mp4";
 
-    // Set src if not already set or if changed
-    if (!video.src || !video.src.endsWith(targetFile)) {
-      video.src = targetFile;
-      video.load();
-    }
+    // Defer video source assignment slightly to allow HTML/CSS/Fonts first paint
+    const timer = setTimeout(() => {
+      if (!video.src || !video.src.endsWith(targetFile)) {
+        video.src = targetFile;
+        video.load();
+      }
 
-    const tryPlay = () => {
-      video.play().catch(() => {});
-    };
+      const tryPlay = () => {
+        video.play().catch(() => {});
+      };
 
-    if (video.readyState >= 2) {
-      tryPlay();
-      onVideoReady?.();
-    } else {
-      const handleCanPlay = () => {
+      if (video.readyState >= 2) {
         tryPlay();
         onVideoReady?.();
-      };
-      video.addEventListener("canplay", handleCanPlay, { once: true });
-    }
+      } else {
+        const handleCanPlay = () => {
+          tryPlay();
+          onVideoReady?.();
+        };
+        video.addEventListener("canplay", handleCanPlay, { once: true });
+      }
+    }, 50);
 
     // Handle viewport resize across mobile/desktop breakpoint without downloading both upfront
     const handleMediaChange = (e: MediaQueryListEvent) => {
@@ -57,17 +59,13 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
     mql.addEventListener("change", handleMediaChange);
 
     return () => {
+      clearTimeout(timer);
       mql.removeEventListener("change", handleMediaChange);
     };
   }, [onVideoReady]);
 
   return (
     <div className="hero-video-container absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0 bg-[#0d0a08]">
-      {/* 
-        Single video element to prevent duplicate network downloads.
-        Inline script ensures src is assigned synchronously at parse time,
-        preventing the browser preload scanner from downloading the wrong asset.
-      */}
       <video
         ref={videoRef}
         id="hero-bg-video"
@@ -75,7 +73,8 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/images/hero-poster.webp"
         suppressHydrationWarning={true}
         aria-hidden="true"
         tabIndex={-1}
