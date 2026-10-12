@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
-import Script from "next/script";
 import { LenisProvider } from "@/animations/scroll/LenisProvider";
 import "./globals.css";
 
@@ -61,21 +60,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col">
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NPWNRT5SSB"
-          strategy="afterInteractive"
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-4SJ7J5VBRS"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-NPWNRT5SSB');
-          `}
-        </Script>
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4SJ7J5VBRS');
+            `,
+          }}
+        />
+      </head>
+      <body className="antialiased min-h-screen flex flex-col">
         <LenisProvider>
           {children}
         </LenisProvider>
