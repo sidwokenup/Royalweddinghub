@@ -24,15 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!service) {
     return {
-      title: "Service Not Found | The Royal Weddinghub",
+      title: "Service Not Found | Royal Wedding Hub",
     };
   }
 
   return {
-    title: `${service.name} in Lucknow | The Royal Weddinghub`,
+    title: `${service.name} in Lucknow | Royal Wedding Hub`,
     description: `${service.headline} ${service.shortDescription}`,
     openGraph: {
-      title: `${service.name} in Lucknow | The Royal Weddinghub`,
+      title: `${service.name} in Lucknow | Royal Wedding Hub`,
       description: service.shortDescription,
       url: `https://royalweddinghub.com/services/${service.slug}`,
       images: [
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: service.image,
           width: 1200,
           height: 800,
-          alt: `${service.name} - The Royal Weddinghub`,
+          alt: `${service.name} - Royal Wedding Hub`,
         },
       ],
     },
@@ -76,13 +76,13 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* Global Minimal Footer */}
       <footer className="w-full bg-[#211A19] text-[#FAF7F2]/70 py-10 px-6 border-t border-white/10 text-center text-xs space-y-2 mt-16">
         <p className="tracking-widest uppercase text-white font-serif text-sm">
-          The Royal Weddinghub
+          Royal Wedding Hub
         </p>
         <p className="font-light text-white/50">
           Curating royal celebrations, palace venues, and bespoke wedding experiences across Lucknow.
         </p>
         <p className="text-[11px] text-white/30 pt-2">
-          © {new Date().getFullYear()} The Royal Weddinghub Lucknow. All rights reserved.
+          © {new Date().getFullYear()} Royal Wedding Hub Lucknow. All rights reserved.
         </p>
       </footer>
     </main>

@@ -571,7 +571,7 @@ export function ConciergeCard() {
                   name,
                   service: selectedServices.join(", "),
                   date: weddingDate,
-                  customMessage: `Hello Royal Weddinghub! I have just placed my celebration on your concierge calendar. Name: ${name}, Event: ${eventType}, Services: ${selectedServices.join(", ")}, Date: ${weddingDate}, Location: ${location}. Looking forward to connecting!`,
+                  customMessage: `Hello Royal Wedding Hub! I have just placed my celebration on your concierge calendar. Name: ${name}, Event: ${eventType}, Services: ${selectedServices.join(", ")}, Date: ${weddingDate}, Location: ${location}. Looking forward to connecting!`,
                 })}
                 target="_blank"
                 rel="noopener noreferrer"

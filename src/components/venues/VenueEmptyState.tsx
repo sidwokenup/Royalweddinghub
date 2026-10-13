@@ -12,7 +12,7 @@ interface VenueEmptyStateProps {
 export function VenueEmptyState({ onReset, searchQuery }: VenueEmptyStateProps) {
   const whatsappUrl = generateWhatsAppLink({
     service: "Custom Venue Scouting",
-    customMessage: `Hello Royal Weddinghub! I searched for "${searchQuery || "venues"}" on your discovery page and would like personalized recommendations for my wedding in Lucknow.`,
+    customMessage: `Hello Royal Wedding Hub! I searched for "${searchQuery || "venues"}" on your discovery page and would like personalized recommendations for my wedding in Lucknow.`,
   });
 
   return (

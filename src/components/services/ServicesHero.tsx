@@ -79,7 +79,7 @@ export function ServicesHero() {
             <div className="relative aspect-[4/5] sm:aspect-[16/13] lg:aspect-[4/5] w-full overflow-hidden">
               <Image
                 src="/images/services/wedding-planning-decor.jpg"
-                alt="Bespoke luxury wedding planning and floral canopy by The Royal Weddinghub"
+                alt="Bespoke luxury wedding planning and floral canopy by Royal Wedding Hub"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 45vw"

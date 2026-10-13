@@ -419,7 +419,7 @@ export function QuickLeadForm() {
                     name,
                     service: selectedService,
                     date: weddingDate,
-                    customMessage: `Hello Royal Weddinghub! I just submitted an inquiry on your website for ${selectedService}. My name is ${name}. I look forward to connecting!`,
+                    customMessage: `Hello Royal Wedding Hub! I just submitted an inquiry on your website for ${selectedService}. My name is ${name}. I look forward to connecting!`,
                   })}
                   target="_blank"
                   rel="noopener noreferrer"

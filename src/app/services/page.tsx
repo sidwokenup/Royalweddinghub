@@ -11,21 +11,21 @@ import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Luxury Wedding Planning Services in Lucknow | The Royal Weddinghub",
+  title: "Luxury Wedding Planning Services in Lucknow | Royal Wedding Hub",
   description:
-    "Explore bespoke royal wedding services in Lucknow by The Royal Weddinghub: luxury venues, bespoke decor & mandaps, fine-art cinema, royal catering, and artist management.",
+    "Explore bespoke royal wedding services in Lucknow by Royal Wedding Hub: luxury venues, bespoke decor & mandaps, fine-art cinema, royal catering, and artist management.",
   openGraph: {
-    title: "Luxury Wedding Planning Services in Lucknow | The Royal Weddinghub",
+    title: "Luxury Wedding Planning Services in Lucknow | Royal Wedding Hub",
     description:
       "Explore bespoke royal wedding services in Lucknow: luxury venues, bespoke decor & mandaps, fine-art cinema, royal catering, and artist management.",
     url: "https://royalweddinghub.com/services",
-    siteName: "The Royal Weddinghub",
+    siteName: "Royal Wedding Hub",
     images: [
       {
         url: "/images/services/wedding-planning-decor.jpg",
         width: 1280,
         height: 720,
-        alt: "The Royal Weddinghub Luxury Services in Lucknow",
+        alt: "Royal Wedding Hub Luxury Services in Lucknow",
       },
     ],
   },
@@ -37,7 +37,7 @@ export default function ServicesPage() {
   const generalWhatsappUrl = generateWhatsAppLink({
     service: "Full Wedding Planning & Services",
     customMessage:
-      "Hello Royal Weddinghub! I am planning an upcoming wedding in Lucknow and would like to consult with your wedding planning team on your curated services.",
+      "Hello Royal Wedding Hub! I am planning an upcoming wedding in Lucknow and would like to consult with your wedding planning team on your curated services.",
   });
 
   return (
@@ -130,13 +130,13 @@ export default function ServicesPage() {
       {/* Global Minimal Footer */}
       <footer className="w-full bg-[#211A19] text-[#FAF7F2]/70 py-10 px-6 border-t border-white/10 text-center text-xs space-y-2">
         <p className="tracking-widest uppercase text-white font-serif text-sm">
-          The Royal Weddinghub
+          Royal Wedding Hub
         </p>
         <p className="font-light text-white/50">
           Curating royal celebrations, palace venues, and bespoke wedding experiences across Lucknow.
         </p>
         <p className="text-[11px] text-white/30 pt-2">
-          © {new Date().getFullYear()} The Royal Weddinghub Lucknow. All rights reserved.
+          © {new Date().getFullYear()} Royal Wedding Hub Lucknow. All rights reserved.
         </p>
       </footer>
     </main>

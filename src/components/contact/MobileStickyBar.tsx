@@ -24,7 +24,7 @@ export function MobileStickyBar() {
         {/* WHATSAPP ACTION */}
         <a
           href={generateWhatsAppLink({
-            customMessage: "Hello Royal Weddinghub, I would like to enquire about wedding planning services in Lucknow.",
+            customMessage: "Hello Royal Wedding Hub, I would like to enquire about wedding planning services in Lucknow.",
           })}
           target="_blank"
           rel="noopener noreferrer"

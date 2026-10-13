@@ -26,7 +26,7 @@ interface ServiceDetailViewProps {
 export function ServiceDetailView({ service, relatedServices }: ServiceDetailViewProps) {
   const whatsappUrl = generateWhatsAppLink({
     service: service.name,
-    customMessage: `Hello Royal Weddinghub! I would like to enquire about your ${service.name} services for our upcoming celebration in Lucknow.`,
+    customMessage: `Hello Royal Wedding Hub! I would like to enquire about your ${service.name} services for our upcoming celebration in Lucknow.`,
   });
 
   const contactUrl = `/contact?service=${encodeURIComponent(service.slug)}`;
@@ -131,7 +131,7 @@ export function ServiceDetailView({ service, relatedServices }: ServiceDetailVie
               
               <div className="absolute bottom-5 left-5 right-5 text-white">
                 <span className="text-[10px] uppercase tracking-widest text-[#EFE8DE] block">
-                  The Royal Weddinghub Curation
+                  Royal Wedding Hub Curation
                 </span>
                 <p className="text-sm font-serif font-light text-white/95">
                   {service.shortDescription}
@@ -233,7 +233,7 @@ export function ServiceDetailView({ service, relatedServices }: ServiceDetailVie
                 </h2>
               </div>
               <span className="text-xs text-[#78716C] tracking-wide">
-                Authentic Royal Weddinghub Real Works
+                Authentic Royal Wedding Hub Real Works
               </span>
             </div>
 

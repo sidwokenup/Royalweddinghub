@@ -85,7 +85,7 @@ export function ConciergeContact() {
                     Bespoke Pavilion &amp; Courtyard Staging • Lucknow
                   </span>
                   <span className="hidden sm:inline-block text-[#FAF7F2] font-semibold drop-shadow-md">
-                    The Royal Weddinghub
+                    Royal Wedding Hub
                   </span>
                 </div>
               </div>
@@ -220,7 +220,7 @@ export function ConciergeContact() {
                 <div className="relative aspect-[16/9] w-full rounded-lg overflow-hidden border border-[#D8CBBE] shadow-sm bg-white">
                   <Image
                     src="/venues/shakuntalam-resort/gallery_002.jpg"
-                    alt="Fine-art wedding tablescape and floral setting by The Royal Weddinghub"
+                    alt="Fine-art wedding tablescape and floral setting by Royal Wedding Hub"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover object-center"
@@ -269,7 +269,7 @@ export function ConciergeContact() {
 
               <a
                 href={generateWhatsAppLink({
-                  customMessage: "Hello Royal Weddinghub, I would like to speak with a wedding specialist about my upcoming celebration.",
+                  customMessage: "Hello Royal Wedding Hub, I would like to speak with a wedding specialist about my upcoming celebration.",
                 })}
                 target="_blank"
                 rel="noopener noreferrer"

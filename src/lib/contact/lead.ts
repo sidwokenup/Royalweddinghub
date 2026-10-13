@@ -22,7 +22,7 @@ export function createLeadObject(params: Omit<LeadData, "createdAt">): LeadData 
 
   // Development logging only - prepared for CRM integration
   if (process.env.NODE_ENV !== "production") {
-    console.info("[Royal Weddinghub Concierge Lead Captured]:", lead);
+    console.info("[Royal Wedding Hub Concierge Lead Captured]:", lead);
   }
 
   return lead;

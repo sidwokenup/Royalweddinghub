@@ -44,7 +44,7 @@ export function ContactActions({ showWhatsApp = true, className = "" }: ContactA
       {showWhatsApp && (
         <a
           href={generateWhatsAppLink({
-            customMessage: "Hello Royal Weddinghub, I would like to schedule a private wedding consultation in Lucknow.",
+            customMessage: "Hello Royal Wedding Hub, I would like to schedule a private wedding consultation in Lucknow.",
           })}
           target="_blank"
           rel="noopener noreferrer"

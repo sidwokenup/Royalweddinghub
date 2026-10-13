@@ -15,9 +15,9 @@ export function generateWhatsAppLink(options: WhatsAppOptions = {}): string {
   let text = customMessage;
 
   if (!text) {
-    let greeting = "Hello Royal Weddinghub!";
+    let greeting = "Hello Royal Wedding Hub!";
     if (name) {
-      greeting = `Hello Royal Weddinghub! My name is ${name}.`;
+      greeting = `Hello Royal Wedding Hub! My name is ${name}.`;
     }
 
     let detail = "I found you through your website and would like to discuss planning my wedding in Lucknow.";

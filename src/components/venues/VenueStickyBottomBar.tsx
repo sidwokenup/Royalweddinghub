@@ -13,7 +13,7 @@ interface VenueStickyBottomBarProps {
 export function VenueStickyBottomBar({ venueName, venueCity = "Lucknow" }: VenueStickyBottomBarProps) {
   const whatsappUrl = generateWhatsAppLink({
     service: `Wedding Enquiry for ${venueName}`,
-    customMessage: `Hello Royal Weddinghub! I would like to check availability and package pricing for ${venueName} (${venueCity}) for my wedding.`,
+    customMessage: `Hello Royal Wedding Hub! I would like to check availability and package pricing for ${venueName} (${venueCity}) for my wedding.`,
   });
 
   return (
@@ -23,7 +23,7 @@ export function VenueStickyBottomBar({ venueName, venueCity = "Lucknow" }: Venue
         <a
           href={getTelUrl(BUSINESS_INFO.primaryPhone)}
           className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#FAF7F2] border border-[#E5DDD2] text-[#211A19] text-xs font-semibold uppercase tracking-wider hover:bg-[#F2ECE3] transition-colors"
-          aria-label="Call Royal Weddinghub Concierge"
+          aria-label="Call Royal Wedding Hub Concierge"
         >
           <Phone className="w-3.5 h-3.5 text-[#521D2B]" />
           <span>Call Us</span>

@@ -51,11 +51,11 @@ export async function generateMetadata({
 
   if (!venue) {
     return {
-      title: "Venue Not Found | The Royal Weddinghub",
+      title: "Venue Not Found | Royal Wedding Hub",
     };
   }
 
-  const title = `${venue.name} | Wedding Venue in ${venue.city} | The Royal Weddinghub`;
+  const title = `${venue.name} | Wedding Venue in ${venue.city} | Royal Wedding Hub`;
   const description =
     venue.description ||
     `Plan your dream luxury wedding at ${venue.name} in ${venue.city}. Verified capacity, accommodation, and royal wedding planning packages.`;
@@ -67,7 +67,7 @@ export async function generateMetadata({
       title,
       description,
       url: `https://royalweddinghub.com/venues/${venue.slug}`,
-      siteName: "The Royal Weddinghub",
+      siteName: "Royal Wedding Hub",
       images: [
         {
           url: venue.primaryImage.url,
@@ -100,7 +100,7 @@ export default async function VenueDetailPage({ params }: VenuePageProps) {
 
   const whatsappUrl = generateWhatsAppLink({
     service: `Venue Booking & Planning for ${venue.name}`,
-    customMessage: `Hello Royal Weddinghub! I am planning a wedding and would like to enquire about ${venue.name} in ${venue.city}. Please share available dates and package details.`,
+    customMessage: `Hello Royal Wedding Hub! I am planning a wedding and would like to enquire about ${venue.name} in ${venue.city}. Please share available dates and package details.`,
   });
 
   return (
@@ -235,7 +235,7 @@ export default async function VenueDetailPage({ params }: VenuePageProps) {
                   `${venue.name} is one of Lucknow's premier ${venue.category.toLowerCase()} destinations. It offers exquisite settings, expansive event spaces, and trusted hospitality tailored for royal wedding celebrations.`}
               </p>
               <div className="p-4 rounded-xl bg-[#FAF7F2] border border-[#E8DFD3] text-xs sm:text-sm text-[#521D2B] font-light leading-relaxed">
-                <strong>The Royal Weddinghub Advantage:</strong> As your dedicated wedding planners, we handle full spatial design, bespoke mandap architecture, lighting, hospitality desks, and guest logistics for this property.
+                <strong>The Royal Wedding Hub Advantage:</strong> As your dedicated wedding planners, we handle full spatial design, bespoke mandap architecture, lighting, hospitality desks, and guest logistics for this property.
               </div>
             </div>
 
@@ -284,7 +284,7 @@ export default async function VenueDetailPage({ params }: VenuePageProps) {
                   Plan Your Wedding Here
                 </h3>
                 <p className="text-xs sm:text-sm text-[#FAF7F2]/80 font-light leading-relaxed pt-1">
-                  Connect with The Royal Weddinghub to verify celebration dates, negotiate preferred rates, and arrange a private venue recce.
+                  Connect with Royal Wedding Hub to verify celebration dates, negotiate preferred rates, and arrange a private venue recce.
                 </p>
               </div>
 
@@ -341,7 +341,7 @@ export default async function VenueDetailPage({ params }: VenuePageProps) {
               {/* Planner Guarantee Strip */}
               <div className="pt-2 border-t border-white/10 text-center space-y-1">
                 <span className="text-[11px] text-[#D6B56D] font-medium">
-                  The Royal Weddinghub Guarantee
+                  The Royal Wedding Hub Guarantee
                 </span>
                 <p className="text-[10px] text-white/60 leading-tight">
                   Transparent contracts • Priority venue dates • Complete decor & hospitality execution

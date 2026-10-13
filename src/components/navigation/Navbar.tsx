@@ -28,7 +28,7 @@ export function Navbar() {
   const whatsappUrl = generateWhatsAppLink({
     service: "General Enquiry",
     customMessage:
-      "Hello Royal Weddinghub! I would like to enquire about your luxury wedding planning and venues in Lucknow.",
+      "Hello Royal Wedding Hub! I would like to enquire about your luxury wedding planning and venues in Lucknow.",
   });
 
   return (
@@ -46,11 +46,11 @@ export function Navbar() {
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         <Link
           href="/"
-          className={`text-xl font-bold tracking-widest uppercase display-text hover:opacity-90 transition-opacity ${
+          className={`text-lg sm:text-xl font-bold tracking-widest uppercase display-text hover:opacity-90 transition-opacity ${
             isLightNav ? "text-[#211A19]" : "text-white"
           }`}
         >
-          Royal Knots
+          Royal Wedding Hub
         </Link>
 
         {/* Desktop Navigation */}

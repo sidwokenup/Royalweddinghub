@@ -29,7 +29,7 @@ export function FeaturedVenueSpotlight({ venue }: FeaturedVenueSpotlightProps) {
 
   const whatsappUrl = generateWhatsAppLink({
     service: `Venue Selection for ${venue.name}`,
-    customMessage: `Hello Royal Weddinghub! I am interested in exploring ${venue.name} in ${venue.city} for my wedding. Could you share availability and planning packages?`,
+    customMessage: `Hello Royal Wedding Hub! I am interested in exploring ${venue.name} in ${venue.city} for my wedding. Could you share availability and planning packages?`,
   });
 
   return (

@@ -10,21 +10,21 @@ import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Wedding Venues in Lucknow | The Royal Weddinghub",
+  title: "Wedding Venues in Lucknow | Royal Wedding Hub",
   description:
     "Explore 32 handpicked luxury wedding venues in Lucknow — banquet halls, royal palace lawns, luxury resorts, and boutique wedding hotels with complete planning support.",
   openGraph: {
-    title: "Wedding Venues in Lucknow | The Royal Weddinghub",
+    title: "Wedding Venues in Lucknow | Royal Wedding Hub",
     description:
       "Explore 32 handpicked luxury wedding venues in Lucknow — banquet halls, royal palace lawns, luxury resorts, and boutique wedding hotels.",
     url: "https://royalweddinghub.com/venues",
-    siteName: "The Royal Weddinghub",
+    siteName: "Royal Wedding Hub",
     images: [
       {
         url: "/venues/santorini-resort-lucknow/thumbnail.jpg",
         width: 1280,
         height: 720,
-        alt: "Luxury Wedding Venues in Lucknow - The Royal Weddinghub",
+        alt: "Luxury Wedding Venues in Lucknow - Royal Wedding Hub",
       },
     ],
   },
@@ -37,7 +37,7 @@ export default function VenuesPage() {
   const generalWhatsappUrl = generateWhatsAppLink({
     service: "Venue Scouting & Planning",
     customMessage:
-      "Hello Royal Weddinghub! I am planning a wedding in Lucknow and would like to explore luxury venues and your full planning packages.",
+      "Hello Royal Wedding Hub! I am planning a wedding in Lucknow and would like to explore luxury venues and your full planning packages.",
   });
 
   return (
@@ -106,7 +106,7 @@ export default function VenuesPage() {
           </div>
 
           <div className="pt-10 text-xs text-white/50 flex flex-wrap justify-center items-center gap-4 border-t border-white/10 mt-12">
-            <span>© {new Date().getFullYear()} The Royal Weddinghub</span>
+            <span>© {new Date().getFullYear()} Royal Wedding Hub</span>
             <span>•</span>
             <span className="flex items-center gap-1">
               <MapPin className="w-3 h-3 text-[#D6B56D]" />

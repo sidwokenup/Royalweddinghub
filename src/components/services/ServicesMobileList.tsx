@@ -77,7 +77,7 @@ export function ServicesMobileList({ services }: ServicesMobileListProps) {
                 <div className="w-[42%] sm:w-[40%] relative min-h-[148px] sm:min-h-[168px] overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={`${service.name} - The Royal Weddinghub`}
+                    alt={`${service.name} - Royal Wedding Hub`}
                     fill
                     sizes="(max-width: 640px) 42vw, 40vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"

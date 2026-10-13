@@ -1,5 +1,5 @@
 export const BUSINESS_INFO = {
-  name: "The Royal Weddinghub",
+  name: "Royal Wedding Hub",
   tagline: "Lucknow's Luxury Wedding Planning Experience",
   experience: "10+ Years",
   serviceArea: "Lucknow & Royal Destinations",
@@ -26,6 +26,6 @@ export function getTelUrl(phone: string = BUSINESS_INFO.primaryPhone): string {
   return `tel:${phone.replace(/\s+/g, "")}`;
 }
 
-export function getMailtoUrl(email = BUSINESS_INFO.email, subject = "Wedding Planning Enquiry - The Royal Weddinghub"): string {
+export function getMailtoUrl(email = BUSINESS_INFO.email, subject = "Wedding Planning Enquiry - Royal Wedding Hub"): string {
   return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 }
