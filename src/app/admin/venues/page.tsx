@@ -56,30 +56,30 @@ export default async function AdminVenuesPage() {
   return (
     <div className="space-y-6 pb-12">
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#241f18]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
         <div>
-          <div className="flex items-center gap-2 text-xs text-[#8a7f70] mb-1 font-mono">
-            <Link href="/admin" className="hover:text-[#c5a880] transition-colors flex items-center gap-1">
+          <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
+            <Link href="/admin" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Dashboard</span>
             </Link>
             <span>/</span>
-            <span className="text-[#c5a880]">Venues Catalog</span>
+            <span className="text-[#521D2B] font-semibold font-sans">Venues Catalog</span>
           </div>
-          <h1 className="text-2xl font-serif text-[#faf6f0] font-normal tracking-wide flex items-center gap-3">
-            <Building2 className="w-6 h-6 text-[#c5a880]" />
+          <h1 className="text-2xl font-serif text-[#1C1611] font-normal tracking-wide flex items-center gap-3">
+            <Building2 className="w-6 h-6 text-[#85662F]" />
             <span>Curated Wedding Venues</span>
           </h1>
-          <p className="text-xs text-[#8a7f70] mt-1 font-light">
+          <p className="text-xs text-[#5C5245] mt-1 font-light">
             Manage pricing, capacity ranges, room inventory, amenities, and live status for 32+ Lucknow properties.
           </p>
         </div>
 
         <Link
           href="/admin/venues/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#c5a880] text-[#12100d] text-xs font-medium tracking-wide hover:bg-[#dfc9a5] transition-colors shadow-sm self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-sm self-start sm:self-auto"
         >
-          <PlusCircle className="w-4 h-4" />
+          <PlusCircle className="w-4 h-4 text-[#E6C994]" />
           <span>Add New Venue</span>
         </Link>
       </div>

@@ -169,17 +169,17 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
   return (
     <div className="space-y-6">
       {/* Top Banner: Client Discretion Policy */}
-      <div className="p-5 rounded-2xl bg-gradient-to-r from-[#171410] via-[#12100d] to-[#0d0c0a] border border-[#2b241b] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-start gap-3">
-          <div className="p-2.5 rounded-xl bg-[#221c16] text-[#c5a880] shrink-0 mt-0.5">
+      <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#FFFFFF] via-[#FAF7F2] to-[#F5EFEB] border border-[#EAE4D9] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+        <div className="flex items-start gap-3.5">
+          <div className="p-2.5 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-[#705527] shrink-0 mt-0.5">
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-sm font-serif text-[#faf6f0] font-normal tracking-wide">
+            <h3 className="text-sm sm:text-base font-serif text-[#1C1611] font-normal tracking-tight">
               Client Confidentiality & Discretion Policy
             </h3>
-            <p className="text-xs text-[#8a7f70] mt-0.5 font-light leading-relaxed max-w-xl">
-              To strictly protect High-Net-Worth families in Lucknow, fabricated or unverified reviews are prohibited. A review can only be set to <span className="text-[#c5a880]">Live</span> once explicit client consent is recorded.
+            <p className="text-xs text-[#5C5245] mt-1 font-light leading-relaxed max-w-xl">
+              To strictly protect High-Net-Worth families in Lucknow, fabricated or unverified reviews are prohibited. A review can only be set to <span className="text-[#85662F] font-medium">Live</span> once explicit client consent is recorded.
             </p>
           </div>
         </div>
@@ -187,7 +187,7 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
         <button
           type="button"
           onClick={openCreateModal}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#c5a880] text-[#12100d] text-xs font-medium tracking-wide hover:bg-[#dfc9a5] transition-colors shadow-sm self-start sm:self-auto shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-[0_1px_2px_rgba(82,29,43,0.2)] self-start sm:self-auto shrink-0"
         >
           <PlusCircle className="w-4 h-4" />
           <span>Record Client Review</span>
@@ -200,11 +200,11 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
           testimonials.map((item) => (
             <div
               key={item.id}
-              className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 flex flex-col justify-between hover:border-[#c5a880]/40 transition-all duration-300 group"
+              className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 flex flex-col justify-between shadow-[0_1px_3px_rgba(28,22,17,0.03)] hover:shadow-md hover:border-[#85662F]/40 transition-all duration-300 group"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-amber-400">
+                  <div className="flex items-center gap-1 text-amber-500">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-current" />
                     ))}
@@ -212,12 +212,12 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
 
                   <div className="flex items-center gap-2">
                     {item.client_consent_recorded ? (
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center gap-1">
                         <Check className="w-3 h-3" />
                         <span>Consent Recorded</span>
                       </span>
                     ) : (
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-950/60 text-amber-400 border border-amber-500/30 flex items-center gap-1">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 flex items-center gap-1">
                         <Lock className="w-3 h-3" />
                         <span>Consent Pending</span>
                       </span>
@@ -225,40 +225,40 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                   </div>
                 </div>
 
-                <div className="mt-3">
-                  <h4 className="text-base font-serif text-[#faf6f0] font-normal">
+                <div className="mt-3.5">
+                  <h4 className="text-base font-serif text-[#1C1611] font-normal tracking-tight">
                     {item.couple_names}
                   </h4>
-                  <div className="text-xs text-[#8a7f70] mt-0.5">
+                  <div className="text-xs text-[#5C5245] mt-0.5 font-light">
                     {item.celebration_type} • {item.location} ({item.wedding_season || 'Winter'})
                   </div>
                 </div>
 
-                <blockquote className="mt-3 text-xs text-[#d6ccc0] italic font-light leading-relaxed border-l-2 border-[#c5a880]/30 pl-3 py-0.5">
+                <blockquote className="mt-3.5 text-xs text-[#1C1611] italic font-light leading-relaxed border-l-2 border-[#85662F]/40 bg-[#FDFBF7] p-3 rounded-r-xl">
                   &ldquo;{item.quote}&rdquo;
                 </blockquote>
               </div>
 
               {/* Bottom Actions */}
-              <div className="mt-5 pt-3 border-t border-[#1e1913] flex items-center justify-between">
+              <div className="mt-5 pt-3 border-t border-[#F2ECE1] flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => handleTogglePublish(item)}
                   disabled={isPending}
                   className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono border transition-all ${
                     item.is_published
-                      ? 'bg-emerald-950/60 text-emerald-400 border-emerald-500/30'
-                      : 'bg-[#1e1914] text-[#7d7263] border-[#2e261d]'
+                      ? 'bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100'
+                      : 'bg-[#F5F2EB] text-[#7A6E5F] border-[#E2DBD0] hover:bg-[#EAE4D9]'
                   }`}
                 >
                   {item.is_published ? (
                     <>
-                      <Check className="w-3 h-3 text-emerald-400" />
+                      <Check className="w-3 h-3 text-emerald-700" />
                       <span>Live on /about</span>
                     </>
                   ) : (
                     <>
-                      <EyeOff className="w-3 h-3 text-[#7d7263]" />
+                      <EyeOff className="w-3 h-3 text-[#7A6E5F]" />
                       <span>Draft</span>
                     </>
                   )}
@@ -268,7 +268,7 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                   <button
                     type="button"
                     onClick={() => openEditModal(item)}
-                    className="p-1.5 rounded-xl text-[#8a7f70] hover:text-[#f5f0eb] hover:bg-[#1a1713] transition-colors"
+                    className="p-1.5 rounded-xl text-[#7A6E5F] hover:text-[#1C1611] hover:bg-[#F8F5EE] border border-transparent hover:border-[#EAE4D9] transition-all"
                     title="Edit Review"
                   >
                     <Edit className="w-4 h-4" />
@@ -276,7 +276,7 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                   <button
                     type="button"
                     onClick={() => handleDelete(item)}
-                    className="p-1.5 rounded-xl text-[#8a7f70] hover:text-red-400 hover:bg-red-950/30 transition-colors"
+                    className="p-1.5 rounded-xl text-[#8C8070] hover:text-red-600 hover:bg-red-50 transition-colors"
                     title="Delete Review"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -286,12 +286,12 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
             </div>
           ))
         ) : (
-          <div className="col-span-full py-12 text-center rounded-2xl bg-[#12100d] border border-[#241f18] p-8">
-            <div className="w-12 h-12 rounded-2xl bg-[#1a1612] text-[#c5a880] flex items-center justify-center mx-auto mb-3">
+          <div className="col-span-full py-12 text-center rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-8 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-[#FDF9F0] border border-[#E9DECA] text-[#705527] flex items-center justify-center mx-auto mb-3">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-serif text-[#faf6f0]">Private Discretion Card Enforced</h4>
-            <p className="text-xs text-[#8a7f70] max-w-md mx-auto mt-1.5 leading-relaxed font-light">
+            <h4 className="text-base font-serif text-[#1C1611]">Private Discretion Card Enforced</h4>
+            <p className="text-xs text-[#5C5245] max-w-md mx-auto mt-1.5 leading-relaxed font-light">
               Zero client reviews are published publicly by design. You can record client feedback here for internal records, or publish verified reviews once written consent is documented.
             </p>
           </div>
@@ -300,31 +300,31 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
 
       {/* Create / Edit Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-[#12100d] border border-[#2e261d] rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-4 border-b border-[#211b15]">
-              <h3 className="text-base font-serif text-[#faf6f0]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-[#FFFFFF] border border-[#DDD5C7] rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-4 border-b border-[#F2ECE1]">
+              <h3 className="text-base font-serif text-[#1C1611]">
                 {editingItem ? 'Edit Client Review' : 'Record Verified Client Review'}
               </h3>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="p-1.5 rounded-xl text-[#8a7f70] hover:text-[#f5f0eb]"
+                className="p-1.5 rounded-xl text-[#8C8070] hover:text-[#1C1611] hover:bg-[#F8F5EE] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {errorMsg && (
-              <div className="mt-4 p-3 rounded-xl bg-red-950/40 border border-red-500/30 text-red-200 text-xs flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+              <div className="mt-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-900 text-xs flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
                 <span>{errorMsg}</span>
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4 mt-4">
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1 font-medium">
                   Couple Names *
                 </label>
                 <input
@@ -333,13 +333,13 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                   value={coupleNames}
                   onChange={(e) => setCoupleNames(e.target.value)}
                   placeholder="e.g. Radhika & Vikramaditya"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1 font-medium">
+                  <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1 font-medium">
                     Celebration Type
                   </label>
                   <input
@@ -347,12 +347,12 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                     value={celebrationType}
                     onChange={(e) => setCelebrationType(e.target.value)}
                     placeholder="Palace Wedding"
-                    className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                    className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1 font-medium">
+                  <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1 font-medium">
                     Location & Season
                   </label>
                   <input
@@ -360,13 +360,13 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                     value={weddingSeason}
                     onChange={(e) => setWeddingSeason(e.target.value)}
                     placeholder="Winter 2025"
-                    className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                    className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1 font-medium">
                   Testimonial Quote *
                 </label>
                 <textarea
@@ -375,24 +375,24 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                   value={quote}
                   onChange={(e) => setQuote(e.target.value)}
                   placeholder="Their words describing the experience..."
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl p-3 text-xs text-[#f5f0eb] leading-relaxed focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl p-3 text-xs text-[#1C1611] leading-relaxed focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
               {/* Mandatory Consent Checkbox */}
-              <div className="p-3.5 rounded-xl bg-[#1b1712] border border-[#382f23] space-y-2">
+              <div className="p-3.5 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] space-y-2">
                 <label className="flex items-start gap-2.5 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={clientConsentRecorded}
                     onChange={(e) => setClientConsentRecorded(e.target.checked)}
-                    className="w-4 h-4 rounded border-[#382f23] bg-[#12100d] text-[#c5a880] focus:ring-[#c5a880] mt-0.5"
+                    className="w-4 h-4 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B] mt-0.5"
                   />
                   <div>
-                    <span className="text-xs font-medium text-[#f5f0eb] block">
+                    <span className="text-xs font-medium text-[#1C1611] block">
                       Recorded Client Consent Verified *
                     </span>
-                    <span className="text-[11px] text-[#8a7f70] font-light leading-relaxed block mt-0.5">
+                    <span className="text-[11px] text-[#5C5245] font-light leading-relaxed block mt-0.5">
                       I confirm that the client has given explicit permission to showcase their celebration feedback publicly.
                     </span>
                   </div>
@@ -400,32 +400,32 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
               </div>
 
               {/* Publish Toggle */}
-              <label className="flex items-center justify-between p-3 rounded-xl bg-[#171410] border border-[#2e261d] cursor-pointer">
+              <label className="flex items-center justify-between p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EAE4D9] cursor-pointer hover:border-[#DDD5C7] transition-all">
                 <div>
-                  <div className="text-xs font-medium text-[#f5f0eb]">Public Visibility</div>
-                  <div className="text-[11px] text-[#73685a]">Show on /about testimonials</div>
+                  <div className="text-xs font-medium text-[#1C1611]">Public Visibility</div>
+                  <div className="text-[11px] text-[#5C5245]">Show on /about testimonials</div>
                 </div>
                 <input
                   type="checkbox"
                   checked={isPublished}
                   onChange={(e) => setIsPublished(e.target.checked)}
                   disabled={!clientConsentRecorded}
-                  className="w-4 h-4 rounded border-[#382f23] bg-[#12100d] text-[#c5a880] focus:ring-[#c5a880] disabled:opacity-30"
+                  className="w-4 h-4 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B] disabled:opacity-30"
                 />
               </label>
 
-              <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#211b15]">
+              <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#F2ECE1]">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 rounded-xl text-xs text-[#a39686] hover:bg-[#1e1914]"
+                  className="px-4 py-2 rounded-xl text-xs text-[#5C5245] hover:bg-[#F8F5EE] transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="px-4 py-2 rounded-xl bg-[#c5a880] text-[#12100d] text-xs font-medium hover:bg-[#dfc9a5] shadow-sm disabled:opacity-50"
+                  className="px-4 py-2 rounded-xl bg-[#521D2B] text-white text-xs font-medium hover:bg-[#682637] transition-all shadow-sm disabled:opacity-50"
                 >
                   {isPending ? 'Saving...' : 'Save Review'}
                 </button>

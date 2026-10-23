@@ -29,37 +29,37 @@ export function AdminHeader({
   };
 
   return (
-    <header className="sticky top-0 z-30 h-20 bg-[#0d0b09]/90 border-b border-[#241f18] backdrop-blur-md px-4 sm:px-8 flex items-center justify-between">
+    <header className="sticky top-0 z-30 h-20 bg-[#FFFFFF]/90 border-b border-[#EAE4D9] backdrop-blur-md px-4 sm:px-8 flex items-center justify-between shadow-[0_1px_3px_rgba(28,22,17,0.02)]">
       {/* Left: Mobile hamburger & breadcrumb title */}
       <div className="flex items-center gap-4">
         <button
           onClick={onMenuToggle}
-          className="lg:hidden p-2 rounded-xl text-[#9c8e7b] hover:text-[#faf6f0] hover:bg-[#1a1713] border border-[#2b241b] transition-colors"
+          className="lg:hidden p-2.5 rounded-xl text-[#5C5245] hover:text-[#1C1611] hover:bg-[#F8F5EE] border border-[#E2DAD0] transition-colors"
           aria-label="Open navigation drawer"
         >
           <Menu className="w-5 h-5" />
         </button>
 
         <div className="hidden sm:flex items-center gap-2 text-xs">
-          <span className="text-[#73685a]">Admin Portal</span>
-          <span className="text-[#3d362d]">/</span>
-          <span className="text-[#c5a880] font-medium tracking-wide">Command Center</span>
+          <span className="text-[#8C8070] font-sans">Admin Portal</span>
+          <span className="text-[#D4CBC0]">/</span>
+          <span className="text-[#521D2B] font-semibold tracking-wide font-sans">Command Center</span>
         </div>
       </div>
 
       {/* Right: DB status badge, public site link, user profile & logout */}
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Database Status Pill */}
-        <div className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2b241b] bg-[#14110e] text-[11px] font-mono">
-          <Database className="w-3.5 h-3.5 text-[#c5a880]" />
-          <span className="text-[#a39686]">Database:</span>
-          <span className="flex items-center gap-1.5 text-[#e0d6c8]">
+        <div className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#EAE4D9] bg-[#F8F5EE] text-[11px] font-mono">
+          <Database className="w-3.5 h-3.5 text-[#85662F]" />
+          <span className="text-[#6E6354]">DB:</span>
+          <span className="flex items-center gap-1.5 text-[#1C1611] font-medium">
             <span
               className={`w-2 h-2 rounded-full ${
-                isDbConnected ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-amber-500'
+                isDbConnected ? 'bg-emerald-500' : 'bg-amber-500'
               }`}
             />
-            {isDbConnected ? 'Supabase Active' : 'Fallback Local'}
+            {isDbConnected ? 'Connected' : 'Offline'}
           </span>
         </div>
 
@@ -68,23 +68,23 @@ export function AdminHeader({
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-[#c5a880] hover:text-[#f5f0eb] hover:bg-[#1c1813] border border-[#2e261d] transition-all"
+          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-[#521D2B] bg-[#FDF9F0] hover:bg-[#F9F1DF] border border-[#E9DECA] transition-all shadow-2xs"
           title="Open live website in new tab"
         >
           <span>View Site</span>
-          <ExternalLink className="w-3.5 h-3.5" />
+          <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" />
         </Link>
 
         {/* User Mini Profile */}
-        <div className="flex items-center gap-2.5 pl-2 sm:pl-3 border-l border-[#241f18]">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#997e59] to-[#c5a880] text-[#12100d] font-bold text-xs flex items-center justify-center shrink-0">
+        <div className="flex items-center gap-2.5 pl-2 sm:pl-3 border-l border-[#EAE4D9]">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#521D2B] to-[#7D293F] text-[#FAF6F0] font-semibold text-xs flex items-center justify-center shrink-0 shadow-2xs">
             {userFullName.charAt(0).toUpperCase()}
           </div>
           <div className="hidden md:block text-left">
-            <div className="text-xs font-medium text-[#faf6f0] leading-none truncate max-w-[130px]">
+            <div className="text-xs font-semibold text-[#1C1611] leading-none truncate max-w-[130px]">
               {userFullName}
             </div>
-            <div className="text-[10px] text-[#8a7f70] tracking-wider uppercase font-mono mt-0.5">
+            <div className="text-[10px] text-[#85662F] tracking-wider uppercase font-mono font-medium mt-0.5">
               {userRole.replace('_', ' ')}
             </div>
           </div>
@@ -94,10 +94,10 @@ export function AdminHeader({
         <button
           onClick={handleSignOut}
           disabled={isPending}
-          className="p-2 sm:px-3 sm:py-1.5 rounded-xl text-xs font-medium text-[#a39686] hover:text-red-400 hover:bg-red-950/20 border border-transparent hover:border-red-900/40 transition-all flex items-center gap-1.5 disabled:opacity-50"
+          className="p-2 sm:px-3 sm:py-1.5 rounded-xl text-xs font-medium text-rose-800 hover:bg-rose-50 border border-transparent hover:border-rose-200 transition-all flex items-center gap-1.5 disabled:opacity-50"
           title="Sign out of administrative session"
         >
-          <LogOut className="w-4 h-4 text-red-400" />
+          <LogOut className="w-4 h-4 text-rose-700" />
           <span className="hidden sm:inline">{isPending ? 'Exiting...' : 'Sign Out'}</span>
         </button>
       </div>

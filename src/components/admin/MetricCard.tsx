@@ -24,30 +24,30 @@ export function MetricCard({
   const getBadgeStyles = () => {
     switch (badgeType) {
       case 'emerald':
-        return 'bg-emerald-950/60 text-emerald-400 border-emerald-500/30';
+        return 'bg-emerald-50 text-emerald-800 border-emerald-200/80';
       case 'amber':
-        return 'bg-amber-950/60 text-amber-400 border-amber-500/30';
+        return 'bg-amber-50 text-amber-800 border-amber-200/80';
       case 'neutral':
-        return 'bg-[#1f1a14] text-[#8a7f70] border-[#332b21]';
+        return 'bg-[#F5F2EB] text-[#5C5245] border-[#E2DAD0]';
       case 'gold':
       default:
-        return 'bg-[#2a2217] text-[#c5a880] border-[#c5a880]/30';
+        return 'bg-[#FDF9F0] text-[#705527] border-[#E9DECA]';
     }
   };
 
   const Content = (
-    <div className="relative group overflow-hidden rounded-2xl bg-[#12100d] border border-[#262018] p-5 sm:p-6 transition-all duration-300 hover:border-[#c5a880]/50 hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
-      {/* Top subtle glow on hover */}
-      <div className="absolute -top-12 -right-12 w-28 h-28 bg-[#c5a880]/5 rounded-full blur-2xl group-hover:bg-[#c5a880]/15 transition-all duration-300" />
+    <div className="relative group overflow-hidden rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-5 sm:p-6 transition-all duration-300 hover:border-[#85662F]/40 shadow-[0_1px_3px_rgba(28,22,17,0.03),0_4px_12px_-2px_rgba(28,22,17,0.03)] hover:shadow-[0_8px_24px_rgba(28,22,17,0.06)]">
+      {/* Top subtle decorative ambient highlight on hover */}
+      <div className="absolute -top-12 -right-12 w-28 h-28 bg-[#85662F]/5 rounded-full blur-2xl group-hover:bg-[#85662F]/10 transition-all duration-300 pointer-events-none" />
 
       <div className="flex items-start justify-between relative z-10">
-        <div className="p-3 rounded-xl bg-[#1a1612] border border-[#2e261d] text-[#c5a880] group-hover:text-[#dfc9a5] group-hover:scale-105 transition-all duration-200">
+        <div className="p-3 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-[#85662F] group-hover:scale-105 transition-transform duration-200 shadow-2xs">
           <Icon className="w-5 h-5" />
         </div>
 
         {badge && (
           <span
-            className={`text-[11px] font-mono px-2.5 py-1 rounded-full border ${getBadgeStyles()}`}
+            className={`text-[10px] font-mono font-medium px-2.5 py-0.5 rounded-full border ${getBadgeStyles()}`}
           >
             {badge}
           </span>
@@ -55,21 +55,21 @@ export function MetricCard({
       </div>
 
       <div className="mt-4 relative z-10">
-        <div className="text-2xl sm:text-3xl font-serif text-[#faf6f0] tracking-tight font-medium">
+        <div className="text-2xl sm:text-3xl font-serif text-[#1C1611] tracking-tight font-medium">
           {value}
         </div>
-        <div className="text-xs uppercase tracking-wider text-[#998c7b] mt-1 font-sans">
+        <div className="text-[11px] uppercase tracking-wider text-[#7A6E5F] mt-1 font-mono font-semibold">
           {title}
         </div>
         {subtitle && (
-          <div className="text-xs text-[#6e6354] mt-2 flex items-center gap-1 font-light">
+          <div className="text-xs text-[#8C8070] mt-1.5 flex items-center gap-1 font-light leading-relaxed">
             {subtitle}
           </div>
         )}
       </div>
 
       {href && (
-        <div className="mt-4 pt-3 border-t border-[#1e1913] flex items-center justify-between text-xs text-[#a39480] group-hover:text-[#c5a880] transition-colors">
+        <div className="mt-4 pt-3 border-t border-[#F0ECE1] flex items-center justify-between text-xs font-medium text-[#521D2B] group-hover:text-[#7D293F] transition-colors">
           <span>Manage Module</span>
           <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </div>

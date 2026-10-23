@@ -84,52 +84,52 @@ export default async function AdminMediaPage() {
   return (
     <div className="space-y-6 pb-12">
       {/* Top Header & Breadcrumbs */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#241f18]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
         <div>
-          <div className="flex items-center gap-2 text-xs text-[#8a7f70] mb-1 font-mono">
+          <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
             <Link
               href="/admin"
-              className="hover:text-[#c5a880] transition-colors flex items-center gap-1"
+              className="hover:text-[#521D2B] transition-colors flex items-center gap-1"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Dashboard</span>
             </Link>
             <span>/</span>
-            <span className="text-[#c5a880]">Asset CDN</span>
+            <span className="text-[#85662F] font-medium">Asset CDN</span>
           </div>
 
-          <h1 className="text-2xl font-serif text-[#faf6f0] font-normal tracking-wide flex items-center gap-3">
-            <ImageIcon className="w-6 h-6 text-[#c5a880]" />
+          <h1 className="text-2xl sm:text-3xl font-serif text-[#1C1611] font-normal tracking-tight flex items-center gap-3">
+            <ImageIcon className="w-6 h-6 text-[#85662F]" />
             <span>Digital Assets & Media Library</span>
           </h1>
-          <p className="text-xs text-[#8a7f70] mt-1 font-light">
+          <p className="text-xs text-[#5C5245] mt-1 font-light">
             Centralized high-resolution CDN for royal palaces, ceremony suites, banquet decor, and brand assets.
           </p>
         </div>
 
         {/* Quick Stats Badges */}
-        <div className="flex items-center gap-3">
-          <div className="px-3.5 py-2 rounded-xl bg-[#12100d] border border-[#241f18] flex items-center gap-2.5">
-            <Layers className="w-4 h-4 text-[#c5a880]" />
+        <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
+          <div className="px-3.5 py-2 rounded-xl bg-[#FFFFFF] border border-[#EAE4D9] flex items-center gap-2.5 shadow-sm">
+            <Layers className="w-4 h-4 text-[#85662F]" />
             <div>
-              <div className="text-[10px] text-[#73685a] uppercase font-mono">Total Assets</div>
-              <div className="text-xs font-mono font-medium text-[#faf6f0]">{totalAssets}</div>
+              <div className="text-[10px] text-[#5C5245] uppercase font-mono">Total Assets</div>
+              <div className="text-xs font-mono font-medium text-[#1C1611]">{totalAssets}</div>
             </div>
           </div>
 
-          <div className="px-3.5 py-2 rounded-xl bg-[#12100d] border border-[#241f18] flex items-center gap-2.5">
-            <HardDrive className="w-4 h-4 text-[#9c8e7b]" />
+          <div className="px-3.5 py-2 rounded-xl bg-[#FFFFFF] border border-[#EAE4D9] flex items-center gap-2.5 shadow-sm">
+            <HardDrive className="w-4 h-4 text-[#5C5245]" />
             <div>
-              <div className="text-[10px] text-[#73685a] uppercase font-mono">Storage Used</div>
-              <div className="text-xs font-mono font-medium text-[#faf6f0]">{formatSize(totalBytes)}</div>
+              <div className="text-[10px] text-[#5C5245] uppercase font-mono">Storage Used</div>
+              <div className="text-xs font-mono font-medium text-[#1C1611]">{formatSize(totalBytes)}</div>
             </div>
           </div>
 
-          <div className="hidden md:flex px-3.5 py-2 rounded-xl bg-[#12100d] border border-[#241f18] items-center gap-2.5">
-            <FolderOpen className="w-4 h-4 text-emerald-400" />
+          <div className="hidden md:flex px-3.5 py-2 rounded-xl bg-[#FFFFFF] border border-[#EAE4D9] items-center gap-2.5 shadow-sm">
+            <FolderOpen className="w-4 h-4 text-emerald-700" />
             <div>
-              <div className="text-[10px] text-[#73685a] uppercase font-mono">Cloud Synced</div>
-              <div className="text-xs font-mono font-medium text-emerald-400">{cloudCount} items</div>
+              <div className="text-[10px] text-[#5C5245] uppercase font-mono">Cloud Synced</div>
+              <div className="text-xs font-mono font-medium text-emerald-700">{cloudCount} items</div>
             </div>
           </div>
         </div>

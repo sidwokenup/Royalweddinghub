@@ -56,10 +56,10 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
   const [introCopy, setIntroCopy] = useState(initialData.intro_copy);
   const [coverImageUrl, setCoverImageUrl] = useState(initialData.cover_image_url);
   const [accentColor, setAccentColor] = useState(initialData.accent_color || '#521D2B');
-  const [bgSurface, setBgSurface] = useState(initialData.bg_surface || '#FAF7F2');
-  const [textOnBg, setTextOnBg] = useState(initialData.text_on_bg || '#211A19');
+  const [bgSurface] = useState(initialData.bg_surface || '#FAF7F2');
+  const [textOnBg] = useState(initialData.text_on_bg || '#211A19');
   const [ctaText, setCtaText] = useState(initialData.cta_text || 'Enquire Now');
-  const [externalLink, setExternalLink] = useState(initialData.external_link || '');
+  const [externalLink] = useState(initialData.external_link || '');
   const [isFeatured, setIsFeatured] = useState(initialData.is_featured);
   const [isPublished, setIsPublished] = useState(initialData.is_published);
 
@@ -147,17 +147,17 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-8 pb-16">
       {/* Top action header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#241f18]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
         <div>
-          <div className="flex items-center gap-2 text-xs text-[#8a7f70] mb-1 font-mono">
-            <Link href="/admin/services" className="hover:text-[#c5a880] transition-colors flex items-center gap-1">
+          <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
+            <Link href="/admin/services" className="hover:text-[#521D2B] transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to Services</span>
             </Link>
             <span>/</span>
-            <span className="text-[#c5a880]">{name}</span>
+            <span className="text-[#85662F] font-medium">{name}</span>
           </div>
-          <h1 className="text-2xl font-serif text-[#faf6f0] font-normal tracking-wide">
+          <h1 className="text-2xl sm:text-3xl font-serif text-[#1C1611] font-normal tracking-tight">
             Edit Service: {name}
           </h1>
         </div>
@@ -167,7 +167,7 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
             href={slug === 'wedding-venues' ? '/venues' : `/services/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#171410] border border-[#2b241b] text-xs font-medium text-[#c5a880] hover:text-white hover:bg-[#1f1a14] transition-all"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#DDD5C7] text-xs font-medium text-[#5C5245] hover:text-[#1C1611] hover:border-[#1C1611] transition-all shadow-sm"
           >
             <span>Live Public Page</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -176,7 +176,7 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
           <button
             type="submit"
             disabled={isPending}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#c5a880] text-[#12100d] text-xs font-medium tracking-wide hover:bg-[#dfc9a5] transition-colors shadow-sm disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-[0_1px_2px_rgba(82,29,43,0.2)] disabled:opacity-50"
           >
             <Save className="w-4 h-4" />
             <span>{isPending ? 'Saving...' : 'Save Discipline'}</span>
@@ -186,15 +186,15 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
 
       {/* Alerts */}
       {errorMsg && (
-        <div className="p-4 rounded-xl bg-red-950/40 border border-red-500/30 text-red-200 text-xs flex items-center gap-2.5">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-900 text-xs flex items-center gap-2.5">
+          <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
           <span>{errorMsg}</span>
         </div>
       )}
 
       {successMsg && (
-        <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-200 text-xs flex items-center gap-2.5">
-          <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-center gap-2.5">
+          <Check className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>{successMsg}</span>
         </div>
       )}
@@ -203,15 +203,15 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
         {/* Left 2 Cols: Main Copy, Deliverables & Subcategories */}
         <div className="lg:col-span-2 space-y-6">
           {/* Card 1: Core Service Copy */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1]">
               <Sparkles className="w-4 h-4" />
               <span>Service Discipline Information</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1.5 font-medium">
                   Service Name
                 </label>
                 <input
@@ -219,12 +219,12 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1.5 font-medium">
                   Category Tag
                 </label>
                 <input
@@ -232,12 +232,12 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   required
                   value={categoryTag}
                   onChange={(e) => setCategoryTag(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1.5 font-medium">
                   Editorial Headline
                 </label>
                 <input
@@ -245,39 +245,39 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   required
                   value={headline}
                   onChange={(e) => setHeadline(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] font-serif focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-serif focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1.5 font-medium">
                   Short Summary
                 </label>
                 <textarea
                   rows={2}
                   value={shortDescription}
                   onChange={(e) => setShortDescription(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl p-3.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl p-3.5 text-xs text-[#1C1611] leading-relaxed focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1.5 font-medium">
                   In-Depth Introduction Copy
                 </label>
                 <textarea
                   rows={4}
                   value={introCopy}
                   onChange={(e) => setIntroCopy(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl p-3.5 text-xs text-[#f5f0eb] leading-relaxed focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl p-3.5 text-xs text-[#1C1611] leading-relaxed focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
             </div>
           </div>
 
           {/* Card 2: Deliverables Checklist */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14] justify-between">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1] justify-between">
               <span className="flex items-center gap-2">
                 <Layers className="w-4 h-4" />
                 <span>Deliverables & Commitments ({deliverables.length})</span>
@@ -288,18 +288,18 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
               {deliverables.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-[#171410] border border-[#262018] flex items-start justify-between gap-3 group"
+                  className="p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EAE4D9] flex items-start justify-between gap-3 group hover:border-[#DDD5C7] transition-all"
                 >
                   <div className="space-y-1">
-                    <div className="text-xs font-medium text-[#f5f0eb]">{item.title}</div>
-                    <div className="text-[11px] text-[#8a7f70] font-light leading-relaxed">
+                    <div className="text-xs font-medium text-[#1C1611]">{item.title}</div>
+                    <div className="text-[11px] text-[#5C5245] font-light leading-relaxed">
                       {item.description}
                     </div>
                   </div>
                   <button
                     type="button"
                     onClick={() => removeDeliverable(idx)}
-                    className="p-1.5 rounded-lg text-[#73685a] hover:text-red-400 hover:bg-red-950/30 transition-colors shrink-0"
+                    className="p-1.5 rounded-lg text-[#8C8070] hover:text-red-600 hover:bg-red-50 transition-colors shrink-0"
                     title="Remove deliverable"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -309,8 +309,8 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
             </div>
 
             {/* Add deliverable */}
-            <div className="pt-3 border-t border-[#1e1913] space-y-2.5">
-              <div className="text-xs text-[#998c7b] font-medium uppercase tracking-wider">
+            <div className="pt-3 border-t border-[#F2ECE1] space-y-2.5">
+              <div className="text-[11px] font-mono text-[#5C5245] font-medium uppercase tracking-wider">
                 Add Deliverable
               </div>
               <input
@@ -318,19 +318,19 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                 value={newDelivTitle}
                 onChange={(e) => setNewDelivTitle(e.target.value)}
                 placeholder="Deliverable Title (e.g. Cinematic 4K Teaser)..."
-                className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
               />
               <textarea
                 rows={2}
                 value={newDelivDesc}
                 onChange={(e) => setNewDelivDesc(e.target.value)}
                 placeholder="Detailed description of what the couple receives..."
-                className="w-full bg-[#171410] border border-[#2e261d] rounded-xl p-3 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl p-3 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
               />
               <button
                 type="button"
                 onClick={addDeliverable}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1f1a14] border border-[#382f23] text-xs text-[#c5a880] hover:bg-[#28221a]"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F8F5EE] border border-[#DDD5C7] text-xs font-medium text-[#1C1611] hover:bg-[#521D2B] hover:text-white hover:border-[#521D2B] transition-all"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Deliverable</span>
@@ -339,8 +339,8 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
           </div>
 
           {/* Card 3: Subcategories */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14] justify-between">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1] justify-between">
               <span className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4" />
                 <span>Subcategories & Disciplines ({subcategories.length})</span>
@@ -351,25 +351,25 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
               {subcategories.map((sub, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-[#171410] border border-[#262018] flex items-start justify-between gap-2 group"
+                  className="p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EAE4D9] flex items-start justify-between gap-2 group hover:border-[#DDD5C7] transition-all"
                 >
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-medium text-[#f5f0eb]">{sub.name}</span>
+                      <span className="text-xs font-medium text-[#1C1611]">{sub.name}</span>
                       {sub.tag && (
-                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#221c16] text-[#c5a880] border border-[#382f23]">
+                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#FDF9F0] text-[#705527] border border-[#E9DECA]">
                           {sub.tag}
                         </span>
                       )}
                     </div>
-                    <div className="text-[11px] text-[#8a7f70] mt-1 font-light leading-relaxed">
+                    <div className="text-[11px] text-[#5C5245] mt-1 font-light leading-relaxed">
                       {sub.detail}
                     </div>
                   </div>
                   <button
                     type="button"
                     onClick={() => removeSubcategory(idx)}
-                    className="p-1 rounded text-[#73685a] hover:text-red-400 transition-colors shrink-0"
+                    className="p-1 rounded text-[#8C8070] hover:text-red-600 hover:bg-red-50 transition-colors shrink-0"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
@@ -378,8 +378,8 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
             </div>
 
             {/* Add subcategory */}
-            <div className="pt-3 border-t border-[#1e1913] space-y-2.5">
-              <div className="text-xs text-[#998c7b] font-medium uppercase tracking-wider">
+            <div className="pt-3 border-t border-[#F2ECE1] space-y-2.5">
+              <div className="text-[11px] font-mono text-[#5C5245] font-medium uppercase tracking-wider">
                 Add Subcategory
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -388,14 +388,14 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   value={newSubName}
                   onChange={(e) => setNewSubName(e.target.value)}
                   placeholder="Subcategory Name..."
-                  className="bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
                 <input
                   type="text"
                   value={newSubTag}
                   onChange={(e) => setNewSubTag(e.target.value)}
                   placeholder="Tag (e.g. Grand, Cinematic)..."
-                  className="bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
               <textarea
@@ -403,12 +403,12 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                 value={newSubDetail}
                 onChange={(e) => setNewSubDetail(e.target.value)}
                 placeholder="Brief detail of this sub-discipline..."
-                className="w-full bg-[#171410] border border-[#2e261d] rounded-xl p-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl p-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
               />
               <button
                 type="button"
                 onClick={addSubcategory}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1f1a14] border border-[#382f23] text-xs text-[#c5a880] hover:bg-[#28221a]"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F8F5EE] border border-[#DDD5C7] text-xs font-medium text-[#1C1611] hover:bg-[#521D2B] hover:text-white hover:border-[#521D2B] transition-all"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Subcategory</span>
@@ -420,46 +420,46 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
         {/* Right 1 Col: Cover image, Palettes, Publishing */}
         <div className="space-y-6">
           {/* Status */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <div className="text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+            <div className="text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1]">
               Publishing Controls
             </div>
 
-            <label className="flex items-center justify-between p-3 rounded-xl bg-[#171410] border border-[#2e261d] cursor-pointer">
+            <label className="flex items-center justify-between p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EAE4D9] cursor-pointer hover:border-[#DDD5C7] transition-all">
               <div>
-                <div className="text-xs font-medium text-[#f5f0eb]">Public Visibility</div>
-                <div className="text-[11px] text-[#73685a]">Live on /services page</div>
+                <div className="text-xs font-medium text-[#1C1611]">Public Visibility</div>
+                <div className="text-[11px] text-[#5C5245]">Live on /services directory</div>
               </div>
               <input
                 type="checkbox"
                 checked={isPublished}
                 onChange={(e) => setIsPublished(e.target.checked)}
-                className="w-5 h-5 rounded border-[#382f23] bg-[#12100d] text-[#c5a880] focus:ring-[#c5a880]"
+                className="w-5 h-5 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B]"
               />
             </label>
 
-            <label className="flex items-center justify-between p-3 rounded-xl bg-[#171410] border border-[#2e261d] cursor-pointer">
+            <label className="flex items-center justify-between p-3.5 rounded-xl bg-[#FBF9F5] border border-[#EAE4D9] cursor-pointer hover:border-[#DDD5C7] transition-all">
               <div>
-                <div className="text-xs font-medium text-[#f5f0eb]">Featured on Homepage</div>
-                <div className="text-[11px] text-[#73685a]">Show in service highlights</div>
+                <div className="text-xs font-medium text-[#1C1611]">Featured on Homepage</div>
+                <div className="text-[11px] text-[#5C5245]">Show in service highlights</div>
               </div>
               <input
                 type="checkbox"
                 checked={isFeatured}
                 onChange={(e) => setIsFeatured(e.target.checked)}
-                className="w-5 h-5 rounded border-[#382f23] bg-[#12100d] text-[#c5a880] focus:ring-[#c5a880]"
+                className="w-5 h-5 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B]"
               />
             </label>
           </div>
 
           {/* Cover image preview */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <div className="text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14] flex items-center justify-between">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+            <div className="text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1] flex items-center justify-between">
               <span>Cover Photo</span>
               <ImageIcon className="w-3.5 h-3.5" />
             </div>
 
-            <div className="w-full h-44 rounded-xl bg-[#171410] border border-[#2e261d] overflow-hidden relative">
+            <div className="w-full h-44 rounded-xl bg-[#F8F5EE] border border-[#EAE4D9] overflow-hidden relative">
               {coverImageUrl ? (
                 <Image
                   src={coverImageUrl}
@@ -470,14 +470,14 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   unoptimized={coverImageUrl.startsWith('http')}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-xs text-[#73685a]">
+                <div className="w-full h-full flex items-center justify-center text-xs text-[#8C8070]">
                   No cover photo set
                 </div>
               )}
             </div>
 
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
+              <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1">
                 Image URL
               </label>
               <input
@@ -486,20 +486,20 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                 value={coverImageUrl}
                 onChange={(e) => setCoverImageUrl(e.target.value)}
                 placeholder="/images/services/..."
-                className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] font-mono focus:outline-none focus:border-[#c5a880]"
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
               />
             </div>
           </div>
 
           {/* Styling Tokens */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <div className="text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14] flex items-center gap-2">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+            <div className="text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1] flex items-center gap-2">
               <Palette className="w-3.5 h-3.5" />
               <span>Palette & Surface Tokens</span>
             </div>
 
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
+              <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1">
                 Accent Color
               </label>
               <div className="flex items-center gap-2">
@@ -507,19 +507,19 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   type="color"
                   value={accentColor}
                   onChange={(e) => setAccentColor(e.target.value)}
-                  className="w-8 h-8 rounded-lg border border-[#2e261d] bg-transparent cursor-pointer"
+                  className="w-8 h-8 rounded-lg border border-[#DDD5C7] bg-transparent cursor-pointer"
                 />
                 <input
                   type="text"
                   value={accentColor}
                   onChange={(e) => setAccentColor(e.target.value)}
-                  className="flex-1 bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-1.5 text-xs text-[#f5f0eb] font-mono focus:outline-none focus:border-[#c5a880]"
+                  className="flex-1 bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-1.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
+              <label className="block text-[11px] font-mono uppercase tracking-wider text-[#5C5245] mb-1">
                 CTA Button Text
               </label>
               <input
@@ -527,7 +527,7 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                 value={ctaText}
                 onChange={(e) => setCtaText(e.target.value)}
                 placeholder="Enquire Now"
-                className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
               />
             </div>
           </div>

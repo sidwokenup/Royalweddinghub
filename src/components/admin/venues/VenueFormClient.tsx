@@ -91,19 +91,17 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
   const [slug, setSlug] = useState(initialData?.slug || '');
   const [category, setCategory] = useState(initialData?.category || 'Palace Lawns');
   const [city, setCity] = useState(initialData?.city || 'Lucknow');
-  const [state, setState] = useState(initialData?.state || 'Uttar Pradesh');
+  const [state] = useState(initialData?.state || 'Uttar Pradesh');
   const [address, setAddress] = useState(initialData?.address || '');
-  const [rating, setRating] = useState<number | string>(initialData?.rating ?? 4.8);
-  const [reviewCount, setReviewCount] = useState<number | string>(initialData?.review_count ?? 95);
+  const [rating] = useState<number | string>(initialData?.rating ?? 4.8);
+  const [reviewCount] = useState<number | string>(initialData?.review_count ?? 95);
 
   const [minPax, setMinPax] = useState<number | string>(initialData?.min_pax ?? '');
   const [maxPax, setMaxPax] = useState<number | string>(initialData?.max_pax ?? '');
   const [totalCapacity, setTotalCapacity] = useState<number | string>(initialData?.total_capacity ?? '');
   const [rooms, setRooms] = useState<number | string>(initialData?.rooms ?? '');
-  const [rawCapacity, setRawCapacity] = useState(initialData?.raw_capacity || '');
 
   const [pricePerPlate, setPricePerPlate] = useState<number | string>(initialData?.price_per_plate ?? '');
-  const [priceUnit, setPriceUnit] = useState(initialData?.price_unit || 'per_plate');
   const [vegAvailable, setVegAvailable] = useState(initialData?.veg_available ?? true);
   const [nonVegAvailable, setNonVegAvailable] = useState(initialData?.non_veg_available ?? true);
 
@@ -114,7 +112,6 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
   const [primaryImageUrl, setPrimaryImageUrl] = useState(
     initialData?.primary_image_url || '/venues/santorini-resort-lucknow/thumbnail.jpg'
   );
-  const [primaryImageAlt, setPrimaryImageAlt] = useState(initialData?.primary_image_alt || '');
   const [isFeatured, setIsFeatured] = useState(initialData?.is_featured ?? false);
   const [isPublished, setIsPublished] = useState(initialData?.is_published ?? true);
 
@@ -181,20 +178,16 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
     if (maxPax !== '') formData.append('max_pax', String(maxPax));
     if (totalCapacity !== '') formData.append('total_capacity', String(totalCapacity));
     if (rooms !== '') formData.append('rooms', String(rooms));
-    if (rawCapacity) formData.append('raw_capacity', rawCapacity);
 
     if (pricePerPlate !== '') formData.append('price_per_plate', String(pricePerPlate));
-    formData.append('price_unit', priceUnit);
-    if (vegAvailable) formData.append('veg_available', 'on');
-    if (nonVegAvailable) formData.append('non_veg_available', 'on');
+    formData.append('veg_available', String(vegAvailable));
+    formData.append('non_veg_available', String(nonVegAvailable));
 
     formData.append('amenities', JSON.stringify(amenities));
-    if (description) formData.append('description', description);
+    formData.append('description', description);
     formData.append('primary_image_url', primaryImageUrl);
-    formData.append('primary_image_alt', primaryImageAlt || `${name} - Luxury Wedding Venue`);
-
-    if (isFeatured) formData.append('is_featured', 'on');
-    if (isPublished) formData.append('is_published', 'on');
+    formData.append('is_featured', String(isFeatured));
+    formData.append('is_published', String(isPublished));
 
     formData.append('gallery', JSON.stringify(gallery));
 
@@ -214,17 +207,17 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
   return (
     <form onSubmit={handleSubmit} className="space-y-8 pb-16">
       {/* Top action header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#241f18]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
         <div>
-          <div className="flex items-center gap-2 text-xs text-[#8a7f70] mb-1 font-mono">
-            <Link href="/admin/venues" className="hover:text-[#c5a880] transition-colors flex items-center gap-1">
+          <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
+            <Link href="/admin/venues" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to Venues</span>
             </Link>
             <span>/</span>
-            <span className="text-[#c5a880]">{isNew ? 'New Venue' : name}</span>
+            <span className="text-[#521D2B] font-semibold font-sans">{isNew ? 'New Venue' : name}</span>
           </div>
-          <h1 className="text-2xl font-serif text-[#faf6f0] font-normal tracking-wide">
+          <h1 className="text-2xl font-serif text-[#1C1611] font-normal tracking-wide">
             {isNew ? 'Create New Wedding Venue' : `Edit: ${name}`}
           </h1>
         </div>
@@ -235,19 +228,19 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
               href={`/venues/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#171410] border border-[#2b241b] text-xs font-medium text-[#c5a880] hover:text-white hover:bg-[#1f1a14] transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-xs font-medium text-[#521D2B] hover:bg-[#F9F1DF] transition-all"
             >
               <span>Live Page</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" />
             </Link>
           )}
 
           <button
             type="submit"
             disabled={isPending}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#c5a880] text-[#12100d] text-xs font-medium tracking-wide hover:bg-[#dfc9a5] transition-colors shadow-sm disabled:opacity-50"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-colors shadow-sm disabled:opacity-50"
           >
-            <Save className="w-4 h-4" />
+            <Save className="w-4 h-4 text-[#E6C994]" />
             <span>{isPending ? 'Saving...' : 'Save Venue'}</span>
           </button>
         </div>
@@ -255,15 +248,15 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
 
       {/* Alerts */}
       {errorMsg && (
-        <div className="p-4 rounded-xl bg-red-950/40 border border-red-500/30 text-red-200 text-xs flex items-center gap-2.5">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2.5">
+          <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
           <span>{errorMsg}</span>
         </div>
       )}
 
       {successMsg && (
-        <div className="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-200 text-xs flex items-center gap-2.5">
-          <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2.5">
+          <Check className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>{successMsg}</span>
         </div>
       )}
@@ -272,16 +265,16 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
         {/* Left 2 Cols: Main Info & Specs */}
         <div className="lg:col-span-2 space-y-6">
           {/* Card 1: Core Details */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
-              <Building2 className="w-4 h-4" />
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-sm">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] font-mono">
+              <Building2 className="w-4 h-4 text-[#85662F]" />
               <span>Core Venue Details</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Name */}
               <div className="sm:col-span-2">
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
                   Property Name *
                 </label>
                 <input
@@ -290,27 +283,27 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Vivanta Luxury Palace"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880] transition-all"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
 
               {/* Slug with generator */}
               <div className="sm:col-span-2">
                 <div className="flex items-center justify-between mb-1.5">
-                  <label className="block text-xs uppercase tracking-wider text-[#998c7b] font-medium">
+                  <label className="block text-xs uppercase tracking-wider text-[#5C5245] font-semibold font-mono">
                     URL Slug *
                   </label>
                   <button
                     type="button"
                     onClick={handleAutoSlug}
-                    className="inline-flex items-center gap-1 text-[11px] text-[#c5a880] hover:underline"
+                    className="inline-flex items-center gap-1 text-[11px] text-[#521D2B] font-semibold hover:underline"
                   >
-                    <Wand2 className="w-3 h-3" />
+                    <Wand2 className="w-3 h-3 text-[#85662F]" />
                     <span>Generate from Name</span>
                   </button>
                 </div>
                 <div className="flex items-center">
-                  <span className="px-3 py-2.5 bg-[#171410] border border-r-0 border-[#2e261d] rounded-l-xl text-xs text-[#73685a] font-mono">
+                  <span className="px-3 py-2.5 bg-[#F8F5EE] border border-r-0 border-[#DDD5C7] rounded-l-xl text-xs text-[#8C8070] font-mono">
                     /venues/
                   </span>
                   <input
@@ -319,23 +312,23 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                     value={slug}
                     onChange={(e) => setSlug(e.target.value.toLowerCase().replace(/\s+/g, '-'))}
                     placeholder="vivanta-luxury-palace"
-                    className="w-full bg-[#171410] border border-[#2e261d] rounded-r-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] font-mono focus:outline-none focus:border-[#c5a880] transition-all"
+                    className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-r-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                   />
                 </div>
               </div>
 
               {/* Category */}
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
                   Category
                 </label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880] transition-all cursor-pointer"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all cursor-pointer shadow-2xs"
                 >
                   {CATEGORIES.map((cat) => (
-                    <option key={cat} value={cat} className="bg-[#171410] text-[#f5f0eb]">
+                    <option key={cat} value={cat}>
                       {cat}
                     </option>
                   ))}
@@ -344,43 +337,43 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
 
               {/* City */}
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
                   City
                 </label>
                 <input
                   type="text"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880] transition-all"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
 
               {/* Address */}
               <div className="sm:col-span-2">
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
-                  Full Address & Neighborhood
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
+                  Locality / Full Address
                 </label>
-                <textarea
-                  rows={2}
+                <input
+                  type="text"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  placeholder="e.g. VIP Road, Gomti Nagar Extension, Lucknow"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880] transition-all"
+                  placeholder="e.g. Vipin Khand, Gomti Nagar, Lucknow"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
             </div>
           </div>
 
-          {/* Card 2: Capacity & Room Inventory */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
-              <Users className="w-4 h-4" />
-              <span>Capacity, Pax & Guest Rooms</span>
+          {/* Card 2: Capacity & Room Specifications */}
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-sm">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] font-mono">
+              <Users className="w-4 h-4 text-[#85662F]" />
+              <span>Guest Capacity & Room Logistics</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
                   Min Guests
                 </label>
                 <input
@@ -388,12 +381,12 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                   value={minPax}
                   onChange={(e) => setMinPax(e.target.value)}
                   placeholder="200"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
                   Max Guests
                 </label>
                 <input
@@ -401,194 +394,189 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                   value={maxPax}
                   onChange={(e) => setMaxPax(e.target.value)}
                   placeholder="1500"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
-                  Total Capacity
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
+                  Total Lawn Cap.
                 </label>
                 <input
                   type="number"
                   value={totalCapacity}
                   onChange={(e) => setTotalCapacity(e.target.value)}
                   placeholder="2000"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
                   Guest Rooms
                 </label>
                 <input
                   type="number"
                   value={rooms}
                   onChange={(e) => setRooms(e.target.value)}
-                  placeholder="15"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                  placeholder="25"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
             </div>
           </div>
 
-          {/* Card 3: Food & Pricing */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
-              <Utensils className="w-4 h-4" />
-              <span>Dining & Food Pricing</span>
+          {/* Card 3: Catering & Pricing */}
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-sm">
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] font-mono">
+              <Utensils className="w-4 h-4 text-[#85662F]" />
+              <span>Catering & Food Packages</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[#998c7b] mb-1.5 font-medium">
-                  Price per Plate (₹)
+                <label className="block text-xs uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
+                  Price Per Plate (₹)
                 </label>
                 <input
                   type="number"
                   value={pricePerPlate}
                   onChange={(e) => setPricePerPlate(e.target.value)}
-                  placeholder="1850"
-                  className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2.5 text-xs text-[#f5f0eb] font-mono focus:outline-none focus:border-[#c5a880]"
+                  placeholder="2500"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
                 />
               </div>
 
-              <div className="sm:col-span-2 flex items-center gap-6 pt-6">
-                <label className="flex items-center gap-2 cursor-pointer text-xs text-[#e3dad0]">
+              <div className="sm:col-span-2 flex items-center gap-4 pt-4 sm:pt-0">
+                <label className="flex items-center gap-2.5 text-xs text-[#1C1611] cursor-pointer">
                   <input
                     type="checkbox"
                     checked={vegAvailable}
                     onChange={(e) => setVegAvailable(e.target.checked)}
-                    className="w-4 h-4 rounded border-[#382f23] bg-[#171410] text-[#c5a880] focus:ring-[#c5a880]"
+                    className="w-4 h-4 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B]"
                   />
-                  <span>Vegetarian Menu Available</span>
+                  <span>Pure Veg Allowed</span>
                 </label>
 
-                <label className="flex items-center gap-2 cursor-pointer text-xs text-[#e3dad0]">
+                <label className="flex items-center gap-2.5 text-xs text-[#1C1611] cursor-pointer">
                   <input
                     type="checkbox"
                     checked={nonVegAvailable}
                     onChange={(e) => setNonVegAvailable(e.target.checked)}
-                    className="w-4 h-4 rounded border-[#382f23] bg-[#171410] text-[#c5a880] focus:ring-[#c5a880]"
+                    className="w-4 h-4 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B]"
                   />
-                  <span>Non-Veg Permitted</span>
+                  <span>Non-Veg Allowed</span>
                 </label>
               </div>
             </div>
           </div>
 
-          {/* Card 4: Curated Amenities */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-5">
-            <div className="flex items-center gap-2 text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
-              <Sparkles className="w-4 h-4" />
-              <span>Verified Property Amenities</span>
+          {/* Card 4: Amenities Matrix */}
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
+            <div className="flex items-center justify-between pb-3 border-b border-[#F0ECE1]">
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#521D2B] uppercase tracking-wider font-mono">
+                <Sparkles className="w-4 h-4 text-[#85662F]" />
+                <span>Amenities Matrix ({amenities.length} selected)</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="flex flex-wrap gap-2">
               {COMMON_AMENITIES.map((item) => {
-                const checked = amenities.includes(item);
+                const isSelected = amenities.includes(item);
                 return (
                   <button
                     key={item}
                     type="button"
                     onClick={() => toggleAmenity(item)}
-                    className={`flex items-center justify-between p-2.5 rounded-xl border text-xs text-left transition-all ${
-                      checked
-                        ? 'bg-[#221c15] border-[#c5a880]/50 text-[#f5f0eb]'
-                        : 'bg-[#171410] border-[#241f18] text-[#8a7f70] hover:text-[#d6ccc0]'
+                    className={`px-3 py-1.5 rounded-xl text-xs transition-all ${
+                      isSelected
+                        ? 'bg-[#FDF9F0] text-[#705527] border border-[#D6B56D] font-medium shadow-2xs'
+                        : 'bg-[#F8F5EE] text-[#5C5245] border border-[#EAE4D9] hover:bg-[#F0ECE1]'
                     }`}
                   >
-                    <span>{item}</span>
-                    <span
-                      className={`w-4 h-4 rounded-full border flex items-center justify-center ${
-                        checked ? 'bg-[#c5a880] border-[#c5a880] text-[#12100d]' : 'border-[#42372a]'
-                      }`}
-                    >
-                      {checked && <Check className="w-2.5 h-2.5 stroke-[3]" />}
-                    </span>
+                    {isSelected ? `✓ ${item}` : `+ ${item}`}
                   </button>
                 );
               })}
             </div>
 
             {/* Custom amenity input */}
-            <div className="pt-2 flex items-center gap-2">
+            <div className="flex items-center gap-2 pt-2">
               <input
                 type="text"
                 value={newAmenity}
                 onChange={(e) => setNewAmenity(e.target.value)}
-                placeholder="Add custom amenity (e.g. Helipad, Riverfront View)..."
-                className="flex-1 bg-[#171410] border border-[#2e261d] rounded-xl px-3.5 py-2 text-xs text-[#f5f0eb] focus:outline-none focus:border-[#c5a880]"
+                placeholder="Add custom amenity tag..."
+                className="bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-1.5 text-xs text-[#1C1611] placeholder-[#A09585] focus:outline-none focus:border-[#521D2B] flex-1 max-w-xs shadow-2xs"
               />
               <button
                 type="button"
                 onClick={addCustomAmenity}
-                className="px-3.5 py-2 rounded-xl bg-[#1f1a14] border border-[#382f23] text-xs text-[#c5a880] hover:bg-[#28221a]"
+                className="p-2 rounded-xl bg-[#F8F5EE] border border-[#EAE4D9] text-[#1C1611] hover:bg-[#F0ECE1] transition-colors"
               >
-                Add
+                <Plus className="w-3.5 h-3.5" />
               </button>
             </div>
           </div>
 
           {/* Card 5: Editorial Description */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <label className="block text-xs uppercase tracking-wider text-[#998c7b] font-medium">
-              Editorial Overview & Narrative Description
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
+            <label className="block text-xs uppercase tracking-wider text-[#5C5245] font-semibold font-mono">
+              Property Description & Concierge Notes
             </label>
             <textarea
-              rows={5}
-              value={description || ''}
+              rows={4}
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Describe the aesthetic, historical architecture, guest experience, and celebratory ambiance..."
-              className="w-full bg-[#171410] border border-[#2e261d] rounded-xl p-3.5 text-xs text-[#f5f0eb] leading-relaxed focus:outline-none focus:border-[#c5a880]"
+              placeholder="Describe the architectural grandeur, lawn aesthetics, bridal suite luxury, and location advantages..."
+              className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl p-3.5 text-xs text-[#1C1611] placeholder-[#A09585] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs leading-relaxed"
             />
           </div>
         </div>
 
-        {/* Right 1 Col: Status, Primary Image & Gallery */}
+        {/* Right 1 Col: Media & Controls */}
         <div className="space-y-6">
           {/* Publishing Controls */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <div className="text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14]">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
+            <div className="text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] font-mono">
               Publishing Controls
             </div>
 
-            <label className="flex items-center justify-between p-3 rounded-xl bg-[#171410] border border-[#2e261d] cursor-pointer">
+            <label className="flex items-center justify-between p-3.5 rounded-xl bg-[#FDFBF7] border border-[#EAE4D9] cursor-pointer shadow-2xs">
               <div>
-                <div className="text-xs font-medium text-[#f5f0eb]">Public Visibility</div>
-                <div className="text-[11px] text-[#73685a]">Live on /venues catalog</div>
+                <div className="text-xs font-semibold text-[#1C1611]">Public Visibility</div>
+                <div className="text-[11px] text-[#7A6E5F]">Live on /venues catalog</div>
               </div>
               <input
                 type="checkbox"
                 checked={isPublished}
                 onChange={(e) => setIsPublished(e.target.checked)}
-                className="w-5 h-5 rounded border-[#382f23] bg-[#12100d] text-[#c5a880] focus:ring-[#c5a880]"
+                className="w-5 h-5 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B]"
               />
             </label>
 
-            <label className="flex items-center justify-between p-3 rounded-xl bg-[#171410] border border-[#2e261d] cursor-pointer">
+            <label className="flex items-center justify-between p-3.5 rounded-xl bg-[#FDFBF7] border border-[#EAE4D9] cursor-pointer shadow-2xs">
               <div>
-                <div className="text-xs font-medium text-[#f5f0eb]">Featured Spotlight</div>
-                <div className="text-[11px] text-[#73685a]">Promoted to homepage & top banner</div>
+                <div className="text-xs font-semibold text-[#1C1611]">Featured Spotlight</div>
+                <div className="text-[11px] text-[#7A6E5F]">Promoted to homepage banner</div>
               </div>
               <input
                 type="checkbox"
                 checked={isFeatured}
                 onChange={(e) => setIsFeatured(e.target.checked)}
-                className="w-5 h-5 rounded border-[#382f23] bg-[#12100d] text-[#c5a880] focus:ring-[#c5a880]"
+                className="w-5 h-5 rounded border-[#DDD5C7] text-[#521D2B] focus:ring-[#521D2B]"
               />
             </label>
           </div>
 
           {/* Primary Cover Image Preview */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <div className="text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14] flex items-center justify-between">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
+            <div className="text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] flex items-center justify-between font-mono">
               <span>Cover Photo</span>
-              <ImageIcon className="w-3.5 h-3.5" />
+              <ImageIcon className="w-3.5 h-3.5 text-[#85662F]" />
             </div>
 
-            <div className="w-full h-44 rounded-xl bg-[#171410] border border-[#2e261d] overflow-hidden relative">
+            <div className="w-full h-44 rounded-xl bg-[#F8F5EE] border border-[#EAE4D9] overflow-hidden relative shadow-2xs">
               {primaryImageUrl ? (
                 <Image
                   src={primaryImageUrl}
@@ -599,15 +587,15 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                   unoptimized={primaryImageUrl.startsWith('http')}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-xs text-[#73685a]">
+                <div className="w-full h-full flex items-center justify-center text-xs text-[#8C8070]">
                   No cover image set
                 </div>
               )}
             </div>
 
             <div>
-              <label className="block text-[11px] uppercase tracking-wider text-[#998c7b] mb-1">
-                Cover Image URL
+              <label className="block text-[11px] uppercase tracking-wider text-[#5C5245] mb-1.5 font-semibold font-mono">
+                Cover Image URL / Path
               </label>
               <input
                 type="text"
@@ -615,23 +603,23 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                 value={primaryImageUrl}
                 onChange={(e) => setPrimaryImageUrl(e.target.value)}
                 placeholder="/venues/santorini-resort-lucknow/thumbnail.jpg"
-                className="w-full bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] font-mono focus:outline-none focus:border-[#c5a880]"
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 shadow-2xs"
               />
             </div>
           </div>
 
           {/* Gallery Strips */}
-          <div className="rounded-2xl bg-[#12100d] border border-[#241f18] p-6 space-y-4">
-            <div className="text-xs font-medium text-[#c5a880] uppercase tracking-wider pb-3 border-b border-[#1f1a14] flex items-center justify-between">
+          <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
+            <div className="text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] flex items-center justify-between font-mono">
               <span>Gallery Strip ({gallery.length})</span>
-              <Sparkles className="w-3.5 h-3.5" />
+              <Sparkles className="w-3.5 h-3.5 text-[#85662F]" />
             </div>
 
             {/* Gallery thumbnails */}
             {gallery.length > 0 && (
               <div className="grid grid-cols-3 gap-2">
                 {gallery.map((img, idx) => (
-                  <div key={idx} className="relative group rounded-lg overflow-hidden h-20 bg-[#171410] border border-[#2e261d]">
+                  <div key={idx} className="relative group rounded-xl overflow-hidden h-20 bg-[#F8F5EE] border border-[#EAE4D9] shadow-2xs">
                     <Image
                       src={img.url}
                       alt={img.alt_text || 'Gallery'}
@@ -643,7 +631,7 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                     <button
                       type="button"
                       onClick={() => removeGalleryImage(idx)}
-                      className="absolute top-1 right-1 p-1 rounded bg-black/70 text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="absolute top-1 right-1 p-1 rounded-lg bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-rose-600"
                     >
                       <Trash2 className="w-3 h-3" />
                     </button>
@@ -658,16 +646,16 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
                 type="text"
                 value={newGalleryUrl}
                 onChange={(e) => setNewGalleryUrl(e.target.value)}
-                placeholder="/venues/.../gallery_001.jpg"
-                className="flex-1 bg-[#171410] border border-[#2e261d] rounded-xl px-3 py-2 text-xs text-[#f5f0eb] font-mono focus:outline-none focus:border-[#c5a880]"
+                placeholder="Paste photo URL / path..."
+                className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3 py-2 text-xs text-[#1C1611] font-mono focus:outline-none focus:border-[#521D2B] shadow-2xs"
               />
               <button
                 type="button"
                 onClick={addGalleryImage}
-                className="p-2 rounded-xl bg-[#1f1a14] border border-[#382f23] text-[#c5a880] hover:bg-[#28221a]"
+                className="p-2 rounded-xl bg-[#521D2B] text-white hover:bg-[#682637] transition-colors shrink-0 shadow-2xs"
                 title="Add to gallery"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-4 h-4 text-[#E6C994]" />
               </button>
             </div>
           </div>

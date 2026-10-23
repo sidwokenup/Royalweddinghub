@@ -20,7 +20,7 @@ export function AdminShellClient({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#070605] text-[#f5f0eb] flex">
+    <div className="min-h-screen bg-[#FBF9F5] text-[#1C1611] flex antialiased selection:bg-[#521D2B] selection:text-[#FFFFFF]">
       {/* Sidebar Navigation */}
       <AdminSidebar
         isOpen={isSidebarOpen}
@@ -38,7 +38,7 @@ export function AdminShellClient({
           isDbConnected={isDbConnected}
         />
 
-        <main className="flex-1 p-4 sm:p-6 md:p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 p-4 sm:p-6 md:p-8 lg:p-10 max-w-7xl w-full mx-auto">
           {children}
         </main>
       </div>
