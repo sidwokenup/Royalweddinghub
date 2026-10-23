@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 const LenisContext = createContext<Lenis | null>(null);
@@ -37,10 +38,17 @@ export function useScrollTo() {
 }
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isAdmin = pathname?.startsWith("/admin");
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
   const rafId = useRef<number | null>(null);
 
   useEffect(() => {
+    // Completely bypass Lenis smooth scroll on admin routes
+    if (isAdmin) {
+      return;
+    }
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
@@ -58,7 +66,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       syncTouch: false,
     });
 
-    requestAnimationFrame(() => {
+    const frameId = requestAnimationFrame(() => {
       setLenisInstance(lenis);
     });
 
@@ -83,6 +91,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
+      cancelAnimationFrame(frameId);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       if (rafId.current) {
         cancelAnimationFrame(rafId.current);
@@ -90,7 +99,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       lenis.destroy();
       setLenisInstance(null);
     };
-  }, []);
+  }, [isAdmin]);
 
   return (
     <LenisContext.Provider value={lenisInstance}>

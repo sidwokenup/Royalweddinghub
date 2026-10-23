@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { Navbar } from "@/components/navigation/Navbar";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
 import { ServiceDetailView } from "@/components/services/ServiceDetailView";
-import { getServices, getServiceBySlug, getRelatedServices } from "@/lib/services";
+import { getServices, getLiveServiceBySlug, getRelatedServices } from "@/lib/services";
 
 interface Props {
   params: Promise<{
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = await getLiveServiceBySlug(slug);
 
   if (!service) {
     return {
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = await getLiveServiceBySlug(slug);
 
   if (!service) {
     notFound();

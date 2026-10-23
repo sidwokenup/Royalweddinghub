@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import {
   getAllVenues,
-  getVenueBySlug,
+  getLiveVenueBySlug,
   formatPaxRange,
   formatRooms,
   formatPrice,
@@ -47,7 +47,7 @@ export async function generateMetadata({
   params,
 }: VenuePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const venue = getVenueBySlug(slug);
+  const venue = await getLiveVenueBySlug(slug);
 
   if (!venue) {
     return {
@@ -82,7 +82,7 @@ export async function generateMetadata({
 
 export default async function VenueDetailPage({ params }: VenuePageProps) {
   const { slug } = await params;
-  const venue = getVenueBySlug(slug);
+  const venue = await getLiveVenueBySlug(slug);
 
   if (!venue) {
     notFound();

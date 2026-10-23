@@ -18,7 +18,7 @@ export const BUSINESS_INFO = {
   },
   instagram: {
     handle: "@royal_weddinghug",
-    url: "https://www.instagram.com/royal_weddinghug",
+    url: "https://www.instagram.com/royal_weddinghug?stkn=bndlcGtpMGY5NWVm",
   },
 } as const;
 

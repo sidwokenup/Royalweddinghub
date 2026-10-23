@@ -9,6 +9,7 @@ import { generateWhatsAppLink } from "@/lib/whatsapp";
 import { captureCampaignParams } from "@/lib/campaign";
 import { saveUserPreferences, getUserPreferences } from "@/lib/storage";
 import { createLeadObject } from "@/lib/contact/lead";
+import { submitConciergeLeadAction } from "@/app/actions/enquiry";
 
 const EVENT_TYPES = [
   "WEDDING",
@@ -43,6 +44,7 @@ export function ConciergeCard() {
   const [location, setLocation] = useState<string>("Lucknow");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [leadNumber, setLeadNumber] = useState<string>("");
 
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -131,7 +133,7 @@ export function ConciergeCard() {
     changeStep(6);
   };
 
-  const handleFinalSubmit = (e: React.FormEvent) => {
+  const handleFinalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const cleanPhone = phone.replace(/\D/g, "");
     if (cleanPhone.length < 10) {
@@ -147,7 +149,7 @@ export function ConciergeCard() {
     // Capture UTM attribution
     const utms = captureCampaignParams();
 
-    // Create lead object
+    // Create local lead object for analytics and fallback
     createLeadObject({
       name: name.trim(),
       phone: cleanPhone,
@@ -163,10 +165,31 @@ export function ConciergeCard() {
       term: utms.utm_term,
     });
 
-    setTimeout(() => {
+    try {
+      const res = await submitConciergeLeadAction({
+        name: name.trim(),
+        phone: cleanPhone,
+        email: email.trim() || undefined,
+        eventType,
+        services: selectedServices,
+        weddingDate: weddingDate.trim(),
+        location: location.trim(),
+        utmSource: utms.utm_source,
+        utmMedium: utms.utm_medium,
+        utmCampaign: utms.utm_campaign,
+        utmContent: utms.utm_content,
+        utmTerm: utms.utm_term,
+      });
+
+      if (res.leadNumber) {
+        setLeadNumber(res.leadNumber);
+      }
+    } catch (err) {
+      console.warn("[Concierge Submission] Database action failed, fallback active:", err);
+    } finally {
       setIsSubmitting(false);
       changeStep(7);
-    }, 450);
+    }
   };
 
   return (
@@ -561,6 +584,13 @@ export function ConciergeCard() {
               <p className="text-xs sm:text-sm font-light text-[#57534E] max-w-sm mx-auto leading-relaxed">
                 One of our senior wedding specialists in Lucknow will be in touch shortly to present curated venue portfolios and preliminary timelines.
               </p>
+
+              {leadNumber && (
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#521D2B]/5 border border-[#521D2B]/20 text-xs font-mono text-[#521D2B]">
+                  <span className="text-[#78716C]">Reference:</span>
+                  <span className="font-semibold">{leadNumber}</span>
+                </div>
+              )}
             </div>
 
             {/* Direct Instant Next Actions */}

@@ -7,6 +7,27 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
+function InstagramIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -146,6 +167,21 @@ export function Navbar() {
               <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#521D2B] rounded-full" />
             )}
           </Link>
+
+          <a
+            href={BUSINESS_INFO.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`transition-all relative py-1 flex items-center gap-1.5 ${
+              isLightNav
+                ? "hover:text-[#521D2B] text-[#211A19]"
+                : "hover:opacity-70 text-white"
+            }`}
+            aria-label="Instagram Profile"
+          >
+            <InstagramIcon size={14} className={isLightNav ? "text-[#521D2B]" : "text-[#d4af37]"} />
+            <span>Instagram</span>
+          </a>
         </div>
 
         {/* Mobile Navigation Controls */}
@@ -274,6 +310,19 @@ export function Navbar() {
             >
               <Phone size={14} className={isLightNav ? "text-[#521D2B]" : "text-[#d4af37]"} />
               <span>Call: {BUSINESS_INFO.displayPhone}</span>
+            </a>
+            <a
+              href={BUSINESS_INFO.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-2 py-3 rounded-full text-xs uppercase tracking-widest font-medium transition-colors border ${
+                isLightNav
+                  ? "bg-white border-[#D8CBBE] text-[#211A19] hover:bg-[#FAF7F2]"
+                  : "bg-white/5 border-white/20 text-white hover:bg-white/10"
+              }`}
+            >
+              <InstagramIcon size={14} className={isLightNav ? "text-[#521D2B]" : "text-[#d4af37]"} />
+              <span>Instagram: {BUSINESS_INFO.instagram.handle}</span>
             </a>
           </div>
         </div>

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, ArrowRight, MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { Sparkles, ArrowRight, MessageCircle, ShieldCheck } from "lucide-react";
 import { Navbar } from "@/components/navigation/Navbar";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
 import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServicesMobileList } from "@/components/services/ServicesMobileList";
 import { ServicesDesktopGrid } from "@/components/services/ServicesDesktopGrid";
-import { getServices } from "@/lib/services";
+import { getLiveServices } from "@/lib/services";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServicesPage() {
-  const services = getServices();
+export default async function ServicesPage() {
+  const services = await getLiveServices();
 
   const generalWhatsappUrl = generateWhatsAppLink({
     service: "Full Wedding Planning & Services",
@@ -134,6 +134,16 @@ export default function ServicesPage() {
         </p>
         <p className="font-light text-white/50">
           Curating royal celebrations, palace venues, and bespoke wedding experiences across Lucknow.
+        </p>
+        <p className="pt-1">
+          <a
+            href={BUSINESS_INFO.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#D6B56D] hover:underline transition-colors"
+          >
+            Follow on Instagram {BUSINESS_INFO.instagram.handle}
+          </a>
         </p>
         <p className="text-[11px] text-white/30 pt-2">
           © {new Date().getFullYear()} Royal Wedding Hub Lucknow. All rights reserved.

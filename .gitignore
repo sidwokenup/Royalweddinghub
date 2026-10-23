@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scrapers and data extraction
+/blinkwed-venue-scraper/
+
+# agent & workflow tooling
+/.agent/
+/.agents/
+/.gemini/
+/.gsd/
+/adapters/
+model_capabilities.yaml
+GSD-STYLE.md
+PROJECT_RULES.md
+VERSION
+scripts/validate-*
+scripts/setup_search.*
+scripts/search_repo.*
+

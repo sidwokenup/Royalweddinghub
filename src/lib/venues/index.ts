@@ -1,22 +1,135 @@
 import rawVenues from "@/data/venues.json";
 import { Venue, VenueFilterOptions } from "@/types/venue";
+import { getAdminDb, isDatabaseConfigured } from "@/lib/db/client";
 
 export const VENUES_DATA: Venue[] = rawVenues as Venue[];
 
 /**
- * Retrieve all wedding venues
+ * Retrieve all wedding venues (synchronous fallback)
  */
 export function getAllVenues(): Venue[] {
   return VENUES_DATA;
 }
 
 /**
- * Retrieve a single venue by slug
+ * Retrieve a single venue by slug (synchronous fallback)
  */
 export function getVenueBySlug(slug: string): Venue | undefined {
   if (!slug) return undefined;
   const decoded = decodeURIComponent(slug).toLowerCase().trim();
   return VENUES_DATA.find((v) => v.slug.toLowerCase() === decoded);
+}
+
+/**
+ * Helper to map a database venue record to the public Venue interface
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mapDbVenueToPublic(v: any, images: any[] = []): Venue {
+  const gallery = images.map((img) => ({
+    url: img.url,
+    localUrl: img.storage_key || null,
+    sourceUrl: img.url,
+    width: img.width || 1280,
+    height: img.height || 720,
+    alt: img.alt_text || v.name,
+  }));
+
+  return {
+    id: v.id,
+    slug: v.slug,
+    name: v.name,
+    category: v.category,
+    city: v.city,
+    state: v.state,
+    address: v.address,
+    rating: v.rating,
+    reviewCount: v.review_count,
+    capacity: {
+      minPax: v.min_pax,
+      maxPax: v.max_pax,
+      capacity: v.total_capacity,
+      rooms: v.rooms,
+      raw: v.raw_capacity,
+    },
+    food: {
+      vegetarian: v.veg_available,
+      nonVegetarian: v.non_veg_available,
+      pricePerPlate: v.price_per_plate,
+      unit: v.price_unit || "per_plate",
+    },
+    amenities: Array.isArray(v.amenities) ? v.amenities : [],
+    description: v.description,
+    primaryImage: {
+      url: v.primary_image_url || "/venues/santorini-resort-lucknow/thumbnail.jpg",
+      localUrl: null,
+      sourceUrl: v.primary_image_url,
+      width: 1280,
+      height: 720,
+      alt: v.primary_image_alt || v.name,
+    },
+    gallery,
+    detailUrl: `/venues/${v.slug}`,
+    source: {
+      website: "Royal Wedding Hub",
+    },
+  };
+}
+
+/**
+ * Retrieve live published venues from database with automatic JSON fallback
+ */
+export async function getLiveVenues(): Promise<Venue[]> {
+  if (isDatabaseConfigured()) {
+    const db = getAdminDb();
+    if (db) {
+      try {
+        const { data: venues, error } = await db
+          .from("venues")
+          .select("*, venue_images(*)")
+          .eq("is_published", true)
+          .order("display_order", { ascending: true });
+
+        if (!error && venues && venues.length > 0) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          return venues.map((v: any) => mapDbVenueToPublic(v, v.venue_images || []));
+        }
+      } catch (err) {
+        console.warn("[Venues Dual-Read] Database query failed, using static fallback:", err);
+      }
+    }
+  }
+
+  return getAllVenues();
+}
+
+/**
+ * Retrieve live single venue by slug with automatic JSON fallback
+ */
+export async function getLiveVenueBySlug(slug: string): Promise<Venue | undefined> {
+  if (!slug) return undefined;
+  const decoded = decodeURIComponent(slug).toLowerCase().trim();
+
+  if (isDatabaseConfigured()) {
+    const db = getAdminDb();
+    if (db) {
+      try {
+        const { data: venue, error } = await db
+          .from("venues")
+          .select("*, venue_images(*)")
+          .eq("slug", decoded)
+          .eq("is_published", true)
+          .single();
+
+        if (!error && venue) {
+          return mapDbVenueToPublic(venue, venue.venue_images || []);
+        }
+      } catch (err) {
+        console.warn("[Venue Dual-Read] Single venue DB query failed, using static fallback:", err);
+      }
+    }
+  }
+
+  return getVenueBySlug(decoded);
 }
 
 /**

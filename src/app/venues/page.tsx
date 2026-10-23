@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getAllVenues, getFeaturedVenue } from "@/lib/venues";
+import { getLiveVenues, getFeaturedVenue } from "@/lib/venues";
 import { Navbar } from "@/components/navigation/Navbar";
 import { VenueHero } from "@/components/venues/VenueHero";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function VenuesPage() {
-  const allVenues = getAllVenues();
+export default async function VenuesPage() {
+  const allVenues = await getLiveVenues();
   const featured = getFeaturedVenue();
 
   const generalWhatsappUrl = generateWhatsAppLink({
@@ -112,6 +112,15 @@ export default function VenuesPage() {
               <MapPin className="w-3 h-3 text-[#D6B56D]" />
               SS 388, Ashiyana LDA Colony, Lucknow
             </span>
+            <span>•</span>
+            <a
+              href={BUSINESS_INFO.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors underline text-[#D6B56D]"
+            >
+              Instagram ({BUSINESS_INFO.instagram.handle})
+            </a>
             <span>•</span>
             <Link href="/contact" className="hover:text-white transition-colors underline">
               Private Concierge

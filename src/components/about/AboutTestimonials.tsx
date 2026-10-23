@@ -6,7 +6,11 @@ import { MessageCircle, ShieldCheck, ChevronLeft, ChevronRight, Quote, HeartHand
 import { VERIFIED_TESTIMONIALS, TestimonialItem } from "@/data/testimonials";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
-export function AboutTestimonials() {
+interface AboutTestimonialsProps {
+  initialTestimonials?: TestimonialItem[];
+}
+
+export function AboutTestimonials({ initialTestimonials }: AboutTestimonialsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const whatsappShareUrl = generateWhatsAppLink({
@@ -14,8 +18,12 @@ export function AboutTestimonials() {
     customMessage: "Hello Royal Wedding Hub team! I would like to share our family reflection and feedback regarding our recent wedding celebration.",
   });
 
-  const hasTestimonials = VERIFIED_TESTIMONIALS.length > 0;
-  const currentItem = hasTestimonials ? VERIFIED_TESTIMONIALS[currentIndex] : null;
+  const list = (initialTestimonials && initialTestimonials.length > 0)
+    ? initialTestimonials
+    : VERIFIED_TESTIMONIALS;
+
+  const hasTestimonials = list.length > 0;
+  const currentItem = hasTestimonials ? list[currentIndex] : null;
 
   const handlePrev = () => {
     if (hasTestimonials) {

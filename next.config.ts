@@ -19,6 +19,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/instagram",
+        destination: "https://www.instagram.com/royal_weddinghug?stkn=bndlcGtpMGY5NWVm",
+        permanent: false,
+      },
+      {
+        source: "/ig",
+        destination: "https://www.instagram.com/royal_weddinghug?stkn=bndlcGtpMGY5NWVm",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -8,6 +8,9 @@ import { AboutExperience } from "@/components/about/AboutExperience";
 import { AboutTestimonials } from "@/components/about/AboutTestimonials";
 import { AboutProcess } from "@/components/about/AboutProcess";
 import { AboutCta } from "@/components/about/AboutCta";
+import { BUSINESS_INFO } from "@/lib/contact";
+import { getAdminDb, isDatabaseConfigured } from "@/lib/db/client";
+import { TestimonialItem } from "@/data/testimonials";
 
 export const metadata: Metadata = {
   title: "About Us & Planning Philosophy | Royal Wedding Hub Lucknow",
@@ -30,7 +33,43 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+async function getLiveTestimonials(): Promise<TestimonialItem[]> {
+  if (isDatabaseConfigured()) {
+    const db = getAdminDb();
+    if (db) {
+      try {
+        const { data, error } = await db
+          .from("testimonials")
+          .select("*")
+          .eq("is_published", true)
+          .eq("client_consent_recorded", true)
+          .order("created_at", { ascending: false });
+
+        if (!error && data && data.length > 0) {
+          return data.map((t) => ({
+            id: t.id,
+            coupleNames: t.couple_names,
+            celebrationType: t.celebration_type,
+            location: t.location,
+            quote: t.quote,
+            fullStory: t.full_story || undefined,
+            weddingSeason: t.wedding_season || undefined,
+            verified: t.verified,
+            featured: t.featured,
+            source: t.source,
+          }));
+        }
+      } catch (err) {
+        console.warn("[About Testimonials] Fetch error, using default empty:", err);
+      }
+    }
+  }
+  return [];
+}
+
+export default async function AboutPage() {
+  const testimonials = await getLiveTestimonials();
+
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-start w-full bg-[#F7F3ED] text-[#211A19] overflow-x-hidden">
       {/* Shared Ambient Warm Glow Background */}
@@ -52,7 +91,7 @@ export default function AboutPage() {
       <AboutExperience />
 
       {/* Section 5: Customer Reviews & Verified Memoirs */}
-      <AboutTestimonials />
+      <AboutTestimonials initialTestimonials={testimonials} />
 
       {/* Section 6: A Thoughtful Approach (The Process) */}
       <AboutProcess />
@@ -67,6 +106,16 @@ export default function AboutPage() {
         </p>
         <p className="font-light text-white/50">
           Curating royal celebrations, palace venues, and bespoke wedding experiences across Lucknow.
+        </p>
+        <p className="pt-1">
+          <a
+            href={BUSINESS_INFO.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#D6B56D] hover:underline transition-colors"
+          >
+            Follow on Instagram {BUSINESS_INFO.instagram.handle}
+          </a>
         </p>
         <p className="text-[11px] text-white/30 pt-2">
           © {new Date().getFullYear()} Royal Wedding Hub Lucknow. All rights reserved.
