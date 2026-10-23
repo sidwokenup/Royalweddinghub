@@ -6,7 +6,6 @@ import Image from 'next/image';
 import {
   ArrowLeft,
   Save,
-  Sparkles,
   Layers,
   Image as ImageIcon,
   Check,
@@ -150,14 +149,14 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
         <div>
           <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
-            <Link href="/admin/services" className="hover:text-[#521D2B] transition-colors flex items-center gap-1">
-              <ArrowLeft className="w-3.5 h-3.5" />
+            <Link href="/admin/services" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
+              <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Back to Services</span>
             </Link>
             <span>/</span>
-            <span className="text-[#85662F] font-medium">{name}</span>
+            <span className="text-[#85662F] font-medium font-sans">{name}</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif text-[#1C1611] font-normal tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-[#1C1611] tracking-tight">
             Edit Service: {name}
           </h1>
         </div>
@@ -167,10 +166,10 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
             href={slug === 'wedding-venues' ? '/venues' : `/services/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#DDD5C7] text-xs font-medium text-[#5C5245] hover:text-[#1C1611] hover:border-[#1C1611] transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[#FFFFFF] border border-[#DDD5C7] text-xs font-medium text-[#5C5245] hover:text-[#1C1611] hover:border-[#1C1611] transition-all shadow-sm font-sans"
           >
             <span>Live Public Page</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-3.5 h-3.5" strokeWidth={1.5} />
           </Link>
 
           <button
@@ -205,7 +204,7 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
           {/* Card 1: Core Service Copy */}
           <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1]">
-              <Sparkles className="w-4 h-4" />
+              <Layers className="w-4 h-4" strokeWidth={1.5} />
               <span>Service Discipline Information</span>
             </div>
 
@@ -245,7 +244,7 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
                   required
                   value={headline}
                   onChange={(e) => setHeadline(e.target.value)}
-                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-serif focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
+                  className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl px-3.5 py-2.5 text-xs text-[#1C1611] font-sans focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
                 />
               </div>
 
@@ -342,7 +341,7 @@ export function ServiceFormClient({ initialData }: ServiceFormClientProps) {
           <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-5 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#85662F] pb-3 border-b border-[#F2ECE1] justify-between">
               <span className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4" />
+                <Layers className="w-4 h-4" strokeWidth={1.5} />
                 <span>Subcategories & Disciplines ({subcategories.length})</span>
               </span>
             </div>

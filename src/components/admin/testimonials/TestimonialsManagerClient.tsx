@@ -172,10 +172,10 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
       <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#FFFFFF] via-[#FAF7F2] to-[#F5EFEB] border border-[#EAE4D9] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
         <div className="flex items-start gap-3.5">
           <div className="p-2.5 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-[#705527] shrink-0 mt-0.5">
-            <ShieldCheck className="w-5 h-5" />
+            <ShieldCheck className="w-5 h-5" strokeWidth={1.5} />
           </div>
           <div>
-            <h3 className="text-sm sm:text-base font-serif text-[#1C1611] font-normal tracking-tight">
+            <h3 className="text-sm sm:text-base font-sans text-[#1C1611] font-semibold tracking-tight">
               Client Confidentiality & Discretion Policy
             </h3>
             <p className="text-xs text-[#5C5245] mt-1 font-light leading-relaxed max-w-xl">
@@ -187,9 +187,9 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
         <button
           type="button"
           onClick={openCreateModal}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-[0_1px_2px_rgba(82,29,43,0.2)] self-start sm:self-auto shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-[0_1px_2px_rgba(82,29,43,0.2)] self-start sm:self-auto shrink-0 font-sans"
         >
-          <PlusCircle className="w-4 h-4" />
+          <PlusCircle className="w-4 h-4" strokeWidth={1.5} />
           <span>Record Client Review</span>
         </button>
       </div>
@@ -226,7 +226,7 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                 </div>
 
                 <div className="mt-3.5">
-                  <h4 className="text-base font-serif text-[#1C1611] font-normal tracking-tight">
+                  <h4 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">
                     {item.couple_names}
                   </h4>
                   <div className="text-xs text-[#5C5245] mt-0.5 font-light">
@@ -288,9 +288,9 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
         ) : (
           <div className="col-span-full py-12 text-center rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-8 shadow-sm">
             <div className="w-12 h-12 rounded-2xl bg-[#FDF9F0] border border-[#E9DECA] text-[#705527] flex items-center justify-center mx-auto mb-3">
-              <ShieldCheck className="w-6 h-6" />
+              <ShieldCheck className="w-6 h-6" strokeWidth={1.5} />
             </div>
-            <h4 className="text-base font-serif text-[#1C1611]">Private Discretion Card Enforced</h4>
+            <h4 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">Private Discretion Card Enforced</h4>
             <p className="text-xs text-[#5C5245] max-w-md mx-auto mt-1.5 leading-relaxed font-light">
               Zero client reviews are published publicly by design. You can record client feedback here for internal records, or publish verified reviews once written consent is documented.
             </p>
@@ -303,7 +303,7 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="bg-[#FFFFFF] border border-[#DDD5C7] rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-4 border-b border-[#F2ECE1]">
-              <h3 className="text-base font-serif text-[#1C1611]">
+              <h3 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">
                 {editingItem ? 'Edit Client Review' : 'Record Verified Client Review'}
               </h3>
               <button
@@ -311,7 +311,7 @@ export function TestimonialsManagerClient({ initialTestimonials }: TestimonialsM
                 onClick={() => setIsModalOpen(false)}
                 className="p-1.5 rounded-xl text-[#8C8070] hover:text-[#1C1611] hover:bg-[#F8F5EE] transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" strokeWidth={1.5} />
               </button>
             </div>
 

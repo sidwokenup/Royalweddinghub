@@ -7,7 +7,6 @@ import {
   Phone,
   MessageCircle,
   Calendar,
-  Sparkles,
   MapPin,
   Clock,
   CheckCircle2,
@@ -333,8 +332,8 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
 
                       {/* Celebration Type & Date */}
                       <td className="py-4 px-4">
-                        <div className="flex items-center gap-1.5 text-xs text-[#1C1611] font-medium">
-                          <Sparkles className="w-3.5 h-3.5 text-[#85662F]" />
+                        <div className="flex items-center gap-1.5 text-xs text-[#1C1611] font-medium font-sans">
+                          <Tag className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
                           <span>{lead.event_type}</span>
                         </div>
                         <div className="text-[11px] text-[#5C5245] mt-1 flex items-center gap-1.5 font-light">
@@ -451,13 +450,13 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
             <div className="flex items-start justify-between pb-4 border-b border-[#F2ECE1]">
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xl font-serif text-[#1C1611]">{selectedLead.name}</span>
+                  <span className="text-xl font-sans font-bold text-[#1C1611] tracking-tight">{selectedLead.name}</span>
                   <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#FDF9F0] text-[#705527] border border-[#E9DECA]">
                     {selectedLead.lead_number}
                   </span>
                 </div>
-                <div className="text-xs text-[#5C5245] mt-1 flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-[#85662F]" />
+                <div className="text-xs text-[#5C5245] mt-1 flex items-center gap-2 font-sans">
+                  <Clock className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
                   <span>Received on {new Date(selectedLead.created_at).toLocaleString('en-IN')}</span>
                 </div>
               </div>
@@ -467,7 +466,7 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
                 onClick={() => setSelectedLead(null)}
                 className="p-2 rounded-xl text-[#8C8070] hover:text-[#1C1611] hover:bg-[#F8F5EE] transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" strokeWidth={1.5} />
               </button>
             </div>
 
@@ -501,7 +500,7 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
             {/* Requested Services */}
             <div className="py-4 border-b border-[#F2ECE1]">
               <div className="text-xs font-mono uppercase tracking-wider text-[#85662F] mb-2 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" />
+                <Tag className="w-3.5 h-3.5" strokeWidth={1.5} />
                 <span>Requested Disciplines & Services</span>
               </div>
               <div className="flex flex-wrap gap-1.5">

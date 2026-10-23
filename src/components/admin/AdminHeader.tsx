@@ -37,7 +37,7 @@ export function AdminHeader({
           className="lg:hidden p-2.5 rounded-xl text-[#5C5245] hover:text-[#1C1611] hover:bg-[#F8F5EE] border border-[#E2DAD0] transition-colors"
           aria-label="Open navigation drawer"
         >
-          <Menu className="w-5 h-5" />
+          <Menu className="w-5 h-5" strokeWidth={1.5} />
         </button>
 
         <div className="hidden sm:flex items-center gap-2 text-xs">
@@ -51,7 +51,7 @@ export function AdminHeader({
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Database Status Pill */}
         <div className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#EAE4D9] bg-[#F8F5EE] text-[11px] font-mono">
-          <Database className="w-3.5 h-3.5 text-[#85662F]" />
+          <Database className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
           <span className="text-[#6E6354]">DB:</span>
           <span className="flex items-center gap-1.5 text-[#1C1611] font-medium">
             <span
@@ -68,19 +68,19 @@ export function AdminHeader({
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-[#521D2B] bg-[#FDF9F0] hover:bg-[#F9F1DF] border border-[#E9DECA] transition-all shadow-2xs"
+          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-[#521D2B] bg-[#FDF9F0] hover:bg-[#F9F1DF] border border-[#E9DECA] transition-all shadow-2xs font-sans"
           title="Open live website in new tab"
         >
           <span>View Site</span>
-          <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" />
+          <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
         </Link>
 
         {/* User Mini Profile */}
         <div className="flex items-center gap-2.5 pl-2 sm:pl-3 border-l border-[#EAE4D9]">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#521D2B] to-[#7D293F] text-[#FAF6F0] font-semibold text-xs flex items-center justify-center shrink-0 shadow-2xs">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#521D2B] to-[#7D293F] text-[#FAF6F0] font-semibold text-xs flex items-center justify-center shrink-0 shadow-2xs font-sans">
             {userFullName.charAt(0).toUpperCase()}
           </div>
-          <div className="hidden md:block text-left">
+          <div className="hidden md:block text-left font-sans">
             <div className="text-xs font-semibold text-[#1C1611] leading-none truncate max-w-[130px]">
               {userFullName}
             </div>
@@ -94,10 +94,10 @@ export function AdminHeader({
         <button
           onClick={handleSignOut}
           disabled={isPending}
-          className="p-2 sm:px-3 sm:py-1.5 rounded-xl text-xs font-medium text-rose-800 hover:bg-rose-50 border border-transparent hover:border-rose-200 transition-all flex items-center gap-1.5 disabled:opacity-50"
+          className="p-2 sm:px-3 sm:py-1.5 rounded-xl text-xs font-medium text-rose-800 hover:bg-rose-50 border border-transparent hover:border-rose-200 transition-all flex items-center gap-1.5 disabled:opacity-50 font-sans"
           title="Sign out of administrative session"
         >
-          <LogOut className="w-4 h-4 text-rose-700" />
+          <LogOut className="w-4 h-4 text-rose-700" strokeWidth={1.5} />
           <span className="hidden sm:inline">{isPending ? 'Exiting...' : 'Sign Out'}</span>
         </button>
       </div>

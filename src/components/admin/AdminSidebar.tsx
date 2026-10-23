@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
   Building2,
-  Sparkles,
+  Layers,
   MessageSquareText,
   Star,
   Image as ImageIcon,
@@ -42,7 +42,7 @@ const NAV_ITEMS = [
     label: 'Services & Disciplines',
     href: '/admin/services',
     exact: false,
-    icon: Sparkles,
+    icon: Layers,
     badge: '8',
   },
   {
@@ -111,14 +111,14 @@ export function AdminSidebar({
         <div className="h-20 px-6 flex items-center justify-between border-b border-[#EAE4D9] shrink-0 bg-[#FFFFFF]">
           <Link href="/admin" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#521D2B] to-[#38111B] text-[#FAF6F0] flex items-center justify-center shadow-[0_2px_8px_rgba(82,29,43,0.25)] group-hover:scale-105 transition-transform">
-              <Sparkles className="w-5 h-5 text-[#E6C994]" />
+              <Building2 className="w-5 h-5 text-[#E6C994]" strokeWidth={1.5} />
             </div>
             <div>
-              <span className="block font-serif text-base tracking-wide text-[#1C1611] font-medium leading-none">
-                Royal Wedding
+              <span className="block font-sans text-sm tracking-tight text-[#1C1611] font-bold leading-tight">
+                Royal Wedding Hub
               </span>
-              <span className="block text-[10px] uppercase tracking-widest text-[#85662F] font-semibold mt-1 font-sans">
-                Concierge Admin
+              <span className="block text-[10px] uppercase tracking-widest text-[#85662F] font-semibold mt-0.5 font-mono">
+                Admin Center
               </span>
             </div>
           </Link>
@@ -129,7 +129,7 @@ export function AdminSidebar({
             className="lg:hidden p-2 rounded-xl text-[#7A6E5F] hover:text-[#1C1611] hover:bg-[#F8F5EE] transition-colors"
             aria-label="Close menu"
           >
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" strokeWidth={1.5} />
           </button>
         </div>
 
@@ -179,6 +179,7 @@ export function AdminSidebar({
                     className={`w-4 h-4 transition-colors ${
                       active ? 'text-[#521D2B]' : 'text-[#8C8070] group-hover:text-[#521D2B]'
                     }`}
+                    strokeWidth={1.5}
                   />
                   <span>{item.label}</span>
                 </div>
@@ -208,7 +209,7 @@ export function AdminSidebar({
             className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium text-[#521D2B] bg-[#FDF9F0] border border-[#E9DECA] hover:bg-[#F9F1DF] transition-colors"
           >
             <span className="flex items-center gap-2">
-              <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
               <span className="font-medium">Live Website</span>
             </span>
             <span className="text-[10px] text-[#85662F]">↗</span>

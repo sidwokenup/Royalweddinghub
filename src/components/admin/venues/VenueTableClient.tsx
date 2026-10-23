@@ -356,10 +356,10 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
           <div className="bg-[#FFFFFF] border border-rose-200 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
             <div className="flex items-center gap-3 text-rose-700 mb-4">
               <div className="p-2.5 rounded-2xl bg-rose-50 border border-rose-200/80">
-                <AlertTriangle className="w-6 h-6" />
+                <AlertTriangle className="w-6 h-6" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="text-base font-serif text-[#1C1611] font-semibold">Confirm Venue Deletion</h3>
+                <h3 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">Confirm Venue Deletion</h3>
                 <p className="text-xs text-[#8C8070] mt-0.5">This action cannot be undone.</p>
               </div>
             </div>

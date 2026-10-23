@@ -10,7 +10,7 @@ import {
   Building2,
   Users,
   Utensils,
-  Sparkles,
+  CheckCircle2,
   Image as ImageIcon,
   Check,
   AlertCircle,
@@ -211,13 +211,13 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
         <div>
           <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
             <Link href="/admin/venues" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Back to Venues</span>
             </Link>
             <span>/</span>
             <span className="text-[#521D2B] font-semibold font-sans">{isNew ? 'New Venue' : name}</span>
           </div>
-          <h1 className="text-2xl font-serif text-[#1C1611] font-normal tracking-wide">
+          <h1 className="text-2xl font-sans font-bold text-[#1C1611] tracking-tight">
             {isNew ? 'Create New Wedding Venue' : `Edit: ${name}`}
           </h1>
         </div>
@@ -228,10 +228,10 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
               href={`/venues/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-xs font-medium text-[#521D2B] hover:bg-[#F9F1DF] transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-xs font-medium text-[#521D2B] hover:bg-[#F9F1DF] transition-all font-sans"
             >
               <span>Live Page</span>
-              <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
             </Link>
           )}
 
@@ -475,7 +475,7 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
           <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
             <div className="flex items-center justify-between pb-3 border-b border-[#F0ECE1]">
               <div className="flex items-center gap-2 text-xs font-semibold text-[#521D2B] uppercase tracking-wider font-mono">
-                <Sparkles className="w-4 h-4 text-[#85662F]" />
+                <CheckCircle2 className="w-4 h-4 text-[#85662F]" strokeWidth={1.5} />
                 <span>Amenities Matrix ({amenities.length} selected)</span>
               </div>
             </div>
@@ -612,7 +612,7 @@ export function VenueFormClient({ initialData, isNew = false }: VenueFormClientP
           <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-6 space-y-4 shadow-sm">
             <div className="text-xs font-semibold text-[#521D2B] uppercase tracking-wider pb-3 border-b border-[#F0ECE1] flex items-center justify-between font-mono">
               <span>Gallery Strip ({gallery.length})</span>
-              <Sparkles className="w-3.5 h-3.5 text-[#85662F]" />
+              <ImageIcon className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
             </div>
 
             {/* Gallery thumbnails */}

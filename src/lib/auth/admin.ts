@@ -19,8 +19,13 @@ export interface AuthResult {
 /**
  * Authenticates an admin using either the database or secure environment credentials
  */
-export async function authenticateAdmin(email: string, password: string): Promise<AuthResult> {
+export async function authenticateAdmin(
+  email: string,
+  password: string,
+  nameInput?: string
+): Promise<AuthResult> {
   const normalizedEmail = email.toLowerCase().trim();
+  const customName = nameInput?.trim();
 
   // 1. Check Database if configured
   if (isDatabaseConfigured()) {
@@ -36,16 +41,21 @@ export async function authenticateAdmin(email: string, password: string): Promis
         if (!error && user) {
           const isValid = await verifyPassword(password, user.password_hash);
           if (isValid) {
-            // Update last_login_at
+            const resolvedName = customName || user.full_name || 'Admin';
+
+            // Update last_login_at & optional name update
             await db
               .from('admin_users')
-              .update({ last_login_at: new Date().toISOString() })
+              .update({
+                last_login_at: new Date().toISOString(),
+                ...(customName ? { full_name: customName } : {}),
+              })
               .eq('id', user.id);
 
             const sessionPayload: AdminSessionPayload = {
               userId: user.id,
               email: user.email,
-              fullName: user.full_name,
+              fullName: resolvedName,
               role: user.role,
             };
 
@@ -54,7 +64,13 @@ export async function authenticateAdmin(email: string, password: string): Promis
 
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { password_hash: _, ...safeUser } = user;
-            return { success: true, user: safeUser };
+            return {
+              success: true,
+              user: {
+                ...safeUser,
+                full_name: resolvedName,
+              },
+            };
           }
         }
       } catch (err) {
@@ -68,10 +84,12 @@ export async function authenticateAdmin(email: string, password: string): Promis
   const fallbackPassword = process.env.INITIAL_ADMIN_PASSWORD || 'RoyalWedding@Lucknow2026';
 
   if (normalizedEmail === fallbackEmail && password === fallbackPassword) {
+    const resolvedName = customName || 'Administrator';
+
     const sessionPayload: AdminSessionPayload = {
       userId: 'root-owner-admin',
       email: fallbackEmail,
-      fullName: 'Royal Wedding Hub Owner',
+      fullName: resolvedName,
       role: 'super_admin',
     };
 
@@ -83,7 +101,7 @@ export async function authenticateAdmin(email: string, password: string): Promis
       user: {
         id: 'root-owner-admin',
         email: fallbackEmail,
-        full_name: 'Royal Wedding Hub Owner',
+        full_name: resolvedName,
         role: 'super_admin',
         last_login_at: new Date().toISOString(),
         created_at: new Date().toISOString(),

@@ -60,26 +60,26 @@ export default async function AdminVenuesPage() {
         <div>
           <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
             <Link href="/admin" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Dashboard</span>
             </Link>
             <span>/</span>
             <span className="text-[#521D2B] font-semibold font-sans">Venues Catalog</span>
           </div>
-          <h1 className="text-2xl font-serif text-[#1C1611] font-normal tracking-wide flex items-center gap-3">
-            <Building2 className="w-6 h-6 text-[#85662F]" />
+          <h1 className="text-2xl font-sans font-bold text-[#1C1611] tracking-tight flex items-center gap-3">
+            <Building2 className="w-6 h-6 text-[#85662F]" strokeWidth={1.5} />
             <span>Curated Wedding Venues</span>
           </h1>
-          <p className="text-xs text-[#5C5245] mt-1 font-light">
+          <p className="text-xs text-[#5C5245] mt-1 font-normal">
             Manage pricing, capacity ranges, room inventory, amenities, and live status for 32+ Lucknow properties.
           </p>
         </div>
 
         <Link
           href="/admin/venues/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-sm self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-sm self-start sm:self-auto font-sans"
         >
-          <PlusCircle className="w-4 h-4 text-[#E6C994]" />
+          <PlusCircle className="w-4 h-4 text-[#E6C994]" strokeWidth={1.5} />
           <span>Add New Venue</span>
         </Link>
       </div>

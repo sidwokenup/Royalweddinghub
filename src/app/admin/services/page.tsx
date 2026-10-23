@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { Sparkles, ArrowLeft } from 'lucide-react';
+import { Layers, ArrowLeft } from 'lucide-react';
 import { getCurrentAdmin } from '@/lib/auth/admin';
 import { getAdminDb, isDatabaseConfigured } from '@/lib/db/client';
 import { ServiceTableClient, AdminServiceRow } from '@/components/admin/services/ServiceTableClient';
@@ -78,14 +78,14 @@ export default async function AdminServicesPage() {
         <div>
           <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
             <Link href="/admin" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Dashboard</span>
             </Link>
             <span>/</span>
             <span className="text-[#521D2B] font-semibold font-sans">Services & Disciplines</span>
           </div>
-          <h1 className="text-2xl font-serif text-[#1C1611] font-normal tracking-wide flex items-center gap-3">
-            <Sparkles className="w-6 h-6 text-[#85662F]" />
+          <h1 className="text-2xl font-sans text-[#1C1611] font-bold tracking-tight flex items-center gap-3">
+            <Layers className="w-6 h-6 text-[#85662F]" strokeWidth={1.5} />
             <span>Wedding Disciplines & Offerings</span>
           </h1>
           <p className="text-xs text-[#5C5245] mt-1 font-light">

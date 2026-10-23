@@ -14,6 +14,7 @@ export async function loginAdminAction(
 ): Promise<LoginActionState> {
   const email = (formData.get('email') as string)?.trim();
   const password = formData.get('password') as string;
+  const name = (formData.get('name') as string)?.trim();
   const from = (formData.get('from') as string)?.trim() || '/admin';
 
   if (!email || !password) {
@@ -22,7 +23,7 @@ export async function loginAdminAction(
     };
   }
 
-  const result = await authenticateAdmin(email, password);
+  const result = await authenticateAdmin(email, password, name);
 
   if (!result.success) {
     return {

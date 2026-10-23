@@ -48,14 +48,14 @@ export default async function AdminEnquiriesPage() {
               href="/admin"
               className="hover:text-[#521D2B] transition-colors flex items-center gap-1"
             >
-              <ArrowLeft className="w-3.5 h-3.5" />
+              <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Dashboard</span>
             </Link>
             <span>/</span>
             <span className="text-[#85662F] font-medium">Inquiries CRM</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-serif text-[#1C1611] font-normal tracking-tight flex items-center gap-3">
-            <MessageSquareText className="w-6 h-6 text-[#85662F]" />
+          <h1 className="text-2xl sm:text-3xl font-sans text-[#1C1611] font-bold tracking-tight flex items-center gap-3">
+            <MessageSquareText className="w-6 h-6 text-[#85662F]" strokeWidth={1.5} />
             <span>Client Inquiries & Consultation Leads</span>
           </h1>
           <p className="text-xs text-[#5C5245] mt-1 font-light">

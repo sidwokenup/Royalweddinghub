@@ -72,12 +72,12 @@ export function ServiceTableClient({ initialServices }: ServiceTableClientProps)
                       {service.category_tag}
                     </span>
                     {service.is_featured && (
-                      <span className="text-[11px] font-serif italic text-[#85662F]">
+                      <span className="text-[11px] font-sans font-medium text-[#85662F]">
                         ★ Featured Service
                       </span>
                     )}
                   </div>
-                  <h3 className="text-base sm:text-lg font-serif text-[#1C1611] font-normal tracking-tight mt-1.5 truncate">
+                  <h3 className="text-base sm:text-lg font-sans text-[#1C1611] font-semibold tracking-tight mt-1.5 truncate">
                     {service.name}
                   </h3>
                   <p className="text-xs text-[#5C5245] line-clamp-2 mt-0.5 font-light leading-relaxed">
@@ -89,7 +89,7 @@ export function ServiceTableClient({ initialServices }: ServiceTableClientProps)
               {/* Subcategories & Deliverables pill */}
               <div className="mt-4 pt-3 border-t border-[#F2ECE1] flex items-center gap-4 text-xs text-[#7A6E5F]">
                 <span className="flex items-center gap-1.5 font-mono text-[11px]">
-                  <Layers className="w-3.5 h-3.5 text-[#85662F]" />
+                  <Layers className="w-3.5 h-3.5 text-[#85662F]" strokeWidth={1.5} />
                   <span>{service.deliverables_count || 4} Deliverables</span>
                 </span>
                 <span>•</span>
@@ -113,12 +113,12 @@ export function ServiceTableClient({ initialServices }: ServiceTableClientProps)
               >
                 {service.is_published ? (
                   <>
-                    <Check className="w-3 h-3 text-emerald-700" />
+                    <Check className="w-3 h-3 text-emerald-700" strokeWidth={1.5} />
                     <span>Live</span>
                   </>
                 ) : (
                   <>
-                    <EyeOff className="w-3 h-3 text-[#7A6E5F]" />
+                    <EyeOff className="w-3 h-3 text-[#7A6E5F]" strokeWidth={1.5} />
                     <span>Hidden</span>
                   </>
                 )}
@@ -132,14 +132,14 @@ export function ServiceTableClient({ initialServices }: ServiceTableClientProps)
                   className="p-2 rounded-xl text-[#7A6E5F] hover:text-[#521D2B] hover:bg-[#F8F5EE] border border-transparent hover:border-[#EAE4D9] transition-all"
                   title="View on live site"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
                 </Link>
 
                 <Link
                   href={`/admin/services/${service.id}`}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FAF7F2] border border-[#DDD5C7] text-xs font-medium text-[#1C1611] hover:bg-[#521D2B] hover:text-white hover:border-[#521D2B] transition-all shadow-sm"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#FAF7F2] border border-[#DDD5C7] text-xs font-medium text-[#1C1611] hover:bg-[#521D2B] hover:text-white hover:border-[#521D2B] transition-all shadow-sm font-sans"
                 >
-                  <Edit className="w-3.5 h-3.5" />
+                  <Edit className="w-3.5 h-3.5" strokeWidth={1.5} />
                   <span>Edit Service</span>
                 </Link>
               </div>

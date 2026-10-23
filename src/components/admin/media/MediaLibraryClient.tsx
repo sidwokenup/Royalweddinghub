@@ -169,7 +169,7 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
       <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#EAE4D9] space-y-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h3 className="text-sm font-serif text-[#1C1611] font-normal tracking-wide">
+            <h3 className="text-sm font-sans text-[#1C1611] font-semibold tracking-tight">
               Direct-to-Cloud Asset Ingestion
             </h3>
             <p className="text-xs text-[#5C5245] font-light mt-0.5">
@@ -425,10 +425,10 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
           <div className="bg-[#FFFFFF] border border-red-200 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
             <div className="flex items-center gap-3 text-red-600 mb-3">
               <div className="p-2.5 rounded-xl bg-red-50 border border-red-200">
-                <AlertTriangle className="w-5 h-5 text-red-600" />
+                <AlertTriangle className="w-5 h-5 text-red-600" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="text-base font-serif text-[#1C1611]">Delete Media Asset</h3>
+                <h3 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">Delete Media Asset</h3>
                 <p className="text-xs text-[#5C5245]">Reference safety checker active</p>
               </div>
             </div>

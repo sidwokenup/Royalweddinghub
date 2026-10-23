@@ -42,7 +42,7 @@ export function MetricCard({
 
       <div className="flex items-start justify-between relative z-10">
         <div className="p-3 rounded-xl bg-[#FDF9F0] border border-[#E9DECA] text-[#85662F] group-hover:scale-105 transition-transform duration-200 shadow-2xs">
-          <Icon className="w-5 h-5" />
+          <Icon className="w-5 h-5" strokeWidth={1.5} />
         </div>
 
         {badge && (
@@ -54,24 +54,24 @@ export function MetricCard({
         )}
       </div>
 
-      <div className="mt-4 relative z-10">
-        <div className="text-2xl sm:text-3xl font-serif text-[#1C1611] tracking-tight font-medium">
+      <div className="mt-4 relative z-10 font-sans">
+        <div className="text-2xl sm:text-3xl font-sans font-bold tabular-nums text-[#1C1611] tracking-tight">
           {value}
         </div>
         <div className="text-[11px] uppercase tracking-wider text-[#7A6E5F] mt-1 font-mono font-semibold">
           {title}
         </div>
         {subtitle && (
-          <div className="text-xs text-[#8C8070] mt-1.5 flex items-center gap-1 font-light leading-relaxed">
+          <div className="text-xs text-[#8C8070] mt-1.5 flex items-center gap-1 font-normal leading-relaxed">
             {subtitle}
           </div>
         )}
       </div>
 
       {href && (
-        <div className="mt-4 pt-3 border-t border-[#F0ECE1] flex items-center justify-between text-xs font-medium text-[#521D2B] group-hover:text-[#7D293F] transition-colors">
+        <div className="mt-4 pt-3 border-t border-[#F0ECE1] flex items-center justify-between text-xs font-semibold text-[#521D2B] group-hover:text-[#7D293F] transition-colors font-sans">
           <span>Manage Module</span>
-          <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" strokeWidth={1.5} />
         </div>
       )}
     </div>
