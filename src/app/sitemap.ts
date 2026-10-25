@@ -3,7 +3,7 @@ import { getAllVenues } from '@/lib/venues';
 import { getServices } from '@/lib/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://royalweddinghub.com';
+  const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_SITE_URL || 'https://royalweddinghub.com';
 
   const staticPages: MetadataRoute.Sitemap = [
     {

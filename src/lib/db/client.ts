@@ -4,15 +4,38 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 let serverAdminClient: SupabaseClient | null = null;
 let publicClient: SupabaseClient | null = null;
 
+function getResolvedSupabaseUrl(): string | undefined {
+  return (
+    process.env.SUPABASE_URL ||
+    process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    process.env.NEXT_SUPABASE_URL
+  );
+}
+
+function getResolvedServiceRoleKey(): string | undefined {
+  return (
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.SUPABASE_ANON_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    process.env.NEXT_SUPABASE_ANON_KEY
+  );
+}
+
+function getResolvedAnonKey(): string | undefined {
+  return (
+    process.env.SUPABASE_ANON_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    process.env.NEXT_SUPABASE_ANON_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+}
+
 /**
  * Returns true if the database credentials are validly configured in environment
  */
 export function isDatabaseConfigured(): boolean {
-  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.SUPABASE_ANON_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = getResolvedSupabaseUrl();
+  const key = getResolvedServiceRoleKey() || getResolvedAnonKey();
   return Boolean(url && key && url.startsWith('http') && !url.includes('placeholder'));
 }
 
@@ -25,12 +48,8 @@ export function getAdminDb(): SupabaseClient | null {
     return null;
   }
 
-  const url = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL)!;
-  const serviceKey = (
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.SUPABASE_ANON_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  )!;
+  const url = getResolvedSupabaseUrl()!;
+  const serviceKey = (getResolvedServiceRoleKey() || getResolvedAnonKey())!;
 
   if (!serverAdminClient) {
     serverAdminClient = createClient(url, serviceKey, {
@@ -52,12 +71,8 @@ export function getPublicDb(): SupabaseClient | null {
     return null;
   }
 
-  const url = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL)!;
-  const anonKey = (
-    process.env.SUPABASE_ANON_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-    process.env.SUPABASE_SERVICE_ROLE_KEY
-  )!;
+  const url = getResolvedSupabaseUrl()!;
+  const anonKey = (getResolvedAnonKey() || getResolvedServiceRoleKey())!;
 
   if (!publicClient) {
     publicClient = createClient(url, anonKey, {

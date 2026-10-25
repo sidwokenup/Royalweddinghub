@@ -512,11 +512,18 @@ async function runSuite6() {
 async function runSuite7() {
   suite('7. Live CRUD Mutations & "Adding New Things" Verification');
 
-  const supabaseUrl = env.SUPABASE_URL || process.env.SUPABASE_URL || env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseUrl =
+    env.SUPABASE_URL ||
+    process.env.SUPABASE_URL ||
+    env.NEXT_PUBLIC_SUPABASE_URL ||
+    env.NEXT_SUPABASE_URL ||
+    process.env.NEXT_SUPABASE_URL;
   const supabaseKey =
     env.SUPABASE_SERVICE_ROLE_KEY ||
     env.SUPABASE_ANON_KEY ||
-    process.env.SUPABASE_SERVICE_ROLE_KEY;
+    env.NEXT_SUPABASE_ANON_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.NEXT_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseKey || supabaseUrl.includes('placeholder')) {
     console.log('  \x1b[33m⚠ SKIP\x1b[0m Live database not configured, skipping direct DB write mutations');
