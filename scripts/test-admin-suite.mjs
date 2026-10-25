@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { SignJWT, jwtVerify } from 'jose';
+import { createClient } from '@supabase/supabase-js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -506,6 +507,261 @@ async function runSuite6() {
 }
 
 // ============================================================================
+// SUITE 7: CRUD MUTATIONS & "ADDING NEW THINGS" LIFECYCLE
+// ============================================================================
+async function runSuite7() {
+  suite('7. Live CRUD Mutations & "Adding New Things" Verification');
+
+  const supabaseUrl = env.SUPABASE_URL || process.env.SUPABASE_URL || env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey =
+    env.SUPABASE_SERVICE_ROLE_KEY ||
+    env.SUPABASE_ANON_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!supabaseUrl || !supabaseKey || supabaseUrl.includes('placeholder')) {
+    console.log('  \x1b[33m⚠ SKIP\x1b[0m Live database not configured, skipping direct DB write mutations');
+    return;
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+  const testRunId = Date.now();
+  const createdRecordIds = {
+    venue: null,
+    testimonial: null,
+    enquiry: null,
+    service: null,
+  };
+
+  // 7.1 Add / Create New Venue
+  try {
+    const testVenueSlug = `test-venue-${testRunId}`;
+    const testVenue = {
+      name: `Automated Test Palace ${testRunId}`,
+      slug: testVenueSlug,
+      category: 'Palace',
+      city: 'Lucknow',
+      state: 'Uttar Pradesh',
+      address: 'Hazratganj Luxury Corridor, Lucknow',
+      rating: 5.0,
+      review_count: 1,
+      min_pax: 200,
+      max_pax: 1500,
+      total_capacity: 1500,
+      rooms: 25,
+      raw_capacity: '200 - 1500 pax',
+      veg_available: true,
+      non_veg_available: true,
+      price_per_plate: 3500,
+      price_unit: 'per_plate',
+      amenities: ['Valet Parking', 'Royal Mandap Suite', 'Centrally Air Conditioned'],
+      description: 'Production verification test venue created by automated test suite.',
+      primary_image_url: '/venues/santorini-resort-lucknow/thumbnail.jpg',
+      primary_image_alt: 'Automated Test Palace',
+      is_featured: false,
+      is_published: true,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    const { data, error } = await supabase.from('venues').insert(testVenue).select('id, name, slug').single();
+    if (error) {
+      throw new Error(`Venue insertion failed: ${error.message}`);
+    }
+
+    if (data?.id) {
+      createdRecordIds.venue = data.id;
+      // Query back to verify persistence
+      const { data: fetched, error: fetchErr } = await supabase
+        .from('venues')
+        .select('id, name, slug, price_per_plate')
+        .eq('id', data.id)
+        .single();
+
+      if (fetchErr || !fetched) {
+        throw new Error('Venue inserted but could not be queried back');
+      }
+
+      pass('7.1 Add & Persist New Venue', `ID: ${data.id.substring(0, 8)}... | Name: "${data.name}"`);
+    } else {
+      throw new Error('Insert returned no ID');
+    }
+  } catch (err) {
+    fail('7.1 Add & Persist New Venue', err);
+  }
+
+  // 7.2 Add / Create New Testimonial
+  try {
+    const testTestimonial = {
+      couple_names: `Vikram & Ananya (Test ${testRunId})`,
+      celebration_type: 'Royal Destination Wedding',
+      location: 'Lucknow Heritage Palace',
+      wedding_season: 'Winter 2026',
+      quote: 'The concierge orchestration was immaculate and dignified throughout our celebration.',
+      full_story: 'Verified by automated test suite.',
+      rating: 5.0,
+      verified: true,
+      featured: false,
+      is_published: true,
+      client_consent_recorded: true,
+      source: 'automated-test-suite',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    const { data, error } = await supabase.from('testimonials').insert(testTestimonial).select('id, couple_names').single();
+    if (error) {
+      throw new Error(`Testimonial insertion failed: ${error.message}`);
+    }
+
+    if (data?.id) {
+      createdRecordIds.testimonial = data.id;
+      pass('7.2 Add & Persist New Testimonial', `ID: ${data.id.substring(0, 8)}... | Couple: "${data.couple_names}"`);
+    } else {
+      throw new Error('Insert returned no ID');
+    }
+  } catch (err) {
+    fail('7.2 Add & Persist New Testimonial', err);
+  }
+
+  // 7.3 Add / Create New Bespoke Client Lead (Enquiry CRM) & Update Status
+  try {
+    const testLeadNumber = `RWH-TEST-${testRunId.toString().slice(-6)}`;
+    const testEnquiry = {
+      lead_number: testLeadNumber,
+      name: 'Rohan Malhotra (Automated Test)',
+      phone: '9988776655',
+      email: 'rohan.test@royalweddinghub.com',
+      event_type: 'WEDDING',
+      services_requested: ['WEDDING VENUES', 'DÉCOR & SPATIAL ARCHITECTURE'],
+      wedding_date: 'November 2026',
+      location: 'Lucknow',
+      status: 'new',
+      internal_notes: 'Created by automated test suite to verify pipeline mutation.',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    const { data, error } = await supabase.from('enquiries').insert(testEnquiry).select('id, lead_number, status').single();
+    if (error) {
+      throw new Error(`Enquiry insertion failed: ${error.message}`);
+    }
+
+    if (data?.id) {
+      createdRecordIds.enquiry = data.id;
+
+      // Test modifying/updating this new inquiry's status to 'qualified'
+      const { error: updateErr } = await supabase
+        .from('enquiries')
+        .update({ status: 'qualified', updated_at: new Date().toISOString() })
+        .eq('id', data.id);
+
+      if (updateErr) {
+        throw new Error(`Failed to update inquiry status: ${updateErr.message}`);
+      }
+
+      // Verify mutation in DB
+      const { data: updatedRecord, error: verifyErr } = await supabase
+        .from('enquiries')
+        .select('status')
+        .eq('id', data.id)
+        .single();
+
+      if (verifyErr || updatedRecord?.status !== 'qualified') {
+        throw new Error(`Status mutation failed, expected 'qualified', got '${updatedRecord?.status}'`);
+      }
+
+      pass('7.3 Add & Mutate CRM Enquiry Lead', `Lead ${data.lead_number} added (new) -> mutated (qualified)`);
+    } else {
+      throw new Error('Insert returned no ID');
+    }
+  } catch (err) {
+    fail('7.3 Add & Mutate CRM Enquiry Lead', err);
+  }
+
+  // 7.4 Add / Create New Service Discipline
+  try {
+    const testServiceSlug = `test-service-${testRunId}`;
+    const testService = {
+      name: `Bespoke Royal Fireworks ${testRunId}`,
+      slug: testServiceSlug,
+      category_tag: 'Celebration Spectacle',
+      headline: 'Illuminating Lucknow Skies.',
+      short_description: 'Synchronized low-smoke musical fireworks for royal baraat and reception entries.',
+      intro_copy: 'Custom aerial pyrotechnics orchestrated with city clearances and safety cordons.',
+      cover_image_url: '/images/services/wedding-entertainment.jpg',
+      accent_color: '#521D2B',
+      bg_surface: '#FAF7F2',
+      text_on_bg: '#211A19',
+      cta_text: 'Book Pyrotechnic Display',
+      is_featured: false,
+      is_published: true,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    const { data, error } = await supabase.from('services').insert(testService).select('id, name, slug').single();
+    if (error) {
+      throw new Error(`Service insertion failed: ${error.message}`);
+    }
+
+    if (data?.id) {
+      createdRecordIds.service = data.id;
+      pass('7.4 Add & Persist New Service Discipline', `ID: ${data.id.substring(0, 8)}... | Slug: "${data.slug}"`);
+    } else {
+      throw new Error('Insert returned no ID');
+    }
+  } catch (err) {
+    fail('7.4 Add & Persist New Service Discipline', err);
+  }
+
+  // 7.5 Zero-Pollution Teardown & Deletion
+  try {
+    let cleanUpSuccess = true;
+    const cleanUpErrors = [];
+
+    if (createdRecordIds.venue) {
+      const { error } = await supabase.from('venues').delete().eq('id', createdRecordIds.venue);
+      if (error) {
+        cleanUpSuccess = false;
+        cleanUpErrors.push(`venue delete: ${error.message}`);
+      }
+    }
+
+    if (createdRecordIds.testimonial) {
+      const { error } = await supabase.from('testimonials').delete().eq('id', createdRecordIds.testimonial);
+      if (error) {
+        cleanUpSuccess = false;
+        cleanUpErrors.push(`testimonial delete: ${error.message}`);
+      }
+    }
+
+    if (createdRecordIds.enquiry) {
+      const { error } = await supabase.from('enquiries').delete().eq('id', createdRecordIds.enquiry);
+      if (error) {
+        cleanUpSuccess = false;
+        cleanUpErrors.push(`enquiry delete: ${error.message}`);
+      }
+    }
+
+    if (createdRecordIds.service) {
+      const { error } = await supabase.from('services').delete().eq('id', createdRecordIds.service);
+      if (error) {
+        cleanUpSuccess = false;
+        cleanUpErrors.push(`service delete: ${error.message}`);
+      }
+    }
+
+    if (cleanUpSuccess) {
+      pass('7.5 Zero-Pollution Cleanup & Record Teardown', 'All test items safely purged from database');
+    } else {
+      throw new Error(`Cleanup failed: ${cleanUpErrors.join(', ')}`);
+    }
+  } catch (err) {
+    fail('7.5 Zero-Pollution Cleanup & Record Teardown', err);
+  }
+}
+
+// ============================================================================
 // RUN ALL SUITES
 // ============================================================================
 async function main() {
@@ -524,6 +780,7 @@ async function main() {
     await runSuite4();
     await runSuite5();
     await runSuite6();
+    await runSuite7();
   } catch (fatalErr) {
     console.error('\n\x1b[31mFatal test suite runner error:\x1b[0m', fatalErr);
   }
