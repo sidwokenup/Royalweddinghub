@@ -4,17 +4,20 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  LayoutDashboard,
-  Building2,
-  Layers,
-  MessageSquareText,
-  Star,
-  Image as ImageIcon,
-  Settings,
   X,
   ExternalLink,
   Shield,
 } from 'lucide-react';
+import {
+  RoyalPalaceIcon,
+  RoyalInquiryScrollIcon,
+  RoyalLotusCrestIcon,
+  RoyalTestimonialSealIcon,
+  RoyalGalleryFrameIcon,
+  RoyalAtelierCompassIcon,
+  RoyalConciergeOverviewIcon,
+  RoyalMonogramCrest,
+} from '@/components/admin/icons/RoyalAdminIcons';
 
 interface AdminSidebarProps {
   isOpen: boolean;
@@ -28,49 +31,49 @@ const NAV_ITEMS = [
     label: 'Overview',
     href: '/admin',
     exact: true,
-    icon: LayoutDashboard,
+    icon: RoyalConciergeOverviewIcon,
     badge: null,
   },
   {
     label: 'Venues Directory',
     href: '/admin/venues',
     exact: false,
-    icon: Building2,
+    icon: RoyalPalaceIcon,
     badge: '32',
   },
   {
     label: 'Services & Disciplines',
     href: '/admin/services',
     exact: false,
-    icon: Layers,
+    icon: RoyalLotusCrestIcon,
     badge: '8',
   },
   {
     label: 'Enquiries CRM',
     href: '/admin/enquiries',
     exact: false,
-    icon: MessageSquareText,
+    icon: RoyalInquiryScrollIcon,
     badge: 'Leads',
   },
   {
     label: 'Testimonials',
     href: '/admin/testimonials',
     exact: false,
-    icon: Star,
+    icon: RoyalTestimonialSealIcon,
     badge: null,
   },
   {
     label: 'Media Library',
     href: '/admin/media',
     exact: false,
-    icon: ImageIcon,
+    icon: RoyalGalleryFrameIcon,
     badge: null,
   },
   {
     label: 'Business Settings',
     href: '/admin/settings',
     exact: false,
-    icon: Settings,
+    icon: RoyalAtelierCompassIcon,
     badge: null,
   },
 ];
@@ -110,8 +113,8 @@ export function AdminSidebar({
         {/* Brand Crest & Header */}
         <div className="h-20 px-6 flex items-center justify-between border-b border-[#D6B56D]/15 shrink-0 bg-[#140F0D]/80">
           <Link href="/admin" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#521D2B] via-[#3D141F] to-[#240A12] border border-[#D6B56D]/40 text-[#FAF7F2] flex items-center justify-center shadow-[0_2px_12px_rgba(82,29,43,0.4)] group-hover:scale-105 group-hover:border-[#D6B56D] transition-all">
-              <Building2 className="w-5 h-5 text-[#D6B56D]" strokeWidth={1.5} />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#521D2B] via-[#3D141F] to-[#240A12] border border-[#D6B56D]/40 text-[#D6B56D] flex items-center justify-center shadow-[0_2px_12px_rgba(82,29,43,0.4)] group-hover:scale-105 group-hover:border-[#D6B56D] transition-all">
+              <RoyalMonogramCrest size={22} className="text-[#D6B56D]" />
             </div>
             <div>
               <span className="block font-serif text-sm tracking-tight text-[#FAF7F2] font-medium leading-tight">
@@ -175,12 +178,15 @@ export function AdminSidebar({
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <Icon
-                    className={`w-4 h-4 transition-colors ${
-                      active ? 'text-[#D6B56D]' : 'text-[#8C8070] group-hover:text-[#D6B56D]'
+                  <div
+                    className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
+                      active
+                        ? 'bg-[#D6B56D]/15 text-[#D6B56D] border border-[#D6B56D]/30 shadow-[0_0_8px_rgba(214,181,109,0.15)]'
+                        : 'text-[#8C8070] group-hover:text-[#D6B56D] group-hover:bg-white/[0.04]'
                     }`}
-                    strokeWidth={1.5}
-                  />
+                  >
+                    <Icon size={16} strokeWidth={1.5} />
+                  </div>
                   <span>{item.label}</span>
                 </div>
 

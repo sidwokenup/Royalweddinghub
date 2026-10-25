@@ -2,7 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { Image as ImageIcon, ArrowLeft, HardDrive, FolderOpen, Layers } from 'lucide-react';
+import { ArrowLeft, HardDrive, FolderOpen, Layers } from 'lucide-react';
+import { RoyalGalleryFrameIcon } from '@/components/admin/icons/RoyalAdminIcons';
 import { getCurrentAdmin } from '@/lib/auth/admin';
 import { getAdminDb, isDatabaseConfigured } from '@/lib/db/client';
 import {
@@ -99,8 +100,8 @@ export default async function AdminMediaPage() {
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-serif text-[#FAF7F2] tracking-wide flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#D6B56D]/10 border border-[#D6B56D]/30 flex items-center justify-center text-[#D6B56D]">
-              <ImageIcon className="w-5 h-5" strokeWidth={1.5} />
+            <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#2E1A1E] to-[#120B0D] border border-[#D6B56D]/35 flex items-center justify-center text-[#D6B56D] shadow-[0_0_16px_rgba(214,181,109,0.1)]">
+              <RoyalGalleryFrameIcon size={22} className="text-[#D6B56D]" />
             </div>
             <span>Digital Assets & Media Library</span>
           </h1>

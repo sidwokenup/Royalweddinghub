@@ -2,9 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import {
-  Building2,
-  MessageSquareText,
-  Star,
   PlusCircle,
   ArrowRight,
   ShieldCheck,
@@ -14,11 +11,16 @@ import {
   Phone,
   Server,
   Zap,
-  Layers,
-  Image as ImageIcon,
   MessageCircle,
   ExternalLink,
 } from 'lucide-react';
+import {
+  RoyalPalaceIcon,
+  RoyalInquiryScrollIcon,
+  RoyalLotusCrestIcon,
+  RoyalTestimonialSealIcon,
+  RoyalGalleryFrameIcon,
+} from '@/components/admin/icons/RoyalAdminIcons';
 import { getCurrentAdmin } from '@/lib/auth/admin';
 import { getAdminDb, isDatabaseConfigured } from '@/lib/db/client';
 import { MetricCard } from '@/components/admin/MetricCard';
@@ -188,13 +190,13 @@ export default async function AdminDashboardPage() {
             href="/admin/enquiries"
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-[#FAF7F2] border border-[#D6B56D]/30 text-xs font-medium transition-all hover:border-[#D6B56D]/60"
           >
-            <MessageSquareText className="w-4 h-4 text-[#D6B56D]" strokeWidth={1.5} />
+            <RoyalInquiryScrollIcon size={16} className="text-[#D6B56D]" />
             <span>View Inquiries</span>
           </Link>
         </div>
       </div>
 
-      {/* KPI Metrics Grid */}
+      {/* KPI Metrics Grid with Bespoke Royal Icons */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <MetricCard
           title="Client Inquiries"
@@ -202,7 +204,7 @@ export default async function AdminDashboardPage() {
           subtitle={`${stats.newEnquiries} awaiting consultation`}
           badge={stats.newEnquiries > 0 ? `${stats.newEnquiries} New` : 'Up to Date'}
           badgeType={stats.newEnquiries > 0 ? 'emerald' : 'neutral'}
-          icon={MessageSquareText}
+          icon={RoyalInquiryScrollIcon}
           href="/admin/enquiries"
         />
 
@@ -212,7 +214,7 @@ export default async function AdminDashboardPage() {
           subtitle={`${stats.publishedVenues} live on public directory`}
           badge="Lucknow"
           badgeType="gold"
-          icon={Building2}
+          icon={RoyalPalaceIcon}
           href="/admin/venues"
         />
 
@@ -222,7 +224,7 @@ export default async function AdminDashboardPage() {
           subtitle="Catering, Decor, Photo, Music & More"
           badge="Active"
           badgeType="gold"
-          icon={Zap}
+          icon={RoyalLotusCrestIcon}
           href="/admin/services"
         />
 
@@ -232,7 +234,7 @@ export default async function AdminDashboardPage() {
           subtitle="Private discretion card enforced"
           badge="Protected"
           badgeType="neutral"
-          icon={Star}
+          icon={RoyalTestimonialSealIcon}
           href="/admin/testimonials"
         />
       </div>
@@ -403,8 +405,8 @@ export default async function AdminDashboardPage() {
                 className="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-[#D6B56D]/40 hover:bg-white/[0.05] transition-all group shadow-2xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#521D2B]/40 to-[#2A0E16]/40 border border-[#D6B56D]/25 text-[#D6B56D] group-hover:scale-105 transition-transform">
-                    <Building2 className="w-4 h-4 text-[#D6B56D]" strokeWidth={1.5} />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#2E1A1E] to-[#120B0D] border border-[#D6B56D]/30 text-[#D6B56D] flex items-center justify-center group-hover:scale-105 group-hover:border-[#D6B56D]/70 transition-all shadow-xs">
+                    <RoyalPalaceIcon size={18} className="text-[#D6B56D]" />
                   </div>
                   <div>
                     <div className="text-xs font-medium text-[#FAF7F2] group-hover:text-[#D6B56D] transition-colors">
@@ -423,8 +425,8 @@ export default async function AdminDashboardPage() {
                 className="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-[#D6B56D]/40 hover:bg-white/[0.05] transition-all group shadow-2xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#521D2B]/40 to-[#2A0E16]/40 border border-[#D6B56D]/25 text-[#D6B56D] group-hover:scale-105 transition-transform">
-                    <Layers className="w-4 h-4 text-[#D6B56D]" strokeWidth={1.5} />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#2E1A1E] to-[#120B0D] border border-[#D6B56D]/30 text-[#D6B56D] flex items-center justify-center group-hover:scale-105 group-hover:border-[#D6B56D]/70 transition-all shadow-xs">
+                    <RoyalLotusCrestIcon size={18} className="text-[#D6B56D]" />
                   </div>
                   <div>
                     <div className="text-xs font-medium text-[#FAF7F2] group-hover:text-[#D6B56D] transition-colors">
@@ -443,8 +445,8 @@ export default async function AdminDashboardPage() {
                 className="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-[#D6B56D]/40 hover:bg-white/[0.05] transition-all group shadow-2xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#521D2B]/40 to-[#2A0E16]/40 border border-[#D6B56D]/25 text-[#D6B56D] group-hover:scale-105 transition-transform">
-                    <ImageIcon className="w-4 h-4 text-[#D6B56D]" strokeWidth={1.5} />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#2E1A1E] to-[#120B0D] border border-[#D6B56D]/30 text-[#D6B56D] flex items-center justify-center group-hover:scale-105 group-hover:border-[#D6B56D]/70 transition-all shadow-xs">
+                    <RoyalGalleryFrameIcon size={18} className="text-[#D6B56D]" />
                   </div>
                   <div>
                     <div className="text-xs font-medium text-[#FAF7F2] group-hover:text-[#D6B56D] transition-colors">
@@ -463,8 +465,8 @@ export default async function AdminDashboardPage() {
                 className="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-[#D6B56D]/40 hover:bg-white/[0.05] transition-all group shadow-2xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-gradient-to-br from-[#521D2B]/40 to-[#2A0E16]/40 border border-[#D6B56D]/25 text-[#D6B56D] group-hover:scale-105 transition-transform">
-                    <Star className="w-4 h-4 text-[#D6B56D]" strokeWidth={1.5} />
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-b from-[#2E1A1E] to-[#120B0D] border border-[#D6B56D]/30 text-[#D6B56D] flex items-center justify-center group-hover:scale-105 group-hover:border-[#D6B56D]/70 transition-all shadow-xs">
+                    <RoyalTestimonialSealIcon size={18} className="text-[#D6B56D]" />
                   </div>
                   <div>
                     <div className="text-xs font-medium text-[#FAF7F2] group-hover:text-[#D6B56D] transition-colors">

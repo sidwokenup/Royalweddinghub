@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { Star, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { RoyalTestimonialSealIcon } from '@/components/admin/icons/RoyalAdminIcons';
 import { getCurrentAdmin } from '@/lib/auth/admin';
 import { getAdminDb, isDatabaseConfigured } from '@/lib/db/client';
 import {
@@ -55,10 +56,10 @@ export default async function AdminTestimonialsPage() {
             <span className="text-[#D6B56D] font-medium font-sans">Verified Stories</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-serif text-[#FAF7F2] tracking-wide flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#D6B56D]/10 border border-[#D6B56D]/30 flex items-center justify-center text-[#D6B56D]">
-              <Star className="w-5 h-5" strokeWidth={1.5} />
+            <div className="w-10 h-10 rounded-full bg-gradient-to-b from-[#2E1A1E] to-[#120B0D] border border-[#D6B56D]/35 flex items-center justify-center text-[#D6B56D] shadow-[0_0_16px_rgba(214,181,109,0.1)]">
+              <RoyalTestimonialSealIcon size={22} className="text-[#D6B56D]" />
             </div>
-            <span>Client Reviews & Verified Testimonials</span>
+            <span>Client Reviews &amp; Verified Testimonials</span>
           </h1>
           <p className="text-xs text-[#B8ADA3] mt-1 font-light">
             Manage feedback with strict privacy guardrails and legal consent validation before publishing.
