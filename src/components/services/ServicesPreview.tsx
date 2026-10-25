@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Crown, Building2, Camera, Utensils, Mic2, Music, Sparkles, Palette, ArrowRight } from "lucide-react";
 import { useScrollTo } from "@/animations/scroll/LenisProvider";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
@@ -75,8 +76,7 @@ export function ServicesPreview() {
   const scrollTo = useScrollTo();
 
   const handleSelectService = (serviceName: string) => {
-    scrollTo("#plan-wedding", { duration: 1.4, offset: -20 });
-    // Dispatch an event so the multi-step form can preselect this service!
+    scrollTo("#contact", { duration: 1.4, offset: -20 });
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("select_wedding_service", { detail: { service: serviceName } }));
     }
@@ -145,13 +145,20 @@ export function ServicesPreview() {
         </div>
 
         {/* Bottom Callout */}
-        <div className="text-center">
-          <button
-            onClick={() => handleSelectService("Complete Wedding Planning")}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/services"
             className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-[2px] text-xs font-medium tracking-[0.24em] uppercase text-white bg-white/[0.08] hover:bg-white/[0.16] border border-[#f3e5d8]/40 hover:border-[#f3e5d8]/80 backdrop-blur-md transition-all duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.3)] cursor-pointer"
           >
-            <span>PLAN MY WEDDING WITH US</span>
+            <span>Explore All Specialized Services</span>
             <ArrowRight size={14} className="text-[#f3e5d8]" />
+          </Link>
+          <button
+            onClick={() => handleSelectService("Complete Wedding Planning")}
+            className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-[2px] text-xs font-medium tracking-[0.24em] uppercase text-[#d4af37] hover:text-white bg-black/40 hover:bg-black/60 border border-[#d4af37]/30 hover:border-[#d4af37] transition-all duration-300 cursor-pointer"
+          >
+            <span>Plan My Wedding With Us</span>
+            <ArrowRight size={14} className="text-[#d4af37]" />
           </button>
         </div>
       </div>

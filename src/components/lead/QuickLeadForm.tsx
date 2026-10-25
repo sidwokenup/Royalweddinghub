@@ -6,6 +6,7 @@ import { saveUserPreferences, getUserPreferences } from "@/lib/storage";
 import { captureCampaignParams, CampaignParams } from "@/lib/campaign";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import { getTelUrl } from "@/lib/contact";
+import { RoyalDatePicker } from "@/components/ui/RoyalDatePicker";
 
 const SERVICE_OPTIONS = [
   "Complete Wedding Planning",
@@ -273,17 +274,15 @@ export function QuickLeadForm() {
                     <label htmlFor="lead-date" className="block text-sm sm:text-base font-normal display-text text-white mb-2">
                       When is your celebration?
                     </label>
-                    <div className="relative mb-6">
-                      <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#f3e5d8]/60">
-                        <Calendar size={18} />
-                      </div>
-                      <input
+                    <div className="mb-6">
+                      <RoyalDatePicker
                         id="lead-date"
-                        type="text"
+                        name="weddingDate"
                         value={weddingDate}
-                        onChange={(e) => setWeddingDate(e.target.value)}
-                        placeholder="e.g. November 2025 / Winter Season"
-                        className="w-full pl-12 pr-4 py-3.5 rounded-[2px] bg-black/40 border border-white/20 focus:border-[#f3e5d8] focus:ring-1 focus:ring-[#f3e5d8] text-white placeholder-white/30 text-sm outline-none transition-all"
+                        onChange={(val) => setWeddingDate(val)}
+                        theme="dark"
+                        placeholder="e.g. 24 November 2025 or Winter Season"
+                        helperText="Select a celebration date from the calendar or choose a tentative season."
                       />
                     </div>
 

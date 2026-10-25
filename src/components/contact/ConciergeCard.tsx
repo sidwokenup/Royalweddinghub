@@ -10,6 +10,7 @@ import { captureCampaignParams } from "@/lib/campaign";
 import { saveUserPreferences, getUserPreferences } from "@/lib/storage";
 import { createLeadObject } from "@/lib/contact/lead";
 import { submitConciergeLeadAction } from "@/app/actions/enquiry";
+import { RoyalDatePicker } from "@/components/ui/RoyalDatePicker";
 
 const EVENT_TYPES = [
   "WEDDING",
@@ -412,19 +413,19 @@ export function ConciergeCard() {
                 When is the <span className="italic text-[#521D2B]">celebration?</span>
               </label>
 
-              <input
+              <RoyalDatePicker
                 id="concierge-date"
-                type="text"
-                autoFocus
+                name="weddingDate"
                 value={weddingDate}
-                onChange={(e) => setWeddingDate(e.target.value)}
-                placeholder="e.g. November 2025 or Winter 2025/2026"
-                className="w-full px-4 py-4 rounded-[2px] bg-[#FDFBF7] border border-[#D8CBBE] focus:border-[#521D2B] text-[#211A19] placeholder-[#9E948A] text-base outline-none transition-colors shadow-sm focus:ring-1 focus:ring-[#521D2B]/20"
+                onChange={(val) => {
+                  setWeddingDate(val);
+                  if (errorMsg) setErrorMsg("");
+                }}
+                autoFocus
+                theme="light"
+                placeholder="e.g. 24 November 2025 or Winter Season"
+                helperText="Select a celebration date from the calendar or choose a tentative season."
               />
-
-              <p className="text-xs text-[#78716C]">
-                An exact wedding date or tentative month/season is welcome.
-              </p>
 
               {errorMsg && <p className="text-rose-700 text-xs">{errorMsg}</p>}
             </div>

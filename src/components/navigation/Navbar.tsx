@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
@@ -31,6 +31,8 @@ function InstagramIcon({ size = 16, className = "" }: { size?: number; className
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
+  const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
 
   const [prevPathname, setPrevPathname] = useState(pathname);
 
@@ -39,12 +41,64 @@ export function Navbar() {
     setMobileMenuOpen(false);
   }
 
-  const isVenuesActive = pathname === "/venues" || pathname?.startsWith("/venues/");
-  const isServicesActive = pathname === "/services" || pathname?.startsWith("/services/");
-  const isAboutActive = pathname === "/about";
-  const isContactActive = pathname === "/contact";
-  const isHomeActive = pathname === "/";
-  const isLightNav = isVenuesActive || isContactActive || isServicesActive || isAboutActive;
+  // Scroll listener to highlight active section and switch header contrast on Home page
+  useEffect(() => {
+    if (pathname !== "/") {
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsScrolledPastHero(scrollY > 450);
+
+      const sectionIds = ["contact", "about", "venues", "services", "hero"];
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 250) {
+            setActiveSection(id === "hero" ? "home" : id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [pathname]);
+
+  const isHome = pathname === "/";
+  const isVenuesActive = pathname === "/venues" || pathname?.startsWith("/venues/") || (isHome && activeSection === "venues");
+  const isServicesActive = pathname === "/services" || pathname?.startsWith("/services/") || (isHome && activeSection === "services");
+  const isAboutActive = pathname === "/about" || (isHome && activeSection === "about");
+  const isContactActive = pathname === "/contact" || (isHome && activeSection === "contact");
+  const isHomeActive = isHome && activeSection === "home";
+
+  const isLightNav =
+    pathname.startsWith("/venues") ||
+    pathname.startsWith("/services") ||
+    pathname === "/about" ||
+    pathname === "/contact" ||
+    (isHome && isScrolledPastHero);
+
+  const handleNavClick = (sectionId: string, pageHref: string, e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      setMobileMenuOpen(false);
+      if (sectionId === "hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top, behavior: "smooth" });
+        return;
+      }
+    }
+  };
 
   const whatsappUrl = generateWhatsAppLink({
     service: "General Enquiry",
@@ -109,9 +163,12 @@ export function Navbar() {
           </Link>
           <Link
             href="/services"
+            onClick={(e) => handleNavClick("services", "/services", e)}
             className={`transition-all relative py-1 ${
               isServicesActive
-                ? "text-[#521D2B] font-semibold"
+                ? isLightNav
+                  ? "text-[#521D2B] font-semibold"
+                  : "text-[#d4af37] font-semibold"
                 : isLightNav
                 ? "hover:text-[#521D2B] text-[#211A19]"
                 : "hover:opacity-70 text-white"
@@ -119,14 +176,19 @@ export function Navbar() {
           >
             <span>Services</span>
             {isServicesActive && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#521D2B] rounded-full" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
+                isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
+              }`} />
             )}
           </Link>
           <Link
             href="/venues"
+            onClick={(e) => handleNavClick("venues", "/venues", e)}
             className={`transition-all relative py-1 ${
               isVenuesActive
-                ? "text-[#521D2B] font-semibold"
+                ? isLightNav
+                  ? "text-[#521D2B] font-semibold"
+                  : "text-[#d4af37] font-semibold"
                 : isLightNav
                 ? "hover:text-[#521D2B] text-[#211A19]"
                 : "hover:opacity-70 text-white"
@@ -134,14 +196,19 @@ export function Navbar() {
           >
             <span>Venues</span>
             {isVenuesActive && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#521D2B] rounded-full" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
+                isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
+              }`} />
             )}
           </Link>
           <Link
             href="/about"
+            onClick={(e) => handleNavClick("about", "/about", e)}
             className={`transition-all relative py-1 ${
               isAboutActive
-                ? "text-[#521D2B] font-semibold"
+                ? isLightNav
+                  ? "text-[#521D2B] font-semibold"
+                  : "text-[#d4af37] font-semibold"
                 : isLightNav
                 ? "hover:text-[#521D2B] text-[#211A19]"
                 : "hover:opacity-70 text-white"
@@ -149,14 +216,19 @@ export function Navbar() {
           >
             <span>About</span>
             {isAboutActive && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#521D2B] rounded-full" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
+                isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
+              }`} />
             )}
           </Link>
           <Link
             href="/contact"
+            onClick={(e) => handleNavClick("contact", "/contact", e)}
             className={`transition-all relative py-1 ${
               isContactActive
-                ? "text-[#521D2B] font-semibold"
+                ? isLightNav
+                  ? "text-[#521D2B] font-semibold"
+                  : "text-[#d4af37] font-semibold"
                 : isLightNav
                 ? "hover:text-[#521D2B] text-[#211A19]"
                 : "hover:opacity-70 text-white"
@@ -164,7 +236,9 @@ export function Navbar() {
           >
             <span>Contact</span>
             {isContactActive && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#521D2B] rounded-full" />
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
+                isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
+              }`} />
             )}
           </Link>
 
@@ -222,7 +296,7 @@ export function Navbar() {
           >
             <Link
               href="/"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick("hero", "/", e)}
               className={`py-1.5 transition-colors flex items-center justify-between ${
                 isHomeActive
                   ? isLightNav
@@ -237,8 +311,18 @@ export function Navbar() {
               )}
             </Link>
             <Link
+              href="/services"
+              onClick={(e) => handleNavClick("services", "/services", e)}
+              className={`py-1.5 transition-colors flex items-center justify-between ${
+                isServicesActive ? "text-[#521D2B] font-semibold" : "hover:text-[#521D2B]"
+              }`}
+            >
+              <span>Services</span>
+              {isServicesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]" />}
+            </Link>
+            <Link
               href="/venues"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick("venues", "/venues", e)}
               className={`py-1.5 transition-colors flex items-center justify-between ${
                 isVenuesActive ? "text-[#521D2B] font-semibold" : "hover:text-[#521D2B]"
               }`}
@@ -254,18 +338,8 @@ export function Navbar() {
               {isVenuesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]" />}
             </Link>
             <Link
-              href="/services"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`py-1.5 transition-colors flex items-center justify-between ${
-                isServicesActive ? "text-[#521D2B] font-semibold" : "hover:text-[#521D2B]"
-              }`}
-            >
-              <span>Services</span>
-              {isServicesActive && <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]" />}
-            </Link>
-            <Link
               href="/about"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick("about", "/about", e)}
               className={`py-1.5 transition-colors flex items-center justify-between ${
                 isAboutActive ? "text-[#521D2B] font-semibold" : "hover:text-[#521D2B]"
               }`}
@@ -275,7 +349,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick("contact", "/contact", e)}
               className={`py-1.5 transition-colors flex items-center justify-between ${
                 isContactActive
                   ? "text-[#521D2B] font-semibold"

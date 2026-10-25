@@ -33,39 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-async function getLiveTestimonials(): Promise<TestimonialItem[]> {
-  if (isDatabaseConfigured()) {
-    const db = getAdminDb();
-    if (db) {
-      try {
-        const { data, error } = await db
-          .from("testimonials")
-          .select("*")
-          .eq("is_published", true)
-          .eq("client_consent_recorded", true)
-          .order("created_at", { ascending: false });
-
-        if (!error && data && data.length > 0) {
-          return data.map((t) => ({
-            id: t.id,
-            coupleNames: t.couple_names,
-            celebrationType: t.celebration_type,
-            location: t.location,
-            quote: t.quote,
-            fullStory: t.full_story || undefined,
-            weddingSeason: t.wedding_season || undefined,
-            verified: t.verified,
-            featured: t.featured,
-            source: t.source,
-          }));
-        }
-      } catch (err) {
-        console.warn("[About Testimonials] Fetch error, using default empty:", err);
-      }
-    }
-  }
-  return [];
-}
+import { getLiveTestimonials } from "@/lib/testimonials";
 
 export default async function AboutPage() {
   const testimonials = await getLiveTestimonials();

@@ -10,11 +10,15 @@ import { ContactActions } from "./ContactActions";
 import { ContactFooter } from "./ContactFooter";
 import { MobileStickyBar } from "./MobileStickyBar";
 
-export function ConciergeContact() {
+interface ConciergeContactProps {
+  showNav?: boolean;
+}
+
+export function ConciergeContact({ showNav = true }: ConciergeContactProps = {}) {
   return (
-    <div className="relative min-h-screen w-full bg-[#F7F3ED] text-[#211A19] flex flex-col justify-between overflow-x-hidden selection:bg-[#521D2B]/15 selection:text-[#521D2B]">
+    <div className={`relative w-full bg-[#F7F3ED] text-[#211A19] flex flex-col justify-between overflow-x-hidden selection:bg-[#521D2B]/15 selection:text-[#521D2B] ${showNav ? "min-h-screen" : ""}`}>
       {/* Shared Global Navigation styled in warm ivory */}
-      <Navbar />
+      {showNav && <Navbar />}
 
       {/* Atmospheric Soft Warm Glows (matching Venues page) */}
       <div 
@@ -23,7 +27,7 @@ export function ConciergeContact() {
       />
 
       {/* Main Content Area */}
-      <main className="relative z-10 flex-1 w-full pt-28 pb-16">
+      <main className={`relative z-10 flex-1 w-full pb-16 ${showNav ? "pt-28" : "pt-12 sm:pt-16"}`}>
         {/* =========================================================================
             SECTION 5: ASYMMETRIC EDITORIAL CONCIERGE HERO (Light Theme)
             ========================================================================= */}
