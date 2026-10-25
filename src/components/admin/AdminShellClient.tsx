@@ -20,7 +20,17 @@ export function AdminShellClient({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#FBF9F5] text-[#1C1611] flex antialiased selection:bg-[#521D2B] selection:text-[#FFFFFF]">
+    <div className="min-h-screen bg-[#0F0C0A] text-[#FAF7F2] flex antialiased selection:bg-[#521D2B] selection:text-[#FAF7F2] relative overflow-x-hidden">
+      {/* Ambient Royal Gold atmospheric glow for depth */}
+      <div 
+        className="fixed top-0 left-1/4 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_center,_rgba(214,181,109,0.04)_0%,_transparent_70%)] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+      <div 
+        className="fixed bottom-0 right-10 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,_rgba(82,29,43,0.06)_0%,_transparent_70%)] pointer-events-none z-0"
+        aria-hidden="true"
+      />
+
       {/* Sidebar Navigation */}
       <AdminSidebar
         isOpen={isSidebarOpen}
@@ -30,7 +40,7 @@ export function AdminShellClient({
       />
 
       {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 lg:pl-72">
+      <div className="flex-1 flex flex-col min-w-0 lg:pl-72 relative z-10">
         <AdminHeader
           onMenuToggle={() => setIsSidebarOpen(true)}
           userFullName={userFullName}
