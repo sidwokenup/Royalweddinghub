@@ -41,25 +41,25 @@ export default async function AdminEnquiriesPage() {
   return (
     <div className="space-y-6 pb-12">
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#D6B56D]/15">
         <div>
           <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
             <Link
               href="/admin"
-              className="hover:text-[#521D2B] transition-colors flex items-center gap-1"
+              className="hover:text-[#D6B56D] transition-colors flex items-center gap-1"
             >
-              <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
+              <ArrowLeft className="w-3.5 h-3.5 text-[#D6B56D]" strokeWidth={1.5} />
               <span>Dashboard</span>
             </Link>
-            <span>/</span>
-            <span className="text-[#85662F] font-medium">Inquiries CRM</span>
+            <span className="text-[#D6B56D]/40">/</span>
+            <span className="text-[#D6B56D] font-medium">Inquiries CRM</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-sans text-[#1C1611] font-bold tracking-tight flex items-center gap-3">
-            <MessageSquareText className="w-6 h-6 text-[#85662F]" strokeWidth={1.5} />
-            <span>Client Inquiries & Consultation Leads</span>
+          <h1 className="text-2xl sm:text-3xl font-serif text-[#FAF7F2] font-normal tracking-tight flex items-center gap-3">
+            <MessageSquareText className="w-6 h-6 text-[#D6B56D]" strokeWidth={1.5} />
+            <span>Client Inquiries &amp; Consultation Leads</span>
           </h1>
-          <p className="text-xs text-[#5C5245] mt-1 font-light">
-            Real-time pipeline of incoming wedding inquiries with WhatsApp direct action, status workflows, and UTM tracking.
+          <p className="text-xs text-[#B8ADA3] mt-1 font-light">
+            Real-time pipeline of incoming wedding inquiries with instant WhatsApp triage, status workflows, and UTM tracking.
           </p>
         </div>
       </div>
