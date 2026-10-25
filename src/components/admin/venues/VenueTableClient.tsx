@@ -109,46 +109,46 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
   return (
     <div className="space-y-6">
       {/* Top Controls: Search, Filters, Add Button */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-3xl bg-[#181310]/85 border border-[#D6B56D]/15 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         {/* Search */}
         <div className="relative flex-1 max-w-md">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C8070]">
-            <Search className="w-4 h-4" />
+            <Search className="w-4 h-4 text-[#D6B56D]" />
           </div>
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search venue by name, category, or area..."
-            className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#1C1611] placeholder-[#A09585] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all shadow-2xs"
+            className="w-full bg-white/[0.03] border border-[#D6B56D]/20 rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#FAF7F2] placeholder-[#8C8070] focus:outline-none focus:border-[#D6B56D] focus:ring-2 focus:ring-[#D6B56D]/20 transition-all font-sans"
           />
         </div>
 
         {/* Filters & Actions */}
         <div className="flex flex-wrap items-center gap-2.5">
           {/* Category Filter */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F8F5EE] border border-[#EAE4D9] text-xs text-[#85662F]">
-            <Filter className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.03] border border-[#D6B56D]/20 text-xs text-[#D6B56D]">
+            <Filter className="w-3.5 h-3.5 text-[#D6B56D]" />
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="bg-transparent text-xs text-[#1C1611] font-medium focus:outline-none cursor-pointer"
+              className="bg-transparent text-xs text-[#FAF7F2] font-medium focus:outline-none cursor-pointer"
             >
-              <option value="all">All Categories</option>
+              <option value="all" className="bg-[#181310] text-[#FAF7F2]">All Categories</option>
               {categories.map((c) => (
-                <option key={c} value={c}>{c}</option>
+                <option key={c} value={c} className="bg-[#181310] text-[#FAF7F2]">{c}</option>
               ))}
             </select>
           </div>
 
           {/* Status Filter */}
-          <div className="flex items-center rounded-xl bg-[#F8F5EE] border border-[#EAE4D9] p-1 text-xs">
+          <div className="flex items-center rounded-xl bg-white/[0.03] border border-[#D6B56D]/20 p-1 text-xs font-mono">
             <button
               onClick={() => setStatusFilter('all')}
               className={`px-3 py-1 rounded-lg text-xs transition-all ${
                 statusFilter === 'all'
-                  ? 'bg-[#FFFFFF] text-[#521D2B] font-semibold shadow-xs'
-                  : 'text-[#5C5245] hover:text-[#1C1611]'
+                  ? 'bg-[#521D2B] text-[#FAF7F2] font-semibold shadow-xs border border-[#D6B56D]/30'
+                  : 'text-[#B8ADA3] hover:text-[#FAF7F2]'
               }`}
             >
               All ({venues.length})
@@ -157,18 +157,18 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
               onClick={() => setStatusFilter('published')}
               className={`px-3 py-1 rounded-lg text-xs transition-all ${
                 statusFilter === 'published'
-                  ? 'bg-[#FFFFFF] text-[#521D2B] font-semibold shadow-xs'
-                  : 'text-[#5C5245] hover:text-[#1C1611]'
+                  ? 'bg-emerald-950/60 text-emerald-300 font-semibold shadow-xs border border-emerald-500/40'
+                  : 'text-[#B8ADA3] hover:text-[#FAF7F2]'
               }`}
             >
-              Published ({venues.filter((v) => v.is_published).length})
+              Live ({venues.filter((v) => v.is_published).length})
             </button>
             <button
               onClick={() => setStatusFilter('draft')}
               className={`px-3 py-1 rounded-lg text-xs transition-all ${
                 statusFilter === 'draft'
-                  ? 'bg-[#FFFFFF] text-[#521D2B] font-semibold shadow-xs'
-                  : 'text-[#5C5245] hover:text-[#1C1611]'
+                  ? 'bg-white/10 text-[#FAF7F2] font-semibold shadow-xs border border-white/20'
+                  : 'text-[#B8ADA3] hover:text-[#FAF7F2]'
               }`}
             >
               Drafts ({venues.filter((v) => !v.is_published).length})
@@ -178,39 +178,39 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
           {/* Add Venue Trigger */}
           <Link
             href="/admin/venues/new"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#521D2B] text-white text-xs font-medium tracking-wide hover:bg-[#682637] transition-all shadow-sm ml-auto"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#D6B56D] to-[#E5CCA0] hover:from-[#E0C385] hover:to-[#F2DFC0] text-[#1C1611] text-xs font-semibold tracking-wide transition-all shadow-[0_2px_12px_rgba(214,181,109,0.25)] hover:scale-[1.02] active:scale-[0.98] ml-auto font-sans"
           >
-            <PlusCircle className="w-3.5 h-3.5 text-[#E6C994]" />
+            <PlusCircle className="w-3.5 h-3.5 text-[#1C1611]" strokeWidth={1.75} />
             <span>Add Venue</span>
           </Link>
         </div>
       </div>
 
       {/* Venues Data Table */}
-      <div className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] overflow-hidden shadow-sm">
+      <div className="rounded-3xl bg-[#181310]/85 border border-[#D6B56D]/15 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#F8F5EE] text-[#5C5245] uppercase font-mono tracking-wider border-b border-[#EAE4D9]">
+            <thead className="bg-white/[0.02] text-[#8C8070] uppercase font-mono tracking-wider border-b border-[#D6B56D]/15 text-[11px]">
               <tr>
-                <th className="py-3.5 px-5">Venue Property</th>
-                <th className="py-3.5 px-4">Category</th>
-                <th className="py-3.5 px-4">Capacity & Rooms</th>
-                <th className="py-3.5 px-4">Pricing</th>
-                <th className="py-3.5 px-4 text-center">Status</th>
-                <th className="py-3.5 px-5 text-right">Actions</th>
+                <th className="py-4 px-5">Venue Property</th>
+                <th className="py-4 px-4">Category</th>
+                <th className="py-4 px-4">Capacity &amp; Rooms</th>
+                <th className="py-4 px-4">Pricing</th>
+                <th className="py-4 px-4 text-center">Status</th>
+                <th className="py-4 px-5 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#F0ECE1] text-[#1C1611]">
+            <tbody className="divide-y divide-[#D6B56D]/10 text-[#FAF7F2]">
               {filtered.length > 0 ? (
                 filtered.map((venue) => (
                   <tr
                     key={venue.id}
-                    className="hover:bg-[#FDFBF7] transition-colors group"
+                    className="hover:bg-white/[0.03] transition-colors group"
                   >
                     {/* Property info & thumbnail */}
-                    <td className="py-3.5 px-5">
+                    <td className="py-4 px-5">
                       <div className="flex items-center gap-3.5">
-                        <div className="w-14 h-11 rounded-lg bg-[#F8F5EE] border border-[#EAE4D9] overflow-hidden relative shrink-0 shadow-2xs">
+                        <div className="w-14 h-11 rounded-xl bg-black/40 border border-[#D6B56D]/20 overflow-hidden relative shrink-0 shadow-sm">
                           <Image
                             src={venue.primary_image_url || '/venues/santorini-resort-lucknow/thumbnail.jpg'}
                             alt={venue.name}
@@ -221,10 +221,10 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
                           />
                         </div>
                         <div>
-                          <div className="font-semibold text-sm text-[#1C1611] group-hover:text-[#521D2B] transition-colors flex items-center gap-2">
+                          <div className="font-medium text-sm text-[#FAF7F2] group-hover:text-[#D6B56D] transition-colors flex items-center gap-2">
                             <span>{venue.name}</span>
                             {venue.is_featured && (
-                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#FDF9F0] text-[#705527] font-mono border border-[#E9DECA] font-medium">
+                              <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#521D2B]/40 text-[#D6B56D] font-mono border border-[#D6B56D]/30 font-semibold">
                                 Featured
                               </span>
                             )}
@@ -237,54 +237,54 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
                     </td>
 
                     {/* Category */}
-                    <td className="py-3.5 px-4">
-                      <span className="px-2.5 py-1 rounded-full bg-[#FDF9F0] text-[#705527] border border-[#E9DECA] text-[11px] font-sans font-medium">
+                    <td className="py-4 px-4">
+                      <span className="px-2.5 py-1 rounded-full bg-white/[0.04] text-[#D6B56D] border border-[#D6B56D]/20 text-[11px] font-mono font-medium">
                         {venue.category}
                       </span>
                     </td>
 
                     {/* Capacity & Rooms */}
-                    <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-1.5 text-[#1C1611] font-medium">
-                        <Users className="w-3.5 h-3.5 text-[#85662F]" />
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-1.5 text-[#FAF7F2] font-medium font-mono text-xs">
+                        <Users className="w-3.5 h-3.5 text-[#D6B56D]" />
                         <span>
                           {venue.min_pax && venue.max_pax
                             ? `${venue.min_pax} - ${venue.max_pax} Guests`
                             : 'Bespoke Pax'}
                         </span>
                       </div>
-                      <div className="text-[11px] text-[#8C8070] mt-0.5">
+                      <div className="text-[11px] text-[#8C8070] mt-0.5 font-light">
                         {venue.rooms ? `${venue.rooms} Guest Rooms` : 'Lawn / Day Event'}
                       </div>
                     </td>
 
                     {/* Pricing */}
-                    <td className="py-3.5 px-4 font-mono">
+                    <td className="py-4 px-4 font-mono">
                       {venue.price_per_plate ? (
-                        <div className="text-[#1C1611] font-semibold">
+                        <div className="text-[#FAF7F2] font-semibold text-xs">
                           ₹{venue.price_per_plate.toLocaleString('en-IN')}
-                          <span className="text-[10px] text-[#8C8070] font-sans font-normal ml-0.5">/plate</span>
+                          <span className="text-[10px] text-[#8C8070] font-light ml-0.5">/plate</span>
                         </div>
                       ) : (
-                        <span className="text-[#8C8070] italic font-sans">On Request</span>
+                        <span className="text-[#8C8070] italic text-xs">On Request</span>
                       )}
                     </td>
 
                     {/* Status Toggle */}
-                    <td className="py-3.5 px-4 text-center">
+                    <td className="py-4 px-4 text-center">
                       <button
                         onClick={() => handleTogglePublish(venue)}
                         disabled={isPending}
                         className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-medium border transition-all ${
                           venue.is_published
-                            ? 'bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100'
-                            : 'bg-[#F5F2EB] text-[#5C5245] border-[#E2DAD0] hover:text-[#1C1611]'
+                            ? 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40 hover:bg-emerald-900/60'
+                            : 'bg-white/[0.04] text-[#B8ADA3] border-white/[0.08] hover:text-[#FAF7F2]'
                         }`}
                         title="Click to toggle publish status"
                       >
                         {venue.is_published ? (
                           <>
-                            <Check className="w-3 h-3 text-emerald-600" />
+                            <Check className="w-3 h-3 text-emerald-400" />
                             <span>Live</span>
                           </>
                         ) : (
@@ -297,27 +297,27 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
                     </td>
 
                     {/* Action buttons */}
-                    <td className="py-3.5 px-5 text-right">
-                      <div className="flex items-center justify-end gap-1">
+                    <td className="py-4 px-5 text-right">
+                      <div className="flex items-center justify-end gap-1.5">
                         <Link
                           href={`/venues/${venue.slug}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-1.5 rounded-lg text-[#8C8070] hover:text-[#521D2B] hover:bg-[#F8F5EE] transition-colors"
+                          className="p-2 rounded-xl text-[#8C8070] hover:text-[#D6B56D] hover:bg-white/[0.04] transition-colors"
                           title="Preview on live public website"
                         >
                           <ExternalLink className="w-4 h-4" />
                         </Link>
                         <Link
                           href={`/admin/venues/${venue.id}`}
-                          className="p-1.5 rounded-lg text-[#521D2B] hover:text-[#7D293F] hover:bg-[#FDF9F0] transition-colors"
+                          className="p-2 rounded-xl text-[#D6B56D] hover:text-[#FAF7F2] hover:bg-[#521D2B]/40 transition-colors"
                           title="Edit venue details and images"
                         >
                           <Edit className="w-4 h-4" />
                         </Link>
                         <button
                           onClick={() => setVenueToDelete(venue)}
-                          className="p-1.5 rounded-lg text-[#8C8070] hover:text-rose-600 hover:bg-rose-50 transition-colors"
+                          className="p-2 rounded-xl text-[#8C8070] hover:text-rose-400 hover:bg-rose-950/40 transition-colors"
                           title="Delete venue"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -328,12 +328,12 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-[#8C8070]">
-                    <div className="w-12 h-12 rounded-2xl bg-[#FDF9F0] text-[#85662F] border border-[#E9DECA] flex items-center justify-center mx-auto mb-3 shadow-2xs">
-                      <Building2 className="w-6 h-6" />
+                  <td colSpan={6} className="py-14 text-center text-[#8C8070]">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#521D2B]/40 to-[#2A0E16]/40 text-[#D6B56D] border border-[#D6B56D]/30 flex items-center justify-center mx-auto mb-3 shadow-sm">
+                      <Building2 className="w-6 h-6 text-[#D6B56D]" />
                     </div>
-                    <div className="text-sm font-semibold text-[#1C1611]">No venues match your filter</div>
-                    <div className="text-xs text-[#8C8070] mt-1">
+                    <div className="text-sm font-serif text-[#FAF7F2]">No venues match your filter</div>
+                    <div className="text-xs text-[#8C8070] mt-1 font-light">
                       Try clearing your search term or select another category.
                     </div>
                   </td>
@@ -344,43 +344,43 @@ export function VenueTableClient({ initialVenues }: VenueTableClientProps) {
         </div>
 
         {/* Table footer count */}
-        <div className="p-3.5 border-t border-[#EAE4D9] bg-[#FAF7F2] text-xs text-[#7A6E5F] flex items-center justify-between font-mono">
+        <div className="p-4 border-t border-[#D6B56D]/15 bg-white/[0.02] text-xs text-[#8C8070] flex items-center justify-between font-mono">
           <span>Showing {filtered.length} of {venues.length} venues</span>
-          <span className="hidden sm:inline">Instant Edge Revalidation Enforced</span>
+          <span className="hidden sm:inline text-[#D6B56D]">Instant Edge Revalidation Enforced</span>
         </div>
       </div>
 
       {/* Delete Confirmation Modal */}
       {venueToDelete && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1C1611]/50 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-[#FFFFFF] border border-rose-200 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
-            <div className="flex items-center gap-3 text-rose-700 mb-4">
-              <div className="p-2.5 rounded-2xl bg-rose-50 border border-rose-200/80">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="bg-[#1A1411] border border-rose-900/40 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl text-[#FAF7F2]">
+            <div className="flex items-center gap-3 text-rose-400 mb-4">
+              <div className="p-2.5 rounded-2xl bg-rose-950/40 border border-rose-800/40">
                 <AlertTriangle className="w-6 h-6" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">Confirm Venue Deletion</h3>
-                <p className="text-xs text-[#8C8070] mt-0.5">This action cannot be undone.</p>
+                <h3 className="text-base font-serif text-[#FAF7F2] font-normal tracking-tight">Confirm Venue Deletion</h3>
+                <p className="text-xs text-[#8C8070] mt-0.5 font-mono">This action cannot be undone.</p>
               </div>
             </div>
 
-            <p className="text-xs text-[#5C5245] leading-relaxed mb-6 font-light">
-              Are you sure you want to delete <span className="font-semibold text-[#1C1611]">&ldquo;{venueToDelete.name}&rdquo;</span>?
+            <p className="text-xs text-[#B8ADA3] leading-relaxed mb-6 font-light">
+              Are you sure you want to delete <span className="font-semibold text-[#FAF7F2]">&ldquo;{venueToDelete.name}&rdquo;</span>?
               Its associated gallery images and records will be permanently removed from the catalog.
             </p>
 
-            <div className="flex items-center justify-end gap-3">
+            <div className="flex items-center justify-end gap-3 font-sans">
               <button
                 type="button"
                 onClick={() => setVenueToDelete(null)}
-                className="px-4 py-2 rounded-xl text-xs text-[#5C5245] hover:bg-[#F8F5EE] transition-colors"
+                className="px-4 py-2 rounded-xl text-xs text-[#B8ADA3] hover:text-[#FAF7F2] hover:bg-white/[0.04] transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={confirmDelete}
-                className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-medium tracking-wide shadow-sm transition-colors"
+                className="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold tracking-wide shadow-sm transition-colors"
               >
                 Confirm Delete
               </button>

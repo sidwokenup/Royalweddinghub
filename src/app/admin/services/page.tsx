@@ -74,21 +74,23 @@ export default async function AdminServicesPage() {
   return (
     <div className="space-y-6 pb-12">
       {/* Header bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#EAE4D9]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#D6B56D]/15">
         <div>
-          <div className="flex items-center gap-2 text-xs text-[#8C8070] mb-1 font-mono">
-            <Link href="/admin" className="hover:text-[#521D2B] transition-colors flex items-center gap-1 font-sans">
+          <div className="flex items-center gap-2 text-xs text-[#B8ADA3]/70 mb-1.5 font-mono">
+            <Link href="/admin" className="hover:text-[#D6B56D] transition-colors flex items-center gap-1 font-sans">
               <ArrowLeft className="w-3.5 h-3.5" strokeWidth={1.5} />
               <span>Dashboard</span>
             </Link>
-            <span>/</span>
-            <span className="text-[#521D2B] font-semibold font-sans">Services & Disciplines</span>
+            <span className="text-[#D6B56D]/40">/</span>
+            <span className="text-[#D6B56D] font-medium font-sans">Services & Disciplines</span>
           </div>
-          <h1 className="text-2xl font-sans text-[#1C1611] font-bold tracking-tight flex items-center gap-3">
-            <Layers className="w-6 h-6 text-[#85662F]" strokeWidth={1.5} />
+          <h1 className="text-2xl sm:text-3xl font-serif text-[#FAF7F2] tracking-wide flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#D6B56D]/10 border border-[#D6B56D]/30 flex items-center justify-center text-[#D6B56D]">
+              <Layers className="w-5 h-5" strokeWidth={1.5} />
+            </div>
             <span>Wedding Disciplines & Offerings</span>
           </h1>
-          <p className="text-xs text-[#5C5245] mt-1 font-light">
+          <p className="text-xs text-[#B8ADA3] mt-1 font-light">
             Manage headlines, deliverables, subcategory tags, and styling for Lucknow luxury wedding services.
           </p>
         </div>

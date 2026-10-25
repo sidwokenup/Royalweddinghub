@@ -166,13 +166,13 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
   return (
     <div className="space-y-6">
       {/* Upload Dropzone Card */}
-      <div className="p-6 rounded-3xl bg-[#FFFFFF] border border-[#EAE4D9] space-y-4 shadow-[0_1px_3px_rgba(28,22,17,0.03)]">
+      <div className="p-6 rounded-3xl bg-[#181310]/85 backdrop-blur-xl border border-[#D6B56D]/15 space-y-4 shadow-[0_12px_32px_rgba(0,0,0,0.35)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h3 className="text-sm font-sans text-[#1C1611] font-semibold tracking-tight">
+            <h3 className="text-sm font-serif text-[#FAF7F2] tracking-wide font-normal">
               Direct-to-Cloud Asset Ingestion
             </h3>
-            <p className="text-xs text-[#5C5245] font-light mt-0.5">
+            <p className="text-xs text-[#B8ADA3] font-light mt-0.5">
               Upload high-resolution photography, floorplans, and royal videos. Files upload directly to storage with zero Vercel payload restrictions.
             </p>
           </div>
@@ -181,7 +181,7 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
             <select
               value={uploadFolder}
               onChange={(e) => setUploadFolder(e.target.value)}
-              className="bg-[#FFFFFF] border border-[#DDD5C7] text-xs font-mono text-[#1C1611] rounded-xl px-3 py-1.5 focus:outline-none focus:border-[#521D2B] cursor-pointer"
+              className="bg-[#0F0C0A] border border-[#D6B56D]/20 text-xs font-mono text-[#FAF7F2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-[#D6B56D] cursor-pointer"
             >
               <option value="general">Folder: General</option>
               <option value="venues">Folder: Venues</option>
@@ -193,7 +193,7 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
               type="button"
               onClick={handleSyncLocal}
               disabled={isPending}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FAF7F2] border border-[#DDD5C7] text-xs text-[#5C5245] hover:text-[#1C1611] hover:bg-[#F2ECE1] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0F0C0A] border border-[#D6B56D]/20 text-xs text-[#B8ADA3] hover:text-[#FAF7F2] hover:bg-[#D6B56D]/10 hover:border-[#D6B56D]/40 transition-colors"
               title="Index existing public/venues and public/images into media library"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isPending ? 'animate-spin' : ''}`} />
@@ -205,7 +205,7 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
         {/* Dropzone Area */}
         <div
           onClick={() => fileInputRef.current?.click()}
-          className="border-2 border-dashed border-[#DDD5C7] hover:border-[#85662F] rounded-2xl p-7 text-center cursor-pointer bg-[#FDFBF7] hover:bg-[#FAF7F2] transition-all group"
+          className="border-2 border-dashed border-[#D6B56D]/20 hover:border-[#D6B56D]/50 rounded-2xl p-7 text-center cursor-pointer bg-[#0F0C0A]/40 hover:bg-[#0F0C0A]/70 transition-all group"
         >
           <input
             ref={fileInputRef}
@@ -215,42 +215,42 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
             className="hidden"
           />
 
-          <div className="w-12 h-12 rounded-2xl bg-[#FDF9F0] border border-[#E9DECA] text-[#705527] group-hover:scale-105 flex items-center justify-center mx-auto mb-3 transition-transform">
+          <div className="w-12 h-12 rounded-2xl bg-[#D6B56D]/10 border border-[#D6B56D]/30 text-[#D6B56D] group-hover:scale-105 flex items-center justify-center mx-auto mb-3 transition-transform">
             <UploadCloud className="w-6 h-6" />
           </div>
 
-          <div className="text-xs font-medium text-[#1C1611]">
+          <div className="text-xs font-medium text-[#FAF7F2]">
             Click or drag & drop files to upload
           </div>
-          <div className="text-[11px] text-[#5C5245] mt-1 font-light">
+          <div className="text-[11px] text-[#B8ADA3] mt-1 font-light">
             Supports WebP, JPEG, PNG, AVIF & MP4 (Up to 100 MB per asset)
           </div>
 
           {isUploading && (
             <div className="max-w-xs mx-auto mt-4 space-y-1.5">
-              <div className="w-full bg-[#EAE4D9] rounded-full h-1.5 overflow-hidden">
+              <div className="w-full bg-[#0F0C0A] rounded-full h-1.5 overflow-hidden border border-[#D6B56D]/20">
                 <div
-                  className="bg-[#521D2B] h-full transition-all duration-300 rounded-full"
+                  className="bg-gradient-to-r from-[#D6B56D] to-[#C29D53] h-full transition-all duration-300 rounded-full"
                   style={{ width: `${uploadProgress}%` }}
                 />
               </div>
-              <div className="text-[10px] font-mono text-[#521D2B] font-medium">
+              <div className="text-[10px] font-mono text-[#D6B56D] font-medium">
                 Uploading directly to cloud storage... {uploadProgress}%
               </div>
             </div>
           )}
 
           {uploadError && (
-            <div className="mt-3 text-xs text-red-600">{uploadError}</div>
+            <div className="mt-3 text-xs text-red-400">{uploadError}</div>
           )}
         </div>
       </div>
 
       {/* Toolbar: Search & Folder Filter Tabs */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-[#181310]/85 backdrop-blur-xl border border-[#D6B56D]/15 shadow-sm">
         {/* Search */}
         <div className="relative flex-1 max-w-sm">
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C8070]">
+          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#D6B56D]">
             <Search className="w-4 h-4" />
           </div>
           <input
@@ -258,7 +258,7 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by asset filename..."
-            className="w-full bg-[#FFFFFF] border border-[#DDD5C7] rounded-xl pl-10 pr-4 py-2 text-xs text-[#1C1611] placeholder-[#8C8070] focus:outline-none focus:border-[#521D2B] focus:ring-2 focus:ring-[#521D2B]/10 transition-all"
+            className="w-full bg-[#0F0C0A] border border-[#D6B56D]/20 rounded-xl pl-10 pr-4 py-2 text-xs text-[#FAF7F2] placeholder-[#B8ADA3]/40 focus:outline-none focus:border-[#D6B56D] focus:ring-1 focus:ring-[#D6B56D]/30 transition-all"
           />
         </div>
 
@@ -270,8 +270,8 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
               onClick={() => setFolderFilter(f)}
               className={`px-3 py-1.5 rounded-xl border capitalize transition-all whitespace-nowrap ${
                 folderFilter === f
-                  ? 'bg-[#521D2B] border-[#521D2B] text-white font-medium shadow-sm'
-                  : 'bg-[#FFFFFF] border-[#EAE4D9] text-[#5C5245] hover:text-[#1C1611] hover:border-[#DDD5C7]'
+                  ? 'bg-gradient-to-r from-[#D6B56D] to-[#C29D53] border-[#D6B56D] text-[#0F0C0A] font-semibold shadow-sm'
+                  : 'bg-[#0F0C0A]/60 border-[#D6B56D]/15 text-[#B8ADA3] hover:text-[#FAF7F2] hover:border-[#D6B56D]/30'
               }`}
             >
               {f === 'all' ? `All (${assets.length})` : f}
@@ -289,10 +289,10 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
           return (
             <div
               key={asset.id}
-              className="rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] overflow-hidden flex flex-col justify-between shadow-[0_1px_3px_rgba(28,22,17,0.03)] hover:shadow-md hover:border-[#85662F]/40 transition-all duration-300 group"
+              className="rounded-2xl bg-[#181310]/85 backdrop-blur-xl border border-[#D6B56D]/15 overflow-hidden flex flex-col justify-between shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:border-[#D6B56D]/40 transition-all duration-300 group hover:shadow-[0_16px_40px_rgba(214,181,109,0.06)]"
             >
               {/* Thumbnail Container */}
-              <div className="relative h-36 bg-[#F8F5EE] overflow-hidden">
+              <div className="relative h-36 bg-[#0F0C0A] overflow-hidden">
                 <Image
                   src={displayUrl}
                   alt={asset.filename}
@@ -306,14 +306,14 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
                 <button
                   type="button"
                   onClick={() => setPreviewAsset(asset)}
-                  className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/60 text-white/80 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
+                  className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/70 text-white/80 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
                   title="Inspect Full Image"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
                 </button>
 
                 {/* Folder pill badge */}
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-white/90 text-[10px] font-mono text-[#705527] border border-[#EAE4D9] backdrop-blur-sm flex items-center gap-1 shadow-sm">
+                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-[#0F0C0A]/90 text-[10px] font-mono text-[#D6B56D] border border-[#D6B56D]/25 backdrop-blur-sm flex items-center gap-1 shadow-sm">
                   <Folder className="w-2.5 h-2.5" />
                   <span>{asset.folder}</span>
                 </div>
@@ -321,39 +321,39 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
 
               {/* Info & Metadata */}
               <div className="p-3.5 space-y-2">
-                <div className="text-xs font-medium text-[#1C1611] truncate" title={asset.filename}>
+                <div className="text-xs font-medium text-[#FAF7F2] truncate" title={asset.filename}>
                   {asset.filename}
                 </div>
 
-                <div className="flex items-center justify-between text-[11px] text-[#5C5245] font-mono">
+                <div className="flex items-center justify-between text-[11px] text-[#B8ADA3] font-mono">
                   <span>{formatBytes(asset.file_size_bytes)}</span>
                   {asset.reference_count > 0 ? (
-                    <span className="text-emerald-700 text-[10px] font-medium">Linked</span>
+                    <span className="text-emerald-400 text-[10px] font-medium">Linked</span>
                   ) : (
-                    <span className="text-[#8C8070] text-[10px]">Unlinked</span>
+                    <span className="text-[#B8ADA3]/50 text-[10px]">Unlinked</span>
                   )}
                 </div>
 
                 {/* Action Buttons */}
-                <div className="pt-2 border-t border-[#F2ECE1] flex items-center justify-between gap-1.5">
+                <div className="pt-2 border-t border-[#D6B56D]/10 flex items-center justify-between gap-1.5">
                   <button
                     type="button"
                     onClick={() => handleCopyUrl(asset)}
                     className={`flex-1 py-1 px-2 rounded-lg text-[11px] font-medium flex items-center justify-center gap-1 transition-all ${
                       isCopied
-                        ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
-                        : 'bg-[#FAF7F2] text-[#1C1611] hover:bg-[#F2ECE1] border border-[#DDD5C7]'
+                        ? 'bg-emerald-950/40 text-emerald-400 border border-emerald-500/30'
+                        : 'bg-[#0F0C0A] text-[#FAF7F2] hover:bg-[#D6B56D]/10 hover:border-[#D6B56D]/40 border border-[#D6B56D]/20'
                     }`}
                     title="Copy path or URL to clipboard"
                   >
-                    {isCopied ? <Check className="w-3 h-3 text-emerald-700" /> : <Copy className="w-3 h-3" />}
+                    {isCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-[#D6B56D]" />}
                     <span>{isCopied ? 'Copied' : 'Copy'}</span>
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setAssetToDelete(asset)}
-                    className="p-1 rounded-lg text-[#8C8070] hover:text-red-600 hover:bg-red-50 transition-colors"
+                    className="p-1 rounded-lg text-[#B8ADA3]/60 hover:text-red-400 hover:bg-red-950/40 transition-colors"
                     title="Delete media asset"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
@@ -366,12 +366,12 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
       </div>
 
       {filtered.length === 0 && (
-        <div className="py-16 text-center rounded-2xl bg-[#FFFFFF] border border-[#EAE4D9] p-8 shadow-sm">
-          <div className="w-12 h-12 rounded-2xl bg-[#FDF9F0] border border-[#E9DECA] text-[#705527] flex items-center justify-center mx-auto mb-3">
+        <div className="py-16 text-center rounded-2xl bg-[#181310]/85 backdrop-blur-xl border border-[#D6B56D]/15 p-8 shadow-sm">
+          <div className="w-12 h-12 rounded-2xl bg-[#D6B56D]/10 border border-[#D6B56D]/30 text-[#D6B56D] flex items-center justify-center mx-auto mb-3">
             <UploadCloud className="w-6 h-6" />
           </div>
-          <div className="text-sm font-medium text-[#1C1611]">No media assets found</div>
-          <div className="text-xs text-[#5C5245] mt-1 max-w-sm mx-auto leading-relaxed font-light">
+          <div className="text-sm font-serif text-[#FAF7F2] font-normal tracking-wide">No media assets found</div>
+          <div className="text-xs text-[#B8ADA3] mt-1 max-w-sm mx-auto leading-relaxed font-light">
             Upload new assets using the drag-and-drop zone above, or click &ldquo;Index Local Assets&rdquo; to scan existing images.
           </div>
         </div>
@@ -379,10 +379,10 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
 
       {/* Lightbox Preview Modal */}
       {previewAsset && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
           <div className="max-w-4xl w-full max-h-[90vh] flex flex-col items-center">
-            <div className="w-full flex items-center justify-between text-white pb-3">
-              <div className="text-xs font-mono truncate max-w-md">
+            <div className="w-full flex items-center justify-between text-[#FAF7F2] pb-3 border-b border-[#D6B56D]/20">
+              <div className="text-xs font-mono truncate max-w-md text-[#D6B56D]">
                 {previewAsset.filename} ({formatBytes(previewAsset.file_size_bytes)})
               </div>
               <div className="flex items-center gap-3">
@@ -390,7 +390,7 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
                   href={previewAsset.publicUrl || previewAsset.storage_key}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10"
+                  className="p-1.5 rounded-lg text-[#B8ADA3] hover:text-[#FAF7F2] hover:bg-[#D6B56D]/10 transition-colors"
                   title="Open raw in new tab"
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -398,14 +398,14 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
                 <button
                   type="button"
                   onClick={() => setPreviewAsset(null)}
-                  className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10"
+                  className="p-1.5 rounded-lg text-[#B8ADA3] hover:text-[#FAF7F2] hover:bg-[#D6B56D]/10 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
             </div>
 
-            <div className="relative w-full h-[70vh] rounded-2xl overflow-hidden bg-black/40 border border-white/10">
+            <div className="relative w-full h-[70vh] rounded-2xl overflow-hidden bg-black/60 border border-[#D6B56D]/20 mt-3">
               <Image
                 src={previewAsset.publicUrl || previewAsset.storage_key}
                 alt={previewAsset.filename}
@@ -421,37 +421,37 @@ export function MediaLibraryClient({ initialAssets }: MediaLibraryClientProps) {
 
       {/* Delete Confirmation Modal with Reference Safety Check */}
       {assetToDelete && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-[#FFFFFF] border border-red-200 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
-            <div className="flex items-center gap-3 text-red-600 mb-3">
-              <div className="p-2.5 rounded-xl bg-red-50 border border-red-200">
-                <AlertTriangle className="w-5 h-5 text-red-600" strokeWidth={1.5} />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="bg-[#181310] border border-red-500/30 rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl">
+            <div className="flex items-center gap-3 text-red-400 mb-3">
+              <div className="p-2.5 rounded-xl bg-red-950/40 border border-red-500/30">
+                <AlertTriangle className="w-5 h-5 text-red-400" strokeWidth={1.5} />
               </div>
               <div>
-                <h3 className="text-base font-sans text-[#1C1611] font-semibold tracking-tight">Delete Media Asset</h3>
-                <p className="text-xs text-[#5C5245]">Reference safety checker active</p>
+                <h3 className="text-base font-serif text-[#FAF7F2] tracking-wide font-normal">Delete Media Asset</h3>
+                <p className="text-xs text-[#B8ADA3]">Reference safety checker active</p>
               </div>
             </div>
 
             {deleteError ? (
-              <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-900 leading-relaxed mb-4">
+              <div className="p-3.5 rounded-xl bg-red-950/40 border border-red-500/30 text-xs text-red-300 leading-relaxed mb-4">
                 {deleteError}
               </div>
             ) : (
-              <p className="text-xs text-[#5C5245] leading-relaxed mb-6 font-light">
-                Are you sure you want to delete <span className="font-semibold text-[#1C1611]">&ldquo;{assetToDelete.filename}&rdquo;</span>?
+              <p className="text-xs text-[#B8ADA3] leading-relaxed mb-6 font-light">
+                Are you sure you want to delete <span className="font-semibold text-[#D6B56D]">&ldquo;{assetToDelete.filename}&rdquo;</span>?
                 If this image is currently linked to published venues or services, the system will block deletion to prevent broken images.
               </p>
             )}
 
-            <div className="flex items-center justify-end gap-3">
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-[#D6B56D]/15">
               <button
                 type="button"
                 onClick={() => {
                   setAssetToDelete(null);
                   setDeleteError(null);
                 }}
-                className="px-4 py-2 rounded-xl text-xs text-[#5C5245] hover:bg-[#F8F5EE] transition-colors"
+                className="px-4 py-2 rounded-xl text-xs text-[#B8ADA3] hover:text-[#FAF7F2] hover:bg-[#D6B56D]/10 transition-colors"
               >
                 {deleteError ? 'Close' : 'Cancel'}
               </button>
