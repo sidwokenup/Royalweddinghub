@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Invoice - Royal Wedding Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #521D2B;
+      --primary-dark: #38131D;
+      --gold: #C5A059;
+      --gold-dark: #8C6D32;
+      --gold-light: #FBF8F2;
+      --text: #1C1917;
+      --muted: #57534E;
+      --border: #E7E5E4;
+      --bg: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background-color: #F5F5F4;
+      line-height: 1.5;
+      padding: 30px 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .invoice-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top Royal Decorative Bar */
+    .top-bar {
+      height: 8px;
+      background: linear-gradient(90deg, #521D2B 0%, #C5A059 50%, #521D2B 100%);
+    }
+
+    .invoice-body {
+      padding: 44px 48px;
+    }
+
+    /* Header */
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid #ECE7E1;
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+    }
+
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-title span {
+      color: var(--gold-dark);
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .invoice-badge-block {
+      text-align: right;
+    }
+
+    .invoice-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1.5px;
+    }
+
+    .invoice-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .invoice-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Parties Section */
+    .parties-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      background: var(--gold-light);
+      border: 1px solid #ECE4D8;
+      border-radius: 6px;
+      padding: 22px 24px;
+      margin-bottom: 32px;
+    }
+
+    .party-title {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .party-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+
+    .party-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Table */
+    .table-title {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    table.invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    table.invoice-table th {
+      background: #FAFAF9;
+      border-top: 1px solid var(--border);
+      border-bottom: 2px solid var(--gold);
+      padding: 12px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    table.invoice-table th:last-child {
+      text-align: right;
+    }
+
+    table.invoice-table td {
+      padding: 14px 14px;
+      border-bottom: 1px solid #F0EEEB;
+      font-size: 13px;
+      vertical-align: top;
+    }
+
+    table.invoice-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--text);
+    }
+
+    .item-name {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 13.5px;
+      margin-bottom: 3px;
+    }
+
+    .item-desc {
+      font-size: 11.5px;
+      color: #6B7280;
+      line-height: 1.5;
+    }
+
+    /* Totals Box */
+    .totals-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 32px;
+    }
+
+    .totals-box {
+      width: 360px;
+      background: #FAFAF9;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+
+    .totals-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 6px 0;
+      color: var(--muted);
+    }
+
+    .totals-row.discount {
+      color: #059669;
+      font-weight: 600;
+    }
+
+    .totals-row.grand-total {
+      border-top: 2px solid var(--gold);
+      margin-top: 8px;
+      padding-top: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .totals-row.grand-total .amount {
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .words-amount {
+      font-size: 11px;
+      color: #78716C;
+      font-style: italic;
+      text-align: right;
+      margin-top: 6px;
+    }
+
+    /* Milestones & Payment Info */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #ECE7E1;
+      margin-bottom: 32px;
+    }
+
+    .info-card {
+      background: #FAFAF9;
+      border: 1px solid #E7E5E4;
+      border-radius: 6px;
+      padding: 16px 18px;
+    }
+
+    .info-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+    }
+
+    .milestone-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 5px 0;
+      border-bottom: 1px dashed #E7E5E4;
+    }
+
+    .milestone-item:last-child {
+      border-bottom: none;
+    }
+
+    .bank-detail-row {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .bank-detail-row strong {
+      color: var(--text);
+    }
+
+    /* Terms */
+    .terms-block {
+      font-size: 11px;
+      color: #78716C;
+      line-height: 1.6;
+      border-top: 1px solid #ECE7E1;
+      padding-top: 18px;
+    }
+
+    .terms-block strong {
+      color: var(--text);
+    }
+
+    .print-button-wrap {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .print-btn {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: 1px solid var(--gold);
+      padding: 12px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 12px rgba(82, 29, 43, 0.25);
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      background: #3B121D;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+      }
+      .invoice-container {
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .print-button-wrap {
+        display: none;
+      }
+      @page {
+        margin: 15mm 15mm 15mm 15mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="invoice-container">
+    <div class="top-bar"></div>
+
+    <div class="invoice-body">
+      <!-- Header -->
+      <div class="header-row">
+        <div>
+          <div class="brand-title">ROYAL WEDDING HUB <span>•</span> STUDIO</div>
+          <div class="brand-subtitle">High-Ticket Digital Architecture & Concierge Platforms</div>
+        </div>
+        <div class="invoice-badge-block">
+          <div class="invoice-tag">COMMERCIAL INVOICE</div>
+          <div class="invoice-meta">Ref: <strong>RWH/INV/2026-27/001</strong></div>
+          <div class="invoice-meta">Date: <strong>26 October 2026</strong></div>
+          <div class="invoice-meta">Due Date: <strong>05 November 2026</strong></div>
+        </div>
+      </div>
+
+      <!-- Parties Grid -->
+      <div class="parties-grid">
+        <div>
+          <div class="party-title">Service Provider</div>
+          <div class="party-name">[Your Name / Digital Studio]</div>
+          <div class="party-desc">
+            Lead Software Architect & Full-Stack Solutions<br>
+            Lucknow Headquarters, Uttar Pradesh - 226001<br>
+            Email: <strong>contact@royalweddinghub.com</strong><br>
+            Direct: <strong>+91 [Your Mobile Number]</strong>
+          </div>
+        </div>
+        <div>
+          <div class="party-title">Billed To Client</div>
+          <div class="party-name">Royal Wedding Hub Enterprise</div>
+          <div class="party-desc">
+            Attention: <strong>Managing Director & Founders</strong><br>
+            Heritage Wedding Planning & Concierge Services<br>
+            Hazratganj Luxury Corridor, Lucknow, UP<br>
+            Currency: <strong>Indian Rupees (INR - ₹)</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Itemized Table -->
+      <div class="table-title">Engineering Deliverables & Scope Itemization</div>
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th style="width: 8%;">#</th>
+            <th style="width: 70%;">Deliverable & Technical Scope</th>
+            <th style="width: 22%;">Amount (INR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td>
+              <div class="item-name">Bespoke Luxury Frontend Architecture & Heritage Design System</div>
+              <div class="item-desc">Custom Next.js 16 (Turbopack) & React 19 architecture with tailored Nawabi royal palette, Lenis smooth scrolling, GSAP micro-interactions, responsive mobile drawer navigation, and bespoke royal Indian vector iconography. 100% custom-coded.</div>
+            </td>
+            <td>₹ 28,000.00</td>
+          </tr>
+          <tr>
+            <td>2.0</td>
+            <td>
+              <div class="item-name">Curated Venue Directory & Intelligent Multi-Filter Engine</div>
+              <div class="item-desc">Interactive catalog featuring 32+ verified celebration destinations across Lucknow with multi-attribute filtering (capacity 50–2,000+ pax, heritage lawns/banquets/resorts, veg/non-veg dining, amenities).</div>
+            </td>
+            <td>₹ 18,000.00</td>
+          </tr>
+          <tr>
+            <td>3.0</td>
+            <td>
+              <div class="item-name">Artisan Wedding Disciplines & High-Intent Inquiry Funnels</div>
+              <div class="item-desc">8 dedicated service modules (Planning & Décor, Photography, Catering, Music & Entertainment, Ceremonies, Bridal Beauty, Invitations) with lead conversion modals and instant consultation captures.</div>
+            </td>
+            <td>₹ 14,000.00</td>
+          </tr>
+          <tr>
+            <td>4.0</td>
+            <td>
+              <div class="item-name">Concierge Command Center (Executive Admin Panel & CRM Pipeline)</div>
+              <div class="item-desc">Secure dark-onyx Bento-Grid administrative dashboard with cryptographic HS256 JWT session engine, inquiry CRM pipeline (*New/Contacted/Qualified/Booked*), venue/service content manager, and legal client consent verification guardrail.</div>
+            </td>
+            <td>₹ 24,000.00</td>
+          </tr>
+          <tr>
+            <td>5.0</td>
+            <td>
+              <div class="item-name">Dual-Read Cloud Database & Edge CDN Architecture</div>
+              <div class="item-desc">Managed Supabase PostgreSQL cloud database with zero-downtime dual-read resilience (static JSON fallback), media storage CDN integration, and one-click Next.js ISR edge cache purging engine.</div>
+            </td>
+            <td>₹ 12,000.00</td>
+          </tr>
+          <tr>
+            <td>6.0</td>
+            <td>
+              <div class="item-name">Enterprise Technical SEO Suite & Google Analytics (GA4)</div>
+              <div class="item-desc">JSON-LD Schema.org rich snippets for local wedding destinations, OpenGraph luxury social cards, GA4 / Google Tag Manager integration, dynamic XML sitemaps, and robots.txt crawler configuration.</div>
+            </td>
+            <td>₹ 10,000.00</td>
+          </tr>
+          <tr>
+            <td>7.0</td>
+            <td>
+              <div class="item-name">Automated Integration Test Suite & Production QA Verification</div>
+              <div class="item-desc">33-point automated integration test suite (`npm run test:admin`) covering token cryptography, route protection, API shielding, live database CRUD mutations, and zero-pollution data cleanup.</div>
+            </td>
+            <td>₹ 6,000.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Totals Wrap -->
+      <div class="totals-wrap">
+        <div class="totals-box">
+          <div class="totals-row">
+            <span>Gross Platform Subtotal:</span>
+            <span>₹ 1,12,000.00</span>
+          </div>
+          <div class="totals-row discount">
+            <span>Lucknow Partnership Courtesy Concession:</span>
+            <span>- ₹ 17,000.00</span>
+          </div>
+          <div class="totals-row grand-total">
+            <span>Total Payable Amount:</span>
+            <span class="amount">₹ 95,000.00</span>
+          </div>
+          <div class="words-amount">Rupees Ninety-Five Thousand Only (Inclusive of all services)</div>
+        </div>
+      </div>
+
+      <!-- Bottom Grid: Milestones & Banking -->
+      <div class="bottom-grid">
+        <div class="info-card">
+          <div class="info-card-title">Phased Payment Milestones</div>
+          <div class="milestone-item">
+            <span><strong>Stage 1:</strong> Project Agreement & Cloud Setup (40%)</span>
+            <span><strong>₹ 38,000.00</strong></span>
+          </div>
+          <div class="milestone-item">
+            <span><strong>Stage 2:</strong> Functional Demo & Admin Walkthrough (40%)</span>
+            <span><strong>₹ 38,000.00</strong></span>
+          </div>
+          <div class="milestone-item">
+            <span><strong>Stage 3:</strong> Final Handover & Root Access Keys (20%)</span>
+            <span><strong>₹ 19,000.00</strong></span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Remittance & Banking Information</div>
+          <div class="bank-detail-row">Account Name: <strong>[Your Name / Business Account]</strong></div>
+          <div class="bank-detail-row">Bank Name: <strong>[e.g. HDFC Bank / ICICI Bank]</strong></div>
+          <div class="bank-detail-row">Account Number: <strong>[Your Account Number]</strong></div>
+          <div class="bank-detail-row">IFSC Code: <strong>[e.g. HDFC0001234]</strong></div>
+          <div class="bank-detail-row">UPI ID / VPA: <strong>[your-upi-id@okhdfcbank]</strong></div>
+        </div>
+      </div>
+
+      <!-- Terms & Notes -->
+      <div class="terms-block">
+        <strong>Terms & Conditions:</strong>
+        1. Full source code, database ownership, and design copyright transfer unconditionally upon receipt of final settlement. 
+        2. First 30 days of post-launch hypercare, bug resolution, and uptime monitoring are included complimentary. 
+        3. Ongoing cloud edge hosting, automated backups, and monthly venue updates available via optional Annual Maintenance Contract (AMC) @ ₹2,999/month. 
+        4. Any additional third-party integrations requested outside lines 1.0–7.0 (e.g. automated WhatsApp bots or payment gateways) will be quoted separately under Phase 2 add-on rates.
+      </div>
+    </div>
+  </div>
+
+  <div class="print-button-wrap">
+    <button class="print-btn" onclick="window.print()">Print or Save as PDF (Ctrl + P)</button>
+  </div>
+
+</body>
+</html>
