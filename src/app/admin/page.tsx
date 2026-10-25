@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import {
   Building2,
-  Sparkles,
   MessageSquareText,
   Star,
   PlusCircle,
@@ -150,22 +149,25 @@ export default async function AdminDashboardPage() {
   return (
     <div className="space-y-8 pb-12 font-sans">
       {/* Top Banner / Welcome Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#521D2B] via-[#431622] to-[#2B0E16] text-[#FAF7F2] shadow-[0_8px_30px_rgba(82,29,43,0.18)] border border-[#6B283A]/50 relative overflow-hidden">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#3D141F] via-[#240A12] to-[#120509] text-[#FAF7F2] shadow-[0_12px_40px_rgba(0,0,0,0.5),0_0_20px_rgba(214,181,109,0.06)] border border-[#D6B56D]/30 relative overflow-hidden backdrop-blur-xl">
         {/* Subtle decorative glow */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle_at_top_right,rgba(230,201,148,0.15)_0%,transparent_60%)] pointer-events-none" />
+        <div 
+          className="absolute top-0 right-0 w-96 h-96 bg-[radial-gradient(circle_at_top_right,rgba(214,181,109,0.15)_0%,transparent_60%)] pointer-events-none" 
+          aria-hidden="true"
+        />
 
         <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D6B56D]/30 bg-[#2B0E16]/60 text-[#E6C994] text-xs font-mono mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D6B56D]/40 bg-[#140509]/80 text-[#D6B56D] text-xs font-mono mb-3 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Royal Concierge Command</span>
+            <span className="tracking-wider uppercase text-[10px] font-semibold">Royal Concierge Command</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-sans font-bold text-[#FAF6F0] tracking-tight">
-            {timeGreeting}, {admin.fullName}
+          <h1 className="text-2xl sm:text-3xl font-serif text-[#FAF7F2] font-normal tracking-tight">
+            {timeGreeting}, <span className="italic font-light text-[#D6B56D]">{admin.fullName}</span>
           </h1>
-          <p className="text-xs sm:text-sm text-[#D4C3B8] mt-1.5 font-normal flex items-center gap-2">
-            <Calendar className="w-3.5 h-3.5 text-[#E6C994]" strokeWidth={1.5} />
+          <p className="text-xs sm:text-sm text-[#B8ADA3] mt-2 font-light flex items-center gap-2">
+            <Calendar className="w-3.5 h-3.5 text-[#D6B56D]" strokeWidth={1.5} />
             <span>{todayFormatted}</span>
-            <span className="text-[#8C6D76]">•</span>
+            <span className="text-[#D6B56D]/40">•</span>
             <span>Lucknow Headquarters</span>
           </p>
         </div>
@@ -173,16 +175,16 @@ export default async function AdminDashboardPage() {
         <div className="relative z-10 flex items-center gap-3">
           <Link
             href="/admin/venues"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#E6C994] hover:bg-[#F0D8AA] text-[#2B0E16] text-xs font-semibold tracking-wide transition-all shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#D6B56D] to-[#E5CCA0] hover:from-[#E0C385] hover:to-[#F2DFC0] text-[#1C1611] text-xs font-semibold tracking-wide transition-all shadow-[0_2px_12px_rgba(214,181,109,0.25)] hover:scale-[1.02] active:scale-[0.98]"
           >
-            <PlusCircle className="w-4 h-4" strokeWidth={1.5} />
+            <PlusCircle className="w-4 h-4 text-[#1C1611]" strokeWidth={1.75} />
             <span>Add Venue</span>
           </Link>
           <Link
             href="/admin/enquiries"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#3D141F] text-[#FAF6F0] border border-[#6B283A] text-xs font-medium hover:bg-[#4E1B29] transition-all"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-[#FAF7F2] border border-[#D6B56D]/30 text-xs font-medium transition-all hover:border-[#D6B56D]/60"
           >
-            <MessageSquareText className="w-4 h-4 text-[#E6C994]" strokeWidth={1.5} />
+            <MessageSquareText className="w-4 h-4 text-[#D6B56D]" strokeWidth={1.5} />
             <span>View Inquiries</span>
           </Link>
         </div>
