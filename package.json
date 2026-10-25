@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "sync:venues": "node scripts/sync-venues.mjs"
+    "sync:venues": "node scripts/sync-venues.mjs",
+    "test:admin": "node scripts/test-admin-suite.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
