@@ -78,6 +78,9 @@ async function runVerification() {
 
     assert(/User-Agent:\s*OAI-SearchBot/i.test(robotsTxt), 'robots.txt includes User-agent: OAI-SearchBot');
     assert(/User-Agent:\s*OAI-AdsBot/i.test(robotsTxt), 'robots.txt includes User-agent: OAI-AdsBot');
+    assert(/User-Agent:\s*GPTBot/i.test(robotsTxt), 'robots.txt includes User-agent: GPTBot');
+    assert(/User-Agent:\s*ClaudeBot/i.test(robotsTxt), 'robots.txt includes User-agent: ClaudeBot');
+    assert(/User-Agent:\s*PerplexityBot/i.test(robotsTxt), 'robots.txt includes User-agent: PerplexityBot');
     assert(robotsTxt.includes('Sitemap: https://www.royalweddinghub.com/sitemap.xml'), 'robots.txt includes canonical Sitemap URL');
     assert(robotsTxt.includes('Allow: /'), 'robots.txt includes Allow: /');
     assert(robotsTxt.includes('Disallow: /admin/'), 'robots.txt protects /admin/');
@@ -176,17 +179,23 @@ async function runVerification() {
     assert(false, `CDN header check failed: ${err.message}`);
   }
 
-  // 6. Google Ads & Tracking Tag Verification
-  console.log('\n[6] GOOGLE ADS & CONVERSION TAG VERIFICATION');
+  // 6. Google Ads, Tracking & AI Agent Readiness Verification
+  console.log('\n[6] GOOGLE ADS, TRACKING & AI AGENT READINESS VERIFICATION');
   const layoutPath = path.resolve('src/app/layout.tsx');
   if (fs.existsSync(layoutPath)) {
     const layoutCode = fs.readFileSync(layoutPath, 'utf8');
     assert(layoutCode.includes('googletagmanager.com/gtag/js?id=AW-18508119901'), 'Google Ads tag loader script included (AW-18508119901)');
-    assert(layoutCode.includes("gtag('config', 'AW-18508119901')"), 'Google Ads tag config initialized in layout');
-    assert(layoutCode.includes("gtag('config', 'G-4SJ7J5VBRS')"), 'Google Analytics tag config initialized in layout');
+    assert(layoutCode.includes("gtag('config', 'AW-18508119901'"), 'Google Ads tag config initialized in layout');
+    assert(layoutCode.includes("gtag('config', 'G-4SJ7J5VBRS'"), 'Google Analytics tag config initialized in layout');
+    assert(layoutCode.includes('<JsonLd />') || layoutCode.includes('<JsonLd/>'), 'Schema.org JSON-LD structured data included in root layout');
   } else {
     assert(false, 'src/app/layout.tsx exists');
   }
+
+  const llmsPath = path.resolve('public/llms.txt');
+  assert(fs.existsSync(llmsPath), 'AI agent documentation file public/llms.txt exists');
+  const wellKnownLlmsPath = path.resolve('public/.well-known/llms.txt');
+  assert(fs.existsSync(wellKnownLlmsPath), 'public/.well-known/llms.txt standard endpoint exists');
 
   console.log('\n' + '='.repeat(70));
   console.log(`AUDIT RESULTS: ${passedTests} / ${totalTests} TESTS PASSED`);

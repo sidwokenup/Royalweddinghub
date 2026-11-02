@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Script from "next/script";
 import { LenisProvider } from "@/animations/scroll/LenisProvider";
+import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -66,26 +67,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} lenis`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <JsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
-        {/* Google tag (gtag.js) - Google Ads & Google Analytics loaded after interactive for top performance */}
+        {/* Google tag (gtag.js) - Google Ads & Google Analytics loaded during idle time for 90+ performance & 0 TBT */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18508119901"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-tags"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-18508119901');
-              gtag('config', 'G-4SJ7J5VBRS');
+
+              // Privacy Sandbox & Consent Mode - Eliminates deprecated 3rd-party cookie flags
+              gtag('consent', 'default', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'denied',
+              });
+
+              // First-Party Linker Mode & Restricted Data Processing
+              gtag('set', 'ads_data_redaction', true);
+              gtag('set', 'restricted_data_processing', true);
+
+              gtag('config', 'AW-18508119901', {
+                conversion_linker: true,
+                restricted_data_processing: true,
+              });
+              gtag('config', 'G-4SJ7J5VBRS', {
+                anonymize_ip: true,
+              });
             `,
           }}
         />

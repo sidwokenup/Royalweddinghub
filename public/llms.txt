@@ -1,0 +1,40 @@
+# Royal Wedding Hub
+
+> Lucknow's premier luxury wedding planning and curated heritage venue concierge.
+
+Royal Wedding Hub curates bespoke destination weddings, royal Awadhi banquets, heritage palace lawns, fine-art cinema, and comprehensive luxury wedding orchestration across Lucknow, Uttar Pradesh, India.
+
+## Verified Wedding Venues (Lucknow & Outskirts)
+The platform curates 32+ verified destination and heritage wedding settings with verified capacities, room inventories, and dining packages:
+- Santorini Resort Lucknow (Capacity: 200–1000 guests, 42 rooms, Resort)
+- Charans Club & Resort (Capacity: 300–2500 guests, 50 rooms, Resort & Banquet)
+- Prayag Marriage Lawn (Capacity: 250–1200 guests, Banquet Lawn)
+- Magnolia Garden Marriage Lawn (Capacity: 400–1800 guests, Heritage Lawn)
+- Hotel Milenia Regency (Capacity: 150–600 guests, Luxury Hotel)
+- Yash Resort (Capacity: 300–2000 guests, 50 rooms)
+- Anandi Water Park Resort (Capacity: 500–3000 guests)
+- Complete directory: https://www.royalweddinghub.com/venues
+
+## Artisan Wedding Disciplines & Services
+- Wedding Planning & Thematic Décor (Heritage Awadhi mandaps, royal floral design, end-to-end production)
+- Photography & Cinematic Films (Fine-art bridal cinema, drone coverage, pre-wedding storytelling)
+- Royal Catering & Awadhi Dastarkhwan (Authentic Nawabi galouti, dum pukht biryani, master khansamas)
+- Artist & Entertainment Management (Sufi qawwali ensembles, live symphony, celebrity artists)
+- Bridal & Groom Royal Styling (Trousseau curation and designer coordination)
+- Bespoke Invitations & Stationery (Royal boxed wedding cards, customized wax seals)
+- Complete catalog: https://www.royalweddinghub.com/services
+
+## Key Endpoints for Agents & Crawlers
+- Venues Catalog: https://www.royalweddinghub.com/venues
+- Services Catalog: https://www.royalweddinghub.com/services
+- About & Planning Philosophy: https://www.royalweddinghub.com/about
+- Concierge Consultation: https://www.royalweddinghub.com/contact
+- Canonical XML Sitemap: https://www.royalweddinghub.com/sitemap.xml
+- Robots Policy: https://www.royalweddinghub.com/robots.txt
+
+## Business Contact & Remittance
+- Legal Entity: Royal Wedding Hub Enterprise
+- Primary Headquarters: Hazratganj Luxury Corridor, Lucknow, UP - 226001, India
+- Phone: +91 9170888981
+- Official Email: contact@royalweddinghub.com
+- Instagram: https://www.instagram.com/royal_weddinghug

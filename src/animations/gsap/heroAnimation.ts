@@ -57,28 +57,28 @@ export function animateHeroEntrance(elements: HeroAnimationElements): gsap.core.
     },
   });
 
-  // Set initial states
-  if (overlay) gsap.set(overlay, { opacity: 0 });
-  if (framing) gsap.set(framing, { opacity: 0 });
-  if (eyebrow) gsap.set(eyebrow, { opacity: 0, y: 14 });
-  if (titleLines) gsap.set(titleLines, { opacity: 0, y: 22 });
-  if (subtitle) gsap.set(subtitle, { opacity: 0, y: 16 });
-  if (cta) gsap.set(cta, { opacity: 0, y: 14 });
-  if (scrollIndicator) gsap.set(scrollIndicator, { opacity: 0, y: 10 });
+  // Maintain immediate visual stability for optimal Speed Index & FCP while providing royal entrance easing
+  if (overlay) gsap.set(overlay, { opacity: 0.6 });
+  if (framing) gsap.set(framing, { opacity: 0.5 });
+  if (eyebrow) gsap.set(eyebrow, { opacity: 0.8, y: 8 });
+  if (titleLines) gsap.set(titleLines, { opacity: 0.85, y: 12 });
+  if (subtitle) gsap.set(subtitle, { opacity: 0.85, y: 8 });
+  if (cta) gsap.set(cta, { opacity: 0.85, y: 8 });
+  if (scrollIndicator) gsap.set(scrollIndicator, { opacity: 0.7, y: 6 });
 
   // 1. Overlay fades in smoothly
   if (overlay) {
-    tl.to(overlay, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0.05);
+    tl.to(overlay, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.05);
   }
 
   // 2. Luxury framing elements fade in
   if (framing) {
-    tl.to(framing, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0.15);
+    tl.to(framing, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.1);
   }
 
   // 3. Eyebrow fades upward
   if (eyebrow) {
-    tl.to(eyebrow, { opacity: 1, y: 0, duration: 0.65 }, 0.25);
+    tl.to(eyebrow, { opacity: 1, y: 0, duration: 0.45 }, 0.15);
   }
 
   // 4. Main heading reveals
@@ -88,27 +88,27 @@ export function animateHeroEntrance(elements: HeroAnimationElements): gsap.core.
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        stagger: 0.12,
+        duration: 0.55,
+        stagger: 0.08,
         ease: "power2.out",
       },
-      0.38
+      0.22
     );
   }
 
   // 5. Supporting text appears
   if (subtitle) {
-    tl.to(subtitle, { opacity: 1, y: 0, duration: 0.65 }, 0.68);
+    tl.to(subtitle, { opacity: 1, y: 0, duration: 0.45 }, 0.4);
   }
 
-  // 6. BOOK NOW CTA appears last
+  // 6. BOOK NOW CTA appears
   if (cta) {
-    tl.to(cta, { opacity: 1, y: 0, duration: 0.65 }, 0.85);
+    tl.to(cta, { opacity: 1, y: 0, duration: 0.45 }, 0.5);
   }
 
   // 7. Scroll indicator reveals
   if (scrollIndicator) {
-    tl.to(scrollIndicator, { opacity: 1, y: 0, duration: 0.6 }, 1.0);
+    tl.to(scrollIndicator, { opacity: 1, y: 0, duration: 0.4 }, 0.6);
   }
 
   return tl;

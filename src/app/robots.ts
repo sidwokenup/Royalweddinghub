@@ -16,12 +16,21 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: 'OAI-SearchBot',
+        userAgent: [
+          'OAI-SearchBot',
+          'OAI-AdsBot',
+          'GPTBot',
+          'ClaudeBot',
+          'Claude-Web',
+          'PerplexityBot',
+          'Google-Extended',
+          'GoogleOther',
+          'Applebot-Extended',
+          'cohere-ai',
+          'Bytespider',
+        ],
         allow: '/',
-      },
-      {
-        userAgent: 'OAI-AdsBot',
-        allow: '/',
+        disallow: ['/admin/', '/api/admin/'],
       },
       {
         userAgent: '*',
