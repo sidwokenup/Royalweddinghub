@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getAllVenues } from '@/lib/venues';
 import { getServices } from '@/lib/services';
 
-const INDEXNOW_KEY = 'royalweddinghub2026indexkey001';
+const INDEXNOW_KEY = 'c03f90b6d4184ec6a53232bbd7dcf36a';
 const HOST = 'www.royalweddinghub.com';
 const BASE_URL = `https://${HOST}`;
 const KEY_LOCATION = `${BASE_URL}/${INDEXNOW_KEY}.txt`;
