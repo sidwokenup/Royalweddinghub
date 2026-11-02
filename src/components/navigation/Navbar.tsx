@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
@@ -121,11 +122,19 @@ export function Navbar() {
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         <Link
           href="/"
-          className={`text-lg sm:text-xl font-bold tracking-widest uppercase display-text hover:opacity-90 transition-opacity ${
+          className={`flex items-center gap-2.5 sm:gap-3 text-lg sm:text-xl font-bold tracking-widest uppercase display-text hover:opacity-90 transition-opacity ${
             isLightNav ? "text-[#211A19]" : "text-white"
           }`}
         >
-          Royal Wedding Hub
+          <Image
+            src="/logo.webp"
+            alt="Royal Wedding Hub Logo"
+            width={36}
+            height={36}
+            className="h-8 sm:h-9 w-auto object-contain drop-shadow-sm"
+            priority
+          />
+          <span>Royal Wedding Hub</span>
         </Link>
 
         {/* Desktop Navigation */}

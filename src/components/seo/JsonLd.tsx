@@ -9,7 +9,7 @@ export function JsonLd() {
         "@id": "https://www.royalweddinghub.com/#business",
         "name": "Royal Wedding Hub",
         "url": "https://www.royalweddinghub.com",
-        "logo": "https://www.royalweddinghub.com/og-image.jpg",
+        "logo": "https://www.royalweddinghub.com/logo.png",
         "image": "https://www.royalweddinghub.com/og-image.jpg",
         "description":
           "Lucknow's premier luxury wedding planning and curated heritage venue concierge. Curating bespoke royal destination weddings, palace venues, and artisan catering across Lucknow.",

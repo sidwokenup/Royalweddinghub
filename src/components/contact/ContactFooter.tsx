@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
 import { BUSINESS_INFO, getTelUrl, getMailtoUrl } from "@/lib/contact";
 
@@ -8,7 +9,14 @@ export function ContactFooter() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-12">
         {/* Brand & Editorial Address */}
         <div className="space-y-2.5">
-          <Link href="/" className="inline-block group">
+          <Link href="/" className="inline-flex items-center gap-3 group">
+            <Image
+              src="/logo.webp"
+              alt="Royal Wedding Hub Logo"
+              width={32}
+              height={32}
+              className="h-8 w-auto object-contain"
+            />
             <span className="text-base sm:text-lg font-serif font-normal tracking-[0.22em] uppercase text-[#211A19] group-hover:text-[#521D2B] transition-colors">
               {BUSINESS_INFO.name}
             </span>

@@ -215,6 +215,14 @@ async function runVerification() {
   const allValidLinks = listItems.every(line => /^-\s*\[.+\]\(https?:\/\/[^\s)]+\)/.test(line.trim()));
   assert(allValidLinks && listItems.length > 10, 'Every listed item in llms.txt follows strict llmstxt.org markdown link standard');
 
+  // Verify brand assets & tab icon
+  assert(fs.existsSync(path.resolve('public/logo.png')), 'public/logo.png brand asset exists');
+  assert(fs.existsSync(path.resolve('public/logo.webp')), 'public/logo.webp optimized brand asset exists');
+  assert(fs.existsSync(path.resolve('public/favicon.ico')), 'public/favicon.ico tab icon exists');
+  assert(fs.existsSync(path.resolve('src/app/icon.png')), 'src/app/icon.png tab icon exists');
+  assert(fs.existsSync(path.resolve('public/og-image.jpg')), 'public/og-image.jpg OpenGraph image exists');
+  assert(fs.existsSync(path.resolve('src/app/opengraph-image.jpg')), 'src/app/opengraph-image.jpg OpenGraph image exists');
+
   console.log('\n' + '='.repeat(70));
   console.log(`AUDIT RESULTS: ${passedTests} / ${totalTests} TESTS PASSED`);
   console.log('='.repeat(70));

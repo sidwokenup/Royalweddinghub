@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   X,
@@ -113,8 +114,14 @@ export function AdminSidebar({
         {/* Brand Crest & Header */}
         <div className="h-20 px-6 flex items-center justify-between border-b border-[#D6B56D]/15 shrink-0 bg-[#140F0D]/80">
           <Link href="/admin" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#521D2B] via-[#3D141F] to-[#240A12] border border-[#D6B56D]/40 text-[#D6B56D] flex items-center justify-center shadow-[0_2px_12px_rgba(82,29,43,0.4)] group-hover:scale-105 group-hover:border-[#D6B56D] transition-all">
-              <RoyalMonogramCrest size={22} className="text-[#D6B56D]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#521D2B] via-[#3D141F] to-[#240A12] border border-[#D6B56D]/40 text-[#D6B56D] flex items-center justify-center shadow-[0_2px_12px_rgba(82,29,43,0.4)] group-hover:scale-105 group-hover:border-[#D6B56D] transition-all p-1.5 overflow-hidden">
+              <Image
+                src="/logo.webp"
+                alt="Royal Wedding Hub Logo"
+                width={28}
+                height={28}
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <span className="block font-serif text-sm tracking-tight text-[#FAF7F2] font-medium leading-tight">
