@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 interface HeroVideoProps {
   onVideoReady?: () => void;
@@ -9,7 +8,6 @@ interface HeroVideoProps {
 
 export function HeroVideo({ onVideoReady }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -20,76 +18,29 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
     video.defaultMuted = true;
     video.playsInline = true;
 
-    // Accessibility & Data Saver respect: if reduced motion or data saver is active, keep high-res poster
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-
-    if (prefersReducedMotion || saveData) {
-      onVideoReady?.();
-      return;
-    }
-
     // Detect mobile viewport (<= 768px)
     const mql = window.matchMedia("(max-width: 768px)");
     const targetFile = mql.matches ? "/videos/Mobile.mp4" : "/videos/Desktop.mp4";
 
-    let isCancelled = false;
+    // Set video source immediately and play
+    if (!video.src || !video.src.endsWith(targetFile)) {
+      video.src = targetFile;
+      video.load();
+    }
 
-    const startVideo = () => {
-      if (isCancelled || !video) return;
-      if (!video.src || !video.src.endsWith(targetFile)) {
-        video.src = targetFile;
-        video.load();
-      }
-
-      const tryPlay = () => {
-        video.play().then(() => {
-          if (!isCancelled) {
-            setIsVideoPlaying(true);
-            onVideoReady?.();
-          }
-        }).catch(() => {});
-      };
-
-      if (video.readyState >= 2) {
-        tryPlay();
-      } else {
-        const handleCanPlay = () => {
-          tryPlay();
-        };
-        video.addEventListener("canplay", handleCanPlay, { once: true });
-      }
+    const tryPlay = () => {
+      video.play().catch(() => {});
     };
 
-    // User interaction triggers immediate playback
-    const triggerNow = () => {
-      window.removeEventListener("pointerdown", triggerNow);
-      window.removeEventListener("scroll", triggerNow);
-      window.removeEventListener("touchstart", triggerNow);
-      startVideo();
-    };
-
-    window.addEventListener("pointerdown", triggerNow, { once: true, passive: true });
-    window.addEventListener("scroll", triggerNow, { once: true, passive: true });
-    window.addEventListener("touchstart", triggerNow, { once: true, passive: true });
-
-    // Schedule playback during idle time so FCP, LCP, and main-thread hydration complete at maximum score
-    let timeoutId: NodeJS.Timeout | null = null;
-    let idleId: number | null = null;
-
-    const schedulePlayback = () => {
-      if ("requestIdleCallback" in window) {
-        idleId = (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(startVideo, { timeout: 1800 });
-      } else {
-        timeoutId = setTimeout(startVideo, 1200);
-      }
-    };
-
-    if (document.readyState === "complete") {
-      schedulePlayback();
+    if (video.readyState >= 2) {
+      tryPlay();
+      onVideoReady?.();
     } else {
-      window.addEventListener("load", schedulePlayback, { once: true });
-      timeoutId = setTimeout(startVideo, 2000);
+      const handleCanPlay = () => {
+        tryPlay();
+        onVideoReady?.();
+      };
+      video.addEventListener("canplay", handleCanPlay, { once: true });
     }
 
     // Handle viewport resize across mobile/desktop breakpoint without downloading both upfront
@@ -106,33 +57,12 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
     mql.addEventListener("change", handleMediaChange);
 
     return () => {
-      isCancelled = true;
-      if (timeoutId) clearTimeout(timeoutId);
-      if (idleId && "cancelIdleCallback" in window) {
-        (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleId);
-      }
-      window.removeEventListener("pointerdown", triggerNow);
-      window.removeEventListener("scroll", triggerNow);
-      window.removeEventListener("touchstart", triggerNow);
       mql.removeEventListener("change", handleMediaChange);
     };
   }, [onVideoReady]);
 
   return (
     <div className="hero-video-container absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0 bg-[#0d0a08]">
-      {/* High-priority LCP poster image: renders instantly at frame 0 */}
-      <Image
-        src="/images/hero-poster.webp"
-        alt="Royal Wedding Hub Luxury Indian Wedding"
-        fill
-        priority
-        fetchPriority="high"
-        sizes="100vw"
-        quality={80}
-        className="object-cover object-[center_35%] md:object-center transition-opacity duration-700"
-      />
-
-      {/* Cinematic video background: smoothly fades in once loaded without blocking initial page paint */}
       <video
         ref={videoRef}
         id="hero-bg-video"
@@ -140,13 +70,12 @@ export function HeroVideo({ onVideoReady }: HeroVideoProps) {
         muted
         loop
         playsInline
-        preload="none"
+        preload="metadata"
+        poster="/images/hero-poster.webp"
         suppressHydrationWarning={true}
         aria-hidden="true"
         tabIndex={-1}
-        className={`w-full h-full object-cover object-[center_35%] md:object-center transition-opacity duration-700 ${
-          isVideoPlaying ? "opacity-100" : "opacity-0"
-        }`}
+        className="w-full h-full object-cover object-[center_35%] md:object-center transition-opacity duration-700"
       />
 
       {/* Cinematic subtle overlays - strictly delicate to preserve wedding footage clarity */}
