@@ -8,10 +8,10 @@ import Link from 'next/link';
 const VENDOR_SERVICES = [
   { id: 'venues', label: 'Wedding Venues & Palaces', url: '/venues', badge: '32 Locations' },
   { id: 'planning-decor', label: 'Wedding Planners & Decor', url: '/services/planning-and-decor', badge: 'Stages & Mandaps' },
-  { id: 'catering', label: 'Royal Awadhi Catering', url: '/services/catering-and-culinary', badge: 'Khansama Menus' },
+  { id: 'catering', label: 'Royal Awadhi Catering', url: '/services/catering-and-banquets', badge: 'Khansama Menus' },
   { id: 'photography', label: 'Photographers & 4K Cinema', url: '/services/photography-and-films', badge: 'Drone & Films' },
-  { id: 'entertainment', label: 'DJs, Sufi & Live Music', url: '/services/entertainment-and-music', badge: 'Sangeet Artists' },
-  { id: 'bridal-makeup', label: 'Bridal Styling & Makeup', url: '/services/styling-and-trousseau', badge: 'Trousseau' },
+  { id: 'entertainment', label: 'DJs, Sufi & Live Music', url: '/services/music-and-entertainment', badge: 'Sangeet Artists' },
+  { id: 'bridal-makeup', label: 'Bridal Styling & Makeup', url: '/services/bridal-beauty', badge: 'Trousseau' },
   { id: 'management', label: 'Turnkey Wedding Management', url: '/wedding-management-lucknow', badge: 'End-to-End' },
 ];
 
@@ -138,7 +138,7 @@ export function ModernHeroSearch() {
         </Link>
 
         <Link
-          href="/services/catering-and-culinary"
+          href="/services/catering-and-banquets"
           className="inline-flex items-center gap-1 bg-black/40 hover:bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-white text-[11px] transition-all hover:border-white/50"
         >
           <span>Awadhi Royal Catering</span>

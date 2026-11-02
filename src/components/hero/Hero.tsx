@@ -37,7 +37,7 @@ export function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative w-full min-h-[480px] sm:min-h-[520px] md:min-h-[560px] flex flex-col items-center justify-center overflow-hidden bg-[#0d0907] text-white pt-20 sm:pt-24 pb-8 sm:pb-12"
+      className="relative z-20 w-full min-h-[440px] sm:min-h-[480px] md:min-h-[520px] flex flex-col items-center justify-center bg-[#0d0907] text-white pt-20 sm:pt-24 pb-8 sm:pb-10"
       aria-label="Hero - Real Luxury Wedding Planner & Venues in Lucknow"
     >
       {/* Background High-Resolution Wedding Photography */}

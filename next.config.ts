@@ -22,6 +22,21 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/services/catering-and-culinary",
+        destination: "/services/catering-and-banquets",
+        permanent: true,
+      },
+      {
+        source: "/services/entertainment-and-music",
+        destination: "/services/music-and-entertainment",
+        permanent: true,
+      },
+      {
+        source: "/services/styling-and-trousseau",
+        destination: "/services/bridal-beauty",
+        permanent: true,
+      },
+      {
         source: "/instagram",
         destination: "https://www.instagram.com/royal_weddinghug?stkn=bndlcGtpMGY5NWVm",
         permanent: false,

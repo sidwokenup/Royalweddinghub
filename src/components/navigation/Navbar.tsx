@@ -214,7 +214,7 @@ export function Navbar() {
                   </Link>
 
                   <Link
-                    href="/services/catering-and-culinary"
+                    href="/services/catering-and-banquets"
                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
                     <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
@@ -244,7 +244,7 @@ export function Navbar() {
                   </Link>
 
                   <Link
-                    href="/services/entertainment-and-music"
+                    href="/services/music-and-entertainment"
                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
                     <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">

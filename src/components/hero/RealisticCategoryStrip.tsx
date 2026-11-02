@@ -36,7 +36,7 @@ const CATEGORIES: CategoryItem[] = [
     name: 'Royal Awadhi Banquets',
     count: 'Master Khansama',
     image: '/images/services/wedding-catering.jpg',
-    href: '/services/catering-and-culinary',
+    href: '/services/catering-and-banquets',
     description: 'Heritage Lucknawi dining & live counters',
   },
   {
@@ -52,7 +52,7 @@ const CATEGORIES: CategoryItem[] = [
     name: 'Sufi, Folk & Sangeet DJs',
     count: 'Live Artists',
     image: '/images/services/wedding-entertainment.jpg',
-    href: '/services/entertainment-and-music',
+    href: '/services/music-and-entertainment',
     description: 'Celebrity DJs, shehnai maestros & dance troops',
   },
   {
@@ -60,7 +60,7 @@ const CATEGORIES: CategoryItem[] = [
     name: 'Bridal Styling & Makeup',
     count: 'Trousseau Team',
     image: '/images/services/bridal-makeup.jpg',
-    href: '/services/styling-and-trousseau',
+    href: '/services/bridal-beauty',
     description: 'Royal bridal couture & bespoke artist curation',
   },
 ];

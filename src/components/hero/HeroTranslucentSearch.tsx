@@ -3,26 +3,90 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search, MapPin, Sparkles, ArrowRight, Building2, Utensils, Camera, Palette, Music, X } from 'lucide-react';
+import { Search, Sparkles, ArrowRight, Building2, Utensils, Camera, Palette, Music, X } from 'lucide-react';
 import { getAllVenues } from '@/lib/venues';
 
 const ROTATING_PLACEHOLDERS = [
+  "Search 'DJs, Sufi Music & Sangeet'...",
+  "Search 'Royal Awadhi Catering Menus'...",
   "Search 'Palace Lawns in Gomti Nagar'...",
   "Search 'Mandap Decor & Floral Themes'...",
-  "Search 'Royal Awadhi Catering Menus'...",
   "Search '500 Guests Under ₹15 Lakh'...",
   "Search '4K Cinematic Wedding Films'...",
-  "Search 'Heritage Resorts on Faizabad Road'...",
 ];
 
-const SEARCHABLE_SERVICES = [
-  { name: 'Wedding Venues & Palaces', category: 'Venues', url: '/venues', icon: Building2 },
-  { name: 'Planning & Theme Decor', category: 'Services', url: '/services/planning-and-decor', icon: Palette },
-  { name: 'Royal Awadhi Catering', category: 'Services', url: '/services/catering-and-culinary', icon: Utensils },
-  { name: 'Photography & 4K Cinema', category: 'Services', url: '/services/photography-and-films', icon: Camera },
-  { name: 'DJs, Sufi & Live Music', category: 'Services', url: '/services/entertainment-and-music', icon: Music },
-  { name: 'Bridal Styling & Makeup', category: 'Services', url: '/services/styling-and-trousseau', icon: Sparkles },
-  { name: 'Turnkey Wedding Management', category: 'Services', url: '/wedding-management-lucknow', icon: Sparkles },
+interface SearchableService {
+  name: string;
+  category: string;
+  url: string;
+  icon: any;
+  keywords: string[];
+}
+
+const SEARCHABLE_SERVICES: SearchableService[] = [
+  {
+    name: 'DJs, Sufi & Live Music',
+    category: 'Wedding Entertainment',
+    url: '/services/music-and-entertainment',
+    icon: Music,
+    keywords: ['dj', 'djs', 'music', 'sufi', 'sangeet', 'orchestra', 'sound', 'dance', 'band', 'shehnai'],
+  },
+  {
+    name: 'Royal Awadhi Catering & Banquets',
+    category: 'Culinary & Dastarkhwan',
+    url: '/services/catering-and-banquets',
+    icon: Utensils,
+    keywords: ['catering', 'caterer', 'food', 'awadhi', 'khansama', 'biryani', 'buffet', 'dastarkhwan', 'menu', 'dinner', 'chaat'],
+  },
+  {
+    name: 'Planning & Theme Decor',
+    category: 'Spatial Architecture',
+    url: '/services/planning-and-decor',
+    icon: Palette,
+    keywords: ['decor', 'decoration', 'mandap', 'floral', 'stage', 'theme', 'flower', 'entryway', 'lighting', 'planning'],
+  },
+  {
+    name: 'Photography & 4K Cinema',
+    category: 'Films & Memories',
+    url: '/services/photography-and-films',
+    icon: Camera,
+    keywords: ['photo', 'photography', 'video', 'videography', 'cinema', 'film', 'shoot', 'photographer', 'drone', '4k', 'candid'],
+  },
+  {
+    name: 'Bridal Beauty & Styling',
+    category: 'Couture & Makeup',
+    url: '/services/bridal-beauty',
+    icon: Sparkles,
+    keywords: ['bridal', 'makeup', 'beauty', 'styling', 'hair', 'grooming', 'mehendi', 'draping', 'lehenga', 'artist'],
+  },
+  {
+    name: 'Invitations & Bespoke Gifting',
+    category: 'Stationery & Favors',
+    url: '/services/invitations-and-gifting',
+    icon: Sparkles,
+    keywords: ['invitation', 'invitations', 'invite', 'card', 'cards', 'gift', 'gifts', 'hamper', 'favors', 'stationery'],
+  },
+  {
+    name: 'Vedic Ceremonies & Pandits',
+    category: 'Sacred Rituals',
+    url: '/services/ceremonies-and-traditions',
+    icon: Sparkles,
+    keywords: ['pandit', 'puja', 'ceremony', 'rituals', 'phere', 'havan', 'samagri', 'vedic', 'haldi'],
+  },
+  {
+    name: 'Wedding Venues & Palaces',
+    category: 'Heritage Venues',
+    url: '/wedding-venues-lucknow',
+    icon: Building2,
+    keywords: ['venue', 'venues', 'palace', 'lawn', 'lawns', 'resort', 'hotel', 'banquet', 'marriage garden', 'hall'],
+  },
+  {
+    name: 'Turnkey Wedding Management',
+    category: 'Concierge Execution',
+    url: '/wedding-management-lucknow',
+    icon: Sparkles,
+    keywords: ['management', 'planner', 'planning', 'turnkey', 'lucknow', 'concierge'],
+  },
 ];
 
 export function HeroTranslucentSearch() {
@@ -64,8 +128,16 @@ export function HeroTranslucentSearch() {
     const venues = getAllVenues();
 
     const matchedServices = SEARCHABLE_SERVICES.filter(
-      (s) => s.name.toLowerCase().includes(q) || s.category.toLowerCase().includes(q)
-    ).map((s) => ({ ...s }));
+      (s) =>
+        s.name.toLowerCase().includes(q) ||
+        s.category.toLowerCase().includes(q) ||
+        s.keywords.some((k) => k.includes(q) || q.includes(k))
+    ).map((s) => ({
+      name: s.name,
+      category: s.category,
+      url: s.url,
+      icon: s.icon,
+    }));
 
     const matchedVenues = venues
       .filter((v) => v.name.toLowerCase().includes(q) || v.address.toLowerCase().includes(q))
@@ -80,15 +152,19 @@ export function HeroTranslucentSearch() {
     setResults([...matchedServices, ...matchedVenues]);
   }, [query]);
 
+  const handleSelect = (url: string) => {
+    setIsFocused(false);
+    router.push(url);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (results.length > 0) {
-      router.push(results[0].url);
-      setIsFocused(false);
+      handleSelect(results[0].url);
     } else if (query.toLowerCase().includes('15') || query.toLowerCase().includes('lakh')) {
-      router.push('/wedding-venues-lucknow');
+      handleSelect('/wedding-venues-lucknow');
     } else {
-      router.push(`/venues?search=${encodeURIComponent(query)}`);
+      handleSelect(`/venues?search=${encodeURIComponent(query)}`);
     }
   };
 
@@ -97,12 +173,13 @@ export function HeroTranslucentSearch() {
       {/* Translucent Modern Search Input Bar */}
       <form
         onSubmit={handleSubmit}
-        className={`relative flex items-center bg-white/90 backdrop-blur-xl rounded-full border transition-all duration-300 shadow-[0_16px_40px_rgba(0,0,0,0.24)] p-1.5 sm:p-2 ${isFocused ? 'ring-2 ring-[#521D2B]/30 border-[#521D2B] bg-white' : 'border-white/50 hover:bg-white'
-          }`}
+        className={`relative flex items-center bg-white/95 backdrop-blur-xl rounded-full border transition-all duration-300 shadow-[0_16px_40px_rgba(0,0,0,0.28)] p-1.5 sm:p-2 ${
+          isFocused ? 'ring-2 ring-[#521D2B]/30 border-[#521D2B] bg-white' : 'border-white/60 hover:bg-white'
+        }`}
       >
         {/* Search Icon */}
-        <div className="pl-3.5 sm:pl-4 pr-2 text-[#521D2B] shrink-0">
-          <Search size={20} className="transition-transform group-hover:scale-110" />
+        <div className="pl-3 sm:pl-4 pr-1.5 sm:pr-2 text-[#521D2B] shrink-0">
+          <Search size={19} className="transition-transform group-hover:scale-110" />
         </div>
 
         {/* Input */}
@@ -132,90 +209,96 @@ export function HeroTranslucentSearch() {
         {/* Search Submit Button */}
         <button
           type="submit"
-          className="inline-flex items-center gap-1.5 bg-[#521D2B] hover:bg-[#671024] active:scale-[0.98] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider px-5 sm:px-7 py-3 sm:py-3.5 rounded-full shadow-md transition-all shrink-0 cursor-pointer"
+          className="inline-flex items-center gap-1.5 bg-[#521D2B] hover:bg-[#671024] active:scale-[0.98] text-white font-semibold text-xs sm:text-sm uppercase tracking-wider px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full shadow-md transition-all shrink-0 cursor-pointer"
         >
           <span>Search</span>
           <ArrowRight size={14} className="hidden sm:inline" />
         </button>
       </form>
 
-      {/* Live Search Auto-Suggestion Dropdown */}
+      {/* Live Search Auto-Suggestion Dropdown (Fixed z-index and mobile touch target) */}
       {isFocused && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white/98 backdrop-blur-2xl rounded-2xl border border-[#E8DFD3] shadow-[0_20px_50px_rgba(0,0,0,0.18)] overflow-hidden z-50 animate-fade-in divide-y divide-[#F0EAE1]">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_24px_50px_rgba(0,0,0,0.35)] overflow-hidden z-[100] animate-fade-in divide-y divide-[#F0EAE1] max-h-[340px] overflow-y-auto">
           {results.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <button
                 key={idx}
                 type="button"
-                onClick={() => {
-                  router.push(item.url);
-                  setIsFocused(false);
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  handleSelect(item.url);
                 }}
-                className="w-full flex items-center justify-between px-4 py-3 hover:bg-[#FAF7F2] transition-colors text-left group cursor-pointer"
+                className="w-full flex items-center justify-between p-3.5 sm:p-4 hover:bg-[#FAF7F2] active:bg-[#F2ECE3] transition-colors text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                    <IconComponent size={16} />
+                  <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                    <IconComponent size={17} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-semibold text-[#211A19] group-hover:text-[#521D2B] transition-colors truncate">
+                    <p className="text-[13px] sm:text-sm font-bold text-[#1F1614] group-hover:text-[#521D2B] transition-colors truncate">
                       {item.name}
                     </p>
-                    <p className="text-[11px] text-[#78716C] uppercase tracking-wider font-mono">
+                    <p className="text-[10px] sm:text-[11px] text-[#521D2B] uppercase tracking-wider font-semibold mt-0.5">
                       {item.category}
                     </p>
                   </div>
                 </div>
-                <ArrowRight size={14} className="text-[#A8A29E] group-hover:text-[#521D2B] group-hover:translate-x-1 transition-all shrink-0 ml-2" />
+                <ArrowRight size={15} className="text-[#A8A29E] group-hover:text-[#521D2B] group-hover:translate-x-1 transition-all shrink-0 ml-2" />
               </button>
             );
           })}
         </div>
       )}
 
-      {/* Popular Quick-Click Pill Tags (WedMeGood Pattern) */}
-      <div className="mt-3.5 flex items-center flex-wrap justify-center sm:justify-start gap-2 text-xs text-white/95 px-1">
+      {/* Popular Quick-Click Pill Tags */}
+      <div className="mt-3 flex items-center flex-wrap justify-center sm:justify-start gap-1.5 sm:gap-2 text-xs text-white/95 px-1">
         <span className="font-semibold text-white/80 text-[11px] uppercase tracking-wider mr-0.5">
           Popular:
         </span>
 
         <Link
           href="/wedding-venues-lucknow"
-          className="inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
+          className="inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
         >
           <span>500 Guests Under ₹15L</span>
         </Link>
 
         <Link
           href="/venues"
-          className="inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
+          className="inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
         >
           <span>Palace Lawns</span>
         </Link>
 
         <Link
-          href="/services/catering-and-culinary"
-          className="inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
+          href="/services/catering-and-banquets"
+          className="inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
         >
           <span>Awadhi Catering</span>
         </Link>
 
         <Link
           href="/services/photography-and-films"
-          className="hidden sm:inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
+          className="hidden sm:inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
         >
           <span>4K Cinema</span>
         </Link>
 
         <Link
           href="/services/planning-and-decor"
-          className="hidden md:inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
+          className="hidden md:inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
         >
           <span>Mandap Decor</span>
+        </Link>
+
+        <Link
+          href="/services/music-and-entertainment"
+          className="hidden md:inline-flex items-center gap-1 bg-black/45 hover:bg-black/65 backdrop-blur-md px-2.5 sm:px-3 py-1 rounded-full border border-white/25 text-white text-[11px] font-medium transition-all hover:border-white/60"
+        >
+          <span>DJs &amp; Music</span>
         </Link>
       </div>
     </div>
   );
 }
-
