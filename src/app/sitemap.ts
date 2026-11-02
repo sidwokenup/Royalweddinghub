@@ -22,6 +22,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${siteUrl}/wedding-venues-lucknow`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${siteUrl}/wedding-planner-lucknow`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${siteUrl}/wedding-management-lucknow`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
       url: `${siteUrl}/venues`,
       lastModified: new Date(),
       changeFrequency: 'daily',
