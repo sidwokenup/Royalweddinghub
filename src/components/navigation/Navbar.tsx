@@ -109,14 +109,14 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-6 py-5 sm:py-6 transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 sm:py-5 transition-colors duration-300 ${
         mobileMenuOpen
           ? isLightNav
             ? "bg-[#FAF7F2] border-b border-[#E2D8CE] shadow-xl text-[#211A19]"
             : "bg-[#0d0907]/98 border-b border-[#d4af37]/20 shadow-2xl text-white"
           : isLightNav
-          ? "bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#E8DFD3] text-[#211A19] shadow-sm"
-          : "mix-blend-difference text-foreground"
+          ? "bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E8DFD3] text-[#211A19] shadow-sm"
+          : "bg-black/60 backdrop-blur-md border-b border-white/15 text-white shadow-sm"
       }`}
     >
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
@@ -195,66 +195,66 @@ export function Navbar() {
             </Link>
 
             {/* Services Dropdown Panel */}
-            <div className="absolute top-full -left-20 w-84 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
-              <div className="bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_18px_45px_rgba(33,26,25,0.18)] p-3 text-left divide-y divide-[#F0EAE1]">
+            <div className="absolute top-full -left-16 w-[340px] pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+              <div className="bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_24px_50px_rgba(0,0,0,0.25)] p-3 text-left divide-y divide-[#F0EAE1] ring-1 ring-black/5">
                 <div className="space-y-1 pb-2">
                   <Link
                     href="/services/planning-and-decor"
-                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                      <Palette size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Palette size={16} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                      <p className="text-[13px] font-bold text-[#1F1614] group-hover/item:text-[#521D2B] transition-colors">
                         Planning &amp; Thematic Decor
                       </p>
-                      <p className="text-[10px] text-[#78716C]">Mandap architecture, floral sets &amp; styling</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">Mandap architecture, floral sets &amp; styling</p>
                     </div>
                   </Link>
 
                   <Link
                     href="/services/catering-and-culinary"
-                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                      <Utensils size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Utensils size={16} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                      <p className="text-[13px] font-bold text-[#1F1614] group-hover/item:text-[#521D2B] transition-colors">
                         Royal Awadhi Banquets
                       </p>
-                      <p className="text-[10px] text-[#78716C]">Master Khansamas &amp; heritage Lucknow menus</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">Master Khansamas &amp; heritage Lucknow menus</p>
                     </div>
                   </Link>
 
                   <Link
                     href="/services/photography-and-films"
-                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                      <Camera size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Camera size={16} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                      <p className="text-[13px] font-bold text-[#1F1614] group-hover/item:text-[#521D2B] transition-colors">
                         Photography &amp; 4K Cinema
                       </p>
-                      <p className="text-[10px] text-[#78716C]">Fine-art portraits, drone &amp; wedding films</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">Fine-art portraits, drone &amp; wedding films</p>
                     </div>
                   </Link>
 
                   <Link
                     href="/services/entertainment-and-music"
-                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                      <Music size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Music size={16} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                      <p className="text-[13px] font-bold text-[#1F1614] group-hover/item:text-[#521D2B] transition-colors">
                         DJs, Sufi &amp; Live Music
                       </p>
-                      <p className="text-[10px] text-[#78716C]">Celebrity DJs, Shehnai &amp; Sangeet choreography</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">Celebrity DJs, Shehnai &amp; Sangeet choreography</p>
                     </div>
                   </Link>
                 </div>
@@ -262,10 +262,10 @@ export function Navbar() {
                 <div className="pt-2">
                   <Link
                     href="/services"
-                    className="flex items-center justify-between px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#521D2B] hover:bg-[#521D2B]/8 transition-colors"
+                    className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#521D2B] bg-[#FAF7F2] hover:bg-[#521D2B] hover:text-white transition-colors"
                   >
                     <span>View All Services</span>
-                    <ArrowRight size={12} />
+                    <ArrowRight size={13} />
                   </Link>
                 </div>
               </div>
@@ -297,51 +297,51 @@ export function Navbar() {
             </Link>
 
             {/* Venues Dropdown Panel */}
-            <div className="absolute top-full -left-20 w-84 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
-              <div className="bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_18px_45px_rgba(33,26,25,0.18)] p-3 text-left divide-y divide-[#F0EAE1]">
+            <div className="absolute top-full -left-16 w-[340px] pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+              <div className="bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_24px_50px_rgba(0,0,0,0.25)] p-3 text-left divide-y divide-[#F0EAE1] ring-1 ring-black/5">
                 <div className="space-y-1 pb-2">
                   <Link
                     href="/wedding-venues-lucknow"
-                    className="flex items-center gap-3 p-2 rounded-xl bg-[#FAF7F2] hover:bg-[#EFE8DE] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl bg-[#FAF7F2] hover:bg-[#EFE8DE] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B] text-white flex items-center justify-center shrink-0">
-                      <Sparkles size={14} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B] text-white flex items-center justify-center shrink-0">
+                      <Sparkles size={15} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-[#521D2B] flex items-center gap-1">
+                      <p className="text-[13px] font-bold text-[#521D2B] flex items-center gap-1">
                         500 Guests Under ₹15 Lakh
                       </p>
-                      <p className="text-[10px] text-[#78716C]">High-demand popular packages</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">High-demand popular packages</p>
                     </div>
                   </Link>
 
                   <Link
                     href="/venues"
-                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                      <Building2 size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Building2 size={16} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                      <p className="text-[13px] font-bold text-[#1F1614] group-hover/item:text-[#521D2B] transition-colors">
                         Palace Lawns &amp; Open Estates
                       </p>
-                      <p className="text-[10px] text-[#78716C]">Sprawling lawns for 500 to 2,500 guests</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">Sprawling lawns for 500 to 2,500 guests</p>
                     </div>
                   </Link>
 
                   <Link
                     href="/venues"
-                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
-                      <Building2 size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#521D2B]/10 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Building2 size={16} />
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                      <p className="text-[13px] font-bold text-[#1F1614] group-hover/item:text-[#521D2B] transition-colors">
                         Heritage Resorts &amp; Banquets
                       </p>
-                      <p className="text-[10px] text-[#78716C]">Poolside resorts, rooms &amp; AC halls</p>
+                      <p className="text-[11px] text-[#57534E] leading-tight">Poolside resorts, rooms &amp; AC halls</p>
                     </div>
                   </Link>
                 </div>
@@ -349,10 +349,10 @@ export function Navbar() {
                 <div className="pt-2">
                   <Link
                     href="/venues"
-                    className="flex items-center justify-between px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#521D2B] hover:bg-[#521D2B]/8 transition-colors"
+                    className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold text-[#521D2B] bg-[#FAF7F2] hover:bg-[#521D2B] hover:text-white transition-colors"
                   >
                     <span>Explore All 32 Verified Venues</span>
-                    <ArrowRight size={12} />
+                    <ArrowRight size={13} />
                   </Link>
                 </div>
               </div>
