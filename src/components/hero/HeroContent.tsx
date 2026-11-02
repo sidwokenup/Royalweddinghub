@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, ShieldCheck, Award } from 'lucide-react';
-import { ModernHeroSearch } from './ModernHeroSearch';
+import { HeroTranslucentSearch } from './HeroTranslucentSearch';
 
 export function HeroContent() {
   return (
@@ -8,12 +8,12 @@ export function HeroContent() {
       {/* Eyebrow Tag */}
       <div className="hero-eyebrow inline-flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-4 sm:mb-5">
         <span className="w-1.5 h-1.5 rounded-full bg-[#E5C779]" />
-        <span className="text-[10px] sm:text-xs tracking-[0.25em] uppercase text-white font-medium">
-          LUCKNOW&apos;S PREMIER WEDDING VENUE &amp; PLANNING NETWORK
+        <span className="text-[10px] sm:text-xs tracking-[0.2em] uppercase text-white font-medium">
+          LUCKNOW&apos;S PREMIER WEDDING VENUES &amp; PLANNING SERVICES
         </span>
       </div>
 
-      {/* Main Headline (WedMeGood Pattern) */}
+      {/* Main Headline */}
       <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white tracking-tight leading-[1.12] mb-3 sm:mb-4 max-w-4xl mx-auto">
         <span className="hero-title-line block font-normal text-white">
           Your Wedding,
@@ -28,9 +28,9 @@ export function HeroContent() {
         Discover 32+ verified marriage lawns and palaces, bespoke thematic decor, royal Awadhi banquets, and 4K cinema teams across Lucknow.
       </p>
 
-      {/* Interactive WedMeGood Search Bar */}
+      {/* Translucent Modern Search Bar with Rotating Placeholders */}
       <div className="hero-cta-slot w-full">
-        <ModernHeroSearch />
+        <HeroTranslucentSearch />
       </div>
 
       {/* Realistic Event Planner Social Proof Strip */}

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, ChevronDown, ArrowRight, Sparkles, Building2, Palette, Utensils, Camera, Music } from "lucide-react";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
@@ -170,46 +170,194 @@ export function Navbar() {
               />
             )}
           </Link>
-          <Link
-            href="/services"
-            onClick={(e) => handleNavClick("services", "/services", e)}
-            className={`transition-all relative py-1 ${
-              isServicesActive
-                ? isLightNav
-                  ? "text-[#521D2B] font-semibold"
-                  : "text-[#d4af37] font-semibold"
-                : isLightNav
-                ? "hover:text-[#521D2B] text-[#211A19]"
-                : "hover:opacity-70 text-white"
-            }`}
-          >
-            <span>Services</span>
-            {isServicesActive && (
-              <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
-                isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
-              }`} />
-            )}
-          </Link>
-          <Link
-            href="/venues"
-            onClick={(e) => handleNavClick("venues", "/venues", e)}
-            className={`transition-all relative py-1 ${
-              isVenuesActive
-                ? isLightNav
-                  ? "text-[#521D2B] font-semibold"
-                  : "text-[#d4af37] font-semibold"
-                : isLightNav
-                ? "hover:text-[#521D2B] text-[#211A19]"
-                : "hover:opacity-70 text-white"
-            }`}
-          >
-            <span>Venues</span>
-            {isVenuesActive && (
-              <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
-                isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
-              }`} />
-            )}
-          </Link>
+          {/* Services Hover Menu */}
+          <div className="relative group py-2">
+            <Link
+              href="/services"
+              onClick={(e) => handleNavClick("services", "/services", e)}
+              className={`transition-all relative py-1 flex items-center gap-1 cursor-pointer ${
+                isServicesActive
+                  ? isLightNav
+                    ? "text-[#521D2B] font-semibold"
+                    : "text-[#d4af37] font-semibold"
+                  : isLightNav
+                  ? "hover:text-[#521D2B] text-[#211A19]"
+                  : "hover:opacity-70 text-white"
+              }`}
+            >
+              <span>Services</span>
+              <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />
+              {isServicesActive && (
+                <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
+                  isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
+                }`} />
+              )}
+            </Link>
+
+            {/* Services Dropdown Panel */}
+            <div className="absolute top-full -left-20 w-84 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+              <div className="bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_18px_45px_rgba(33,26,25,0.18)] p-3 text-left divide-y divide-[#F0EAE1]">
+                <div className="space-y-1 pb-2">
+                  <Link
+                    href="/services/planning-and-decor"
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Palette size={15} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                        Planning &amp; Thematic Decor
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">Mandap architecture, floral sets &amp; styling</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/services/catering-and-culinary"
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Utensils size={15} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                        Royal Awadhi Banquets
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">Master Khansamas &amp; heritage Lucknow menus</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/services/photography-and-films"
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Camera size={15} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                        Photography &amp; 4K Cinema
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">Fine-art portraits, drone &amp; wedding films</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/services/entertainment-and-music"
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Music size={15} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                        DJs, Sufi &amp; Live Music
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">Celebrity DJs, Shehnai &amp; Sangeet choreography</p>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="pt-2">
+                  <Link
+                    href="/services"
+                    className="flex items-center justify-between px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#521D2B] hover:bg-[#521D2B]/8 transition-colors"
+                  >
+                    <span>View All Services</span>
+                    <ArrowRight size={12} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Venues Hover Menu */}
+          <div className="relative group py-2">
+            <Link
+              href="/venues"
+              onClick={(e) => handleNavClick("venues", "/venues", e)}
+              className={`transition-all relative py-1 flex items-center gap-1 cursor-pointer ${
+                isVenuesActive
+                  ? isLightNav
+                    ? "text-[#521D2B] font-semibold"
+                    : "text-[#d4af37] font-semibold"
+                  : isLightNav
+                  ? "hover:text-[#521D2B] text-[#211A19]"
+                  : "hover:opacity-70 text-white"
+              }`}
+            >
+              <span>Venues</span>
+              <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />
+              {isVenuesActive && (
+                <span className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${
+                  isLightNav ? "bg-[#521D2B]" : "bg-[#d4af37]"
+                }`} />
+              )}
+            </Link>
+
+            {/* Venues Dropdown Panel */}
+            <div className="absolute top-full -left-20 w-84 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto z-50">
+              <div className="bg-white rounded-2xl border border-[#E8DFD3] shadow-[0_18px_45px_rgba(33,26,25,0.18)] p-3 text-left divide-y divide-[#F0EAE1]">
+                <div className="space-y-1 pb-2">
+                  <Link
+                    href="/wedding-venues-lucknow"
+                    className="flex items-center gap-3 p-2 rounded-xl bg-[#FAF7F2] hover:bg-[#EFE8DE] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B] text-white flex items-center justify-center shrink-0">
+                      <Sparkles size={14} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-[#521D2B] flex items-center gap-1">
+                        500 Guests Under ₹15 Lakh
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">High-demand popular packages</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/venues"
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Building2 size={15} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                        Palace Lawns &amp; Open Estates
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">Sprawling lawns for 500 to 2,500 guests</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/venues"
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-[#FAF7F2] transition-colors group/item"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center shrink-0">
+                      <Building2 size={15} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-[#211A19] group-hover/item:text-[#521D2B] transition-colors">
+                        Heritage Resorts &amp; Banquets
+                      </p>
+                      <p className="text-[10px] text-[#78716C]">Poolside resorts, rooms &amp; AC halls</p>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="pt-2">
+                  <Link
+                    href="/venues"
+                    className="flex items-center justify-between px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#521D2B] hover:bg-[#521D2B]/8 transition-colors"
+                  >
+                    <span>Explore All 32 Verified Venues</span>
+                    <ArrowRight size={12} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
           <Link
             href="/about"
             onClick={(e) => handleNavClick("about", "/about", e)}
