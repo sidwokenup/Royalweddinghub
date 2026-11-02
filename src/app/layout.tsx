@@ -77,13 +77,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="antialiased min-h-screen flex flex-col font-sans" suppressHydrationWarning>
-        {/* Preconnect & high-priority LCP hero poster hints */}
+        {/* Preconnect & high-priority LCP hero image hints */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link
           rel="preload"
           as="image"
-          href="/images/hero-poster.webp"
-          type="image/webp"
+          href="/images/hero.jpg"
+          type="image/jpeg"
           // @ts-expect-error fetchpriority attribute is supported in modern browsers and React 19
           fetchpriority="high"
         />

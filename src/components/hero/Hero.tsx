@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@/animations/gsap";
 import { animateHeroEntrance } from "@/animations/gsap/heroAnimation";
-import { HeroVideo } from "./HeroVideo";
+import { HeroImage } from "./HeroImage";
 import { HeroContent } from "./HeroContent";
 import { HeroScrollIndicator } from "./HeroScrollIndicator";
 
@@ -43,8 +43,8 @@ export function Hero() {
       className="relative w-full min-h-[100svh] flex flex-col items-center justify-between overflow-hidden bg-[#0d0907] text-white pt-20 pb-6 sm:pb-8"
       aria-label="Hero - Real Luxury Wedding Planner & Venues in Lucknow"
     >
-      {/* Background Responsive Video */}
-      <HeroVideo />
+      {/* Background High-Resolution Wedding Photography */}
+      <HeroImage />
 
       {/* Main Central Composition */}
       <HeroContent />
