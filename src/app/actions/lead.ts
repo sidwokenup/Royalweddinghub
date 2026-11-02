@@ -62,3 +62,4 @@ export async function submitLeadAction(data: SubmitLeadParams): Promise<SubmitLe
     leadNumber,
   };
 }
+

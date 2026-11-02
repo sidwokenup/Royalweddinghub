@@ -36,7 +36,7 @@ export function AdLandingPage({ venues, pageType, canonicalUrl }: AdLandingPageP
   };
 
   return (
-    <div className="min-h-screen bg-[#0d0907] text-[#FAF7F2] font-sans selection:bg-[#D6B56D] selection:text-[#140F0D]">
+    <div className="min-h-screen bg-[#F7F3ED] text-[#211A19] font-sans selection:bg-[#521D2B] selection:text-white">
       {/* 1. High-Converting Header */}
       <AdLandingNavbar onOpenQuoteModal={handleOpenQuoteModal} />
 
@@ -50,37 +50,54 @@ export function AdLandingPage({ venues, pageType, canonicalUrl }: AdLandingPageP
         />
 
         {/* 3. Value Proposition & Trust Guarantees */}
-        <section className="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
+        <section className="w-full py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-[#E8DFD3]">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="inline-block text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#521D2B] font-mono bg-[#521D2B]/8 px-3 py-1 rounded-full border border-[#521D2B]/15 mb-2 font-medium">
+              The Nawabi Concierge Standard
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#211A19]">
+              Why Discerning Families Trust Royal Wedding Hub
+            </h3>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
-            <div className="p-5 rounded-2xl bg-[#140F0D] border border-[#D6B56D]/15">
-              <Award className="text-[#D6B56D] mb-3 mx-auto sm:mx-0" size={24} />
-              <h4 className="text-sm font-serif font-bold text-[#FAF7F2]">32+ Verified Lucknow Settings</h4>
-              <p className="text-xs text-[#B8ADA3] mt-1">
-                Every palace, lawn, and resort is personally verified for physical capacity, acoustics, and power backup.
+            <div className="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-[0_4px_20px_rgba(33,26,25,0.04)] hover:border-[#521D2B]/30 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center mb-3 mx-auto sm:mx-0">
+                <Award size={20} />
+              </div>
+              <h4 className="text-sm font-serif font-bold text-[#211A19]">32+ Verified Lucknow Settings</h4>
+              <p className="text-xs text-[#57534E] mt-1.5 leading-relaxed">
+                Every palace, lawn, and resort is personally verified for physical capacity, acoustics, bridal suites, and backup generators.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#140F0D] border border-[#D6B56D]/15">
-              <ShieldCheck className="text-[#D6B56D] mb-3 mx-auto sm:mx-0" size={24} />
-              <h4 className="text-sm font-serif font-bold text-[#FAF7F2]">Direct Venue Relationship Pricing</h4>
-              <p className="text-xs text-[#B8ADA3] mt-1">
-                Guaranteed transparent rates with zero inflated broker markups on muhurat and weekend dates.
+            <div className="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-[0_4px_20px_rgba(33,26,25,0.04)] hover:border-[#521D2B]/30 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center mb-3 mx-auto sm:mx-0">
+                <ShieldCheck size={20} />
+              </div>
+              <h4 className="text-sm font-serif font-bold text-[#211A19]">Direct Venue Relationship Pricing</h4>
+              <p className="text-xs text-[#57534E] mt-1.5 leading-relaxed">
+                Guaranteed transparent rates with zero inflated middleman markups on auspicious muhurat dates and weekend slots.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#140F0D] border border-[#D6B56D]/15">
-              <Clock className="text-[#D6B56D] mb-3 mx-auto sm:mx-0" size={24} />
-              <h4 className="text-sm font-serif font-bold text-[#FAF7F2]">1-Hour Quotation Turnaround</h4>
-              <p className="text-xs text-[#B8ADA3] mt-1">
-                Receive customized packages including catering, mandap decor, and room buyouts within 60 minutes.
+            <div className="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-[0_4px_20px_rgba(33,26,25,0.04)] hover:border-[#521D2B]/30 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center mb-3 mx-auto sm:mx-0">
+                <Clock size={20} />
+              </div>
+              <h4 className="text-sm font-serif font-bold text-[#211A19]">1-Hour Quotation Turnaround</h4>
+              <p className="text-xs text-[#57534E] mt-1.5 leading-relaxed">
+                Receive customized proposals with per-plate catering, mandap decor tiers, and room buyouts within 60 minutes.
               </p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#140F0D] border border-[#D6B56D]/15">
-              <MapPin className="text-[#D6B56D] mb-3 mx-auto sm:mx-0" size={24} />
-              <h4 className="text-sm font-serif font-bold text-[#FAF7F2]">Guided Site Walkthroughs</h4>
-              <p className="text-xs text-[#B8ADA3] mt-1">
-                Accompanied site visits with our senior concierge to evaluate guest flow, kitchen docks, and staging.
+            <div className="p-6 rounded-2xl bg-white border border-[#E8DFD3] shadow-[0_4px_20px_rgba(33,26,25,0.04)] hover:border-[#521D2B]/30 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#521D2B]/8 text-[#521D2B] flex items-center justify-center mb-3 mx-auto sm:mx-0">
+                <MapPin size={20} />
+              </div>
+              <h4 className="text-sm font-serif font-bold text-[#211A19]">Guided Site Walkthroughs</h4>
+              <p className="text-xs text-[#57534E] mt-1.5 leading-relaxed">
+                Accompanied site visits with our senior concierge to evaluate guest flow, kitchen docks, barat staging, and guest valet.
               </p>
             </div>
           </div>
@@ -90,38 +107,43 @@ export function AdLandingPage({ venues, pageType, canonicalUrl }: AdLandingPageP
         <AdServicesSection onOpenQuoteModal={handleOpenQuoteModal} />
       </main>
 
-      {/* 5. Minimal Luxury Footer */}
-      <footer className="w-full bg-[#140F0D] border-t border-[#D6B56D]/20 py-12 px-4 sm:px-6 lg:px-8 text-xs text-[#A89F91]">
+      {/* 5. Luxury Heritage Footer */}
+      <footer className="w-full bg-[#EFE8DE] border-t border-[#DDD3C5] py-12 px-4 sm:px-6 lg:px-8 text-xs text-[#57534E]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <Image
               src="/logo.webp"
               alt="Royal Wedding Hub Logo"
-              width={28}
-              height={28}
-              className="h-7 w-auto object-contain"
+              width={30}
+              height={30}
+              className="h-8 w-auto object-contain"
             />
-            <span className="font-serif text-sm font-bold uppercase tracking-widest text-[#FAF7F2]">
-              Royal Wedding Hub
-            </span>
+            <div>
+              <span className="font-serif text-sm font-bold uppercase tracking-widest text-[#211A19]">
+                Royal Wedding Hub
+              </span>
+              <span className="block text-[9px] uppercase tracking-[0.2em] text-[#78716C] font-mono">
+                Lucknow Concierge Desk
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] uppercase tracking-wider text-[#FAF7F2]/80">
-            <a href={getTelUrl()} className="hover:text-[#D6B56D] transition-colors flex items-center gap-1.5">
-              <Phone size={12} className="text-[#D6B56D]" /> {BUSINESS_INFO.displayPhone}
+          <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] uppercase tracking-wider font-medium text-[#44403C]">
+            <a href={getTelUrl()} className="hover:text-[#521D2B] transition-colors flex items-center gap-1.5">
+              <Phone size={12} className="text-[#521D2B]" /> {BUSINESS_INFO.displayPhone}
             </a>
-            <a href={getMailtoUrl()} className="hover:text-[#D6B56D] transition-colors flex items-center gap-1.5">
-              <Mail size={12} className="text-[#D6B56D]" /> {BUSINESS_INFO.email}
+            <a href={getMailtoUrl()} className="hover:text-[#521D2B] transition-colors flex items-center gap-1.5">
+              <Mail size={12} className="text-[#521D2B]" /> {BUSINESS_INFO.email}
             </a>
-            <Link href="/privacy" className="hover:text-[#D6B56D] transition-colors">
+            <Link href="/privacy" className="hover:text-[#521D2B] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-[#D6B56D] transition-colors">
+            <Link href="/terms" className="hover:text-[#521D2B] transition-colors">
               Terms of Service
             </Link>
           </div>
 
-          <p className="text-[11px] text-[#6B635B]">
+          <p className="text-[11px] text-[#78716C]">
             © {new Date().getFullYear()} Royal Wedding Hub. Hazratganj Luxury Corridor, Lucknow, UP.
           </p>
         </div>
@@ -147,3 +169,4 @@ export function AdLandingPage({ venues, pageType, canonicalUrl }: AdLandingPageP
     </div>
   );
 }
+
