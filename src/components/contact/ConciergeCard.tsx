@@ -11,6 +11,7 @@ import { saveUserPreferences, getUserPreferences } from "@/lib/storage";
 import { createLeadObject } from "@/lib/contact/lead";
 import { submitConciergeLeadAction } from "@/app/actions/enquiry";
 import { RoyalDatePicker } from "@/components/ui/RoyalDatePicker";
+import { trackLeadGeneration } from "@/lib/analytics";
 
 const EVENT_TYPES = [
   "WEDDING",
@@ -185,6 +186,13 @@ export function ConciergeCard() {
       if (res.leadNumber) {
         setLeadNumber(res.leadNumber);
       }
+
+      // Fire conversion tracking event for Google Ads & Meta Ads
+      trackLeadGeneration({
+        leadNumber: res.leadNumber || 'RWH-WEB',
+        eventType,
+        value: 15000,
+      });
     } catch (err) {
       console.warn("[Concierge Submission] Database action failed, fallback active:", err);
     } finally {

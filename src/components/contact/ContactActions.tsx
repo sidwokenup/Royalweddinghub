@@ -3,6 +3,7 @@
 import { ArrowDown, Phone, MessageCircle } from "lucide-react";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 
 interface ContactActionsProps {
   showWhatsApp?: boolean;
@@ -33,6 +34,7 @@ export function ContactActions({ showWhatsApp = true, className = "" }: ContactA
       {/* Secondary Action: Speak With Our Team */}
       <a
         href={getTelUrl()}
+        onClick={() => trackPhoneClick('contact_hero')}
         className="inline-flex items-center justify-center gap-2 px-4.5 sm:px-5 h-11 sm:h-12 rounded-[2px] text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-[#211A19] bg-white hover:bg-[#FAF7F2] border border-[#D8CBBE] hover:border-[#521D2B] transition-all duration-300 whitespace-nowrap shrink-0 shadow-sm"
         aria-label={`Call concierge team at ${BUSINESS_INFO.displayPhone}`}
       >
@@ -46,6 +48,7 @@ export function ContactActions({ showWhatsApp = true, className = "" }: ContactA
           href={generateWhatsAppLink({
             customMessage: "Hello Royal Wedding Hub, I would like to schedule a private wedding consultation in Lucknow.",
           })}
+          onClick={() => trackWhatsAppClick('contact_hero')}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-4.5 sm:px-5 h-11 sm:h-12 rounded-[2px] text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-[#211A19] bg-[#FAF7F2] hover:bg-white border border-[#D8CBBE] hover:border-[#25D366] transition-all duration-300 whitespace-nowrap shrink-0 shadow-sm"

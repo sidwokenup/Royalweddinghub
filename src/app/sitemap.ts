@@ -3,7 +3,16 @@ import { getAllVenues } from '@/lib/venues';
 import { getServices } from '@/lib/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_SITE_URL || 'https://royalweddinghub.com';
+  const isProd = process.env.NODE_ENV === 'production';
+  const rawSiteUrl =
+    process.env.SITE_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    'https://www.royalweddinghub.com';
+
+  const siteUrl =
+    isProd || rawSiteUrl.includes('royalweddinghub.com')
+      ? 'https://www.royalweddinghub.com'
+      : rawSiteUrl.replace(/\/$/, '');
 
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -35,6 +44,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${siteUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 

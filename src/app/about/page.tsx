@@ -16,11 +16,14 @@ export const metadata: Metadata = {
   title: "About Us & Planning Philosophy | Royal Wedding Hub Lucknow",
   description:
     "Discover the philosophy, bespoke planning approach, and story behind Royal Wedding Hub. Curating personalized luxury Indian weddings across Lucknow and royal destinations.",
+  alternates: {
+    canonical: "https://www.royalweddinghub.com/about",
+  },
   openGraph: {
     title: "About Us & Planning Philosophy | Royal Wedding Hub Lucknow",
     description:
       "Discover the philosophy, bespoke planning approach, and story behind Royal Wedding Hub. Curating personalized luxury Indian weddings across Lucknow.",
-    url: "https://royalweddinghub.com/about",
+    url: "https://www.royalweddinghub.com/about",
     siteName: "Royal Wedding Hub",
     images: [
       {

@@ -14,11 +14,14 @@ export const metadata: Metadata = {
   title: "Luxury Wedding Planning Services in Lucknow | Royal Wedding Hub",
   description:
     "Explore bespoke royal wedding services in Lucknow by Royal Wedding Hub: luxury venues, bespoke decor & mandaps, fine-art cinema, royal catering, and artist management.",
+  alternates: {
+    canonical: "https://www.royalweddinghub.com/services",
+  },
   openGraph: {
     title: "Luxury Wedding Planning Services in Lucknow | Royal Wedding Hub",
     description:
       "Explore bespoke royal wedding services in Lucknow: luxury venues, bespoke decor & mandaps, fine-art cinema, royal catering, and artist management.",
-    url: "https://royalweddinghub.com/services",
+    url: "https://www.royalweddinghub.com/services",
     siteName: "Royal Wedding Hub",
     images: [
       {

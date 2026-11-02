@@ -13,11 +13,14 @@ export const metadata: Metadata = {
   title: "Wedding Venues in Lucknow | Royal Wedding Hub",
   description:
     "Explore 32 handpicked luxury wedding venues in Lucknow — banquet halls, royal palace lawns, luxury resorts, and boutique wedding hotels with complete planning support.",
+  alternates: {
+    canonical: "https://www.royalweddinghub.com/venues",
+  },
   openGraph: {
     title: "Wedding Venues in Lucknow | Royal Wedding Hub",
     description:
       "Explore 32 handpicked luxury wedding venues in Lucknow — banquet halls, royal palace lawns, luxury resorts, and boutique wedding hotels.",
-    url: "https://royalweddinghub.com/venues",
+    url: "https://www.royalweddinghub.com/venues",
     siteName: "Royal Wedding Hub",
     images: [
       {

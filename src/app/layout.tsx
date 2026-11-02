@@ -24,18 +24,21 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://royalweddinghub.com"),
+  metadataBase: new URL("https://www.royalweddinghub.com"),
+  alternates: {
+    canonical: "https://www.royalweddinghub.com",
+  },
   title: "Royal Wedding Hub | Luxury Wedding Planner in Lucknow",
   description: "Plan your dream wedding with Royal Wedding Hub - luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
   openGraph: {
     title: "Royal Wedding Hub | Luxury Wedding Planner in Lucknow",
     description: "Plan your dream wedding with Royal Wedding Hub - luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
-    url: "https://royalweddinghub.com",
+    url: "https://www.royalweddinghub.com",
     siteName: "Royal Wedding Hub",
     images: [
       {
-        url: "https://royalweddinghub.com/og-image.jpg",
-        secureUrl: "https://royalweddinghub.com/og-image.jpg",
+        url: "https://www.royalweddinghub.com/og-image.jpg",
+        secureUrl: "https://www.royalweddinghub.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Happy Indian Bride and Groom - Royal Wedding Hub Lucknow",
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Royal Wedding Hub | Luxury Wedding Planner in Lucknow",
     description: "Plan your dream wedding with Royal Wedding Hub - luxury wedding planning, venues, photography, catering, entertainment and more in Lucknow.",
-    images: ["https://royalweddinghub.com/og-image.jpg"],
+    images: ["https://www.royalweddinghub.com/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -65,18 +68,19 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Google Ads & Google Analytics */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4SJ7J5VBRS"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18508119901"
         />
         <script
-          id="google-analytics"
+          id="google-tags"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+              gtag('config', 'AW-18508119901');
               gtag('config', 'G-4SJ7J5VBRS');
             `,
           }}

@@ -31,10 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${service.name} in Lucknow | Royal Wedding Hub`,
     description: `${service.headline} ${service.shortDescription}`,
+    alternates: {
+      canonical: `https://www.royalweddinghub.com/services/${service.slug}`,
+    },
     openGraph: {
       title: `${service.name} in Lucknow | Royal Wedding Hub`,
       description: service.shortDescription,
-      url: `https://royalweddinghub.com/services/${service.slug}`,
+      url: `https://www.royalweddinghub.com/services/${service.slug}`,
       images: [
         {
           url: service.image,

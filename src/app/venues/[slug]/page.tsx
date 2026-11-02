@@ -63,10 +63,13 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://www.royalweddinghub.com/venues/${venue.slug}`,
+    },
     openGraph: {
       title,
       description,
-      url: `https://royalweddinghub.com/venues/${venue.slug}`,
+      url: `https://www.royalweddinghub.com/venues/${venue.slug}`,
       siteName: "Royal Wedding Hub",
       images: [
         {

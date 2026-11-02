@@ -56,11 +56,21 @@ export function ContactFooter() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-[#DDD3C5] flex items-center justify-between text-[11px] font-light text-[#78716C]">
+      <div className="max-w-6xl mx-auto mt-8 pt-6 border-t border-[#DDD3C5] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-light text-[#78716C]">
         <p>© {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights reserved.</p>
-        <Link href="/" className="hover:text-[#521D2B] transition-colors">
-          Home Experience →
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/privacy" className="hover:text-[#521D2B] transition-colors underline-offset-4 hover:underline">
+            Privacy Policy
+          </Link>
+          <span>•</span>
+          <Link href="/terms" className="hover:text-[#521D2B] transition-colors underline-offset-4 hover:underline">
+            Terms of Service
+          </Link>
+          <span>•</span>
+          <Link href="/" className="hover:text-[#521D2B] transition-colors">
+            Home Experience →
+          </Link>
+        </div>
       </div>
     </footer>
   );

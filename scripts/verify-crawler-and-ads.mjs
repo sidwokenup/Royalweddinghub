@@ -1,0 +1,197 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import https from 'node:https';
+import http from 'node:http';
+
+const LIVE_DOMAIN = 'https://www.royalweddinghub.com';
+const NON_WWW_DOMAIN = 'https://royalweddinghub.com';
+
+async function fetchUrl(targetUrl, headers = {}, maxRedirects = 0) {
+  return new Promise((resolve, reject) => {
+    const urlObj = new URL(targetUrl);
+    const client = urlObj.protocol === 'https:' ? https : http;
+
+    const options = {
+      method: 'GET',
+      hostname: urlObj.hostname,
+      port: urlObj.port || (urlObj.protocol === 'https:' ? 443 : 80),
+      path: urlObj.pathname + urlObj.search,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        ...headers,
+      },
+    };
+
+    const req = client.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      res.on('end', () => {
+        resolve({
+          statusCode: res.statusCode,
+          headers: res.headers,
+          body: data,
+        });
+      });
+    });
+
+    req.on('error', (err) => {
+      reject(err);
+    });
+
+    req.setTimeout(10000, () => {
+      req.destroy();
+      reject(new Error(`Timeout fetching ${targetUrl}`));
+    });
+
+    req.end();
+  });
+}
+
+async function runVerification() {
+  console.log('='.repeat(70));
+  console.log('ROYAL WEDDING HUB - SEO, CRAWLER & AD READINESS AUDIT SUITE');
+  console.log('='.repeat(70));
+
+  let totalTests = 0;
+  let passedTests = 0;
+
+  function assert(condition, message) {
+    totalTests++;
+    if (condition) {
+      console.log(`  [PASS] ${message}`);
+      passedTests++;
+    } else {
+      console.error(`  [FAIL] ${message}`);
+    }
+  }
+
+  // 1. Verify Local Build Artifacts
+  console.log('\n[1] LOCAL BUILD ARTIFACTS VERIFICATION');
+  const robotsPath = path.resolve('.next/server/app/robots.txt.body');
+  if (fs.existsSync(robotsPath)) {
+    const robotsTxt = fs.readFileSync(robotsPath, 'utf8');
+    console.log('--- Generated robots.txt Content ---');
+    console.log(robotsTxt.trim());
+    console.log('------------------------------------');
+
+    assert(/User-Agent:\s*OAI-SearchBot/i.test(robotsTxt), 'robots.txt includes User-agent: OAI-SearchBot');
+    assert(/User-Agent:\s*OAI-AdsBot/i.test(robotsTxt), 'robots.txt includes User-agent: OAI-AdsBot');
+    assert(robotsTxt.includes('Sitemap: https://www.royalweddinghub.com/sitemap.xml'), 'robots.txt includes canonical Sitemap URL');
+    assert(robotsTxt.includes('Allow: /'), 'robots.txt includes Allow: /');
+    assert(robotsTxt.includes('Disallow: /admin/'), 'robots.txt protects /admin/');
+  } else {
+    assert(false, '.next/server/app/robots.txt.body exists');
+  }
+
+  const sitemapPath = path.resolve('.next/server/app/sitemap.xml.body');
+  if (fs.existsSync(sitemapPath)) {
+    const sitemapXml = fs.readFileSync(sitemapPath, 'utf8');
+    assert(!sitemapXml.includes('http://localhost'), 'sitemap.xml does not contain localhost URLs');
+    assert(!sitemapXml.includes('<loc>https://royalweddinghub.com'), 'sitemap.xml does not contain non-www URLs');
+    assert(sitemapXml.includes('<loc>https://www.royalweddinghub.com</loc>'), 'sitemap.xml contains canonical root');
+    assert(sitemapXml.includes('<loc>https://www.royalweddinghub.com/venues</loc>'), 'sitemap.xml contains /venues');
+    assert(sitemapXml.includes('<loc>https://www.royalweddinghub.com/services</loc>'), 'sitemap.xml contains /services');
+  } else {
+    assert(false, '.next/server/app/sitemap.xml.body exists');
+  }
+
+  // 2. Canonical Domain & Redirect Verification
+  console.log('\n[2] CANONICAL REDIRECTS & STATUS CODES');
+  try {
+    const nonWwwRes = await fetchUrl(NON_WWW_DOMAIN);
+    console.log(`  Non-WWW (${NON_WWW_DOMAIN}) -> HTTP ${nonWwwRes.statusCode}, Location: ${nonWwwRes.headers.location}`);
+    assert(nonWwwRes.statusCode === 308 || nonWwwRes.statusCode === 301, 'Non-WWW redirects permanently');
+    assert(
+      nonWwwRes.headers.location === 'https://www.royalweddinghub.com/' ||
+      nonWwwRes.headers.location === 'https://www.royalweddinghub.com',
+      'Non-WWW redirects directly to canonical https://www.royalweddinghub.com/'
+    );
+
+    const httpRes = await fetchUrl('http://www.royalweddinghub.com');
+    console.log(`  HTTP (http://www.royalweddinghub.com) -> HTTP ${httpRes.statusCode}, Location: ${httpRes.headers.location}`);
+    assert(httpRes.statusCode === 308 || httpRes.statusCode === 301, 'HTTP redirects to HTTPS');
+  } catch (err) {
+    console.error('Redirect check error:', err.message);
+  }
+
+  // 3. Crawler Access for OpenAI & Major Ad Crawlers
+  console.log('\n[3] CRAWLER & USER-AGENT VERIFICATION (LIVE CDN/WAF)');
+  const testAgents = [
+    { name: 'OAI-SearchBot', header: 'OAI-SearchBot' },
+    { name: 'OAI-AdsBot', header: 'OAI-AdsBot' },
+    { name: 'AdsBot-Google', header: 'AdsBot-Google (+http://www.google.com/adsbot.html)' },
+    { name: 'Googlebot', header: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' },
+    { name: 'Facebook AdBot / Meta', header: 'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' },
+  ];
+
+  for (const bot of testAgents) {
+    try {
+      const res = await fetchUrl(LIVE_DOMAIN, { 'User-Agent': bot.header });
+      const server = res.headers['server'] || 'Unknown';
+      const vercelCache = res.headers['x-vercel-cache'] || 'N/A';
+      console.log(`  Bot [${bot.name}] -> HTTP ${res.statusCode} | Server: ${server} | Cache: ${vercelCache}`);
+      assert(res.statusCode === 200, `Crawler ${bot.name} receives HTTP 200 OK`);
+      assert(res.statusCode !== 403 && res.statusCode !== 429, `Crawler ${bot.name} is NOT blocked by WAF/CDN`);
+    } catch (err) {
+      assert(false, `Crawler ${bot.name} request failed: ${err.message}`);
+    }
+  }
+
+  // 4. Key Landing Pages HTTP 200 Check
+  console.log('\n[4] AD LANDING PAGES HTTP 200 VERIFICATION');
+  const landingPages = [
+    '/',
+    '/venues',
+    '/venues/santorini-resort-lucknow',
+    '/venues/charans-club-and-resort',
+    '/services',
+    '/services/planning-and-decor',
+    '/services/photography-and-films',
+    '/about',
+    '/contact',
+  ];
+
+  for (const page of landingPages) {
+    try {
+      const pageUrl = `${LIVE_DOMAIN}${page}`;
+      const res = await fetchUrl(pageUrl);
+      console.log(`  Page ${page.padEnd(35)} -> HTTP ${res.statusCode} (${res.headers['content-type']?.split(';')[0]})`);
+      assert(res.statusCode === 200, `Page ${page} returns HTTP 200`);
+    } catch (err) {
+      assert(false, `Page ${page} failed: ${err.message}`);
+    }
+  }
+
+  // 5. CDN / WAF Security Headers & Edge Caching
+  console.log('\n[5] CDN & WAF HEADERS INSPECTION');
+  try {
+    const liveRes = await fetchUrl(`${LIVE_DOMAIN}/`);
+    assert(liveRes.headers['server']?.toLowerCase().includes('vercel'), 'CDN Edge server identified (Vercel)');
+    assert(!!liveRes.headers['strict-transport-security'], 'HSTS (Strict-Transport-Security) is active');
+    console.log('  HSTS Header:', liveRes.headers['strict-transport-security']);
+    console.log('  Edge Request ID:', liveRes.headers['x-vercel-id']);
+  } catch (err) {
+    assert(false, `CDN header check failed: ${err.message}`);
+  }
+
+  // 6. Google Ads & Tracking Tag Verification
+  console.log('\n[6] GOOGLE ADS & CONVERSION TAG VERIFICATION');
+  const layoutPath = path.resolve('src/app/layout.tsx');
+  if (fs.existsSync(layoutPath)) {
+    const layoutCode = fs.readFileSync(layoutPath, 'utf8');
+    assert(layoutCode.includes('googletagmanager.com/gtag/js?id=AW-18508119901'), 'Google Ads tag loader script included (AW-18508119901)');
+    assert(layoutCode.includes("gtag('config', 'AW-18508119901')"), 'Google Ads tag config initialized in layout');
+    assert(layoutCode.includes("gtag('config', 'G-4SJ7J5VBRS')"), 'Google Analytics tag config initialized in layout');
+  } else {
+    assert(false, 'src/app/layout.tsx exists');
+  }
+
+  console.log('\n' + '='.repeat(70));
+  console.log(`AUDIT RESULTS: ${passedTests} / ${totalTests} TESTS PASSED`);
+  console.log('='.repeat(70));
+}
+
+runVerification().catch(console.error);
+
