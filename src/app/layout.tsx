@@ -73,39 +73,53 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
-        {/* Google tag (gtag.js) - Google Ads & Google Analytics loaded during idle time for 90+ performance & 0 TBT */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18508119901"
-          strategy="lazyOnload"
-        />
+        {/* Google tag (gtag.js) - Google Ads & Google Analytics strictly restricted to official production domain */}
         <Script
           id="google-tags"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+              (function() {
+                var host = window.location.hostname;
+                // Only load and initialize Google Ads for official production domain
+                if (host !== 'www.royalweddinghub.com' && host !== 'royalweddinghub.com') {
+                  return;
+                }
 
-              // Privacy Sandbox & Consent Mode - Eliminates deprecated 3rd-party cookie flags
-              gtag('consent', 'default', {
-                'ad_storage': 'granted',
-                'analytics_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'denied',
-              });
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-              // First-Party Linker Mode & Restricted Data Processing
-              gtag('set', 'ads_data_redaction', true);
-              gtag('set', 'restricted_data_processing', true);
+                // Privacy Sandbox & Consent Mode - Eliminates deprecated 3rd-party cookie flags
+                gtag('consent', 'default', {
+                  'ad_storage': 'granted',
+                  'analytics_storage': 'granted',
+                  'ad_user_data': 'granted',
+                  'ad_personalization': 'denied',
+                });
 
-              gtag('config', 'AW-18508119901', {
-                conversion_linker: true,
-                restricted_data_processing: true,
-              });
-              gtag('config', 'G-4SJ7J5VBRS', {
-                anonymize_ip: true,
-              });
+                // First-Party Linker Mode & Restricted Data Processing
+                gtag('set', 'ads_data_redaction', true);
+                gtag('set', 'restricted_data_processing', true);
+
+                // Strictly lock measurement to royalweddinghub.com domain only (blocks vercel.app / staging / previews)
+                gtag('set', 'linker', {
+                  domains: ['www.royalweddinghub.com', 'royalweddinghub.com']
+                });
+
+                gtag('config', 'AW-18508119901', {
+                  conversion_linker: true,
+                  restricted_data_processing: true,
+                });
+                gtag('config', 'G-4SJ7J5VBRS', {
+                  anonymize_ip: true,
+                });
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18508119901';
+                document.head.appendChild(s);
+              })();
             `,
           }}
         />

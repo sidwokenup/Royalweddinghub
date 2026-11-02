@@ -6,6 +6,12 @@
 export const GOOGLE_ADS_ID = 'AW-18508119901';
 export const GA4_MEASUREMENT_ID = 'G-4SJ7J5VBRS';
 
+export function isOfficialDomain(): boolean {
+  if (typeof window === 'undefined') return false;
+  const host = window.location.hostname;
+  return host === 'www.royalweddinghub.com' || host === 'royalweddinghub.com';
+}
+
 type GtagArgs = [string, ...unknown[]];
 
 declare global {
@@ -21,6 +27,7 @@ export function trackEvent(
   params: Record<string, string | number | boolean | null | undefined> = {}
 ) {
   if (typeof window === 'undefined') return;
+  if (!isOfficialDomain()) return;
 
   // Google Analytics (GA4) / Google Ads
   if (typeof window.gtag === 'function') {
@@ -40,6 +47,7 @@ export function trackLeadGeneration(payload: {
   currency?: string;
 }) {
   if (typeof window === 'undefined') return;
+  if (!isOfficialDomain()) return;
 
   const leadData: Record<string, string | number> = {
     currency: payload.currency || 'INR',

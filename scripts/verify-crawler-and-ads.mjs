@@ -187,6 +187,7 @@ async function runVerification() {
     assert(layoutCode.includes('googletagmanager.com/gtag/js?id=AW-18508119901'), 'Google Ads tag loader script included (AW-18508119901)');
     assert(layoutCode.includes("gtag('config', 'AW-18508119901'"), 'Google Ads tag config initialized in layout');
     assert(layoutCode.includes("gtag('config', 'G-4SJ7J5VBRS'"), 'Google Analytics tag config initialized in layout');
+    assert(layoutCode.includes("domains: ['www.royalweddinghub.com', 'royalweddinghub.com']"), 'Google Ads tag is strictly domain-locked to royalweddinghub.com');
     assert(layoutCode.includes('<JsonLd />') || layoutCode.includes('<JsonLd/>'), 'Schema.org JSON-LD structured data included in root layout');
   } else {
     assert(false, 'src/app/layout.tsx exists');
