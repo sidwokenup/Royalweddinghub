@@ -30,18 +30,24 @@ export async function submitLeadAction(data: SubmitLeadParams): Promise<SubmitLe
 
   if (db && isDatabaseConfigured()) {
     try {
+      const services = data.services?.length
+        ? data.services
+        : [data.venueName ? `Venue: ${data.venueName}` : 'Venue Scouting & Planning', 'Shahi Quotation & Availability'];
+
+      const notes = `[Royal Quotation Lead] Venue: ${data.venueName || 'Any'}. Budget Tier: ${data.budgetBracket || 'Under ₹15 Lakh'}. Guest Capacity: ${data.guestCountBracket || '500 Pax'}. Date/Season: ${data.weddingDate || 'Upcoming Season'}. Campaign: ${data.utmCampaign || 'Google Ads'}.`;
+
       const { error } = await db.from('enquiries').insert({
         lead_number: leadNumber,
         name: data.name.trim(),
         phone: data.phone.trim(),
         email: data.email?.trim() || null,
         event_type: data.eventType || 'WEDDING',
-        services_requested: data.services?.length ? data.services : ['Wedding Venues & Planning'],
+        services_requested: services,
         wedding_date: data.weddingDate || 'TBD',
         guest_count_bracket: data.guestCountBracket || '500 Pax',
         location: data.location || 'Lucknow',
         status: 'new',
-        internal_notes: `[Google Ads Lead] Venue: ${data.venueName || 'Any'}. Budget: ${data.budgetBracket || 'Flexible'}.`,
+        internal_notes: notes,
         utm_source: data.utmSource || 'google_ads',
         utm_medium: data.utmMedium || 'cpc',
         utm_campaign: data.utmCampaign || 'wedding_venues_lucknow',
