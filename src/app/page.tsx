@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/navigation/Navbar";
 import { Hero } from "@/components/hero/Hero";
+import { RealisticCategoryStrip } from "@/components/hero/RealisticCategoryStrip";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
 
 // Services Page Components
@@ -75,6 +76,9 @@ export default async function Home() {
       <section id="services" className="relative w-full bg-[#F7F3ED] text-[#211A19]">
         <VenueAmbientBackground />
         
+        {/* WedMeGood-Style Realistic Category Discovery Ribbon */}
+        <RealisticCategoryStrip />
+
         {/* Editorial Introduction Hero */}
         <ServicesHero />
 
