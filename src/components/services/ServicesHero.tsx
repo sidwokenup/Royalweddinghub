@@ -38,7 +38,7 @@ export function ServicesHero() {
           </div>
 
           {/* Quick Metrics / Guarantees Strip */}
-          <div className="pt-1 flex flex-wrap items-center gap-5 text-xs sm:text-sm text-[#78716C] border-y border-[#E5DDD2] py-4">
+          <div className="pt-1 flex flex-wrap items-center gap-5 text-xs sm:text-sm text-[#57534E] border-y border-[#E5DDD2] py-4">
             <div className="flex items-center gap-2">
               <span className="text-lg font-serif font-normal text-[#521D2B]">8</span>
               <span className="font-light">Curated Disciplines</span>

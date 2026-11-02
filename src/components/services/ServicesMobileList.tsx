@@ -20,7 +20,7 @@ export function ServicesMobileList({ services }: ServicesMobileListProps) {
             All Disciplines ({services.length})
           </span>
         </div>
-        <span className="text-[11px] text-[#78716C] tracking-wide">
+        <span className="text-[11px] text-[#57534E] tracking-wide">
           Tap to explore deliverables
         </span>
       </div>

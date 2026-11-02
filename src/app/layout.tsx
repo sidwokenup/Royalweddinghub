@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Script from "next/script";
 import { LenisProvider } from "@/animations/scroll/LenisProvider";
 import "./globals.css";
 
@@ -68,13 +69,16 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        {/* Google tag (gtag.js) - Google Ads & Google Analytics */}
-        <script
-          async
+      </head>
+      <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
+        {/* Google tag (gtag.js) - Google Ads & Google Analytics loaded after interactive for top performance */}
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18508119901"
+          strategy="afterInteractive"
         />
-        <script
+        <Script
           id="google-tags"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -85,8 +89,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
         <LenisProvider>
           {children}
         </LenisProvider>

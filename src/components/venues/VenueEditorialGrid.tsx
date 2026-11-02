@@ -71,7 +71,7 @@ export function VenueEditorialGrid({ venues }: VenueEditorialGridProps) {
                 venue={venue}
                 variant={variant}
                 className={colSpan}
-                priority={index < 3}
+                priority={index === 0}
               />
             </React.Fragment>
           );

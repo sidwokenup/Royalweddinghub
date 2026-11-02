@@ -41,7 +41,7 @@ export function VenueCard({
       <Link
         href={`/venues/${venue.slug}`}
         className="relative w-full h-full flex flex-col justify-between"
-        aria-label={`View details for ${venue.name} in ${venue.city}`}
+        aria-label={`${venue.name} — ${venue.category} in ${venue.city}`}
       >
         {/* Card Media Container */}
         <div

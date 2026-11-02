@@ -44,7 +44,7 @@ export function VenueHero({ totalVenuesCount = 32 }: VenueHeroProps) {
           </div>
 
           {/* Curated Venue Statistics & Editorial Badges */}
-          <div className="pt-2 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#78716C] border-y border-[#E5DDD2] py-4">
+          <div className="pt-2 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#57534E] border-y border-[#E5DDD2] py-4">
             <div className="flex items-center gap-2">
               <span className="text-lg font-serif font-normal text-[#521D2B]">{totalVenuesCount}</span>
               <span className="font-light">Curated Destinations</span>

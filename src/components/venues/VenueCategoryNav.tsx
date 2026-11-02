@@ -53,7 +53,7 @@ export function VenueCategoryNav({
                 className={`text-[10px] px-1.5 py-0.5 rounded-full font-sans transition-colors ${
                   isSelected
                     ? "bg-white/20 text-[#FAF7F2] font-semibold"
-                    : "bg-[#211A19]/5 text-[#211A19]/60"
+                    : "bg-[#211A19]/5 text-[#44403C] font-medium"
                 }`}
               >
                 {tab.count}

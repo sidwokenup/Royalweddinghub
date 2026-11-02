@@ -38,7 +38,7 @@ export function AboutHero() {
           </div>
 
           {/* Core Guiding Tenets Strip */}
-          <div className="pt-1 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#78716C] border-y border-[#E5DDD2] py-4">
+          <div className="pt-1 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#57534E] border-y border-[#E5DDD2] py-4">
             <div className="flex items-center gap-2">
               <span className="font-serif text-lg text-[#521D2B]">01</span>
               <span className="font-light">Uncompromising Discretion</span>

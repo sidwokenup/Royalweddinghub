@@ -171,7 +171,7 @@ export function VenueFilters({
       )}
 
       {/* Results Header Status */}
-      <div className="flex items-center justify-between px-2 text-xs text-[#78716C] font-light">
+      <div className="flex items-center justify-between px-2 text-xs text-[#57534E]">
         <span>
           Showing <strong className="text-[#211A19] font-medium">{totalFiltered}</strong> of{" "}
           <strong className="text-[#211A19] font-medium">{totalVenues}</strong> venues
