@@ -15,7 +15,7 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
   const displayServices = services.filter((s) => s.slug !== 'wedding-venues').slice(0, 6);
 
   return (
-    <section id="services" className="w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto select-none">
+    <section id="services" className="w-full pt-8 sm:pt-12 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto select-none">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 sm:mb-12 border-b border-[#E8DFD3] pb-6">
         <div>

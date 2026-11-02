@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navigation/Navbar";
 import { Hero } from "@/components/hero/Hero";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
+import { HomePopularSearches } from "@/components/home/HomePopularSearches";
 import { HomeServicesSection } from "@/components/home/HomeServicesSection";
 import { HomeFeaturedVenues } from "@/components/home/HomeFeaturedVenues";
 import { HomeHowItWorks } from "@/components/home/HomeHowItWorks";
@@ -39,6 +40,11 @@ export default async function Home() {
       {/* Main Content Body with Ambient Luxury Parchment */}
       <div className="relative w-full bg-[#FAF7F2] text-[#211A19]">
         <VenueAmbientBackground />
+
+        {/* =========================================================================
+            STAGE 1.5: POPULAR VENUE SEARCHES (Peeking Above Fold Like WedMeGood)
+            ========================================================================= */}
+        <HomePopularSearches />
 
         {/* =========================================================================
             STAGE 2: OUR WEDDING SERVICES (Clean 6-Discipline Showcase)
