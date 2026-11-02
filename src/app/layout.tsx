@@ -79,6 +79,9 @@ export default function RootLayout({
           // @ts-expect-error fetchpriority attribute is supported in modern browsers and React 19
           fetchpriority="high"
         />
+        {/* Machine & AI Agent Discoverability */}
+        <link rel="alternate" type="text/markdown" title="LLM Context" href="/llms.txt" />
+        <link rel="describedby" href="/llms.txt" />
         {/* Schema.org Structured Data */}
         <JsonLd />
 

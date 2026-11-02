@@ -1,0 +1,83 @@
+# Royal Wedding Hub — Full Context for AI Agents
+
+> Premier luxury wedding planning and curated heritage venue concierge in Lucknow, Uttar Pradesh, India.
+
+## Overview & Brand Identity
+Royal Wedding Hub is Lucknow's dedicated luxury wedding planning concierge. We specialize in bespoke royal celebrations, heritage palace lawns, authentic Awadhi banquets (dum pukht, galouti kebabs curated by master khansamas), fine-art 4K cinema, and turnkey wedding orchestrations.
+
+- Official Domain: https://www.royalweddinghub.com
+- Primary Geographic Focus: Lucknow, Uttar Pradesh, India (Hazratganj, Gomti Nagar, Shaheed Path, Raebareli Road, Faizabad Road, Sitapur Road corridors)
+- Contact Phone: +91 9170888981
+- Official Email: contact@royalweddinghub.com
+- Social: https://www.instagram.com/royal_weddinghug
+
+## Curated Wedding Venues Portfolio
+1. Santorini Resort Lucknow
+   - URL: https://www.royalweddinghub.com/venues/santorini-resort-lucknow
+   - Type: Luxury Resort & Lawn
+   - Guest Capacity: 200–1000 guests
+   - Rooms: 42 AC luxury suites
+   - Dining: Vegetarian and Non-Vegetarian packages available
+
+2. Charans Club and Resort
+   - URL: https://www.royalweddinghub.com/venues/charans-club-and-resort
+   - Type: Club, Resort & Grand Banquet
+   - Guest Capacity: 300–2500 guests
+   - Rooms: 50 guest rooms
+   - Dining: Multi-cuisine and Awadhi specialty banquets
+
+3. Magnolia Garden Marriage Lawn
+   - URL: https://www.royalweddinghub.com/venues/magnolia-garden-marriage-lawn
+   - Type: Heritage Marriage Lawn
+   - Guest Capacity: 400–1800 guests
+
+4. Prayag Marriage Lawn
+   - URL: https://www.royalweddinghub.com/venues/prayag-marriage-lawn
+   - Type: Classic Marriage Lawn
+   - Guest Capacity: 250–1200 guests
+
+5. Hotel Milenia Regency
+   - URL: https://www.royalweddinghub.com/venues/hotel-milenia-regency
+   - Type: Luxury Hotel & Banquet Hall
+   - Guest Capacity: 150–600 guests
+
+6. Yash Resort
+   - URL: https://www.royalweddinghub.com/venues/yash-resort
+   - Type: Destination Wedding Resort
+   - Guest Capacity: 300–2000 guests
+   - Rooms: 50 luxury rooms
+
+7. Anandi Water Park Resort
+   - URL: https://www.royalweddinghub.com/venues/anandi-water-park-resort
+   - Type: Mega Lawn & Destination Resort
+   - Guest Capacity: 500–3000 guests
+
+## Services & Disciplines
+1. Royal Wedding Planning & Thematic Décor
+   - URL: https://www.royalweddinghub.com/services/planning-and-decor
+   - Scope: Bespoke theme conception, heritage Awadhi mandap design, exotic floral installations, ambient lighting, and complete stage production.
+
+2. Fine-Art Photography & Cinematic Wedding Films
+   - URL: https://www.royalweddinghub.com/services/photography-and-films
+   - Scope: Pre-wedding documentaries, bridal portraits, drone aerials, candid cinematography, and same-day highlight reels.
+
+3. Heritage Venue Concierge & Booking
+   - URL: https://www.royalweddinghub.com/services/wedding-venues
+   - Scope: Transparent rate negotiation, availability matching, guest flow layout, and regulatory permissions across 32+ verified Lucknow settings.
+
+4. Awadhi Dastarkhwan & Royal Catering
+   - URL: https://www.royalweddinghub.com/services
+   - Scope: Authentic Nawabi cuisine, live artisanal tawa stations, royal dessert displays, and hospitality staff.
+
+5. Artist & Entertainment Management
+   - URL: https://www.royalweddinghub.com/services
+   - Scope: Sufi qawwali ensembles, live symphonies, Bollywood celebrity singers, and traditional shehnai welcome troupes.
+
+## Navigation & Discovery for Autonomous Agents
+- [Home](https://www.royalweddinghub.com/)
+- [Venues Directory](https://www.royalweddinghub.com/venues)
+- [Services Directory](https://www.royalweddinghub.com/services)
+- [About Us](https://www.royalweddinghub.com/about)
+- [Contact Concierge](https://www.royalweddinghub.com/contact)
+- [XML Sitemap](https://www.royalweddinghub.com/sitemap.xml)
+- [Robots.txt Directives](https://www.royalweddinghub.com/robots.txt)

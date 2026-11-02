@@ -197,6 +197,23 @@ async function runVerification() {
   assert(fs.existsSync(llmsPath), 'AI agent documentation file public/llms.txt exists');
   const wellKnownLlmsPath = path.resolve('public/.well-known/llms.txt');
   assert(fs.existsSync(wellKnownLlmsPath), 'public/.well-known/llms.txt standard endpoint exists');
+  const fullLlmsPath = path.resolve('public/llms-full.txt');
+  assert(fs.existsSync(fullLlmsPath), 'public/llms-full.txt full agent context exists');
+  const wellKnownFullLlmsPath = path.resolve('public/.well-known/llms-full.txt');
+  assert(fs.existsSync(wellKnownFullLlmsPath), 'public/.well-known/llms-full.txt standard endpoint exists');
+
+  const llmsContent = fs.readFileSync(llmsPath, 'utf8');
+  assert(/^#\s+[^\n]+/.test(llmsContent), 'llms.txt has standard H1 title at top');
+  assert(/\n>\s+[^\n]+/.test(llmsContent), 'llms.txt has standard blockquote summary');
+  assert(llmsContent.includes('## Venues'), 'llms.txt has H2 Venues catalog section');
+  assert(llmsContent.includes('## Services'), 'llms.txt has H2 Services directory section');
+  assert(llmsContent.includes('## Core Pages'), 'llms.txt has H2 Core Pages section');
+  assert(llmsContent.includes('## Optional'), 'llms.txt has standard H2 Optional section');
+
+  // Verify that every line starting with '-' is a strictly compliant markdown link: - [Title](URL): Description
+  const listItems = llmsContent.split('\n').filter(line => line.trim().startsWith('-'));
+  const allValidLinks = listItems.every(line => /^-\s*\[.+\]\(https?:\/\/[^\s)]+\)/.test(line.trim()));
+  assert(allValidLinks && listItems.length > 10, 'Every listed item in llms.txt follows strict llmstxt.org markdown link standard');
 
   console.log('\n' + '='.repeat(70));
   console.log(`AUDIT RESULTS: ${passedTests} / ${totalTests} TESTS PASSED`);

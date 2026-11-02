@@ -1,41 +1,36 @@
 # Royal Wedding Hub
 
-> Lucknow's premier luxury wedding planning and curated heritage venue concierge.
+> Premier luxury wedding planning and curated heritage venue concierge in Lucknow, India.
 
 Royal Wedding Hub curates bespoke destination weddings, royal Awadhi banquets, heritage palace lawns, fine-art cinema, and comprehensive luxury wedding orchestration across Lucknow, Uttar Pradesh, India.
 
-## Verified Wedding Venues (Lucknow & Outskirts)
-The platform curates 32+ verified destination and heritage wedding settings with verified capacities, room inventories, and dining packages:
-- Santorini Resort Lucknow (Capacity: 200–1000 guests, 42 rooms, Resort)
-- Charans Club & Resort (Capacity: 300–2500 guests, 50 rooms, Resort & Banquet)
-- Prayag Marriage Lawn (Capacity: 250–1200 guests, Banquet Lawn)
-- Magnolia Garden Marriage Lawn (Capacity: 400–1800 guests, Heritage Lawn)
-- Hotel Milenia Regency (Capacity: 150–600 guests, Luxury Hotel)
-- Yash Resort (Capacity: 300–2000 guests, 50 rooms)
-- Anandi Water Park Resort (Capacity: 500–3000 guests)
-- Complete directory: https://www.royalweddinghub.com/venues
+## Venues
+- [All Venues Catalog](https://www.royalweddinghub.com/venues): Curated portfolio of 32+ verified heritage wedding venues, palaces, and resort lawns in Lucknow.
+- [Santorini Resort Lucknow](https://www.royalweddinghub.com/venues/santorini-resort-lucknow): Luxury resort wedding setting with 42 rooms and capacity for up to 1000 guests.
+- [Charans Club and Resort](https://www.royalweddinghub.com/venues/charans-club-and-resort): Expansive wedding resort with 50 rooms and capacity for up to 2500 guests.
+- [Magnolia Garden Marriage Lawn](https://www.royalweddinghub.com/venues/magnolia-garden-marriage-lawn): Heritage banquet lawn for royal wedding gatherings up to 1800 guests.
+- [Prayag Marriage Lawn](https://www.royalweddinghub.com/venues/prayag-marriage-lawn): Classic marriage lawn hosting celebrations from 250 to 1200 guests.
+- [Hotel Milenia Regency](https://www.royalweddinghub.com/venues/hotel-milenia-regency): Luxury hotel wedding banquets accommodating 150 to 600 guests.
+- [Yash Resort](https://www.royalweddinghub.com/venues/yash-resort): Scenic resort venue with 50 rooms and lawn capacity for 2000 guests.
+- [Anandi Water Park Resort](https://www.royalweddinghub.com/venues/anandi-water-park-resort): Expansive lawn and resort venue for large celebrations up to 3000 guests.
 
-## Artisan Wedding Disciplines & Services
-- Wedding Planning & Thematic Décor (Heritage Awadhi mandaps, royal floral design, end-to-end production)
-- Photography & Cinematic Films (Fine-art bridal cinema, drone coverage, pre-wedding storytelling)
-- Royal Catering & Awadhi Dastarkhwan (Authentic Nawabi galouti, dum pukht biryani, master khansamas)
-- Artist & Entertainment Management (Sufi qawwali ensembles, live symphony, celebrity artists)
-- Bridal & Groom Royal Styling (Trousseau curation and designer coordination)
-- Bespoke Invitations & Stationery (Royal boxed wedding cards, customized wax seals)
-- Complete catalog: https://www.royalweddinghub.com/services
+## Services
+- [All Services Directory](https://www.royalweddinghub.com/services): Complete overview of bespoke wedding production disciplines.
+- [Wedding Planning & Thematic Décor](https://www.royalweddinghub.com/services/planning-and-decor): Heritage Awadhi royal mandap themes, floral styling, and complete wedding planning.
+- [Fine-Art Photography & Cinematic Films](https://www.royalweddinghub.com/services/photography-and-films): Fine-art cinematic bridal films, pre-wedding cinematography, and 4K multi-camera coverage.
+- [Heritage Wedding Venues](https://www.royalweddinghub.com/services/wedding-venues): Heritage palace venue scouting, concierge booking, and contract negotiation.
+- [Awadhi Dastarkhwan & Royal Catering](https://www.royalweddinghub.com/services): Authentic Awadhi Dastarkhwan, royal Nawabi banquets, and master khansama culinary curation.
+- [Music & Entertainment Orchestration](https://www.royalweddinghub.com/services): Live Sufi qawwali, royal shehnai, symphony orchestras, and celebrity artists.
 
-## Key Endpoints for Agents & Crawlers
-- Venues Catalog: https://www.royalweddinghub.com/venues
-- Services Catalog: https://www.royalweddinghub.com/services
-- About & Planning Philosophy: https://www.royalweddinghub.com/about
-- Concierge Consultation: https://www.royalweddinghub.com/contact
-- Canonical XML Sitemap: https://www.royalweddinghub.com/sitemap.xml
-- Robots Policy: https://www.royalweddinghub.com/robots.txt
+## Core Pages
+- [Official Homepage](https://www.royalweddinghub.com/): Official homepage with interactive venue explorer, portfolio, and wedding consultation concierge.
+- [About Royal Wedding Hub](https://www.royalweddinghub.com/about): Brand legacy, Nawabi royal aesthetic ethos, and luxury planning standards.
+- [Contact & Consultation Concierge](https://www.royalweddinghub.com/contact): Direct luxury wedding consultation, inquiry form, and WhatsApp concierge.
+- [Privacy Policy](https://www.royalweddinghub.com/privacy): Data privacy policies, client confidentiality, and consent disclosures.
+- [Terms of Service](https://www.royalweddinghub.com/terms): Service engagement agreements, booking terms, and concierge conditions.
 
-## Business Contact & Remittance
-- Legal Entity: Royal Wedding Hub Enterprise
-- Primary Headquarters: Hazratganj Luxury Corridor, Lucknow, UP - 226001, India
-- Phone: +91 9170888981
-- Official Email: contact@royalweddinghub.com
-- Instagram: https://www.instagram.com/royal_weddinghug
-
+## Optional
+- [Full LLM Context](https://www.royalweddinghub.com/llms-full.txt): Complete concatenated site information and venue directory for autonomous AI agents.
+- [XML Sitemap](https://www.royalweddinghub.com/sitemap.xml): Machine-readable XML sitemap indexing all canonical routes.
+- [Robots Policy](https://www.royalweddinghub.com/robots.txt): Machine crawler access permissions and AI agent index directives.
+- [Instagram Portfolio](https://www.instagram.com/royal_weddinghug): Verified social portfolio showcasing recent Lucknow wedding productions.
