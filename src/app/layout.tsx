@@ -67,12 +67,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} lenis`} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <JsonLd />
-      </head>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
+        {/* Preconnect & high-priority LCP hero poster hints */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-poster.webp"
+          type="image/webp"
+          // @ts-expect-error fetchpriority attribute is supported in modern browsers and React 19
+          fetchpriority="high"
+        />
+        {/* Schema.org Structured Data */}
+        <JsonLd />
+
         {/* Google tag (gtag.js) - Google Ads & Google Analytics strictly restricted to official production domain */}
         <Script
           id="google-tags"
