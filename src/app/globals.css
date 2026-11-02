@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-display), "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-body: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-display), "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   
@@ -17,9 +22,6 @@
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
   looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
 */
 @layer base {
   *,
@@ -28,6 +30,33 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  html {
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6, .display-text {
+    font-family: var(--font-display), "Playfair Display", Georgia, serif;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  p {
+    line-height: 1.65;
   }
 }
 
@@ -48,24 +77,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Optional Dark Mode - For cinematic sections */
     --background: #1c1917;
     --foreground: #faf9f6;
-    
     --muted: #a8a29e;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-body), sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6, .display-text {
-  font-family: var(--font-display), serif;
 }
 
 @keyframes scrollPill {

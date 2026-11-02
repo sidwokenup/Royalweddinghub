@@ -62,7 +62,7 @@ export function ModernHeroSearch() {
             <Sparkles className="w-4 h-4 text-[#521D2B]" />
           </div>
           <div className="flex-1 min-w-0">
-            <label className="block text-[10px] font-mono uppercase tracking-wider text-[#78716C] font-semibold">
+            <label className="block text-xs uppercase tracking-wider text-[#521D2B] font-bold mb-0.5">
               Select Vendor Type
             </label>
             <select
@@ -88,7 +88,7 @@ export function ModernHeroSearch() {
             <MapPin className="w-4 h-4 text-[#521D2B]" />
           </div>
           <div className="flex-1 min-w-0">
-            <label className="block text-[10px] font-mono uppercase tracking-wider text-[#78716C] font-semibold">
+            <label className="block text-xs uppercase tracking-wider text-[#521D2B] font-bold mb-0.5">
               Select Location / Budget
             </label>
             <select

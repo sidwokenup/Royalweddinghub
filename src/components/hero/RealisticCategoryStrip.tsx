@@ -112,7 +112,7 @@ export function RealisticCategoryStrip() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
               {/* Badge */}
-              <span className="absolute bottom-2 left-2 text-[9px] font-mono uppercase tracking-wider bg-white/95 text-[#521D2B] font-bold px-2 py-0.5 rounded shadow-xs border border-[#E8DFD3]">
+              <span className="absolute bottom-2 left-2 text-[11px] sm:text-xs font-sans uppercase tracking-wider bg-white/95 text-[#521D2B] font-semibold px-2.5 py-0.5 rounded-md shadow-xs border border-[#E8DFD3]">
                 {cat.count}
               </span>
             </div>

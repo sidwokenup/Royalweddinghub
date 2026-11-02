@@ -16,7 +16,7 @@ export function HeroScrollIndicator() {
       className="hero-scroll-indicator group absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer select-none text-white/60 hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#f3e5d8]"
       aria-label="Scroll to explore our wedding collections"
     >
-      <span className="text-[9px] sm:text-[10px] tracking-[0.35em] uppercase font-light text-[#f3e5d8]/75 group-hover:text-white transition-colors duration-300">
+      <span className="text-xs tracking-wider uppercase font-medium text-white/90 group-hover:text-white transition-colors duration-300">
         SCROLL
       </span>
 

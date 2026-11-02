@@ -79,7 +79,7 @@ export function VenueCard({
                 <Star className="w-3 h-3 fill-[#D6B56D] text-[#D6B56D]" />
                 <span>{venue.rating.toFixed(1)}</span>
                 {venue.reviewCount && (
-                  <span className="text-[9px] text-white/70 font-light">
+                  <span className="text-[11px] text-white/90 font-medium">
                     ({venue.reviewCount})
                   </span>
                 )}
@@ -99,8 +99,8 @@ export function VenueCard({
         <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5 bg-white">
           <div className="space-y-1.5">
             {/* Locality */}
-            <div className="flex items-center gap-1.5 text-xs text-[#78716C] font-light truncate">
-              <MapPin className="w-3 h-3 text-[#D6B56D] shrink-0" />
+            <div className="flex items-center gap-1.5 text-xs text-[#57534E] font-medium truncate">
+              <MapPin className="w-3 h-3 text-[#521D2B] shrink-0" />
               <span className="truncate">{locality}</span>
             </div>
 
@@ -111,7 +111,7 @@ export function VenueCard({
 
             {/* Optional Short Description */}
             {venue.description && (
-              <p className="text-xs sm:text-sm text-[#57534E] line-clamp-2 font-light leading-relaxed pt-0.5">
+              <p className="text-xs sm:text-sm text-[#44403C] line-clamp-2 font-normal leading-relaxed pt-0.5">
                 {venue.description}
               </p>
             )}
@@ -120,15 +120,15 @@ export function VenueCard({
           {/* Specs & Pricing Strip */}
           <div className="pt-3 border-t border-[#F0EAE1] flex flex-wrap items-center justify-between gap-2 text-xs">
             {/* Capacity & Rooms */}
-            <div className="flex items-center gap-3 text-[#44403C]">
-              <span className="inline-flex items-center gap-1.5 font-medium" title="Guest Capacity">
+            <div className="flex items-center gap-3 text-[#211A19]">
+              <span className="inline-flex items-center gap-1.5 font-semibold" title="Guest Capacity">
                 <Users className="w-3.5 h-3.5 text-[#521D2B]" />
                 <span>{paxText}</span>
               </span>
 
               {roomsText && (
-                <span className="inline-flex items-center gap-1 text-[#78716C]" title="Available Rooms">
-                  <DoorOpen className="w-3.5 h-3.5 text-[#D6B56D]" />
+                <span className="inline-flex items-center gap-1 text-[#57534E] font-medium" title="Available Rooms">
+                  <DoorOpen className="w-3.5 h-3.5 text-[#521D2B]" />
                   <span>{roomsText}</span>
                 </span>
               )}
@@ -136,7 +136,7 @@ export function VenueCard({
 
             {/* Price Info */}
             <div className="text-right">
-              <span className="text-[11px] font-medium text-[#521D2B] bg-[#F7F3ED] px-2.5 py-1 rounded-md border border-[#E8E0D5]">
+              <span className="text-xs font-semibold text-[#521D2B] bg-[#F7F3ED] px-2.5 py-1 rounded-md border border-[#E8E0D5]">
                 {priceText}
               </span>
             </div>

@@ -9,6 +9,7 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -16,6 +17,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const viewport: Viewport = {
@@ -74,7 +76,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body className="antialiased min-h-screen flex flex-col" suppressHydrationWarning>
+      <body className="antialiased min-h-screen flex flex-col font-sans" suppressHydrationWarning>
         {/* Preconnect & high-priority LCP hero poster hints */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link
