@@ -21,6 +21,10 @@ export async function updateEnquiryStatusAction(
     return { success: false, error: 'Unauthorized.' };
   }
 
+  if (admin.role === 'viewer') {
+    return { success: false, error: 'Read-only access: Viewers cannot update enquiry status.' };
+  }
+
   const validStatuses = ['new', 'contacted', 'qualified', 'booked', 'archived'];
   if (!validStatuses.includes(status)) {
     return { success: false, error: 'Invalid status code.' };
@@ -61,6 +65,10 @@ export async function saveEnquiryNotesAction(
     return { success: false, error: 'Unauthorized.' };
   }
 
+  if (admin.role === 'viewer') {
+    return { success: false, error: 'Read-only access: Viewers cannot edit internal notes.' };
+  }
+
   const db = getAdminDb();
   if (!db || !isDatabaseConfigured()) {
     return { success: false, error: 'Database unavailable.' };
@@ -90,6 +98,10 @@ export async function deleteEnquiryAction(id: string): Promise<ActionResponse> {
   const admin = await getCurrentAdmin();
   if (!admin) {
     return { success: false, error: 'Unauthorized.' };
+  }
+
+  if (admin.role === 'viewer') {
+    return { success: false, error: 'Read-only access: Viewers cannot delete inquiries.' };
   }
 
   const db = getAdminDb();

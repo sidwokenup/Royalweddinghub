@@ -19,6 +19,11 @@ export default async function AdminSettingsPage() {
     redirect('/admin/login');
   }
 
+  // Viewers cannot access system settings
+  if (admin.role === 'viewer') {
+    redirect('/admin');
+  }
+
   const isDbConnected = isDatabaseConfigured();
 
   return (

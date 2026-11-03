@@ -20,7 +20,7 @@ const POPULAR_SEARCH_CATEGORIES: VenueCategoryCard[] = [
     title: '4 Star & Above Hotels',
     subtext: 'Gomti Nagar • Shaheed Path • Airport Road',
     image: '/venues/meava/thumbnail.jpg',
-    href: '/wedding-venues-lucknow',
+    href: '/venues/meava',
     badge: 'Luxury',
   },
   {
@@ -28,7 +28,7 @@ const POPULAR_SEARCH_CATEGORIES: VenueCategoryCard[] = [
     title: 'Royal Banquet Halls',
     subtext: 'Alambagh • Hazratganj • Gomti Nagar',
     image: '/venues/vsquare/thumbnail.jpg',
-    href: '/wedding-venues-lucknow',
+    href: '/venues/vsquare',
     badge: 'AC Indoor',
   },
   {
@@ -36,7 +36,7 @@ const POPULAR_SEARCH_CATEGORIES: VenueCategoryCard[] = [
     title: 'Marriage Garden / Lawns',
     subtext: 'Faizabad Road • Raebareli Road • Sitapur Rd',
     image: '/venues/hotel-kings-paradise/thumbnail.jpg',
-    href: '/wedding-venues-lucknow',
+    href: '/venues/hotel-kings-paradise',
     badge: 'Open Air',
   },
   {
@@ -44,7 +44,7 @@ const POPULAR_SEARCH_CATEGORIES: VenueCategoryCard[] = [
     title: 'Wedding Resorts & Palaces',
     subtext: 'Bijnor Road • Mohanlalganj • Outskirts',
     image: '/venues/yash-resort/thumbnail.jpg',
-    href: '/wedding-venues-lucknow',
+    href: '/venues/yash-resort',
     badge: 'Destination',
   },
 ];
@@ -64,7 +64,7 @@ export function HomePopularSearches() {
         </div>
 
         <Link
-          href="/wedding-venues-lucknow"
+          href="/venues"
           className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-[#521D2B] hover:text-[#671024] hover:underline transition-colors shrink-0"
         >
           <span>All 32+ Venues</span>
@@ -112,7 +112,7 @@ export function HomePopularSearches() {
               </div>
 
               <div className="mt-2 pt-2 border-t border-[#F2ECE3] flex items-center justify-between text-[11px] font-semibold text-[#521D2B]">
-                <span className="group-hover:underline">Explore Venues</span>
+                <span className="group-hover:underline">View Venue</span>
                 <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

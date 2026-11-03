@@ -63,6 +63,14 @@ export function AdminHeader({
           </span>
         </div>
 
+        {/* Viewer Mode Alert Pill */}
+        {userRole === 'viewer' && (
+          <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold uppercase bg-amber-950/40 text-amber-300 border border-amber-800/50 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            <span>Read-Only (Ads Mode)</span>
+          </span>
+        )}
+
         {/* View Public Site Quick Link */}
         <Link
           href="/"

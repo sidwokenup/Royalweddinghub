@@ -17,6 +17,7 @@ import {
   Save,
   Tag,
   Share2,
+  Eye,
 } from 'lucide-react';
 import {
   updateEnquiryStatusAction,
@@ -46,9 +47,14 @@ export interface AdminEnquiry {
 
 interface EnquiriesManagerClientProps {
   initialEnquiries: AdminEnquiry[];
+  userRole?: string;
 }
 
-export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerClientProps) {
+export function EnquiriesManagerClient({
+  initialEnquiries,
+  userRole = 'editor',
+}: EnquiriesManagerClientProps) {
+  const isViewer = userRole === 'viewer';
   const [enquiries, setEnquiries] = useState<AdminEnquiry[]>(initialEnquiries);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -129,6 +135,10 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
     enquiries.filter((e) => e.status === status).length;
 
   const handleStatusChange = (leadId: string, newStatus: string) => {
+    if (isViewer) {
+      alert('Read-only access: Viewers cannot change enquiry status.');
+      return;
+    }
     // Optimistic UI
     setEnquiries((prev) =>
       prev.map((e) =>
@@ -156,6 +166,10 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
   };
 
   const handleSaveNotes = () => {
+    if (isViewer) {
+      alert('Read-only access: Viewers cannot save internal notes.');
+      return;
+    }
     if (!selectedLead) return;
     const leadId = selectedLead.id;
 
@@ -174,6 +188,10 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
   };
 
   const handleDelete = (lead: AdminEnquiry) => {
+    if (isViewer) {
+      alert('Read-only access: Viewers cannot delete inquiries.');
+      return;
+    }
     if (confirm(`Permanently delete inquiry ${lead.lead_number} for ${lead.name}?`)) {
       setEnquiries((prev) => prev.filter((e) => e.id !== lead.id));
       if (selectedLead?.id === lead.id) setSelectedLead(null);
@@ -189,6 +207,21 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
 
   return (
     <div className="space-y-6">
+      {/* Viewer Mode Banner */}
+      {isViewer && (
+        <div className="p-4 rounded-2xl bg-amber-950/30 border border-amber-800/40 text-amber-200 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+          <div className="flex items-center gap-2.5">
+            <Eye className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>
+              <strong>Read-Only Access Active (Marketing &amp; Ads Mode):</strong> You have full visibility into incoming inquiries, mobile numbers, and campaign attribution tags. Pipeline status updates and record deletion are restricted.
+            </span>
+          </div>
+          <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-amber-900/50 border border-amber-700/50 text-amber-300 font-semibold self-start sm:self-auto shrink-0">
+            Viewer Mode
+          </span>
+        </div>
+      )}
+
       {/* Top Filter & Toolbar */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-5 rounded-3xl bg-[#181310]/85 border border-[#D6B56D]/15 shadow-[0_8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         {/* Search Input */}
@@ -370,30 +403,48 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
                         </div>
                       </td>
 
-                      {/* Status Dropdown */}
+                      {/* Status Dropdown / Badge */}
                       <td className="py-4 px-4">
-                        <select
-                          value={lead.status}
-                          disabled={isPending}
-                          onChange={(e) => handleStatusChange(lead.id, e.target.value)}
-                          className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded-xl border focus:outline-none cursor-pointer ${
-                            lead.status === 'new'
-                              ? 'bg-sky-950/60 text-sky-300 border-sky-500/40'
-                              : lead.status === 'contacted'
-                              ? 'bg-amber-950/60 text-amber-300 border-amber-500/40'
-                              : lead.status === 'qualified'
-                              ? 'bg-purple-950/60 text-purple-300 border-purple-500/40'
-                              : lead.status === 'booked'
-                              ? 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40'
-                              : 'bg-white/[0.04] text-[#B8ADA3] border-white/[0.08]'
-                          }`}
-                        >
-                          <option value="new" className="bg-[#181310] text-[#FAF7F2]">NEW</option>
-                          <option value="contacted" className="bg-[#181310] text-[#FAF7F2]">CONTACTED</option>
-                          <option value="qualified" className="bg-[#181310] text-[#FAF7F2]">QUALIFIED</option>
-                          <option value="booked" className="bg-[#181310] text-[#FAF7F2]">BOOKED</option>
-                          <option value="archived" className="bg-[#181310] text-[#FAF7F2]">ARCHIVED</option>
-                        </select>
+                        {isViewer ? (
+                          <span
+                            className={`inline-block text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded-xl border ${
+                              lead.status === 'new'
+                                ? 'bg-sky-950/60 text-sky-300 border-sky-500/40'
+                                : lead.status === 'contacted'
+                                ? 'bg-amber-950/60 text-amber-300 border-amber-500/40'
+                                : lead.status === 'qualified'
+                                ? 'bg-purple-950/60 text-purple-300 border-purple-500/40'
+                                : lead.status === 'booked'
+                                ? 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40'
+                                : 'bg-white/[0.04] text-[#B8ADA3] border-white/[0.08]'
+                            }`}
+                          >
+                            {lead.status}
+                          </span>
+                        ) : (
+                          <select
+                            value={lead.status}
+                            disabled={isPending}
+                            onChange={(e) => handleStatusChange(lead.id, e.target.value)}
+                            className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded-xl border focus:outline-none cursor-pointer ${
+                              lead.status === 'new'
+                                ? 'bg-sky-950/60 text-sky-300 border-sky-500/40'
+                                : lead.status === 'contacted'
+                                ? 'bg-amber-950/60 text-amber-300 border-amber-500/40'
+                                : lead.status === 'qualified'
+                                ? 'bg-purple-950/60 text-purple-300 border-purple-500/40'
+                                : lead.status === 'booked'
+                                ? 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40'
+                                : 'bg-white/[0.04] text-[#B8ADA3] border-white/[0.08]'
+                            }`}
+                          >
+                            <option value="new" className="bg-[#181310] text-[#FAF7F2]">NEW</option>
+                            <option value="contacted" className="bg-[#181310] text-[#FAF7F2]">CONTACTED</option>
+                            <option value="qualified" className="bg-[#181310] text-[#FAF7F2]">QUALIFIED</option>
+                            <option value="booked" className="bg-[#181310] text-[#FAF7F2]">BOOKED</option>
+                            <option value="archived" className="bg-[#181310] text-[#FAF7F2]">ARCHIVED</option>
+                          </select>
+                        )}
                       </td>
 
                       {/* Actions */}
@@ -406,14 +457,16 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
                           >
                             Inspect Lead
                           </button>
-                          <button
-                            type="button"
-                            onClick={() => handleDelete(lead)}
-                            className="p-1.5 rounded-xl text-[#8C8070] hover:text-rose-400 hover:bg-rose-950/40 transition-colors"
-                            title="Delete Lead"
-                          >
-                            <Trash2 className="w-3.5 h-3.5" />
-                          </button>
+                          {!isViewer && (
+                            <button
+                              type="button"
+                              onClick={() => handleDelete(lead)}
+                              className="p-1.5 rounded-xl text-[#8C8070] hover:text-rose-400 hover:bg-rose-950/40 transition-colors"
+                              title="Delete Lead"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          )}
                         </div>
                       </td>
                     </tr>
@@ -565,36 +618,53 @@ export function EnquiriesManagerClient({ initialEnquiries }: EnquiriesManagerCli
               <textarea
                 rows={3}
                 value={activeNotes}
+                readOnly={isViewer}
                 onChange={(e) => setActiveNotes(e.target.value)}
-                placeholder="Add private staff notes (e.g. Spoke with father, prefers palace lawn on VIP Road, budget 25L)..."
-                className="w-full bg-black/30 border border-[#D6B56D]/20 rounded-2xl p-3.5 text-xs text-[#FAF7F2] placeholder-[#8C8070] focus:outline-none focus:border-[#D6B56D] focus:ring-2 focus:ring-[#D6B56D]/20 transition-all font-sans"
+                placeholder={
+                  isViewer
+                    ? 'No internal notes recorded. (Read-only mode: Viewers cannot edit notes)'
+                    : 'Add private staff notes (e.g. Spoke with father, prefers palace lawn on VIP Road, budget 25L)...'
+                }
+                className={`w-full bg-black/30 border border-[#D6B56D]/20 rounded-2xl p-3.5 text-xs text-[#FAF7F2] placeholder-[#8C8070] transition-all font-sans ${
+                  isViewer
+                    ? 'opacity-70 cursor-not-allowed'
+                    : 'focus:outline-none focus:border-[#D6B56D] focus:ring-2 focus:ring-[#D6B56D]/20'
+                }`}
               />
 
               <div className="flex items-center justify-between pt-2">
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-[#B8ADA3] font-light">Status:</span>
-                  <select
-                    value={selectedLead.status}
-                    onChange={(e) => handleStatusChange(selectedLead.id, e.target.value)}
-                    className="bg-[#140F0D] border border-[#D6B56D]/30 text-xs font-mono text-[#FAF7F2] rounded-xl px-2.5 py-1.5 focus:outline-none focus:border-[#D6B56D]"
-                  >
-                    <option value="new">NEW</option>
-                    <option value="contacted">CONTACTED</option>
-                    <option value="qualified">QUALIFIED</option>
-                    <option value="booked">BOOKED</option>
-                    <option value="archived">ARCHIVED</option>
-                  </select>
+                  {isViewer ? (
+                    <span className="bg-[#140F0D] border border-[#D6B56D]/30 text-xs font-mono text-[#D6B56D] rounded-xl px-2.5 py-1.5 uppercase font-medium">
+                      {selectedLead.status}
+                    </span>
+                  ) : (
+                    <select
+                      value={selectedLead.status}
+                      onChange={(e) => handleStatusChange(selectedLead.id, e.target.value)}
+                      className="bg-[#140F0D] border border-[#D6B56D]/30 text-xs font-mono text-[#FAF7F2] rounded-xl px-2.5 py-1.5 focus:outline-none focus:border-[#D6B56D]"
+                    >
+                      <option value="new">NEW</option>
+                      <option value="contacted">CONTACTED</option>
+                      <option value="qualified">QUALIFIED</option>
+                      <option value="booked">BOOKED</option>
+                      <option value="archived">ARCHIVED</option>
+                    </select>
+                  )}
                 </div>
 
-                <button
-                  type="button"
-                  onClick={handleSaveNotes}
-                  disabled={isPending}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D6B56D] to-[#E5CCA0] hover:from-[#E0C385] hover:to-[#F2DFC0] text-[#1C1611] text-xs font-semibold tracking-wide transition-all shadow-[0_2px_12px_rgba(214,181,109,0.25)] hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <Save className="w-3.5 h-3.5" />
-                  <span>{isPending ? 'Saving...' : 'Save Notes'}</span>
-                </button>
+                {!isViewer && (
+                  <button
+                    type="button"
+                    onClick={handleSaveNotes}
+                    disabled={isPending}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D6B56D] to-[#E5CCA0] hover:from-[#E0C385] hover:to-[#F2DFC0] text-[#1C1611] text-xs font-semibold tracking-wide transition-all shadow-[0_2px_12px_rgba(214,181,109,0.25)] hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    <Save className="w-3.5 h-3.5" />
+                    <span>{isPending ? 'Saving...' : 'Save Notes'}</span>
+                  </button>
+                )}
               </div>
             </div>
           </div>

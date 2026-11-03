@@ -50,7 +50,7 @@ export function VenueCard({
               ? "aspect-[16/10] sm:aspect-[16/9]"
               : isPortrait
               ? "aspect-[3/4]"
-              : "aspect-[4/3] sm:aspect-[16/11]"
+              : "aspect-[16/10]"
           }`}
         >
           <Image
@@ -97,28 +97,30 @@ export function VenueCard({
 
         {/* Content Section */}
         <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5 bg-white">
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 flex-1">
             {/* Locality */}
             <div className="flex items-center gap-1.5 text-xs text-[#57534E] font-medium truncate">
               <MapPin className="w-3 h-3 text-[#521D2B] shrink-0" />
               <span className="truncate">{locality}</span>
             </div>
 
-            {/* Venue Title in Serif */}
+            {/* Venue Title */}
             <h3 className="text-xl sm:text-2xl display-text font-serif text-[#211A19] group-hover:text-[#521D2B] transition-colors leading-snug line-clamp-1">
               {venue.name}
             </h3>
 
-            {/* Optional Short Description */}
-            {venue.description && (
-              <p className="text-xs sm:text-sm text-[#44403C] line-clamp-2 font-normal leading-relaxed pt-0.5">
+            {/* Optional Short Description (Unified Min-Height for Grid Alignment) */}
+            {venue.description ? (
+              <p className="text-xs sm:text-sm text-[#44403C] line-clamp-2 font-normal leading-relaxed pt-0.5 min-h-[2.5rem]">
                 {venue.description}
               </p>
+            ) : (
+              <div className="min-h-[2.5rem]" />
             )}
           </div>
 
           {/* Specs & Pricing Strip */}
-          <div className="pt-3 border-t border-[#F0EAE1] flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div className="pt-3 border-t border-[#F0EAE1] flex flex-wrap items-center justify-between gap-2 text-xs mt-auto">
             {/* Capacity & Rooms */}
             <div className="flex items-center gap-3 text-[#211A19]">
               <span className="inline-flex items-center gap-1.5 font-semibold" title="Guest Capacity">

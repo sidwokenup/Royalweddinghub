@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from '@/animations/gsap';
-import { X, Sparkles, Crown, ArrowRight, ShieldCheck, Gift, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Sparkles, Crown, ArrowRight, ShieldCheck, Gift, Calendar, ChevronLeft, ChevronRight, Loader2, CheckCircle2 } from 'lucide-react';
+import { submitShahiFarmanAction } from '@/app/actions/lead';
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June',
@@ -24,6 +25,33 @@ export function RoyalScrollExperience() {
   const today = new Date();
   const [calMonth, setCalMonth] = useState<number>(today.getMonth());
   const [calYear, setCalYear] = useState<number>(today.getFullYear() < 2026 ? 2026 : today.getFullYear());
+
+  // Shahi Farman Lead Capture State
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [celebrationStyle, setCelebrationStyle] = useState('Palace Lawn (500 – 1,500 Guests)');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [confirmedLeadNumber, setConfirmedLeadNumber] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [hasClaimed, setHasClaimed] = useState(false);
+
+  // Check on mount if the user has already filled the lead form
+  useEffect(() => {
+    try {
+      if (typeof window !== 'undefined') {
+        const claimed = localStorage.getItem('rwh_shahi_farman_claimed');
+        const savedId = localStorage.getItem('rwh_shahi_farman_lead_id');
+        if (claimed === 'true') {
+          setHasClaimed(true);
+          setSubmitSuccess(true);
+          if (savedId) setConfirmedLeadNumber(savedId);
+        }
+      }
+    } catch {
+      // LocalStorage access check
+    }
+  }, []);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollWrapperRef = useRef<HTMLDivElement>(null);
@@ -81,9 +109,15 @@ export function RoyalScrollExperience() {
   const firstDayOfWeek = new Date(calYear, calMonth, 1).getDay();
   const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
 
-  // 1. Initial 30-second delay, then 60-second recurring interval
+  // 1. Initial 30-second delay, then 60-second recurring interval (Only if NOT already claimed)
   useEffect(() => {
-    // Initial 30-second appearance
+    // If the user already filled the form, never auto-show the scroll popup
+    try {
+      if (typeof window !== 'undefined' && localStorage.getItem('rwh_shahi_farman_claimed') === 'true') {
+        return;
+      }
+    } catch {}
+
     const initialTimer = setTimeout(() => {
       setIsOpen(true);
     }, 30000);
@@ -102,16 +136,22 @@ export function RoyalScrollExperience() {
     return () => window.removeEventListener('open-royal-scroll', handleTrigger);
   }, []);
 
-  // Interval trigger when closed
+  // Interval trigger when closed (suppressed once form is filled)
   useEffect(() => {
-    if (isOpen) return;
+    if (isOpen || hasClaimed) return;
+
+    try {
+      if (typeof window !== 'undefined' && localStorage.getItem('rwh_shahi_farman_claimed') === 'true') {
+        return;
+      }
+    } catch {}
 
     const intervalTimer = setInterval(() => {
       setIsOpen(true);
     }, 60000);
 
     return () => clearInterval(intervalTimer);
-  }, [isOpen]);
+  }, [isOpen, hasClaimed]);
 
   // 2. GSAP 3D Unrolling Motion Choreography
   useEffect(() => {
@@ -296,6 +336,55 @@ export function RoyalScrollExperience() {
       });
   };
 
+  // Handle Shahi Farman Lead Submission
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!name.trim()) {
+      setErrorMessage('Please enter bride, groom, or family name.');
+      return;
+    }
+    const cleanPhone = phone.replace(/\D/g, '');
+    if (cleanPhone.length < 10) {
+      setErrorMessage('Please enter a valid 10-digit WhatsApp number.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const res = await submitShahiFarmanAction({
+        name,
+        phone: cleanPhone,
+        weddingDate,
+        celebrationStyle,
+      });
+
+      if (res.success) {
+        setSubmitSuccess(true);
+        setHasClaimed(true);
+        setConfirmedLeadNumber(res.leadNumber || 'RWH-FARMAN-LOCKED');
+        try {
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('rwh_shahi_farman_claimed', 'true');
+            if (res.leadNumber) {
+              localStorage.setItem('rwh_shahi_farman_lead_id', res.leadNumber);
+            }
+          }
+        } catch {}
+        setTimeout(() => {
+          handleClose();
+        }, 4000);
+      } else {
+        setErrorMessage(res.error || 'Failed to submit. Please call concierge directly.');
+      }
+    } catch {
+      setErrorMessage('Connection error. Please try again or contact concierge.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleOpen = () => {
     setIsMinimized(false);
     setIsOpen(true);
@@ -306,7 +395,7 @@ export function RoyalScrollExperience() {
       {/* =========================================================================
           MINIMIZED FLOATING GOLD EMBLEM (When Scroll is Dismissed)
           ========================================================================= */}
-      {(!isOpen || isMinimized) && (
+      {(!isOpen || isMinimized) && !hasClaimed && (
         <button
           type="button"
           onClick={handleOpen}
@@ -507,217 +596,266 @@ export function RoyalScrollExperience() {
                 </div>
 
                 {/* =====================================================================
-                    VISUAL COMPOSITION: STYLED FORM SLOTS (Visual Mockup for Design Review)
+                    ROYAL LEAD CAPTURE FORM / CONFIRMATION
                     ===================================================================== */}
-                <div className="mt-5 space-y-3 text-left">
-                  {/* Name Field Slot */}
-                  <div>
-                    <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
-                      Bride / Groom / Family Name
-                    </label>
-                    <div className="w-full px-3.5 py-2.5 rounded-lg bg-white/80 border border-[#D8CBBE] focus-within:border-[#521D2B] text-xs font-medium text-[#211A19] shadow-inner transition-colors">
-                      <input
-                        type="text"
-                        placeholder="e.g. Royal Kapoor &amp; Sharma Celebration"
-                        className="w-full bg-transparent outline-none placeholder:text-[#A8A29E]"
-                      />
+                {submitSuccess ? (
+                  <div className="mt-5 py-6 px-4 text-center space-y-3.5 bg-[#FAF7F2]/90 rounded-xl border border-[#D4AF37]/50 shadow-inner animate-in fade-in zoom-in-95 duration-300">
+                    <div className="w-12 h-12 mx-auto rounded-full bg-[#521D2B] text-[#F5E296] flex items-center justify-center border-2 border-[#D4AF37] shadow-md animate-bounce">
+                      <Crown size={22} />
                     </div>
+                    <div className="space-y-1">
+                      <span className="text-[10px] uppercase tracking-[0.25em] text-[#7A5B1D] font-bold block">
+                        IMPERIAL DECREE REGISTERED
+                      </span>
+                      <h4 className="text-xl sm:text-2xl font-bold text-[#3B0D16]">
+                        Privilege Claimed Successfully!
+                      </h4>
+                      <p className="text-xs text-[#57534E] max-w-sm mx-auto leading-relaxed">
+                        Your ₹50,000 privilege has been registered in the Royal Registry. Our wedding director will call you on WhatsApp within 15 minutes.
+                      </p>
+                    </div>
+                    <div className="inline-block px-3.5 py-1.5 rounded-full bg-[#521D2B]/10 border border-[#D4AF37]/40 text-[#521D2B] text-xs font-mono font-bold">
+                      Reference ID: {confirmedLeadNumber}
+                    </div>
+                    <p className="text-[11px] text-[#78716C] pt-1">
+                      This scroll will automatically close shortly...
+                    </p>
                   </div>
+                ) : (
+                  <form onSubmit={handleFormSubmit} className="mt-5 space-y-3 text-left">
+                    {/* Error Banner */}
+                    {errorMessage && (
+                      <div className="p-2.5 rounded-lg bg-[#521D2B]/10 border border-[#521D2B]/30 text-[#521D2B] text-xs font-medium text-center">
+                        {errorMessage}
+                      </div>
+                    )}
 
-                  {/* WhatsApp Number & Auspicious Date Row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {/* Name Field Slot */}
                     <div>
                       <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
-                        WhatsApp Number
+                        Bride / Groom / Family Name *
                       </label>
                       <div className="w-full px-3.5 py-2.5 rounded-lg bg-white/80 border border-[#D8CBBE] focus-within:border-[#521D2B] text-xs font-medium text-[#211A19] shadow-inner transition-colors">
                         <input
-                          type="tel"
-                          placeholder="+91 98765 43210"
+                          type="text"
+                          required
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder="e.g. Royal Kapoor &amp; Sharma Celebration"
                           className="w-full bg-transparent outline-none placeholder:text-[#A8A29E]"
                         />
                       </div>
                     </div>
 
-                    {/* Wedding Month / Muhurat Calendar Picker */}
-                    <div ref={calendarContainerRef} className="relative">
-                      <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
-                        Wedding Month / Muhurat
-                      </label>
-                      <div
-                        onClick={() => setIsCalendarOpen(!isCalendarOpen)}
-                        className={`w-full px-3 py-2 sm:py-2.5 rounded-lg bg-white/90 border transition-all cursor-pointer flex items-center justify-between shadow-inner ${
-                          isCalendarOpen
-                            ? 'border-[#521D2B] ring-2 ring-[#521D2B]/15 bg-white'
-                            : 'border-[#D8CBBE] hover:border-[#9B7A28]'
-                        }`}
-                      >
-                        <div className="flex items-center gap-2 min-w-0">
-                          <Calendar size={14} className="text-[#9B7A28] shrink-0" />
-                          <span
-                            className={`text-xs font-medium truncate ${
-                              weddingDate ? 'text-[#211A19] font-semibold' : 'text-[#A8A29E]'
-                            }`}
-                          >
-                            {weddingDate || 'Choose from calendar...'}
-                          </span>
+                    {/* WhatsApp Number & Auspicious Date Row */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
+                          WhatsApp Number *
+                        </label>
+                        <div className="w-full px-3.5 py-2.5 rounded-lg bg-white/80 border border-[#D8CBBE] focus-within:border-[#521D2B] text-xs font-medium text-[#211A19] shadow-inner transition-colors">
+                          <input
+                            type="tel"
+                            required
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            placeholder="+91 98765 43210"
+                            className="w-full bg-transparent outline-none placeholder:text-[#A8A29E]"
+                          />
                         </div>
-
-                        {weddingDate ? (
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setWeddingDate('');
-                            }}
-                            className="p-0.5 text-[#A8A29E] hover:text-[#521D2B] rounded-full transition-colors"
-                          >
-                            <X size={13} />
-                          </button>
-                        ) : (
-                          <span className="text-[10px] font-semibold text-[#9B7A28] uppercase tracking-wider bg-[#D4AF37]/15 px-1.5 py-0.5 rounded">
-                            Calendar
-                          </span>
-                        )}
                       </div>
 
-                      {/* Royal Calendar Popover */}
-                      {isCalendarOpen && (
-                        <div className="absolute top-full left-0 right-0 sm:left-auto sm:right-0 mt-1.5 w-full sm:w-[280px] p-3 rounded-xl bg-white border border-[#D4AF37]/60 shadow-[0_16px_40px_rgba(0,0,0,0.28)] z-[120] text-center divide-y divide-[#F2ECE3] ring-1 ring-black/5 animate-fade-in">
-                          {/* Month Header Navigation */}
-                          <div className="pb-2 flex items-center justify-between">
+                      {/* Wedding Month / Muhurat Calendar Picker */}
+                      <div ref={calendarContainerRef} className="relative">
+                        <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
+                          Wedding Month / Muhurat
+                        </label>
+                        <div
+                          onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                          className={`w-full px-3 py-2 sm:py-2.5 rounded-lg bg-white/90 border transition-all cursor-pointer flex items-center justify-between shadow-inner ${
+                            isCalendarOpen
+                              ? 'border-[#521D2B] ring-2 ring-[#521D2B]/15 bg-white'
+                              : 'border-[#D8CBBE] hover:border-[#9B7A28]'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <Calendar size={14} className="text-[#9B7A28] shrink-0" />
+                            <span
+                              className={`text-xs font-medium truncate ${
+                                weddingDate ? 'text-[#211A19] font-semibold' : 'text-[#A8A29E]'
+                              }`}
+                            >
+                              {weddingDate || 'Choose from calendar...'}
+                            </span>
+                          </div>
+
+                          {weddingDate ? (
                             <button
                               type="button"
-                              onClick={handlePrevMonth}
-                              className="w-7 h-7 rounded-lg hover:bg-[#FAF7F2] text-[#7A5B1D] hover:text-[#521D2B] flex items-center justify-center transition-colors cursor-pointer"
-                              aria-label="Previous month"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setWeddingDate('');
+                              }}
+                              className="p-0.5 text-[#A8A29E] hover:text-[#521D2B] rounded-full transition-colors"
                             >
-                              <ChevronLeft size={16} />
+                              <X size={13} />
                             </button>
-
-                            <span className="text-xs font-serif font-bold text-[#3B0D16] tracking-wide">
-                              {MONTH_NAMES[calMonth]} {calYear}
+                          ) : (
+                            <span className="text-[10px] font-semibold text-[#9B7A28] uppercase tracking-wider bg-[#D4AF37]/15 px-1.5 py-0.5 rounded">
+                              Calendar
                             </span>
-
-                            <button
-                              type="button"
-                              onClick={handleNextMonth}
-                              className="w-7 h-7 rounded-lg hover:bg-[#FAF7F2] text-[#7A5B1D] hover:text-[#521D2B] flex items-center justify-center transition-colors cursor-pointer"
-                              aria-label="Next month"
-                            >
-                              <ChevronRight size={16} />
-                            </button>
-                          </div>
-
-                          {/* Days Grid */}
-                          <div className="pt-2">
-                            {/* Day Name Headers */}
-                            <div className="grid grid-cols-7 gap-1 text-[10px] font-bold text-[#7A5B1D] uppercase pb-1">
-                              <span>Su</span>
-                              <span>Mo</span>
-                              <span>Tu</span>
-                              <span>We</span>
-                              <span>Th</span>
-                              <span>Fr</span>
-                              <span>Sa</span>
-                            </div>
-
-                            {/* Calendar Days */}
-                            <div className="grid grid-cols-7 gap-1 text-xs">
-                              {/* Empty padding cells */}
-                              {Array.from({ length: firstDayOfWeek }).map((_, idx) => (
-                                <span key={`empty-${idx}`} />
-                              ))}
-
-                              {/* Days of month */}
-                              {Array.from({ length: daysInMonth }).map((_, idx) => {
-                                const day = idx + 1;
-                                const isSelected = weddingDate === `${day} ${SHORT_MONTHS[calMonth]} ${calYear}`;
-
-                                return (
-                                  <button
-                                    key={`day-${day}`}
-                                    type="button"
-                                    onClick={() => handleSelectDay(day)}
-                                    className={`w-7 h-7 rounded-md text-[11px] font-medium transition-all flex items-center justify-center cursor-pointer ${
-                                      isSelected
-                                        ? 'bg-[#521D2B] text-[#F5E296] font-bold shadow-xs'
-                                        : 'text-[#211A19] hover:bg-[#521D2B]/10 hover:text-[#521D2B]'
-                                    }`}
-                                  >
-                                    {day}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </div>
-
-                          {/* Quick Auspicious Muhurats Shortcuts */}
-                          <div className="pt-2.5 mt-2">
-                            <span className="block text-[9px] uppercase tracking-wider text-[#7A5B1D] font-bold mb-1.5 text-left">
-                              Auspicious Muhurat Months:
-                            </span>
-                            <div className="flex flex-wrap gap-1">
-                              {[
-                                { label: 'Nov 2026', month: 'November', year: 2026 },
-                                { label: 'Dec 2026', month: 'December', year: 2026 },
-                                { label: 'Jan 2027', month: 'January', year: 2027 },
-                                { label: 'Feb 2027', month: 'February', year: 2027 },
-                              ].map((m) => (
-                                <button
-                                  key={m.label}
-                                  type="button"
-                                  onClick={() => handleSelectMuhurat(m.month, m.year)}
-                                  className="text-[10px] px-2 py-0.5 rounded-full bg-[#FAF7F2] hover:bg-[#521D2B] text-[#521D2B] hover:text-white border border-[#D4AF37]/40 transition-colors font-medium cursor-pointer"
-                                >
-                                  {m.label}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
+                          )}
                         </div>
-                      )}
+
+                        {/* Royal Calendar Popover */}
+                        {isCalendarOpen && (
+                          <div className="absolute top-full left-0 right-0 sm:left-auto sm:right-0 mt-1.5 w-full sm:w-[280px] p-3 rounded-xl bg-white border border-[#D4AF37]/60 shadow-[0_16px_40px_rgba(0,0,0,0.28)] z-[120] text-center divide-y divide-[#F2ECE3] ring-1 ring-black/5 animate-fade-in">
+                            {/* Month Header Navigation */}
+                            <div className="pb-2 flex items-center justify-between">
+                              <button
+                                type="button"
+                                onClick={handlePrevMonth}
+                                className="w-7 h-7 rounded-lg hover:bg-[#FAF7F2] text-[#7A5B1D] hover:text-[#521D2B] flex items-center justify-center transition-colors cursor-pointer"
+                                aria-label="Previous month"
+                              >
+                                <ChevronLeft size={16} />
+                              </button>
+
+                              <span className="text-xs font-serif font-bold text-[#3B0D16] tracking-wide">
+                                {MONTH_NAMES[calMonth]} {calYear}
+                              </span>
+
+                              <button
+                                type="button"
+                                onClick={handleNextMonth}
+                                className="w-7 h-7 rounded-lg hover:bg-[#FAF7F2] text-[#7A5B1D] hover:text-[#521D2B] flex items-center justify-center transition-colors cursor-pointer"
+                                aria-label="Next month"
+                              >
+                                <ChevronRight size={16} />
+                              </button>
+                            </div>
+
+                            {/* Days Grid */}
+                            <div className="pt-2">
+                              {/* Day Name Headers */}
+                              <div className="grid grid-cols-7 gap-1 text-[10px] font-bold text-[#7A5B1D] uppercase pb-1">
+                                <span>Su</span>
+                                <span>Mo</span>
+                                <span>Tu</span>
+                                <span>We</span>
+                                <span>Th</span>
+                                <span>Fr</span>
+                                <span>Sa</span>
+                              </div>
+
+                              {/* Calendar Days */}
+                              <div className="grid grid-cols-7 gap-1 text-xs">
+                                {Array.from({ length: firstDayOfWeek }).map((_, idx) => (
+                                  <span key={`empty-${idx}`} />
+                                ))}
+
+                                {Array.from({ length: daysInMonth }).map((_, idx) => {
+                                  const day = idx + 1;
+                                  const isSelected = weddingDate === `${day} ${SHORT_MONTHS[calMonth]} ${calYear}`;
+
+                                  return (
+                                    <button
+                                      key={`day-${day}`}
+                                      type="button"
+                                      onClick={() => handleSelectDay(day)}
+                                      className={`w-7 h-7 rounded-md text-[11px] font-medium transition-all flex items-center justify-center cursor-pointer ${
+                                        isSelected
+                                          ? 'bg-[#521D2B] text-[#F5E296] font-bold shadow-xs'
+                                          : 'text-[#211A19] hover:bg-[#521D2B]/10 hover:text-[#521D2B]'
+                                      }`}
+                                    >
+                                      {day}
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            </div>
+
+                            {/* Quick Auspicious Muhurats Shortcuts */}
+                            <div className="pt-2.5 mt-2">
+                              <span className="block text-[9px] uppercase tracking-wider text-[#7A5B1D] font-bold mb-1.5 text-left">
+                                Auspicious Muhurat Months:
+                              </span>
+                              <div className="flex flex-wrap gap-1">
+                                {[
+                                  { label: 'Nov 2026', month: 'November', year: 2026 },
+                                  { label: 'Dec 2026', month: 'December', year: 2026 },
+                                  { label: 'Jan 2027', month: 'January', year: 2027 },
+                                  { label: 'Feb 2027', month: 'February', year: 2027 },
+                                ].map((m) => (
+                                  <button
+                                    key={m.label}
+                                    type="button"
+                                    onClick={() => handleSelectMuhurat(m.month, m.year)}
+                                    className="text-[10px] px-2 py-0.5 rounded-full bg-[#FAF7F2] hover:bg-[#521D2B] text-[#521D2B] hover:text-white border border-[#D4AF37]/40 transition-colors font-medium cursor-pointer"
+                                  >
+                                    {m.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Royal Preferred Setting / Venue Type */}
-                  <div>
-                    <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
-                      Celebration Style &amp; Guest Size
-                    </label>
-                    <div className="w-full px-3.5 py-2.5 rounded-lg bg-white/80 border border-[#D8CBBE] text-xs font-medium text-[#211A19] shadow-inner">
-                      <select className="w-full bg-transparent outline-none text-[#57534E] cursor-pointer">
-                        <option>Palace Lawn (500 – 1,500 Guests)</option>
-                        <option>Heritage Banquet Hall (200 – 500 Guests)</option>
-                        <option>Poolside Wedding Resort &amp; Buyout</option>
-                        <option>Full Turnkey Planning &amp; Catering Only</option>
-                      </select>
+                    {/* Royal Preferred Setting / Venue Type */}
+                    <div>
+                      <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
+                        Celebration Style &amp; Guest Size
+                      </label>
+                      <div className="w-full px-3.5 py-2.5 rounded-lg bg-white/80 border border-[#D8CBBE] text-xs font-medium text-[#211A19] shadow-inner">
+                        <select
+                          value={celebrationStyle}
+                          onChange={(e) => setCelebrationStyle(e.target.value)}
+                          className="w-full bg-transparent outline-none text-[#57534E] cursor-pointer"
+                        >
+                          <option>Palace Lawn (500 – 1,500 Guests)</option>
+                          <option>Heritage Banquet Hall (200 – 500 Guests)</option>
+                          <option>Poolside Wedding Resort &amp; Buyout</option>
+                          <option>Full Turnkey Planning &amp; Catering Only</option>
+                        </select>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Royal CTA Button */}
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={handleClose}
-                      className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#521D2B] via-[#6B182B] to-[#450F1D] text-[#F5E296] hover:text-white font-serif font-bold text-xs sm:text-sm uppercase tracking-[0.2em] shadow-[0_8px_24px_rgba(82,29,43,0.35)] hover:shadow-[0_12px_32px_rgba(82,29,43,0.45)] hover:scale-[1.01] active:scale-[0.99] border border-[#D4AF37]/50 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer group"
-                    >
-                      <Crown size={15} className="group-hover:rotate-12 transition-transform" />
-                      <span>Claim Privilege &amp; Lock Dates</span>
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
+                    {/* Royal CTA Button */}
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#521D2B] via-[#6B182B] to-[#450F1D] text-[#F5E296] hover:text-white font-serif font-bold text-xs sm:text-sm uppercase tracking-[0.2em] shadow-[0_8px_24px_rgba(82,29,43,0.35)] hover:shadow-[0_12px_32px_rgba(82,29,43,0.45)] hover:scale-[1.01] active:scale-[0.99] border border-[#D4AF37]/50 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer group disabled:opacity-75 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 size={16} className="animate-spin text-[#F5E296]" />
+                            <span>Locking Decree in Registry...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Crown size={15} className="group-hover:rotate-12 transition-transform" />
+                            <span>Claim Privilege &amp; Lock Dates</span>
+                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                          </>
+                        )}
+                      </button>
+                    </div>
 
-                  {/* Trust & Direct Concierge Guarantee */}
-                  <div className="pt-1 flex items-center justify-center gap-4 text-[10px] sm:text-[11px] font-medium text-[#78716C]">
-                    <span className="flex items-center gap-1">
-                      <ShieldCheck size={12} className="text-[#9B7A28]" />
-                      <span>100% Confidential</span>
-                    </span>
-                    <span>•</span>
-                    <span>Direct Concierge Callback in 15 Mins</span>
-                  </div>
-                </div>
+                    {/* Trust & Direct Concierge Guarantee */}
+                    <div className="pt-1 flex items-center justify-center gap-4 text-[10px] sm:text-[11px] font-medium text-[#78716C]">
+                      <span className="flex items-center gap-1">
+                        <ShieldCheck size={12} className="text-[#9B7A28]" />
+                        <span>100% Confidential</span>
+                      </span>
+                      <span>•</span>
+                      <span>Direct Concierge Callback in 15 Mins</span>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
 

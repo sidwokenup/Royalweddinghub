@@ -8,7 +8,7 @@ import {
   clearAdminSessionCookie,
   AdminSessionPayload,
 } from '@/lib/auth/session';
-import { AdminUser } from '@/lib/db/types';
+import { AdminUser, AdminRole } from '@/lib/db/types';
 
 export interface AuthResult {
   success: boolean;
@@ -41,7 +41,13 @@ export async function authenticateAdmin(
         if (!error && user) {
           const isValid = await verifyPassword(password, user.password_hash);
           if (isValid) {
-            const resolvedName = customName || user.full_name || 'Admin';
+            let resolvedName = customName || user.full_name || 'Admin';
+            let resolvedRole: AdminRole = user.role;
+
+            if (user.role === 'viewer' || resolvedName.includes('[VIEWER]')) {
+              resolvedRole = 'viewer';
+              resolvedName = resolvedName.replace(/\s*\[VIEWER\]\s*/gi, '').trim();
+            }
 
             // Update last_login_at & optional name update
             await db
@@ -56,7 +62,7 @@ export async function authenticateAdmin(
               userId: user.id,
               email: user.email,
               fullName: resolvedName,
-              role: user.role,
+              role: resolvedRole,
             };
 
             const token = await createAdminToken(sessionPayload);
@@ -69,6 +75,7 @@ export async function authenticateAdmin(
               user: {
                 ...safeUser,
                 full_name: resolvedName,
+                role: resolvedRole,
               },
             };
           }

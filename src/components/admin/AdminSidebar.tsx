@@ -8,6 +8,7 @@ import {
   X,
   ExternalLink,
   Shield,
+  Users,
 } from 'lucide-react';
 import {
   RoyalPalaceIcon,
@@ -71,11 +72,20 @@ const NAV_ITEMS = [
     badge: null,
   },
   {
+    label: 'Team & Access',
+    href: '/admin/users',
+    exact: false,
+    icon: Users,
+    badge: 'Access',
+    superAdminOnly: true,
+  },
+  {
     label: 'Business Settings',
     href: '/admin/settings',
     exact: false,
     icon: RoyalAtelierCompassIcon,
     badge: null,
+    hideForViewer: true,
   },
 ];
 
@@ -167,7 +177,11 @@ export function AdminSidebar({
             Concierge Modules
           </div>
 
-          {NAV_ITEMS.map((item) => {
+          {NAV_ITEMS.filter((item) => {
+            if ('superAdminOnly' in item && item.superAdminOnly && userRole !== 'super_admin') return false;
+            if ('hideForViewer' in item && item.hideForViewer && userRole === 'viewer') return false;
+            return true;
+          }).map((item) => {
             const active = isLinkActive(item.href, item.exact);
             const Icon = item.icon;
 

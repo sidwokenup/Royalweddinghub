@@ -14,11 +14,15 @@ CREATE TABLE IF NOT EXISTS admin_users (
   email VARCHAR(255) NOT NULL UNIQUE,
   password_hash VARCHAR(255) NOT NULL,
   full_name VARCHAR(255) NOT NULL,
-  role VARCHAR(50) NOT NULL DEFAULT 'editor' CHECK (role IN ('super_admin', 'editor')),
+  role VARCHAR(50) NOT NULL DEFAULT 'editor' CHECK (role IN ('super_admin', 'editor', 'viewer')),
   last_login_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- Migration snippet to apply on Supabase SQL Editor if upgrading existing table:
+-- ALTER TABLE admin_users DROP CONSTRAINT IF EXISTS admin_users_role_check;
+-- ALTER TABLE admin_users ADD CONSTRAINT admin_users_role_check CHECK (role IN ('super_admin', 'editor', 'viewer'));
 
 -- ----------------------------------------------------------------------------
 -- 2. VENUES TABLE

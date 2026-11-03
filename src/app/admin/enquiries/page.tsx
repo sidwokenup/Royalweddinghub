@@ -68,7 +68,7 @@ export default async function AdminEnquiriesPage() {
       </div>
 
       {/* Enquiries Pipeline Manager */}
-      <EnquiriesManagerClient initialEnquiries={enquiries} />
+      <EnquiriesManagerClient initialEnquiries={enquiries} userRole={admin.role} />
     </div>
   );
 }
