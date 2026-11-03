@@ -17,8 +17,8 @@ export const BUSINESS_INFO = {
     full: "SS 388, Ashiyana LDA Colony, Kanpur Road, Lucknow",
   },
   instagram: {
-    handle: "@royal_weddinghug",
-    url: "https://www.instagram.com/royal_weddinghug?stkn=bndlcGtpMGY5NWVm",
+    handle: "@royal_weddinghub",
+    url: "https://www.instagram.com/royal_weddinghub",
   },
 } as const;
 

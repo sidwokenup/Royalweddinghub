@@ -45,7 +45,7 @@ export function JsonLd() {
             "closes": "21:00",
           },
         ],
-        "sameAs": ["https://www.instagram.com/royal_weddinghug"],
+        "sameAs": ["https://www.instagram.com/royal_weddinghub"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Luxury Wedding Concierge Services",

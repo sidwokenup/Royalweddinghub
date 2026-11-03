@@ -5,12 +5,11 @@ import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackgrou
 import { HomePopularSearches } from "@/components/home/HomePopularSearches";
 import { HomeServicesSection } from "@/components/home/HomeServicesSection";
 import { HomeFeaturedVenues } from "@/components/home/HomeFeaturedVenues";
+import { HomeHappyFamilyReels } from "@/components/home/HomeHappyFamilyReels";
 import { HomeHowItWorks } from "@/components/home/HomeHowItWorks";
-import { AboutTestimonials } from "@/components/about/AboutTestimonials";
 import { ConciergeContact } from "@/components/contact/ConciergeContact";
 import { getLiveServices } from "@/lib/services";
 import { getLiveVenues } from "@/lib/venues";
-import { getLiveTestimonials } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
   title: "Royal Wedding Hub | Luxury Wedding Planner & Curated Venues in Lucknow",
@@ -21,10 +20,9 @@ export const metadata: Metadata = {
 export const revalidate = 60; // ISR cache revalidation every minute
 
 export default async function Home() {
-  const [services, allVenues, testimonials] = await Promise.all([
+  const [services, allVenues] = await Promise.all([
     getLiveServices(),
     getLiveVenues(),
-    getLiveTestimonials(),
   ]);
 
   return (
@@ -59,16 +57,14 @@ export default async function Home() {
         </div>
 
         {/* =========================================================================
+            STAGE 3.5: WHAT HAPPY FAMILIES SAY (Royal Video Reels & Stories)
+            ========================================================================= */}
+        <HomeHappyFamilyReels />
+
+        {/* =========================================================================
             STAGE 4: HOW IT WORKS (Subtle 3-Step Concierge Standard)
             ========================================================================= */}
         <HomeHowItWorks />
-
-        {/* =========================================================================
-            STAGE 5: CLIENT MEMOIRS & REVIEWS
-            ========================================================================= */}
-        <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-[#E8DFD3]">
-          <AboutTestimonials initialTestimonials={testimonials} />
-        </section>
 
         {/* =========================================================================
             STAGE 6: DIRECT CONCIERGE CONSULTATION & FOOTER
