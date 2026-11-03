@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { Navbar } from "@/components/navigation/Navbar";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
 import { ServiceDetailView } from "@/components/services/ServiceDetailView";
+import { Footer } from "@/components/footer/Footer";
 import { getServices, getLiveServiceBySlug, getRelatedServices } from "@/lib/services";
 
 interface Props {
@@ -76,18 +77,10 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* Reusable Editorial Service Detail View */}
       <ServiceDetailView service={service} relatedServices={relatedServices} />
 
-      {/* Global Minimal Footer */}
-      <footer className="w-full bg-[#211A19] text-[#FAF7F2]/70 py-10 px-6 border-t border-white/10 text-center text-xs space-y-2 mt-16">
-        <p className="tracking-widest uppercase text-white font-serif text-sm">
-          Royal Wedding Hub
-        </p>
-        <p className="font-light text-white/50">
-          Curating royal celebrations, palace venues, and bespoke wedding experiences across Lucknow.
-        </p>
-        <p className="text-[11px] text-white/30 pt-2">
-          © {new Date().getFullYear()} Royal Wedding Hub Lucknow. All rights reserved.
-        </p>
-      </footer>
+      {/* Royal Luxury Footer */}
+      <div className="w-full mt-16">
+        <Footer />
+      </div>
     </main>
   );
 }

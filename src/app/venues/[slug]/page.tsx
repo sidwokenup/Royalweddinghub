@@ -14,6 +14,7 @@ import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackgrou
 import { VenueGallery } from "@/components/venues/VenueGallery";
 import { VenueCard } from "@/components/venues/VenueCard";
 import { VenueStickyBottomBar } from "@/components/venues/VenueStickyBottomBar";
+import { Footer } from "@/components/footer/Footer";
 import {
   MapPin,
   Star,
@@ -383,6 +384,9 @@ export default async function VenueDetailPage({ params }: VenuePageProps) {
           </section>
         )}
       </div>
+
+      {/* Royal Luxury Footer */}
+      <Footer />
 
       {/* Mobile Sticky Bottom Conversion Bar */}
       <VenueStickyBottomBar venueName={venue.name} venueCity={venue.city} />

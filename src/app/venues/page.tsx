@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { VenueHero } from "@/components/venues/VenueHero";
 import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackground";
 import { VenueDiscoveryClient } from "@/components/venues/VenueDiscoveryClient";
+import { Footer } from "@/components/footer/Footer";
 import Link from "next/link";
 import { Phone, MessageCircle, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
@@ -107,30 +108,11 @@ export default async function VenuesPage() {
               <span>{BUSINESS_INFO.displayPhone}</span>
             </a>
           </div>
-
-          <div className="pt-10 text-xs text-white/50 flex flex-wrap justify-center items-center gap-4 border-t border-white/10 mt-12">
-            <span>© {new Date().getFullYear()} Royal Wedding Hub</span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <MapPin className="w-3 h-3 text-[#D6B56D]" />
-              SS 388, Ashiyana LDA Colony, Lucknow
-            </span>
-            <span>•</span>
-            <a
-              href={BUSINESS_INFO.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors underline text-[#D6B56D]"
-            >
-              Instagram ({BUSINESS_INFO.instagram.handle})
-            </a>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-white transition-colors underline">
-              Private Concierge
-            </Link>
-          </div>
         </div>
       </section>
+
+      {/* Royal Luxury Footer */}
+      <Footer />
     </main>
   );
 }

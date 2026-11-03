@@ -6,6 +6,7 @@ import { VenueAmbientBackground } from "@/components/venues/VenueAmbientBackgrou
 import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServicesMobileList } from "@/components/services/ServicesMobileList";
 import { ServicesDesktopGrid } from "@/components/services/ServicesDesktopGrid";
+import { Footer } from "@/components/footer/Footer";
 import { getLiveServices } from "@/lib/services";
 import { BUSINESS_INFO, getTelUrl } from "@/lib/contact";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
@@ -124,34 +125,14 @@ export default async function ServicesPage() {
               </a>
             </div>
             <div>
-              <span>Hazratganj, Lucknow</span>
+              <span>Ashiyana, Lucknow</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Global Minimal Footer */}
-      <footer className="w-full bg-[#211A19] text-[#FAF7F2]/70 py-10 px-6 border-t border-white/10 text-center text-xs space-y-2">
-        <p className="tracking-widest uppercase text-white font-serif text-sm">
-          Royal Wedding Hub
-        </p>
-        <p className="font-light text-white/50">
-          Curating royal celebrations, palace venues, and bespoke wedding experiences across Lucknow.
-        </p>
-        <p className="pt-1">
-          <a
-            href={BUSINESS_INFO.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#D6B56D] hover:underline transition-colors"
-          >
-            Follow on Instagram {BUSINESS_INFO.instagram.handle}
-          </a>
-        </p>
-        <p className="text-[11px] text-white/30 pt-2">
-          © {new Date().getFullYear()} Royal Wedding Hub Lucknow. All rights reserved.
-        </p>
-      </footer>
+      {/* Royal Luxury Footer */}
+      <Footer />
     </main>
   );
 }

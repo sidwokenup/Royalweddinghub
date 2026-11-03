@@ -144,7 +144,7 @@ export function AdLandingPage({ venues, pageType, canonicalUrl }: AdLandingPageP
           </div>
 
           <p className="text-[11px] text-[#78716C]">
-            © {new Date().getFullYear()} Royal Wedding Hub. Hazratganj Luxury Corridor, Lucknow, UP.
+            © {new Date().getFullYear()} Royal Wedding Hub. SS 388, Ashiyana LDA Colony, Kanpur Road, Lucknow, UP.
           </p>
         </div>
       </footer>
