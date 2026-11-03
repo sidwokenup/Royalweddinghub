@@ -45,16 +45,16 @@ export function AboutTestimonials({ initialTestimonials }: AboutTestimonialsProp
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFE8DE] border border-[#DDD3C5]">
             <HeartHandshake className="w-3.5 h-3.5 text-[#521D2B]" />
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#521D2B] font-medium">
-              VERIFIED WEDDING MEMOIRS
+              CLIENT REVIEWS
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#211A19]">
-            Words from the Celebrations We’ve Shared.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#211A19]">
+            What Happy Families Say
           </h2>
 
           <p className="text-sm sm:text-base text-[#57534E] font-light leading-relaxed">
-            Every celebration leaves behind memories. Discover the experiences our couples and families have chosen to share.
+            Real feedback and reviews from couples and families who planned their wedding with Royal Wedding Hub in Lucknow.
           </p>
         </div>
 

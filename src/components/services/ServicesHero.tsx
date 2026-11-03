@@ -22,18 +22,18 @@ export function ServicesHero() {
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#EFE8DE] border border-[#DDD3C5]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]" />
             <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#521D2B] font-medium">
-              THOUGHTFULLY CURATED
+              WEDDING SERVICES
             </span>
           </div>
 
           {/* Main Editorial Headline */}
           <div className="space-y-3">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[#211A19] leading-[1.08] tracking-tight">
-              Every Detail.<br />
-              <span className="italic text-[#521D2B]">One Extraordinary Celebration.</span>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#211A19] leading-[1.12] tracking-tight">
+              Wedding Services <br />
+              <span className="text-[#521D2B]">in Lucknow.</span>
             </h1>
-            <p className="text-base sm:text-lg text-[#57534E] font-light max-w-xl leading-relaxed pt-1">
-              From the first venue visit to the final farewell, discover the bespoke services that bring your wedding vision to life across Lucknow and royal destinations.
+            <p className="text-base sm:text-lg text-[#57534E] font-normal max-w-xl leading-relaxed pt-1">
+              Complete wedding planning, mandap &amp; floral decor, authentic Awadhi catering, 4K photography, and live music for your special day.
             </p>
           </div>
 

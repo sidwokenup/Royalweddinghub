@@ -28,18 +28,18 @@ export function VenueHero({ totalVenuesCount = 32 }: VenueHeroProps) {
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#EFE8DE] border border-[#DDD3C5]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]" />
             <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#521D2B] font-medium">
-              THE ROYAL COLLECTION
+              WEDDING VENUES
             </span>
           </div>
 
           {/* Main Editorial Headline */}
           <div className="space-y-2">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl display-text font-serif text-[#211A19] leading-[1.08] tracking-tight">
-              Find Your <br />
-              <span className="italic text-[#521D2B]">Perfect Setting.</span>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#211A19] leading-[1.12] tracking-tight">
+              Dreamy Wedding Venues <br />
+              <span className="text-[#521D2B]">in Lucknow.</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#57534E] font-light max-w-xl leading-relaxed pt-2">
-              Extraordinary spaces for the beginning of your forever.
+            <p className="text-base sm:text-lg text-[#57534E] font-normal max-w-xl leading-relaxed pt-2">
+              Explore 32+ verified marriage lawns, luxury banquet halls, and wedding resorts with photos, capacity, and prices.
             </p>
           </div>
 

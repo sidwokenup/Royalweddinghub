@@ -7,23 +7,23 @@ import Link from 'next/link';
 const STEPS = [
   {
     step: '01',
-    title: 'Curate & Walkthrough',
+    title: 'Choose Your Venue',
     description:
-      'We shortlist verified Lucknow palace lawns, resorts, and banquet halls based on your exact guest count and budget. Our senior concierge accompanies you on private site inspections.',
+      'We help you shortlist and visit top marriage lawns, banquets, and resorts in Lucknow that fit your guest size and budget.',
     icon: Compass,
   },
   {
     step: '02',
-    title: 'Design & Pre-Production',
+    title: 'Plan Food & Decor',
     description:
-      'Preview custom 3D floral mandap architecture, participate in master Khansama menu tastings, and plan 4K cinematic storylines with complete timeline choreography.',
+      'Choose your mandap design, theme decorations, and enjoy delicious Awadhi catering tastings with our master chefs.',
     icon: Palette,
   },
   {
     step: '03',
-    title: 'Flawless On-Day Execution',
+    title: 'Enjoy Your Wedding',
     description:
-      'A dedicated team of senior event directors oversees valet logistics, baraat entry coordination, vendor handoffs, and guest hospitality from the first muhurat to bidaai.',
+      'Our Lucknow wedding managers handle all on-ground arrangements from baraat entry to bidaai, so you and your family can enjoy.',
     icon: ShieldCheck,
   },
 ];
@@ -34,13 +34,13 @@ export function HomeHowItWorks() {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
         <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.2em] text-[#521D2B] bg-[#521D2B]/8 px-3 py-1 rounded-full border border-[#521D2B]/15 font-semibold">
-          The Concierge Standard
+          Easy 3-Step Process
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#211A19]">
-          How We Orchestrate Your Celebration
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#211A19]">
+          How It Works
         </h2>
         <p className="text-sm sm:text-base text-[#57534E] font-normal leading-relaxed">
-          Three structured stages ensuring complete transparency, zero inflated broker markups, and pure peace of mind.
+          Simple, transparent, and hassle-free wedding planning with zero hidden charges.
         </p>
       </div>
 

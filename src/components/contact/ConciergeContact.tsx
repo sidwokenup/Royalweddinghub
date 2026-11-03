@@ -39,19 +39,18 @@ export function ConciergeContact({ showNav = true }: ConciergeContactProps = {})
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#EFE8DE] border border-[#DDD3C5]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]" />
                 <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#521D2B] font-medium">
-                  YOUR PRIVATE WEDDING CONCIERGE
+                  TALK TO OUR TEAM
                 </span>
               </div>
 
-              {/* Serif Headline with deliberate breaks */}
-              <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-[#211A19] leading-[1.08] tracking-tight">
-                Every great<br className="hidden sm:inline" /> celebration begins<br />
-                <span className="italic text-[#521D2B]">with a conversation.</span>
+              {/* Clear, simple headline */}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#211A19] leading-[1.12] tracking-tight">
+                Plan Your Wedding<br className="hidden sm:inline" /> With Us in Lucknow.
               </h1>
 
-              {/* Restrained Supporting Copy */}
-              <p className="text-base sm:text-lg text-[#57534E] font-light max-w-xl leading-relaxed">
-                Tell us what you are dreaming of. Together, we&apos;ll shape a celebration that feels unmistakably yours.
+              {/* Supporting Copy */}
+              <p className="text-base sm:text-lg text-[#57534E] font-normal max-w-xl leading-relaxed">
+                Connect directly with our Lucknow wedding specialists for venue visits, auspicious dates, catering tastings, and complete wedding planning.
               </p>
 
               {/* Single Alignment Action Buttons */}

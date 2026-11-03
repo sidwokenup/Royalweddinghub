@@ -21,13 +21,13 @@ export function HomeFeaturedVenues({ venues }: HomeFeaturedVenuesProps) {
         <div>
           <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.2em] text-[#521D2B] bg-[#521D2B]/8 px-3 py-1 rounded-full border border-[#521D2B]/15 font-semibold">
             <Building2 size={13} />
-            Verified Lucknow Settings
+            Top Locations
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#211A19] mt-3">
-            Handpicked Wedding Palaces &amp; Lawns
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#211A19] mt-3">
+            Dreamy Wedding Venues
           </h2>
           <p className="text-sm sm:text-base text-[#57534E] mt-1.5 font-normal max-w-2xl leading-relaxed">
-            Every lawn, palace, and boutique resort is physically inspected for guest flow, bridal suites, acoustics, and power backup.
+            Explore 32+ verified marriage lawns, luxury banquet halls, and wedding resorts in Lucknow.
           </p>
         </div>
 
@@ -51,10 +51,10 @@ export function HomeFeaturedVenues({ venues }: HomeFeaturedVenuesProps) {
             maxPax <= 400
               ? 'Under ₹10 Lakh'
               : maxPax <= 800
-              ? '₹10L – ₹15 Lakh'
-              : maxPax <= 1500
-              ? '₹15L – ₹25 Lakh'
-              : '₹25 Lakh+ Luxury';
+                ? '₹10L – ₹15 Lakh'
+                : maxPax <= 1500
+                  ? '₹15L – ₹25 Lakh'
+                  : '₹25 Lakh+ Luxury';
 
           return (
             <Link

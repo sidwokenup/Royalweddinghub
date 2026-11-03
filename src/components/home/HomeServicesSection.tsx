@@ -54,13 +54,13 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
         <div>
           <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.2em] text-[#521D2B] bg-[#521D2B]/8 px-3 py-1 rounded-full border border-[#521D2B]/15 font-semibold">
             <Sparkles size={13} />
-            Bespoke Production
+            Our Services
           </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-[#211A19] mt-2 sm:mt-3">
-            Artisan Wedding Services in Lucknow
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#211A19] mt-2 sm:mt-3">
+            Wedding Services
           </h2>
           <p className="text-xs sm:text-base text-[#57534E] mt-1 font-normal max-w-2xl leading-relaxed">
-            Beyond venue curation, Royal Wedding Hub delivers full bespoke wedding planning, Nawabi decor, master khansama banquets, and fine-art 4K cinema.
+            Planning, mandap decor, royal Awadhi catering, photography &amp; music — everything you need for your wedding in Lucknow.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
           href="/services"
           className="inline-flex items-center gap-2 bg-[#521D2B] hover:bg-[#671024] text-white text-xs font-semibold uppercase tracking-wider px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full shadow-md transition-all self-start md:self-auto shrink-0"
         >
-          <span>View All Disciplines</span>
+          <span>View All Services</span>
           <ArrowRight size={14} />
         </Link>
       </div>
