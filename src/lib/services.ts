@@ -23,6 +23,11 @@ export function getRelatedServices(currentSlug: string, limit = 3): ServiceItem[
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapDbServiceToPublic(s: any, deliverables: any[] = [], subcategories: any[] = []): ServiceItem {
+  const fallback = getServiceBySlug(s.slug);
+  const gallery = Array.from(
+    new Set([s.cover_image_url, ...(fallback?.galleryImages || [])].filter(Boolean))
+  );
+
   return {
     id: s.slug,
     slug: s.slug,
@@ -31,8 +36,8 @@ function mapDbServiceToPublic(s: any, deliverables: any[] = [], subcategories: a
     shortDescription: s.short_description,
     headline: s.headline,
     introCopy: s.intro_copy,
-    image: s.cover_image_url,
-    galleryImages: [s.cover_image_url],
+    image: s.cover_image_url || fallback?.image || "",
+    galleryImages: gallery.length > 0 ? gallery : [s.cover_image_url],
     accentColor: s.accent_color,
     bgSurface: s.bg_surface,
     textOnBg: s.text_on_bg,
