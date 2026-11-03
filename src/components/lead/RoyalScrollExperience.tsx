@@ -2,12 +2,28 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from '@/animations/gsap';
-import { X, Sparkles, Crown, ArrowRight, ShieldCheck, Gift } from 'lucide-react';
+import { X, Sparkles, Crown, ArrowRight, ShieldCheck, Gift, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export function RoyalScrollExperience() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasUnrolled, setHasUnrolled] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+
+  // Calendar Picker state
+  const [weddingDate, setWeddingDate] = useState<string>('');
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const calendarContainerRef = useRef<HTMLDivElement>(null);
+
+  const today = new Date();
+  const [calMonth, setCalMonth] = useState<number>(today.getMonth());
+  const [calYear, setCalYear] = useState<number>(today.getFullYear() < 2026 ? 2026 : today.getFullYear());
 
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollWrapperRef = useRef<HTMLDivElement>(null);
@@ -17,6 +33,53 @@ export function RoyalScrollExperience() {
   const waxSealRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const petalsRef = useRef<HTMLDivElement>(null);
+
+  // Close calendar popover on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (calendarContainerRef.current && !calendarContainerRef.current.contains(e.target as Node)) {
+        setIsCalendarOpen(false);
+      }
+    }
+    if (isCalendarOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isCalendarOpen]);
+
+  const handlePrevMonth = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (calMonth === 0) {
+      setCalMonth(11);
+      setCalYear((y) => y - 1);
+    } else {
+      setCalMonth((m) => m - 1);
+    }
+  };
+
+  const handleNextMonth = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (calMonth === 11) {
+      setCalMonth(0);
+      setCalYear((y) => y + 1);
+    } else {
+      setCalMonth((m) => m + 1);
+    }
+  };
+
+  const handleSelectDay = (day: number) => {
+    const formatted = `${day} ${SHORT_MONTHS[calMonth]} ${calYear}`;
+    setWeddingDate(formatted);
+    setIsCalendarOpen(false);
+  };
+
+  const handleSelectMuhurat = (monthName: string, year: number) => {
+    setWeddingDate(`${monthName} ${year}`);
+    setIsCalendarOpen(false);
+  };
+
+  const firstDayOfWeek = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
 
   // 1. Initial 30-second delay, then 60-second recurring interval
   useEffect(() => {
@@ -369,7 +432,9 @@ export function RoyalScrollExperience() {
                 ========================================================================= */}
             <div
               ref={parchmentBodyRef}
-              className="relative w-full overflow-hidden transition-all duration-300"
+              className={`relative w-full transition-all duration-300 ${
+                hasUnrolled ? 'overflow-visible' : 'overflow-hidden'
+              }`}
               style={{
                 background:
                   'linear-gradient(135deg, #FAF7F2 0%, #F5ECE0 50%, #ECE2D2 100%)',
@@ -474,17 +539,144 @@ export function RoyalScrollExperience() {
                       </div>
                     </div>
 
-                    <div>
+                    {/* Wedding Month / Muhurat Calendar Picker */}
+                    <div ref={calendarContainerRef} className="relative">
                       <label className="block text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[#7A5B1D] mb-1">
                         Wedding Month / Muhurat
                       </label>
-                      <div className="w-full px-3.5 py-2.5 rounded-lg bg-white/80 border border-[#D8CBBE] focus-within:border-[#521D2B] text-xs font-medium text-[#211A19] shadow-inner transition-colors">
-                        <input
-                          type="text"
-                          placeholder="e.g. November 2026"
-                          className="w-full bg-transparent outline-none placeholder:text-[#A8A29E]"
-                        />
+                      <div
+                        onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                        className={`w-full px-3 py-2 sm:py-2.5 rounded-lg bg-white/90 border transition-all cursor-pointer flex items-center justify-between shadow-inner ${
+                          isCalendarOpen
+                            ? 'border-[#521D2B] ring-2 ring-[#521D2B]/15 bg-white'
+                            : 'border-[#D8CBBE] hover:border-[#9B7A28]'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2 min-w-0">
+                          <Calendar size={14} className="text-[#9B7A28] shrink-0" />
+                          <span
+                            className={`text-xs font-medium truncate ${
+                              weddingDate ? 'text-[#211A19] font-semibold' : 'text-[#A8A29E]'
+                            }`}
+                          >
+                            {weddingDate || 'Choose from calendar...'}
+                          </span>
+                        </div>
+
+                        {weddingDate ? (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setWeddingDate('');
+                            }}
+                            className="p-0.5 text-[#A8A29E] hover:text-[#521D2B] rounded-full transition-colors"
+                          >
+                            <X size={13} />
+                          </button>
+                        ) : (
+                          <span className="text-[10px] font-semibold text-[#9B7A28] uppercase tracking-wider bg-[#D4AF37]/15 px-1.5 py-0.5 rounded">
+                            Calendar
+                          </span>
+                        )}
                       </div>
+
+                      {/* Royal Calendar Popover */}
+                      {isCalendarOpen && (
+                        <div className="absolute top-full left-0 right-0 sm:left-auto sm:right-0 mt-1.5 w-full sm:w-[280px] p-3 rounded-xl bg-white border border-[#D4AF37]/60 shadow-[0_16px_40px_rgba(0,0,0,0.28)] z-[120] text-center divide-y divide-[#F2ECE3] ring-1 ring-black/5 animate-fade-in">
+                          {/* Month Header Navigation */}
+                          <div className="pb-2 flex items-center justify-between">
+                            <button
+                              type="button"
+                              onClick={handlePrevMonth}
+                              className="w-7 h-7 rounded-lg hover:bg-[#FAF7F2] text-[#7A5B1D] hover:text-[#521D2B] flex items-center justify-center transition-colors cursor-pointer"
+                              aria-label="Previous month"
+                            >
+                              <ChevronLeft size={16} />
+                            </button>
+
+                            <span className="text-xs font-serif font-bold text-[#3B0D16] tracking-wide">
+                              {MONTH_NAMES[calMonth]} {calYear}
+                            </span>
+
+                            <button
+                              type="button"
+                              onClick={handleNextMonth}
+                              className="w-7 h-7 rounded-lg hover:bg-[#FAF7F2] text-[#7A5B1D] hover:text-[#521D2B] flex items-center justify-center transition-colors cursor-pointer"
+                              aria-label="Next month"
+                            >
+                              <ChevronRight size={16} />
+                            </button>
+                          </div>
+
+                          {/* Days Grid */}
+                          <div className="pt-2">
+                            {/* Day Name Headers */}
+                            <div className="grid grid-cols-7 gap-1 text-[10px] font-bold text-[#7A5B1D] uppercase pb-1">
+                              <span>Su</span>
+                              <span>Mo</span>
+                              <span>Tu</span>
+                              <span>We</span>
+                              <span>Th</span>
+                              <span>Fr</span>
+                              <span>Sa</span>
+                            </div>
+
+                            {/* Calendar Days */}
+                            <div className="grid grid-cols-7 gap-1 text-xs">
+                              {/* Empty padding cells */}
+                              {Array.from({ length: firstDayOfWeek }).map((_, idx) => (
+                                <span key={`empty-${idx}`} />
+                              ))}
+
+                              {/* Days of month */}
+                              {Array.from({ length: daysInMonth }).map((_, idx) => {
+                                const day = idx + 1;
+                                const isSelected = weddingDate === `${day} ${SHORT_MONTHS[calMonth]} ${calYear}`;
+
+                                return (
+                                  <button
+                                    key={`day-${day}`}
+                                    type="button"
+                                    onClick={() => handleSelectDay(day)}
+                                    className={`w-7 h-7 rounded-md text-[11px] font-medium transition-all flex items-center justify-center cursor-pointer ${
+                                      isSelected
+                                        ? 'bg-[#521D2B] text-[#F5E296] font-bold shadow-xs'
+                                        : 'text-[#211A19] hover:bg-[#521D2B]/10 hover:text-[#521D2B]'
+                                    }`}
+                                  >
+                                    {day}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          {/* Quick Auspicious Muhurats Shortcuts */}
+                          <div className="pt-2.5 mt-2">
+                            <span className="block text-[9px] uppercase tracking-wider text-[#7A5B1D] font-bold mb-1.5 text-left">
+                              Auspicious Muhurat Months:
+                            </span>
+                            <div className="flex flex-wrap gap-1">
+                              {[
+                                { label: 'Nov 2026', month: 'November', year: 2026 },
+                                { label: 'Dec 2026', month: 'December', year: 2026 },
+                                { label: 'Jan 2027', month: 'January', year: 2027 },
+                                { label: 'Feb 2027', month: 'February', year: 2027 },
+                              ].map((m) => (
+                                <button
+                                  key={m.label}
+                                  type="button"
+                                  onClick={() => handleSelectMuhurat(m.month, m.year)}
+                                  className="text-[10px] px-2 py-0.5 rounded-full bg-[#FAF7F2] hover:bg-[#521D2B] text-[#521D2B] hover:text-white border border-[#D4AF37]/40 transition-colors font-medium cursor-pointer"
+                                >
+                                  {m.label}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
