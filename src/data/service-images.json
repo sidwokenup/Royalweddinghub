@@ -22,7 +22,7 @@
   {
     "slug": "photography-and-films",
     "name": "Photography & Films",
-    "localPath": "/images/services/wedding-photography.jpg",
+    "localPath": "/images/services/photographer.jpg",
     "subject": "Professional wedding photographer in action capturing fine-art portraits with a camera during a wedding shoot",
     "sourceUrl": "https://unsplash.com/photos/photographer-captures-bride-outdoors-769230360899",
     "license": "Unsplash License (Free commercial use, no copyright restrictions)",
@@ -32,7 +32,7 @@
   {
     "slug": "catering-and-banquets",
     "name": "Catering & Royal Banquets",
-    "localPath": "/images/services/wedding-catering.jpg",
+    "localPath": "/images/services/catering.jpg",
     "subject": "Luxury wedding banquet catering station with elegant chafing dishes and gourmet dining presentation",
     "sourceUrl": "https://unsplash.com/photos/a-buffet-table-with-silver-chafing-dishes-555244162",
     "license": "Unsplash License (Free commercial use, no copyright restrictions)",

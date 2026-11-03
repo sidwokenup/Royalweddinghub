@@ -98,8 +98,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDescription: "Wedding photography, cinematic films and pre-wedding shoots.",
     headline: "Preserve Every Moment That Matters.",
     introCopy: "Discover photography and film direction that captures the raw emotion, grandeur, and fleeting intimate glances of your celebration in timeless editorial fashion.",
-    image: "/images/services/wedding-photography.jpg",
+    image: "/images/services/photographer.jpg",
     galleryImages: [
+      "/images/services/photographer.jpg",
+      "/images/services/photographer2.jpg",
       "/images/services/wedding-photography.jpg",
       "/images/services/photography-g1.jpg",
       "/images/services/photography-g2.jpg",
@@ -142,8 +144,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDescription: "Authentic Nawabi Dastarkhwans, live culinary stations and artisanal banquets.",
     headline: "An Experience Worth Gathering For.",
     introCopy: "Treat your guests to the legendary culinary heritage of Lucknow—authentic dum-cooked biryanis, delicate galawats, artisanal chaat streets, and curated global cuisines.",
-    image: "/images/services/wedding-catering.jpg",
+    image: "/images/services/catering.jpg",
     galleryImages: [
+      "/images/services/catering.jpg",
       "/images/services/wedding-catering.jpg",
       "/images/services/catering-g1.jpg",
       "/images/services/catering-g2.jpg",

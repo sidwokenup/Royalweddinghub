@@ -413,10 +413,38 @@ export function Navbar() {
             <InstagramIcon size={14} className={isLightNav ? "text-[#521D2B]" : "text-[#d4af37]"} />
             <span>Instagram</span>
           </a>
+
+          {/* Royal Scroll Lead Trigger Button (Navbar Hook) */}
+          <button
+            type="button"
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("open-royal-scroll"));
+              }
+            }}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F5E296] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-xs uppercase tracking-wider shadow-[0_2px_12px_rgba(212,175,55,0.35)] hover:shadow-[0_4px_18px_rgba(212,175,55,0.55)] hover:scale-105 active:scale-95 transition-all duration-300 border border-[#FDECB0] cursor-pointer group shrink-0"
+            aria-label="Claim ₹50,000 Wedding Privilege"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B] animate-ping" />
+            <span>Claim ₹50K Privilege</span>
+          </button>
         </div>
 
         {/* Mobile Navigation Controls */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("open-royal-scroll"));
+              }
+            }}
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-[10px] uppercase tracking-wider shadow-sm border border-[#FDECB0] active:scale-95 transition-all cursor-pointer"
+            aria-label="Claim ₹50K Privilege"
+          >
+            <span>👑 ₹50K Off</span>
+          </button>
+
           <Link
             href="/venues"
             className={`text-xs uppercase tracking-widest px-2.5 py-1 rounded-[2px] transition-colors border ${
@@ -446,6 +474,24 @@ export function Navbar() {
       {/* Mobile Menu Dropdown Panel */}
       {mobileMenuOpen && (
         <div className="md:hidden pt-6 pb-6 px-4 space-y-6 animate-in fade-in slide-in-from-top-2 duration-200">
+          {/* Mobile Royal Privilege Hook Banner */}
+          <button
+            type="button"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              if (typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("open-royal-scroll"));
+              }
+            }}
+            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#521D2B] via-[#6B182B] to-[#450F1D] text-[#F5E296] border border-[#D4AF37]/50 font-serif font-bold text-xs uppercase tracking-[0.2em] shadow-md flex items-center justify-between active:scale-[0.98] transition-transform cursor-pointer"
+          >
+            <span className="flex items-center gap-2">
+              <span>👑</span>
+              <span>Shahi Farman (₹50,000 Privilege)</span>
+            </span>
+            <ArrowRight size={13} />
+          </button>
+
           <div
             className={`flex flex-col space-y-4 text-base uppercase tracking-widest border-b pb-6 ${
               isLightNav ? "text-[#211A19] border-[#E5DDD2]" : "text-white border-white/10"

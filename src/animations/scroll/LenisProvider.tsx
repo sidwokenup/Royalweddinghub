@@ -2,7 +2,13 @@
 
 import React, { createContext, useContext, useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
 import Lenis from "lenis";
+
+const RoyalScrollExperience = dynamic(
+  () => import("@/components/lead/RoyalScrollExperience").then((mod) => mod.RoyalScrollExperience),
+  { ssr: false }
+);
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -104,6 +110,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
   return (
     <LenisContext.Provider value={lenisInstance}>
       {children}
+      {!isAdmin && <RoyalScrollExperience />}
     </LenisContext.Provider>
   );
 }
