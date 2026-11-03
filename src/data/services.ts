@@ -188,8 +188,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDescription: "Sufi ensembles, live celebrity artists, royal shehnai and high-energy DJs.",
     headline: "Curated Sounds of Celebration.",
     introCopy: "Elevate your celebrations with spellbinding Sufi qawwals, classical shehnai maestros for ceremonial grace, and high-octane celebrity artists that keep the dance floor vibrant till dawn.",
-    image: "/images/services/wedding-entertainment.jpg",
+    image: "/images/services/music.jpg",
     galleryImages: [
+      "/images/services/music.jpg",
       "/images/services/wedding-entertainment.jpg",
       "/images/services/entertainment-g1.jpg",
       "/images/services/entertainment-g2.jpg",

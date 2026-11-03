@@ -310,7 +310,7 @@ export function RoyalScrollExperience() {
         <button
           type="button"
           onClick={handleOpen}
-          className="fixed bottom-6 right-6 z-[9980] flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#4A121E] via-[#521D2B] to-[#3B0D16] text-[#F5E296] border border-[#D4AF37]/50 shadow-[0_12px_30px_rgba(0,0,0,0.35)] hover:shadow-[0_16px_40px_rgba(212,175,55,0.35)] hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
+          className="hidden md:flex fixed bottom-6 right-6 z-[9980] items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#4A121E] via-[#521D2B] to-[#3B0D16] text-[#F5E296] border border-[#D4AF37]/50 shadow-[0_12px_30px_rgba(0,0,0,0.35)] hover:shadow-[0_16px_40px_rgba(212,175,55,0.35)] hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer"
           aria-label="Open Royal Shahi Farman Decree"
         >
           <div className="w-7 h-7 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/50 flex items-center justify-center shrink-0 text-[#F5E296] group-hover:rotate-12 transition-transform">

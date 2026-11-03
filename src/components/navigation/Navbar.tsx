@@ -131,10 +131,10 @@ export function Navbar() {
             alt="Royal Wedding Hub Logo"
             width={36}
             height={36}
-            className="h-8 sm:h-9 w-auto object-contain drop-shadow-sm"
+            className="h-8 sm:h-9 w-auto object-contain drop-shadow-sm shrink-0"
             priority
           />
-          <span>Royal Wedding Hub</span>
+          <span className="hidden md:inline">Royal Wedding Hub</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -431,7 +431,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile Navigation Controls */}
-        <div className="md:hidden flex items-center gap-2 sm:gap-3">
+        <div className="md:hidden flex items-center gap-1.5 sm:gap-2.5">
           <button
             type="button"
             onClick={() => {
@@ -439,7 +439,7 @@ export function Navbar() {
                 window.dispatchEvent(new CustomEvent("open-royal-scroll"));
               }
             }}
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-[10px] uppercase tracking-wider shadow-sm border border-[#FDECB0] active:scale-95 transition-all cursor-pointer"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-sm border border-[#FDECB0] active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0"
             aria-label="Claim ₹50K Privilege"
           >
             <span>👑 ₹50K Off</span>
@@ -447,7 +447,7 @@ export function Navbar() {
 
           <Link
             href="/venues"
-            className={`text-xs uppercase tracking-widest px-2.5 py-1 rounded-[2px] transition-colors border ${
+            className={`text-xs uppercase tracking-widest px-2 sm:px-2.5 py-1 rounded-[2px] transition-colors border whitespace-nowrap shrink-0 ${
               isVenuesActive
                 ? "border-[#521D2B] text-[#521D2B] bg-[#521D2B]/10 font-medium"
                 : isLightNav
@@ -460,7 +460,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-1.5 hover:opacity-80 transition-opacity ${
+            className={`p-1 sm:p-1.5 hover:opacity-80 transition-opacity shrink-0 ${
               isLightNav ? "text-[#211A19]" : "text-white"
             }`}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}

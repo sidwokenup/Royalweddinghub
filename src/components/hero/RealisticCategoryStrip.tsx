@@ -51,7 +51,7 @@ const CATEGORIES: CategoryItem[] = [
     id: 'entertainment',
     name: 'Sufi, Folk & Sangeet DJs',
     count: 'Live Artists',
-    image: '/images/services/wedding-entertainment.jpg',
+    image: '/images/services/music.jpg',
     href: '/services/music-and-entertainment',
     description: 'Celebrity DJs, shehnai maestros & dance troops',
   },
