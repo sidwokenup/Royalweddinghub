@@ -6,7 +6,8 @@ export const BUSINESS_INFO = {
   hours: "24/7 Concierge",
   primaryPhone: "+919170701546",
   displayPhone: "+91 91707 01546",
-  rawPhone: "9170701546",
+  rawPhone: "919170701546",
+  whatsappPhone: "919170701546",
   email: "Royalweddinghug@gmail.com",
   address: {
     line1: "SS 388, Ashiyana LDA Colony",

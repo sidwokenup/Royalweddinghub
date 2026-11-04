@@ -3,70 +3,37 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkles, ArrowRight, Check, ChevronDown } from 'lucide-react';
+import { Sparkles, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ServiceItem } from '@/types/service';
 
 interface HomeServicesSectionProps {
   services: ServiceItem[];
 }
 
-const MOBILE_CARDS_CONFIG: Record<string, { bg: string; chevron: string; subtext: string }> = {
-  'planning-and-decor': {
-    bg: 'bg-[#EBE5DB]', // Warm sand / khaki
-    chevron: 'text-[#521D2B]',
-    subtext: 'Mandap Architecture, Floral Sets, Timeline Direction',
-  },
-  'catering-and-banquets': {
-    bg: 'bg-[#E3EFF7]', // Soft powder blue
-    chevron: 'text-[#1D3B52]',
-    subtext: 'Royal Awadhi Khansamas, Dum Biryani, Live Street Tawa',
-  },
-  'photography-and-films': {
-    bg: 'bg-[#FDF3D8]', // Soft golden butter
-    chevron: 'text-[#7A5B1D]',
-    subtext: '4K Cinematic Feature Films, Drone, Candid Portraits',
-  },
-  'music-and-entertainment': {
-    bg: 'bg-[#EED5A5]', // Warm amber / ochre
-    chevron: 'text-[#6B4B1B]',
-    subtext: 'Celebrity DJs, Sufi Ensembles, Royal Shehnai & Sangeet',
-  },
-  'bridal-beauty': {
-    bg: 'bg-[#E5E9F8]', // Soft lilac / periwinkle
-    chevron: 'text-[#3D3B6B]',
-    subtext: 'Airbrush HD Makeup, Couture Dupatta Draping, Hair Tresses',
-  },
-  'invitations-and-gifting': {
-    bg: 'bg-[#F9ECEB]', // Soft blush rose
-    chevron: 'text-[#6B3B42]',
-    subtext: 'Handcrafted Paper Suites, Boxed Hampers, Video Invites',
-  },
-};
-
 export function HomeServicesSection({ services }: HomeServicesSectionProps) {
   // Take the primary 6 core disciplines
   const displayServices = services.filter((s) => s.slug !== 'wedding-venues').slice(0, 6);
 
   return (
-    <section id="services" className="w-full pt-8 sm:pt-12 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto select-none">
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-12 border-b border-[#E8DFD3] pb-4 sm:pb-6">
+    <section id="services" className="w-full py-12 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto select-none">
+      {/* Section Header with Generous Breathing Room */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-14 border-b border-[#E8DFD3] pb-5 sm:pb-6">
         <div>
-          <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.2em] text-[#521D2B] bg-[#521D2B]/8 px-3 py-1 rounded-full border border-[#521D2B]/15 font-semibold">
-            <Sparkles size={13} />
-            Our Services
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.2em] text-[#521D2B] bg-[#521D2B]/8 px-3.5 py-1 rounded-full border border-[#521D2B]/15 font-semibold">
+            <Sparkles size={13} className="text-[#521D2B]" />
+            Disciplines
           </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#211A19] mt-2 sm:mt-3">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#211A19] mt-2.5 sm:mt-3 font-serif tracking-tight">
             Wedding Services
           </h2>
-          <p className="text-xs sm:text-base text-[#57534E] mt-1 font-normal max-w-2xl leading-relaxed">
-            Planning, mandap decor, royal Awadhi catering, photography &amp; music — everything you need for your wedding in Lucknow.
+          <p className="text-xs sm:text-base text-[#57534E] mt-1.5 font-normal max-w-2xl leading-relaxed">
+            From royal mandap decor and Awadhi banquets to 4K cinematic films — bespoke wedding services in Lucknow.
           </p>
         </div>
 
         <Link
           href="/services"
-          className="inline-flex items-center gap-2 bg-[#521D2B] hover:bg-[#671024] text-white text-xs font-semibold uppercase tracking-wider px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full shadow-md transition-all self-start md:self-auto shrink-0"
+          className="inline-flex items-center gap-2 bg-[#521D2B] hover:bg-[#671024] text-white text-xs font-semibold uppercase tracking-wider px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full shadow-sm hover:shadow-md transition-all self-start md:self-auto shrink-0"
         >
           <span>View All Services</span>
           <ArrowRight size={14} />
@@ -74,46 +41,45 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
       </div>
 
       {/* =========================================================================
-          MOBILE VIEW: WedMeGood-Style Horizontal Curved Cards (Screenshot 2 Match)
+          MOBILE VIEW: Breathable, High-Legibility 2-Column Visual Cards (No Micro-Text Clutter)
           ========================================================================= */}
-      <div className="flex flex-col gap-3 md:hidden">
+      <div className="grid grid-cols-2 gap-3.5 sm:gap-4 md:hidden">
         {displayServices.map((service) => {
-          const config = MOBILE_CARDS_CONFIG[service.slug] || {
-            bg: 'bg-[#FAF5EF]',
-            chevron: 'text-[#521D2B]',
-            subtext: service.shortDescription,
-          };
           const detailUrl = `/services/${service.slug}`;
 
           return (
             <Link
               key={service.id}
               href={detailUrl}
-              className={`group relative flex items-stretch justify-between ${config.bg} rounded-2xl overflow-hidden shadow-xs hover:shadow-md active:scale-[0.985] transition-all duration-200 min-h-[92px] sm:min-h-[104px] border border-black/5`}
+              className="group relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#181310] border border-[#E8DFD3] shadow-xs active:scale-[0.98] transition-all duration-300 flex flex-col justify-between p-3.5"
             >
-              {/* Left Content Area (58% width) */}
-              <div className="w-[58%] sm:w-[60%] p-3.5 sm:p-4 flex flex-col justify-center text-left">
-                <div className="flex items-center gap-1">
-                  <h3 className="text-[14px] sm:text-base font-serif font-bold text-[#211A19] group-hover:text-[#521D2B] transition-colors leading-tight">
-                    {service.name}
-                  </h3>
-                  <ChevronDown size={14} className={`${config.chevron} opacity-80 shrink-0 group-hover:translate-y-0.5 transition-transform`} />
-                </div>
+              {/* High-Resolution Wedding Photography */}
+              <Image
+                src={service.image || '/images/services/wedding-planning-decor.jpg'}
+                alt={service.name}
+                fill
+                sizes="50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
 
-                <p className="text-[11px] text-[#57534E] mt-1 line-clamp-1 leading-snug font-normal">
-                  {config.subtext}
-                </p>
+              {/* Gradient Scrim for Flawless Text Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/30 pointer-events-none" />
+
+              {/* Top Tag & Arrow */}
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="text-[10px] font-mono font-semibold uppercase tracking-wider bg-white/90 text-[#521D2B] px-2 py-0.5 rounded-md backdrop-blur-xs">
+                  {service.categoryTag?.split(' ')[0] || 'Service'}
+                </span>
+                <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-[#521D2B] transition-colors">
+                  <ArrowUpRight size={13} />
+                </div>
               </div>
 
-              {/* Right Photo Area: Signature Arched Semi-Circle Shape (42% width) */}
-              <div className="w-[42%] sm:w-[40%] relative min-h-[92px] sm:min-h-[104px] rounded-l-full overflow-hidden shadow-[-4px_0_12px_rgba(0,0,0,0.06)] shrink-0">
-                <Image
-                  src={service.image || '/images/services/wedding-planning-decor.jpg'}
-                  alt={service.name}
-                  fill
-                  sizes="45vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+              {/* Bottom Bold, Easily Readable Title (15px-16px, Zero Tiny Clutter) */}
+              <div className="relative z-10">
+                <h3 className="text-[15px] sm:text-base font-serif font-bold text-white tracking-tight leading-tight drop-shadow-sm group-hover:text-[#F5E296] transition-colors">
+                  {service.name}
+                </h3>
               </div>
             </Link>
           );
@@ -121,7 +87,7 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
       </div>
 
       {/* =========================================================================
-          DESKTOP VIEW: Rich 3-Column Luxury Grid
+          DESKTOP VIEW: Clean 3-Column Luxury Cards
           ========================================================================= */}
       <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {displayServices.map((service) => {
@@ -130,7 +96,7 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
           return (
             <div
               key={service.id}
-              className="group bg-white rounded-2xl border border-[#E8DFD3] hover:border-[#521D2B]/40 shadow-[0_4px_20px_rgba(33,26,25,0.05)] hover:shadow-[0_12px_36px_rgba(82,29,43,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between"
+              className="group bg-white rounded-3xl border border-[#E8DFD3] hover:border-[#521D2B]/40 shadow-[0_4px_20px_rgba(33,26,25,0.04)] hover:shadow-[0_12px_36px_rgba(82,29,43,0.12)] transition-all duration-300 overflow-hidden flex flex-col justify-between"
             >
               {/* Image Container */}
               <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#FAF7F2]">
@@ -141,16 +107,16 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
                   sizes="(max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
 
                 {/* Category Pill */}
-                <span className="absolute top-3 left-3 text-[11px] font-semibold uppercase tracking-wider bg-white/95 text-[#521D2B] px-3 py-1 rounded-full shadow-xs border border-[#E8DFD3]">
+                <span className="absolute top-3.5 left-3.5 text-[11px] font-semibold uppercase tracking-wider bg-white/95 text-[#521D2B] px-3 py-1 rounded-full shadow-xs border border-[#E8DFD3]">
                   {service.categoryTag}
                 </span>
               </div>
 
-              {/* Body */}
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+              {/* Card Body */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
                   <h3 className="text-xl font-serif font-bold text-[#211A19] group-hover:text-[#521D2B] transition-colors leading-snug">
                     {service.name}
@@ -159,33 +125,37 @@ export function HomeServicesSection({ services }: HomeServicesSectionProps) {
                   <p className="text-xs sm:text-sm text-[#57534E] mt-2 leading-relaxed line-clamp-2">
                     {service.shortDescription}
                   </p>
+                </div>
 
-                  {/* Highlights */}
-                  <div className="mt-4 pt-3 border-t border-[#F0EAE1] space-y-2 text-xs">
-                    {service.deliverables.slice(0, 2).map((d, i) => (
-                      <div key={i} className="flex items-start gap-2 text-[#44403C]">
-                        <Check size={14} className="text-[#521D2B] shrink-0 mt-0.5" />
-                        <span className="line-clamp-1">{d.title}</span>
+                {/* Key Deliverables Highlights */}
+                {service.deliverables && service.deliverables.length > 0 && (
+                  <div className="pt-2 border-t border-[#F2ECE3] space-y-1.5">
+                    {service.deliverables.slice(0, 2).map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-xs text-[#57534E]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B]/60 shrink-0" />
+                        <span className="truncate">{item.title}</span>
                       </div>
                     ))}
                   </div>
-                </div>
+                )}
 
-                {/* Footer Action */}
-                <div className="pt-3 border-t border-[#F0EAE1] flex items-center justify-between">
+                {/* Pricing & CTA */}
+                <div className="pt-3 border-t border-[#F2ECE3] flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider text-[#8C8070] font-mono block">
+                      Starting Investment
+                    </span>
+                    <span className="text-sm font-semibold text-[#211A19]">
+                      Bespoke Packages
+                    </span>
+                  </div>
+
                   <Link
                     href={detailUrl}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#521D2B] hover:text-[#671024] group-hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#521D2B] hover:text-[#7A1D36] group-hover:translate-x-1 transition-all"
                   >
-                    <span>Explore Service Details</span>
+                    <span>Explore</span>
                     <ArrowRight size={13} />
-                  </Link>
-
-                  <Link
-                    href="/contact"
-                    className="text-[11px] font-semibold uppercase tracking-wider px-3 py-1.5 rounded-lg border border-[#DDD3C5] bg-[#FAF7F2] hover:bg-[#521D2B] hover:text-white transition-colors"
-                  >
-                    Book Consultation
                   </Link>
                 </div>
               </div>

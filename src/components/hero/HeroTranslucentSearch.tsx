@@ -251,8 +251,8 @@ export function HeroTranslucentSearch() {
         </div>
       )}
 
-      {/* Popular Quick-Click Pill Tags */}
-      <div className="mt-3 flex items-center flex-wrap justify-center sm:justify-start gap-1.5 sm:gap-2 text-xs text-white/95 px-1">
+      {/* Popular Quick-Click Pill Tags (Hidden on mobile to keep hero breathable & uncluttered) */}
+      <div className="mt-3 hidden sm:flex items-center flex-wrap justify-center sm:justify-start gap-1.5 sm:gap-2 text-xs text-white/95 px-1">
         <span className="font-semibold text-white/80 text-[11px] uppercase tracking-wider mr-0.5">
           Popular:
         </span>

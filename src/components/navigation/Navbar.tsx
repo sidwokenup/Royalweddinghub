@@ -414,7 +414,7 @@ export function Navbar() {
             <span>Instagram</span>
           </a>
 
-          {/* Royal Scroll Lead Trigger Button (Navbar Hook) */}
+          {/* Lead Trigger Button (Navbar Hook) */}
           <button
             type="button"
             onClick={() => {
@@ -422,10 +422,9 @@ export function Navbar() {
                 window.dispatchEvent(new CustomEvent("open-royal-scroll"));
               }
             }}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F5E296] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-xs uppercase tracking-wider shadow-[0_2px_12px_rgba(212,175,55,0.35)] hover:shadow-[0_4px_18px_rgba(212,175,55,0.55)] hover:scale-105 active:scale-95 transition-all duration-300 border border-[#FDECB0] cursor-pointer group shrink-0"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#521D2B] hover:bg-[#682436] text-[#FAF7F2] text-xs font-medium tracking-wide transition-all shadow-xs cursor-pointer shrink-0"
             aria-label="Claim ₹50,000 Wedding Privilege"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#521D2B] animate-ping" />
             <span>Claim ₹50K Privilege</span>
           </button>
         </div>
@@ -439,15 +438,15 @@ export function Navbar() {
                 window.dispatchEvent(new CustomEvent("open-royal-scroll"));
               }
             }}
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-sm border border-[#FDECB0] active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#521D2B] text-[#FAF7F2] text-[11px] font-medium tracking-wide transition-all active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
             aria-label="Claim ₹50K Privilege"
           >
-            <span>👑 ₹50K Off</span>
+            <span>₹50K Privilege</span>
           </button>
 
           <Link
             href="/venues"
-            className={`text-xs uppercase tracking-widest px-2 sm:px-2.5 py-1 rounded-[2px] transition-colors border whitespace-nowrap shrink-0 ${
+            className={`hidden sm:inline-flex text-xs uppercase tracking-widest px-2 sm:px-2.5 py-1 rounded-[2px] transition-colors border whitespace-nowrap shrink-0 ${
               isVenuesActive
                 ? "border-[#521D2B] text-[#521D2B] bg-[#521D2B]/10 font-medium"
                 : isLightNav
@@ -483,13 +482,10 @@ export function Navbar() {
                 window.dispatchEvent(new CustomEvent("open-royal-scroll"));
               }
             }}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#521D2B] via-[#6B182B] to-[#450F1D] text-[#F5E296] border border-[#D4AF37]/50 font-serif font-bold text-xs uppercase tracking-[0.2em] shadow-md flex items-center justify-between active:scale-[0.98] transition-transform cursor-pointer"
+            className="w-full py-3 px-4 rounded-2xl bg-[#521D2B] hover:bg-[#682436] text-[#FAF7F2] text-xs font-medium tracking-wide shadow-sm flex items-center justify-between active:scale-[0.98] transition-transform cursor-pointer"
           >
-            <span className="flex items-center gap-2">
-              <span>👑</span>
-              <span>Shahi Farman (₹50,000 Privilege)</span>
-            </span>
-            <ArrowRight size={13} />
+            <span>Claim ₹50,000 Wedding Privilege</span>
+            <ArrowRight size={14} />
           </button>
 
           <div

@@ -51,9 +51,9 @@ const POPULAR_SEARCH_CATEGORIES: VenueCategoryCard[] = [
 
 export function HomePopularSearches() {
   return (
-    <section className="w-full pt-8 sm:pt-10 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto select-none">
+    <section className="w-full pt-10 sm:pt-14 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto select-none">
       {/* Section Header (Matching WedMeGood typography & clarity) */}
-      <div className="flex items-center justify-between mb-4 sm:mb-5">
+      <div className="flex items-center justify-between mb-5 sm:mb-6">
         <div>
           <h2 className="text-xl sm:text-2xl font-serif font-bold text-[#211A19] tracking-tight">
             Popular Venue Searches

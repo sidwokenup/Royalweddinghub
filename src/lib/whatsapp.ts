@@ -40,5 +40,8 @@ export function generateWhatsAppLink(options: WhatsAppOptions = {}): string {
   }
 
   const encoded = encodeURIComponent(text);
-  return `https://wa.me/${BUSINESS_INFO.rawPhone}?text=${encoded}`;
+  const raw = (('whatsappPhone' in BUSINESS_INFO ? (BUSINESS_INFO as Record<string, unknown>).whatsappPhone : null) || BUSINESS_INFO.rawPhone || '919170701546') as string;
+  const digits = raw.replace(/\D/g, '');
+  const waNumber = digits.length === 10 ? `91${digits}` : digits;
+  return `https://wa.me/${waNumber}?text=${encoded}`;
 }

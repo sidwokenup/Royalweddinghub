@@ -36,7 +36,7 @@ export default async function Home() {
       <Hero />
 
       {/* Main Content Body with Ambient Luxury Parchment */}
-      <div className="relative w-full bg-[#FAF7F2] text-[#211A19]">
+      <div className="relative w-full bg-[#FAF7F2] text-[#211A19] pb-24 md:pb-0">
         <VenueAmbientBackground />
 
         {/* =========================================================================

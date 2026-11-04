@@ -110,13 +110,13 @@ export function Footer() {
               <span>{BUSINESS_INFO.displayPhone}</span>
             </a>
 
-            {/* Shahi Farman Lead Modal Trigger */}
+            {/* Lead Modal Trigger */}
             <button
               type="button"
               onClick={handleOpenShahiFarman}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F5E296] to-[#C59B27] text-[#3B0D16] font-serif font-bold text-xs uppercase tracking-wider shadow-[0_4px_18px_rgba(212,175,55,0.35)] hover:scale-105 active:scale-95 transition-all duration-300 border border-[#FDECB0] cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#521D2B] hover:bg-[#682436] text-[#FAF7F2] text-xs font-medium tracking-wide shadow-sm hover:scale-105 active:scale-95 transition-all border border-[#521D2B]/30 cursor-pointer"
             >
-              <Sparkles size={14} />
+              <Sparkles size={14} className="text-[#D6B56D]" />
               <span>Claim ₹50K Privilege</span>
             </button>
           </div>

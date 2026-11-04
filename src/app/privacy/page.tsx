@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
               <p><strong>{BUSINESS_INFO.name}</strong></p>
               <p>{BUSINESS_INFO.address.full}</p>
               <p>Email: <a href={`mailto:${BUSINESS_INFO.email}`} className="text-[#521D2B] underline">{BUSINESS_INFO.email}</a></p>
-              <p>Phone: <a href={`tel:${BUSINESS_INFO.rawPhone}`} className="text-[#521D2B] underline">{BUSINESS_INFO.displayPhone}</a></p>
+              <p>Phone: <a href={`tel:${BUSINESS_INFO.primaryPhone}`} className="text-[#521D2B] underline">{BUSINESS_INFO.displayPhone}</a></p>
             </div>
           </section>
         </div>
