@@ -42,16 +42,30 @@ export function RoyalScrollExperience() {
     return () => window.removeEventListener('open-royal-scroll', handleTrigger);
   }, []);
 
-  // Timed popup: 35s initial delay (if not claimed)
+  // Timed popup: appears 15 seconds after page load, and reappears every 15s after closing until filled
   useEffect(() => {
     if (isOpen || hasClaimed) return;
 
-    const timer = setTimeout(() => {
+    try {
       if (typeof window !== 'undefined' && localStorage.getItem('rwh_shahi_farman_claimed') === 'true') {
+        setHasClaimed(true);
         return;
       }
+    } catch {
+      // ignore
+    }
+
+    const timer = setTimeout(() => {
+      try {
+        if (typeof window !== 'undefined' && localStorage.getItem('rwh_shahi_farman_claimed') === 'true') {
+          setHasClaimed(true);
+          return;
+        }
+      } catch {
+        // ignore
+      }
       setIsOpen(true);
-    }, 35000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, [isOpen, hasClaimed]);
