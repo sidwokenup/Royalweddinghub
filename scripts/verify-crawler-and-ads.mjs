@@ -6,7 +6,7 @@ import http from 'node:http';
 const LIVE_DOMAIN = 'https://www.royalweddinghub.com';
 const NON_WWW_DOMAIN = 'https://royalweddinghub.com';
 
-async function fetchUrl(targetUrl, headers = {}, maxRedirects = 0) {
+async function fetchUrl(targetUrl, headers = {}) {
   return new Promise((resolve, reject) => {
     const urlObj = new URL(targetUrl);
     const client = urlObj.protocol === 'https:' ? https : http;
@@ -98,6 +98,17 @@ async function runVerification() {
     assert(sitemapXml.includes('<loc>https://www.royalweddinghub.com/services</loc>'), 'sitemap.xml contains /services');
   } else {
     assert(false, '.next/server/app/sitemap.xml.body exists');
+  }
+
+  // 1b. Verify Microsoft Clarity & Analytics in Prerendered HTML
+  const indexPath = path.resolve('.next/server/app/index.html');
+  if (fs.existsSync(indexPath)) {
+    const indexHtml = fs.readFileSync(indexPath, 'utf8');
+    assert(indexHtml.includes('zbj9wujpy6'), 'Prerendered HTML includes Microsoft Clarity ID (zbj9wujpy6)');
+    assert(indexHtml.includes('https://www.clarity.ms/tag/'), 'Prerendered HTML loads Microsoft Clarity script tag');
+    assert(indexHtml.includes('https://www.clarity.ms'), 'Prerendered HTML includes Clarity preconnect/dns-prefetch');
+  } else {
+    assert(false, '.next/server/app/index.html exists');
   }
 
   // 2. Canonical Domain & Redirect Verification

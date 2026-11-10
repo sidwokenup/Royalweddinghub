@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import { Playfair_Display, Inter } from "next/font/google";
 import Script from "next/script";
 import { LenisProvider } from "@/animations/scroll/LenisProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ClarityRouteChangeTracker } from "@/components/analytics/ClarityRouteChangeTracker";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -79,6 +81,10 @@ export default function RootLayout({
       <body className="antialiased min-h-screen flex flex-col font-sans" suppressHydrationWarning>
         {/* Preconnect & high-priority LCP hero image hints */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="preconnect" href="https://c.clarity.ms" />
+        <link rel="dns-prefetch" href="https://c.clarity.ms" />
         <link
           rel="preload"
           as="image"
@@ -143,6 +149,26 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Microsoft Clarity - Session Recording, Heatmaps & User Navigation Tracking */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "zbj9wujpy6");
+            `,
+          }}
+        />
+
+        {/* Sync App Router SPA navigations with Microsoft Clarity across all pages */}
+        <Suspense fallback={null}>
+          <ClarityRouteChangeTracker />
+        </Suspense>
         <LenisProvider>
           {children}
         </LenisProvider>

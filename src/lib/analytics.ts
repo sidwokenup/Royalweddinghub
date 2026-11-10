@@ -1,10 +1,11 @@
 /**
  * Unified Analytics & Ad Conversion Tracking for Royal Wedding Hub
- * Supports Google Analytics (gtag.js), Google Ads (AW-18508119901), and Meta Pixel (fbq)
+ * Supports Google Analytics (gtag.js), Google Ads (AW-18508119901), Meta Pixel (fbq), and Microsoft Clarity
  */
 
 export const GOOGLE_ADS_ID = 'AW-18508119901';
 export const GA4_MEASUREMENT_ID = 'G-4SJ7J5VBRS';
+export const CLARITY_PROJECT_ID = 'zbj9wujpy6';
 
 export function isOfficialDomain(): boolean {
   if (typeof window === 'undefined') return false;
@@ -18,6 +19,7 @@ declare global {
   interface Window {
     gtag?: (...args: GtagArgs) => void;
     fbq?: (action: string, eventName: string, params?: Record<string, unknown>) => void;
+    clarity?: (action: string, ...args: unknown[]) => void;
     dataLayer?: unknown[];
   }
 }
@@ -27,6 +29,12 @@ export function trackEvent(
   params: Record<string, string | number | boolean | null | undefined> = {}
 ) {
   if (typeof window === 'undefined') return;
+
+  // Microsoft Clarity (Session recording event tag)
+  if (typeof window.clarity === 'function') {
+    window.clarity('event', action);
+  }
+
   if (!isOfficialDomain()) return;
 
   // Google Analytics (GA4) / Google Ads
@@ -47,6 +55,18 @@ export function trackLeadGeneration(payload: {
   currency?: string;
 }) {
   if (typeof window === 'undefined') return;
+
+  // Tag Microsoft Clarity Session
+  if (typeof window.clarity === 'function') {
+    window.clarity('event', 'lead_submitted');
+    if (payload.leadNumber) {
+      window.clarity('set', 'lead_id', payload.leadNumber);
+    }
+    if (payload.eventType) {
+      window.clarity('set', 'event_type', payload.eventType);
+    }
+  }
+
   if (!isOfficialDomain()) return;
 
   const leadData: Record<string, string | number> = {
