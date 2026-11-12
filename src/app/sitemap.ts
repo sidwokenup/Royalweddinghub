@@ -22,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${siteUrl}/wedding-planner-in-lucknow`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
       url: `${siteUrl}/wedding-venues-lucknow`,
       lastModified: new Date(),
       changeFrequency: 'daily',

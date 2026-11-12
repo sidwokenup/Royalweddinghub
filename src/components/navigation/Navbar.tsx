@@ -80,8 +80,11 @@ export function Navbar() {
   const isLightNav =
     pathname.startsWith("/venues") ||
     pathname.startsWith("/services") ||
+    pathname.startsWith("/wedding-planner-in-lucknow") ||
     pathname === "/about" ||
     pathname === "/contact" ||
+    pathname === "/privacy" ||
+    pathname === "/terms" ||
     (isHome && isScrolledPastHero);
 
   const handleNavClick = (sectionId: string, pageHref: string, e: React.MouseEvent) => {
